@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "revashare-svc-webapi.Client", "revashare-svc-webapi.Client\revashare-svc-webapi.Client.csproj", "{34E7218F-4DD5-45BD-A16D-693C538BA3AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "revashare-svc-webapi.Logic", "revashare-svc-webapi.Logic\revashare-svc-webapi.Logic.csproj", "{041018A7-B63A-4B34-B907-6D3D822DC084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "revashare-svc-webapi.Tests", "revashare-svc-webapi.Tests\revashare-svc-webapi.Tests.csproj", "{F6926FA8-5834-4F6C-AF6A-1CEEEFD8AA33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34E7218F-4DD5-45BD-A16D-693C538BA3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E7218F-4DD5-45BD-A16D-693C538BA3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E7218F-4DD5-45BD-A16D-693C538BA3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E7218F-4DD5-45BD-A16D-693C538BA3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041018A7-B63A-4B34-B907-6D3D822DC084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041018A7-B63A-4B34-B907-6D3D822DC084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041018A7-B63A-4B34-B907-6D3D822DC084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041018A7-B63A-4B34-B907-6D3D822DC084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6926FA8-5834-4F6C-AF6A-1CEEEFD8AA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6926FA8-5834-4F6C-AF6A-1CEEEFD8AA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6926FA8-5834-4F6C-AF6A-1CEEEFD8AA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6926FA8-5834-4F6C-AF6A-1CEEEFD8AA33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

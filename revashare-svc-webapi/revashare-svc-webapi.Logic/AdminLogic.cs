@@ -5,31 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using revashare_svc_webapi.Logic.ModelDTO;
+using revashare_svc_webapi.Logic.Models;
 
 namespace revashare_svc_webapi.Logic
 {
     public class AdminLogic : IAdminLogic
     {
-        public bool AddDriver(DriverDTO driverToAdd)
+        public bool InsertDriver(DriverDTO driverToAdd)
         {
-            if (driverToAdd.name == "true")
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
+            return true;
         }
 
-        public List<AdminDTO> GetAllAdmins()
-        {
-            List<AdminDTO> adminList = new List<AdminDTO>();
-            AdminDTO newAdmin = new AdminDTO { name = "Ray" };
-            adminList.Add(newAdmin);
-
-            return adminList;
-        }
     }
 }

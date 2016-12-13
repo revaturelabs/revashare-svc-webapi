@@ -12,5 +12,6 @@ namespace revashare_svc_webapi.Logic.Models
       public DateTime StartOfWeekDate { get; set; }
       public DateTime DepartureTime { get; set; }
       public bool IsOnTime { get; set; }
+      public virtual VehicleDTO RideVehicle { get; set; }
    }
 }

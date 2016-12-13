@@ -43,9 +43,12 @@
     <Compile Include="Interfaces\IDriverRepository.cs" />
     <Compile Include="Models\FlagDTO.cs" />
     <Compile Include="Models\VehicleDTO.cs" />
+    <Compile Include="AdminLogic.cs" />
+    <Compile Include="Interfaces\IAdminLogic.cs" />
+    <Compile Include="Models\ApartmentDTO.cs" />
+    <Compile Include="Models\UserInfoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

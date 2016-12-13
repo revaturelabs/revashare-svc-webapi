@@ -1,5 +1,5 @@
 ﻿using revashare_svc_webapi.Logic;
-using revashare_svc_webapi.Logic.ModelDTO;
+using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +25,6 @@ namespace revashare_svc_webapi.Client.Controllers
         {
 
         }
-        
-        /*
-        [HttpGet]
-        [Route("all-admins")]
-        public HttpResponseMessage GetAllAdmins()
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, AdmLogic.GetAllAdmins(), "application/json");
-        }
 
         [HttpPost]
         [Route("add-driver")]
@@ -40,7 +32,6 @@ namespace revashare_svc_webapi.Client.Controllers
         {
             return Request.CreateResponse(HttpStatusCode.OK, AdmLogic.AddDriver(driverSent));
         }
-        */
 
     }
 }

@@ -43,6 +43,7 @@
     <Compile Include="Interfaces\IRider.cs" />
     <Compile Include="Mappers\RideMapper.cs" />
     <Compile Include="Mappers\RideRiderMapper.cs" />
+    <Compile Include="Models\DriverDTO.cs" />
     <Compile Include="Models\RideRiderDTO.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Models\RideDTO.cs" />

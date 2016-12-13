@@ -5,11 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using revashare_svc_webapi.Logic.ModelDTO;
+using revashare_svc_webapi.Logic.Models;
 
 namespace revashare_svc_webapi.Logic
 {
     public class AdminLogic : IAdminLogic
     {
-        
+        public bool AddDriver(DriverDTO driverToAdd)
+        {
+            return true;
+        }
+
     }
 }

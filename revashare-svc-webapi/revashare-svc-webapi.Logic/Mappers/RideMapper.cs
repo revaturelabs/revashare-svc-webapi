@@ -7,25 +7,28 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Mappers
 {
-   public class RideMapper
-   {
-      public static RideDTO mapToRideDTO(RideDAO b)
-      {
-         var a = new RideDTO();
-         a.DepartureTime = b.DepartureTime;
-         a.IsOnTime = b.IsOnTime;
-         a.StartOfWeekDate = b.StartOfWeekDate;
-         a.VehicleId = b.HehicleId;
-         return a;
-      }
+    public class RideMapper
+    {
+        /*
+        public static RideDTO mapToRideDTO(RideDAO b)
+        {
+            var a = new RideDTO();
+            a.DepartureTime = b.DepartureTime;
+            a.IsOnTime = b.IsOnTime;
+            a.StartOfWeekDate = b.StartOfWeekDate;
+            a.VehicleId = b.HehicleId;
+            return a;
+        }
 
-      public static RideDAO mapToRideDAO(RideDTO b)
-      {
-         var a = new RideDAO();
-         a.DepartureTime = b.DepartureTime;
-         a.IsOnTime = b.IsOnTime;
-         a.StartOfWeekDate = b.StartOfWeekDate;
-         a.VehicleId = b.VehicleId;
-         return a;
-      }
-   }
+        public static RideDAO mapToRideDAO(RideDTO b)
+        {
+            var a = new RideDAO();
+            a.DepartureTime = b.DepartureTime;
+            a.IsOnTime = b.IsOnTime;
+            a.StartOfWeekDate = b.StartOfWeekDate;
+            a.VehicleId = b.VehicleId;
+            return a;
+        }
+        */
+    }
+}

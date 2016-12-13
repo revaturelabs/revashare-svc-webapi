@@ -1,0 +1,53 @@
+﻿using revashare_svc_webapi.Logic.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using revashare_svc_webapi.Logic.Models;
+
+namespace revashare_svc_webapi.Logic
+{
+   public class Rider : IRider
+   {
+      public bool addRiderToRide(UserDTO user, RideDTO ride)
+      {
+         throw new NotImplementedException();
+      }
+
+      public List<RideDTO> getAvailableRides(string startLocation)
+      {
+         throw new NotImplementedException();
+      }
+
+      public int getAvailableSeatsInRide(RideDTO ride)
+      {
+         throw new NotImplementedException();
+      }
+
+      public RideDTO getCurrentSelectedRide(UserDTO user)
+      {
+         throw new NotImplementedException();
+      }
+
+      public bool modifyCurrentSelectedRide(UserDTO user, RideDTO ride)
+      {
+         throw new NotImplementedException();
+      }
+
+      public bool modifyRiderInfo(UserDTO user)
+      {
+         throw new NotImplementedException();
+      }
+
+      public bool removeRiderFromRide(UserDTO user, RideDTO ride)
+      {
+         throw new NotImplementedException();
+      }
+
+      public bool requestToBeDriver(UserDTO user)
+      {
+         throw new NotImplementedException();
+      }
+   }
+}

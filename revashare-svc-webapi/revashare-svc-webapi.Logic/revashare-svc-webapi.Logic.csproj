@@ -40,11 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IRider.cs" />
+    <Compile Include="Mappers\RideMapper.cs" />
+    <Compile Include="Mappers\RideRiderMapper.cs" />
+    <Compile Include="Models\RideRiderDTO.cs" />
+    <Compile Include="Models\UserDTO.cs" />
+    <Compile Include="Models\RideDTO.cs" />
+    <Compile Include="Interfaces\IDriverRepository.cs" />
+    <Compile Include="Models\FlagDTO.cs" />
+    <Compile Include="Models\VehicleDTO.cs" />
     <Compile Include="AdminLogic.cs" />
     <Compile Include="Interfaces\IAdminLogic.cs" />
     <Compile Include="Models\ApartmentDTO.cs" />
     <Compile Include="Models\UserInfoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

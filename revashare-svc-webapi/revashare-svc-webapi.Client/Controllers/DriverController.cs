@@ -26,10 +26,18 @@ namespace revashare_svc_webapi.Client.Controllers {
       return "value";
     }
 
-    // POST: api/Driver
-    public void Post([FromBody]string value) {
+    [HttpPost]
+    [Route("report")]
+    public HttpResponseMessage Post([FromBody]FlagDTO flag) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.ReportRider(flag));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
     }
 
+    [HttpPut]
     [Route("update/vehicle")]
     public HttpResponseMessage Put([FromBody]VehicleDTO vehicle) {
       try {

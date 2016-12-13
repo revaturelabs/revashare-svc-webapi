@@ -9,10 +9,6 @@ namespace revashare_svc_webapi.Logic.Interfaces
 {
     public interface IAdminLogic
     {
-        List<AdminDTO> GetAllAdmins();
-
-        bool AddDriver(DriverDTO DriverToAdd);
-
 
     }
 }

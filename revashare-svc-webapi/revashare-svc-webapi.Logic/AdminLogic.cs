@@ -10,26 +10,6 @@ namespace revashare_svc_webapi.Logic
 {
     public class AdminLogic : IAdminLogic
     {
-        public bool AddDriver(DriverDTO driverToAdd)
-        {
-            if (driverToAdd.name == "true")
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
-        }
-
-        public List<AdminDTO> GetAllAdmins()
-        {
-            List<AdminDTO> adminList = new List<AdminDTO>();
-            AdminDTO newAdmin = new AdminDTO { name = "Ray" };
-            adminList.Add(newAdmin);
-
-            return adminList;
-        }
+        
     }
 }

@@ -25,7 +25,8 @@ namespace revashare_svc_webapi.Client.Controllers
         {
 
         }
-
+        
+        /*
         [HttpGet]
         [Route("all-admins")]
         public HttpResponseMessage GetAllAdmins()
@@ -39,6 +40,7 @@ namespace revashare_svc_webapi.Client.Controllers
         {
             return Request.CreateResponse(HttpStatusCode.OK, AdmLogic.AddDriver(driverSent));
         }
+        */
 
     }
 }

@@ -9,7 +9,7 @@ namespace revashare_svc_webapi.Logic.Interfaces {
   public interface IDriverRepository {
     bool UpdateVehicleInfo(VehicleDTO vehicle);
 
-    bool ReportRider(RiderDTO rider);
+    bool ReportRider(FlagDTO flag);
 
     bool SetAvailability();
   }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IDriverRepository.cs" />
+    <Compile Include="Models\FlagDTO.cs" />
     <Compile Include="Models\VehicleDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -5,7 +5,9 @@ namespace revashare_svc_webapi.Client.App_Start
     using System.Web.Http;
     using SimpleInjector;
     using SimpleInjector.Integration.WebApi;
-    
+    using Logic.Interfaces;
+    using Logic;
+
     public static class SimpleInjectorWebApiInitializer
     {
         /// <summary>Initialize the container and register it as Web API Dependency Resolver.</summary>
@@ -18,7 +20,7 @@ namespace revashare_svc_webapi.Client.App_Start
 
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
        
-            container.Verify();
+            //container.Verify();
             
             GlobalConfiguration.Configuration.DependencyResolver =
                 new SimpleInjectorWebApiDependencyResolver(container);
@@ -28,6 +30,7 @@ namespace revashare_svc_webapi.Client.App_Start
         {
             // For instance:
             // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
+            container.Register<IAdminLogic, AdminLogic>(Lifestyle.Transient);
         }
     }
 }

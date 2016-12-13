@@ -41,9 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRider.cs" />
+    <Compile Include="Mappers\RideMapper.cs" />
+    <Compile Include="Mappers\RideRiderMapper.cs" />
+    <Compile Include="Models\RideRiderDTO.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Models\RideDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rider.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,7 +12,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
       List<RideDTO> getAvailableRides(string startLocation);
       RideDTO getCurrentSelectedRide(UserDTO user);
       bool modifyCurrentSelectedRide(UserDTO user, RideDTO ride);
-      bool addRiderToRide(UserDTO user, RideDTO ride);
+      bool addRiderToRide(RideDTO ride, RiderDTO rider);
       int getAvailableSeatsInRide(RideDTO ride);
       bool removeRiderFromRide(UserDTO user, RideDTO ride);
       bool requestToBeDriver(UserDTO user);

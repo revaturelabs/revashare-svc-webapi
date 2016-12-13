@@ -8,6 +8,6 @@ namespace revashare_svc_webapi.Logic.Models
 {
    public class RiderDTO
    {
-
+      public string UserName { get; set; }
    }
 }

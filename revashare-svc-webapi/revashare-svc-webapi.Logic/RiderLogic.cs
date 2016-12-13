@@ -16,9 +16,9 @@ namespace revashare_svc_webapi.Logic
       {
          sc = client;
       }
-      public bool addRiderToRide(RideDTO ride, string user)
+      public bool addRiderToRide(RideDTO ride, RiderDTO rider)
       {         
-         return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), user);
+         return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), Mappers.RiderMapper.mapToRiderDAO(rider));
       }
 
       public List<RideDTO> getAvailableRides(string startLocation)

@@ -15,6 +15,8 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.Accepted=b.Accepted;
          a.RideId=b.RideId;
          a.RiderId=b.RiderId;
+
+         return a;
       }
 
       public static RideRiderDAO mapToRideRiderDAO(RideRiderDTO b)
@@ -23,6 +25,8 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.Accepted = b.Accepted;
          a.RideId = b.RideId;
          a.RiderId = b.RiderId;
+
+         return a;
       }
    }
 }

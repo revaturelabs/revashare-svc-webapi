@@ -1,18 +1,24 @@
 ﻿using revashare_svc_webapi.Logic;
-using revashare_svc_webapi.Logic.ModelDTO;
+using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using revashare_svc_webapi.Logic.Interfaces;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
     [RoutePrefix("api/admin")]
     public class AdminController : ApiController
     {
-        public AdminLogic AdmLogic = new AdminLogic();
+        private readonly IAdminLogic Repo;
+
+        public AdminController( IAdminLogic repo)
+        {
+            this.Repo = repo;
+        }
 
         [HttpGet]
         public void Get()
@@ -26,18 +32,11 @@ namespace revashare_svc_webapi.Client.Controllers
 
         }
 
-        [HttpGet]
-        [Route("all-admins")]
-        public HttpResponseMessage GetAllAdmins()
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, AdmLogic.GetAllAdmins(), "application/json");
-        }
-
         [HttpPost]
         [Route("add-driver")]
         public HttpResponseMessage AddDriver([FromBody] DriverDTO driverSent)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, AdmLogic.AddDriver(driverSent));
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertDriver(driverSent));
         }
 
     }

@@ -274,6 +274,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource" />
+    <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

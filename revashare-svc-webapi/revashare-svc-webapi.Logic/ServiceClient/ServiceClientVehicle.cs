@@ -8,26 +8,27 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.ServiceClient
 {
-   public partial class ServiceClient//:IServiceClient
+   public partial class ServiceClient:IServiceClient
    {
-      //public bool deleteVehicle(VehicleDAO v)
-      //{
-      //   return rs.deleteVehicle(v);
-      //}
+   //   public bool deleteVehicle(VehicleDAO v)
+   //   {
+   //      return rs.deleteVehicle(v);
+   //   }
 
-      //public List<VehicleDAO> GetVehicle()
-      //{
-      //   return rs.GetVehicle();
-      //}
+   //   public List<VehicleDAO> GetVehicle()
+   //   {
+   //      return rs.GetVehicle();
+   //   }
 
-      //public bool InsertVehicle(VehicleDAO v)
-      //{
-      //   return rs.InsertVehicle(v);
-      //}
+   //   public bool InsertVehicle(VehicleDAO v)
+   //   {
+   //      return rs.InsertVehicle(v);
+   //   }
 
-      //public bool UpdateVehicle(VehicleDAO v)
-      //{
-      //   return rs.UpdateVehicle(v);
-      //}
+   //   public bool UpdateVehicle(VehicleDAO v)
+   //   {
+   //      return rs.UpdateVehicle(v);
+   //   }
    }
+   
 }

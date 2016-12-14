@@ -10,7 +10,6 @@ namespace revashare_svc_webapi.Logic.Interfaces
 {
    public interface IServiceClient
    {
-      /*
       List<RideDTO> GetRides();
       bool InsertRide(RideDAO ride);
       bool UpdateRide(RideDAO ride);

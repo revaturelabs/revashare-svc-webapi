@@ -9,7 +9,6 @@ namespace revashare_svc_webapi.Logic.Models
 {
    public class RideRiderDTO
    {
-        /*
       public int RideId { get; set; }
       public int RiderId { get; set; }
       public bool Accepted { get; set; }

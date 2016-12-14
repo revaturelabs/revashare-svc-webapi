@@ -29,6 +29,5 @@ namespace revashare_svc_webapi.Logic.Mappers
 
          return a;
       }
-      */
    }
 }

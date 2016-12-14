@@ -9,26 +9,26 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
    public partial class ServiceClient : IServiceClient
    {
-      /*
-      public bool deleteRide(RideDAO )
+      
+      public bool deleteRide(RideDAO ride)
       {
-         throw new NotImplementedException();
+         sr.deleteRide(ride);
       }
 
       public List<RideDAO> GetRides()
       {
-         throw new NotImplementedException();
+         sr.GetRides();
       }
 
       public bool InsertRide(RideDAO ride)
       {
-         throw new NotImplementedException();
+         sr.InsertRide(ride);
       }
 
       public bool UpdateRide(RideDAO ride)
       {
-         throw new NotImplementedException();
+         sr.UpdateRide(ride);
       }
-      */
+      
    }
 }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DriverLogic.cs" />
     <Compile Include="Interfaces\IRider.cs" />
     <Compile Include="Interfaces\IServiceClient.cs" />
     <Compile Include="Mappers\ApartmentMapper.cs" />

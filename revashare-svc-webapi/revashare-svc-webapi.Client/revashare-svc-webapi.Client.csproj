@@ -276,6 +276,7 @@
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource" />
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
+    <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -320,6 +321,9 @@
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,7 +15,7 @@ namespace revashare_svc_webapi.Client.Controllers
     {
         private readonly IAdminLogic Repo;
 
-        public AdminController( IAdminLogic repo)
+        public AdminController(IAdminLogic repo)
         {
             this.Repo = repo;
         }
@@ -30,14 +30,6 @@ namespace revashare_svc_webapi.Client.Controllers
         public void Post()
         {
 
-        }
-
-        //new merge
-        [HttpPost]
-        [Route("add-driver")]
-        public HttpResponseMessage AddDriver([FromBody] UserDTO driverSent)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertDriver(driverSent));
         }
 
     }

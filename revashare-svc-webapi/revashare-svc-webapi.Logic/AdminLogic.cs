@@ -12,10 +12,6 @@ namespace revashare_svc_webapi.Logic
 {
     public class AdminLogic : IAdminLogic
     {
-        public bool InsertDriver(UserDTO driverToAdd)
-        {
-            return true;
-        }
-
+        
     }
 }

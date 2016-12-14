@@ -51,5 +51,36 @@ namespace revashare_svc_webapi.Client.Controllers {
     // DELETE: api/Driver/5
     public void Delete(int id) {
     }
-  }
+
+    #region Driver CRUD Methods
+        [HttpPost]
+        [Route("add-driver")]
+        public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.repo.InsertDriver(driver));
+        }
+
+        [HttpGet]
+        [Route("get-drivers")]
+        public HttpResponseMessage GetDrivers()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.repo.RequestDrivers(), "application/json");
+        }
+
+        [HttpPut]
+        [Route("update-driver")]
+        public HttpResponseMessage UpdateDriver([FromBody] UserDTO driver)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.repo.ModifyDriver(driver));
+        }
+
+        [HttpPost]
+        [Route("remove-driver")]
+        public HttpResponseMessage RemoveDriver([FromBody] UserDTO driver)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.repo.DeleteDriver(driver));
+        }
+        #endregion
+
+    }
 }

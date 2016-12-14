@@ -113,15 +113,6 @@
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.RideDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.RideRidersDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.UserDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

@@ -38,6 +38,7 @@
       <xs:element minOccurs="0" name="ApartmentID" type="xs:int" />
       <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ApartmentDAO" nillable="true" type="tns:ApartmentDAO" />

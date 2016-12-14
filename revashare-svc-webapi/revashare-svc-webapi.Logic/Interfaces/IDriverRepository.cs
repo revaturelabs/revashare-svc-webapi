@@ -12,5 +12,14 @@ namespace revashare_svc_webapi.Logic.Interfaces {
     bool ReportRider(FlagDTO flag);
 
     bool SetAvailability();
-  }
+   
+    bool InsertDriver(UserDTO driverToAdd);
+
+    List<UserDTO> RequestDrivers();
+
+    bool ModifyDriver(UserDTO driverToUpdate);
+
+    bool DeleteDriver(UserDTO driverToRemove);
+
+    }
 }

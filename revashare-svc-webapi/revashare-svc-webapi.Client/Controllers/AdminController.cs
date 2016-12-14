@@ -32,44 +32,5 @@ namespace revashare_svc_webapi.Client.Controllers
 
         }
 
-        #region Driver Related Methods
-        [HttpPost]
-        [Route("add-driver")]
-        public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertDriver(driver));
-        }
-
-        [HttpGet]
-        [Route("get-drivers")]
-        public HttpResponseMessage GetDrivers()
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.RequestDrivers(), "application/json");
-        }
-
-        [HttpPost]
-        [Route("update-driver")]
-        public HttpResponseMessage UpdateDriver([FromBody] UserDTO driver)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.ModifyDriver(driver));
-        }
-
-        [HttpPost]
-        [Route("remove-driver")]
-        public HttpResponseMessage RemoveDriver([FromBody] UserDTO driver)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.DeleteDriver(driver));
-        }
-        #endregion
-
-        #region Rider Related Methods
-        [HttpPost]
-        [Route("add-rider")]
-        public HttpResponseMessage AddRider([FromBody] UserDTO newRider)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertRider(newRider));
-        }
-        #endregion
-
     }
 }

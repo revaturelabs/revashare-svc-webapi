@@ -68,6 +68,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -237,6 +238,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -278,6 +284,12 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <None Include="Service References\RevaShareServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\RevaShareServiceReference\configuration.svcinfo" />
+    <None Include="Service References\RevaShareServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -295,6 +307,25 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService.wsdl" />
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.UserDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RevaShareServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

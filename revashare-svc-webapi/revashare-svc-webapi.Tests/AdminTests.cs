@@ -1,7 +1,9 @@
 ﻿using Moq;
 using NSubstitute;
 using revashare_svc_webapi.Client.Controllers;
+using revashare_svc_webapi.Logic;
 using revashare_svc_webapi.Logic.Interfaces;
+
 using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
@@ -18,25 +20,30 @@ namespace revashare_svc_webapi.Tests
 {
     public class AdminTests
     {
+        //[Fact]
+        //public void Test_AddDriver_AdminController()
+        //{ 
+        //    var mock = new Mock<IAdminLogic>();
+        //    mock.Setup(a => a.InsertDriver(new DriverDTO())).Returns(true);
+        //    var ctrl = new AdminController(mock.Object);
 
-        [Fact]
-        public void Test_AddDriver()
-        { 
-            var mock = new Mock<IAdminLogic>();
+        //    ctrl.Request = Substitute.For<HttpRequestMessage>();
+        //    ctrl.Configuration = Substitute.For<HttpConfiguration>();
+        //    HttpResponseMessage res = ctrl.AddDriver(new DriverDTO());
 
-            mock.Setup(a => a.InsertDriver(new DriverDTO())).Returns(true);
+        //    Assert.Equal(res.StatusCode, HttpStatusCode.OK);
+        //}
 
-            var ctrl = new AdminController(mock.Object);
+        //[Fact]
+        //public void Test_AddDriver_AdminLogic()
+        //{
+        //    AdminLogic admLogic = new AdminLogic();
+        //    DriverDTO testDriver = new DriverDTO { name = "TestDriver" };
 
-            ctrl.Request = Substitute.For<HttpRequestMessage>();
+        //    bool actual = admLogic.InsertDriver(testDriver);
 
-            ctrl.Configuration = Substitute.For<HttpConfiguration>();
-
-            HttpResponseMessage res = ctrl.AddDriver(new DriverDTO());
-
-            Assert.Equal(res.StatusCode, HttpStatusCode.OK);
-        }
-
+        //    Assert.True(actual);
+        //}
 
     }
 }

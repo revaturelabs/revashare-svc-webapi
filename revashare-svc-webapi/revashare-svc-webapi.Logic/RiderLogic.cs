@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.ModelDTO;
 
 namespace revashare_svc_webapi.Logic
 {
-   
+   /*
    public partial class RiderLogic : IRider
    {
       private IServiceClient sc;
@@ -16,13 +17,15 @@ namespace revashare_svc_webapi.Logic
       {
          sc = client;
       }
-      public bool addRiderToRide(RideDTO ride, string user)
-      {         
-         return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), user);
+      public bool addRiderToRide(RideDTO ride, UserDTO rider)
+      {
+         throw new NotImplementedException();
+         //return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), Mappers.RiderMapper.mapToRiderDAO(rider));
       }
 
       public List<RideDTO> getAvailableRides(string startLocation)
       {
+         //List<ApartmentDTO> apartmentList = getApartments();
          throw new NotImplementedException();
       }
 
@@ -56,4 +59,5 @@ namespace revashare_svc_webapi.Logic
          throw new NotImplementedException();
       }
    }
+   */
 }

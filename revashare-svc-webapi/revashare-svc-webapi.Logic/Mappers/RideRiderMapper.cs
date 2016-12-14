@@ -1,4 +1,5 @@
 ﻿using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +10,27 @@ namespace revashare_svc_webapi.Logic.Mappers
 {
    public static class RideRiderMapper
    {
-      public static RideRiderDTO mapToRideRiderDTO(RideRiderDAO b)
-      {
-         var a = new RideRiderDTO();
-         a.Accepted=b.Accepted;
-         a.RideId=b.RideId;
-         a.RiderId=b.RiderId;
-      }
+      
+      //public static RideRiderDTO mapToRideRiderDTO(RideRidersDAO b)
+      //{
+      //   var a = new RideRiderDTO();
+      //   a.Accepted = b.Accepted;
 
-      public static RideRiderDAO mapToRideRiderDAO(RideRiderDTO b)
-      {
-         var a = new RideRiderDAO();
-         a.Accepted = b.Accepted;
-         a.RideId = b.RideId;
-         a.RiderId = b.RiderId;
-      }
+      //   a.RideId = b.RideId;
+      //   a.RiderId = b.RiderId;
+
+      //   return a;
+      //}
+
+      //public static RideRiderDAO mapToRideRiderDAO(RideRiderDTO b)
+      //{
+      //   var a = new RideRiderDAO();
+      //   a.Accepted = b.Accepted;
+      //   a.RideId = b.RideId;
+      //   a.RiderId = b.RiderId;
+
+      //   return a;
+      //}
+      
    }
 }

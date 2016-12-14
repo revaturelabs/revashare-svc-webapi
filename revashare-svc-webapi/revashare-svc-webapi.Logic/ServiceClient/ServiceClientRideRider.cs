@@ -7,26 +7,28 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.ServiceClient
 {
-   public partial class ServiceClient : IServiceClient
+   public partial class ServiceClient //: IServiceClient
    {
-      public bool deleteRideRider(RideRiderDAO )
-      {
-         throw new NotImplementedException();
-      }
+      
+      //public bool DeleteRideRider(RideRiderDAO rr)
+      //{
+      //   rs.DeleteRideRider(rr);
+      //}
 
-      public List<RideRiderDAO> GetRideRiders()
-      {
-         throw new NotImplementedException();
-      }
+      //public List<RideRiderDAO> GetRideRiders()
+      //{
+      //   rs.GetRideRiders();
+      //}
 
-      public bool InsertRideRider(RideRiderDAO rideRider)
-      {
-         throw new NotImplementedException();
-      }
+      //public bool InsertRideRider(RideRiderDAO rr)
+      //{
+      //   rs.InsertRideRider(rr);
+      //}
 
-      public bool UpdateRideRider(RideRiderDAO rideRider)
-      {
-         throw new NotImplementedException();
-      }
+      //public bool UpdateRideRider(RideRiderDAO rr)
+      //{
+      //   rs.UpdateRideRider(rr);
+      //}
+      
    }
 }

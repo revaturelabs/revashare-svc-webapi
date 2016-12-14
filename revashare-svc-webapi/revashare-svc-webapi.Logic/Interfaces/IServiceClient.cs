@@ -1,4 +1,6 @@
-﻿using System;
+﻿using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +10,16 @@ namespace revashare_svc_webapi.Logic.Interfaces
 {
    public interface IServiceClient
    {
-      List<RideDAO> GetRides();
+      
+      List<RideDTO> GetRides();
       bool InsertRide(RideDAO ride);
       bool UpdateRide(RideDAO ride);
-      bool deleteRide(RideDAO);
+      bool deleteRide(RideDAO ride);
 
-      List<RideRiderDAO> GetRideRiders();
-      bool InsertRideRider(RiderDAO rider, string user);
-      bool UpdateRideRider(RideRiderDAO rideRider);
-      bool deleteRideRider(RideRiderDAO);
+      //List<RideRiderDAO> GetRideRiders();
+      //bool InsertRideRider(UserDAO rider, string user);
+      //bool UpdateRideRider(RideRiderDAO rideRider);
+      //bool deleteRideRider(RideRiderDAO rr);
 
    }
 }

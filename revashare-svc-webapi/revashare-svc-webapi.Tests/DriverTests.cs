@@ -28,5 +28,33 @@ namespace revashare_svc_webapi.Tests {
 
       Assert.Equal(res.StatusCode, HttpStatusCode.OK);
     }
+
+    [Fact]
+    public void Test_ReportRider() {
+      var mock = new Mock<IDriverRepository>();
+      mock.Setup(m => m.ReportRider(new FlagDTO()))
+        .Returns(true);
+
+      var ctrl = new DriverController(mock.Object);
+      ctrl.Request = Substitute.For<HttpRequestMessage>();
+      ctrl.Configuration = Substitute.For<HttpConfiguration>();
+      HttpResponseMessage res = ctrl.Post(new FlagDTO());
+
+      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
+    }
+
+    /*[Fact]
+    public void Test_SetAvailability() {
+      var mock = new Mock<IDriverRepository>();
+      mock.Setup(m => m.SetAvailability())
+        .Returns(true);
+
+      var ctrl = new DriverController(mock.Object);
+      ctrl.Request = Substitute.For<HttpRequestMessage>();
+      ctrl.Configuration = Substitute.For<HttpConfiguration>();
+      HttpResponseMessage res = ctrl.Post();
+
+      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
+    }*/
   }
 }

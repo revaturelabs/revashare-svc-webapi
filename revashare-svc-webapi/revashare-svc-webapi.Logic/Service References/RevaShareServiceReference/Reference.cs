@@ -23,6 +23,9 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan DepartureTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsOnTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -41,6 +44,19 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan DepartureTime {
+            get {
+                return this.DepartureTimeField;
+            }
+            set {
+                if ((this.DepartureTimeField.Equals(value) != true)) {
+                    this.DepartureTimeField = value;
+                    this.RaisePropertyChanged("DepartureTime");
+                }
             }
         }
         
@@ -374,6 +390,9 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LongitudeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -419,6 +438,19 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
                 if ((object.ReferenceEquals(this.LongitudeField, value) != true)) {
                     this.LongitudeField = value;
                     this.RaisePropertyChanged("Longitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }

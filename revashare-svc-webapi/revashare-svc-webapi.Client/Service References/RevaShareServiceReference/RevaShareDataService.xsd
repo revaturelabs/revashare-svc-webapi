@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="RideDAO">
     <xs:sequence>
+      <xs:element minOccurs="0" name="DepartureTime" type="ser:duration" />
       <xs:element minOccurs="0" name="IsOnTime" type="xs:boolean" />
       <xs:element minOccurs="0" name="RideID" type="xs:int" />
       <xs:element minOccurs="0" name="StartOfWeek" type="xs:dateTime" />

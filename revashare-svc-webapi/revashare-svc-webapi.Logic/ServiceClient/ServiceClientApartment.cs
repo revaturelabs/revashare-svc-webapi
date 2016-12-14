@@ -9,6 +9,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
    public partial class ServiceClient:IServiceClient
    {
+      /*
       RevaShareServiceReference sr = new RevaShareServiceReference();
       public bool deleteRide(ApartmentDAO apartment)
       {
@@ -29,5 +30,6 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       {
          sr.UpdateApartment(apartment);
       }
+      */
    }
 }

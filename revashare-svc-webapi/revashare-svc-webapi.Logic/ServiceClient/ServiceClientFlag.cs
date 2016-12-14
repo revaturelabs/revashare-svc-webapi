@@ -9,6 +9,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
    public partial class ServiceClient:IServiceClient
    {
+        /*
       public bool deleteFlag(FlagDAO flag)
       {
          sr.deleteFlag(flag);
@@ -28,5 +29,6 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       {
          sr.UpdateFlag(flag);
       }
+      */
    }
 }

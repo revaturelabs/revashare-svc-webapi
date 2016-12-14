@@ -10,6 +10,13 @@ namespace revashare_svc_webapi.Logic.Interfaces
 {
     public interface IAdminLogic
     {
-        bool InsertDriver(DriverDTO driverToAdd);
+        //Methods For Drivers
+        bool InsertDriver(UserDTO driverToAdd);
+        List<UserDTO> RequestDrivers();
+        bool ModifyDriver(UserDTO driverToUpdate);
+        bool DeleteDriver(UserDTO driverToRemove);
+
+        //Methods For Riders
+        bool InsertRider(UserDTO riderToAdd);
     }
 }

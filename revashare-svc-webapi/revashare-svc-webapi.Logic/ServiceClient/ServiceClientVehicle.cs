@@ -9,6 +9,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
    public partial class ServiceClient:IServiceClient
    {
+        /*
       public bool deleteVehicle(VehicleDAO v)
       {
          sr.deleteVehicle(v);
@@ -28,5 +29,6 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       {
          sr.UpdateVehicle(v);
       }
+      */
    }
 }

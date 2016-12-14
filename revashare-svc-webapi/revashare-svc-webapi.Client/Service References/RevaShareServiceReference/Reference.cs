@@ -9,86 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace revashare_svc_webapi.Client.RevaShareServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RideRidersDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
-    [System.SerializableAttribute()]
-    public partial class RideRidersDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AcceptedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO RideField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO RiderField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Accepted {
-            get {
-                return this.AcceptedField;
-            }
-            set {
-                if ((this.AcceptedField.Equals(value) != true)) {
-                    this.AcceptedField = value;
-                    this.RaisePropertyChanged("Accepted");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO Ride {
-            get {
-                return this.RideField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RideField, value) != true)) {
-                    this.RideField = value;
-                    this.RaisePropertyChanged("Ride");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Rider {
-            get {
-                return this.RiderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RiderField, value) != true)) {
-                    this.RiderField = value;
-                    this.RaisePropertyChanged("Rider");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RevaShareServiceReference.IRevaShareDataService")]
@@ -107,10 +28,10 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
         System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> passUserAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideRiderResponse")]
-        revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO passRideRider();
+        revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO passRideRider();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideRiderResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO> passRideRiderAsync();
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO> passRideRiderAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -156,11 +77,11 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
             return base.Channel.passUserAsync();
         }
         
-        public revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO passRideRider() {
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO passRideRider() {
             return base.Channel.passRideRider();
         }
         
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO> passRideRiderAsync() {
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO> passRideRiderAsync() {
             return base.Channel.passRideRiderAsync();
         }
     }

@@ -11,5 +11,7 @@ namespace revashare_svc_webapi.Logic.Models
       public int RideId { get; set; }
       public int RiderId { get; set; }
       public bool Accepted { get; set; }
+      public virtual RideDTO Ride { get; set; }
+      public virtual RiderDTO Rider { get; set; }
    }
 }

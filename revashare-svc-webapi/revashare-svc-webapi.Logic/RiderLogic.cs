@@ -18,13 +18,14 @@ namespace revashare_svc_webapi.Logic
          sc = client;
       }
       public bool addRiderToRide(RideDTO ride, UserDTO rider)
-      {         
-         return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), Mappers.RiderMapper.mapToRiderDAO(rider));
+      {
+         throw new NotImplementedException();
+         //return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), Mappers.RiderMapper.mapToRiderDAO(rider));
       }
 
       public List<RideDTO> getAvailableRides(string startLocation)
       {
-         List<ApartmentDTO> apartmentList = getApartments();
+         //List<ApartmentDTO> apartmentList = getApartments();
          throw new NotImplementedException();
       }
 

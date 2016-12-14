@@ -35,7 +35,7 @@ namespace revashare_svc_webapi.Client.Controllers
         //new merge
         [HttpPost]
         [Route("add-driver")]
-        public HttpResponseMessage AddDriver([FromBody] DriverDTO driverSent)
+        public HttpResponseMessage AddDriver([FromBody] UserDTO driverSent)
         {
             return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertDriver(driverSent));
         }

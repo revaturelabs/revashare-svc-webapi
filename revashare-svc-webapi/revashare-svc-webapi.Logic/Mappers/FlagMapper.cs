@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace revashare_svc_webapi.Logic.Models
+namespace revashare_svc_webapi.Logic.Mappers
 {
-    public class DriverDTO
-    {
-        public string name { get; set; }
-    }
+   class FlagMapper
+   {
+   }
 }

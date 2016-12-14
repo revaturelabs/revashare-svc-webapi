@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace revashare_svc_webapi.Logic.Models
 {
    public class RideDTO
-   {
-      public int VehicleId { get; set; }
+   {      
       public DateTime StartOfWeekDate { get; set; }
-      public DateTime DepartureTime { get; set; }
+      public TimeSpan DepartureTime { get; set; }
       public bool IsOnTime { get; set; }
-      public virtual VehicleDTO RideVehicle { get; set; }
+      public virtual VehicleDTO Vehicle { get; set; }
+
    }
 }

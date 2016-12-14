@@ -9,7 +9,7 @@ using revashare_svc_webapi.Logic.ModelDTO;
 
 namespace revashare_svc_webapi.Logic
 {
-   
+   /*
    public partial class RiderLogic : IRider
    {
       private IServiceClient sc;
@@ -59,5 +59,5 @@ namespace revashare_svc_webapi.Logic
          throw new NotImplementedException();
       }
    }
-   
+   */
 }

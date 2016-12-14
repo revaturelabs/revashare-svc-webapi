@@ -113,15 +113,22 @@
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.RideDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RevaShareServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.RideRidersDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.UserDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\revashare-svc-webapi.Client\revashare-svc-webapi.Client.csproj">
+      <Project>{34e7218f-4dd5-45bd-a16d-693c538ba3aa}</Project>
+      <Name>revashare-svc-webapi.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\revashare-svc-webapi.Logic\revashare-svc-webapi.Logic.csproj">
+      <Project>{041018a7-b63a-4b34-b907-6d3d822dc084}</Project>
+      <Name>revashare-svc-webapi.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -143,16 +150,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\revashare-svc-webapi.Client\revashare-svc-webapi.Client.csproj">
-      <Project>{34e7218f-4dd5-45bd-a16d-693c538ba3aa}</Project>
-      <Name>revashare-svc-webapi.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\revashare-svc-webapi.Logic\revashare-svc-webapi.Logic.csproj">
-      <Project>{041018a7-b63a-4b34-b907-6d3d822dc084}</Project>
-      <Name>revashare-svc-webapi.Logic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

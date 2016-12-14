@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace revashare_svc_webapi.Client.Controllers {
-  [RoutePrefix("rider")]
+  [RoutePrefix("driver")]
   public class DriverController : ApiController {
     private readonly IDriverRepository repo;
 

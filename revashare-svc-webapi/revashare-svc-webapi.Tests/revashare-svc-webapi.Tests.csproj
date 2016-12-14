@@ -115,12 +115,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\RevaShareServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\revashare-svc-webapi.Client\revashare-svc-webapi.Client.csproj">
-      <Project>{34E7218F-4DD5-45BD-A16D-693C538BA3AA}</Project>
+      <Project>{34e7218f-4dd5-45bd-a16d-693c538ba3aa}</Project>
       <Name>revashare-svc-webapi.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\revashare-svc-webapi.Logic\revashare-svc-webapi.Logic.csproj">
-      <Project>{041018A7-B63A-4B34-B907-6D3D822DC084}</Project>
+      <Project>{041018a7-b63a-4b34-b907-6d3d822dc084}</Project>
       <Name>revashare-svc-webapi.Logic</Name>
     </ProjectReference>
   </ItemGroup>

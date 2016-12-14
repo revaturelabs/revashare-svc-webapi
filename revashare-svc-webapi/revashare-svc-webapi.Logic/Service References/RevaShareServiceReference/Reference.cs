@@ -390,6 +390,9 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LongitudeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -435,6 +438,19 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
                 if ((object.ReferenceEquals(this.LongitudeField, value) != true)) {
                     this.LongitudeField = value;
                     this.RaisePropertyChanged("Longitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }

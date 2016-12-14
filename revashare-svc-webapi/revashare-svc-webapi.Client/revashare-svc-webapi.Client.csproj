@@ -320,6 +320,15 @@
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.UserDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

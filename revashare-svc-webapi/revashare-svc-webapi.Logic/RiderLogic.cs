@@ -8,7 +8,6 @@ using revashare_svc_webapi.Logic.Models;
 
 namespace revashare_svc_webapi.Logic
 {
-   /*
    public partial class RiderLogic : IRider
    {
       private IServiceClient sc;
@@ -16,9 +15,10 @@ namespace revashare_svc_webapi.Logic
       {
          sc = client;
       }
-      public bool addRiderToRide(RideDTO ride, string user)
-      {         
-         return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), user);
+
+      public bool addRiderToRide(UserDTO user, RideDTO ride)
+      {
+          throw new NotImplementedException();
       }
 
       public List<RideDTO> getAvailableRides(string startLocation)
@@ -56,5 +56,4 @@ namespace revashare_svc_webapi.Logic
          throw new NotImplementedException();
       }
    }
-   */
 }

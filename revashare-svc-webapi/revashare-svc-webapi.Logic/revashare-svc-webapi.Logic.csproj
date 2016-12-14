@@ -71,6 +71,7 @@
     <Compile Include="ServiceClient\ServiceClientFlag.cs" />
     <Compile Include="ServiceClient\ServiceClientRide.cs" />
     <Compile Include="ServiceClient\ServiceClientRideRider.cs" />
+    <Compile Include="ServiceClient\ServiceClientUser.cs" />
     <Compile Include="ServiceClient\ServiceClientUserInfo.cs" />
     <Compile Include="ServiceClient\ServiceClientVehicle.cs" />
   </ItemGroup>

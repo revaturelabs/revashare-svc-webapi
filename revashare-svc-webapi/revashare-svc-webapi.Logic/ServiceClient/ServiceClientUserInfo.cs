@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.ServiceClient
 {
-   public partial class ServiceClient//:IServiceClient
+   public partial class ServiceClient:IServiceClient
    {
       //public bool deleteUserInfo(UserInfoDAO info)
       //{

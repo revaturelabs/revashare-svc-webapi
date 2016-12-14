@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.ServiceClient
 {
-   public partial class ServiceClient//:IServiceClient
+   public partial class ServiceClient:IServiceClient
    {
       RevaShareDataServiceClient rs = new RevaShareDataServiceClient();
-      //public bool deleteRide(ApartmentDAO apartment)
+      //public bool deleteApartment(ApartmentDAO apartment)
       //{
-      //   return rs.DeleteRide(apartment);
+      //   return rs.DeleteApartment(apartment);
       //}
 
       //public List<ApartmentDAO> GetApartments()
@@ -21,9 +21,9 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       //   return rs.GetApartments();
       //}
 
-      //public bool InsertRide(ApartmentDAO apartment)
+      //public bool InsertApartment(ApartmentDAO apartment)
       //{
-      //   return rs.InsertRide(apartment);
+      //   return rs.InsertApartment(apartment);
       //}
 
       //public bool UpdateApartment(ApartmentDAO apartment)

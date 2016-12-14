@@ -11,11 +11,17 @@ namespace revashare_svc_webapi.Logic.Mappers
 {
    public class FlagMapper
    {
-      public static FlagDTO mapToFlagDTO(FlagDAO b)
-      {
-         var a = new FlagDTO();
-
-         return a;
-      }
+      
    }
 }
+
+
+
+
+
+
+
+
+
+
+

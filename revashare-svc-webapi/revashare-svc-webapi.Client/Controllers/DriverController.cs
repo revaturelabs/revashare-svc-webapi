@@ -16,16 +16,6 @@ namespace revashare_svc_webapi.Client.Controllers {
       this.repo = repo;
     }
 
-    // GET: api/Driver
-    public IEnumerable<string> Get() {
-      return new string[] { "value1", "value2" };
-    }
-
-    // GET: api/Driver/5
-    public string Get(int id) {
-      return "value";
-    }
-
     [HttpPost]
     [Route("report")]
     public HttpResponseMessage Post([FromBody]FlagDTO flag) {
@@ -46,10 +36,6 @@ namespace revashare_svc_webapi.Client.Controllers {
       catch (Exception) {
         return Request.CreateResponse(HttpStatusCode.BadRequest);
       }
-    }
-
-    // DELETE: api/Driver/5
-    public void Delete(int id) {
     }
   }
 }

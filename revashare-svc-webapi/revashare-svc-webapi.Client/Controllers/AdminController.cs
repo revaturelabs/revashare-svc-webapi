@@ -32,5 +32,35 @@ namespace revashare_svc_webapi.Client.Controllers
 
         }
 
+        #region Admin CRUD Methods
+        [HttpPost]
+        [Route("add-admin")]
+        public HttpResponseMessage AddAdmin([FromBody] UserDTO admin)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertAdmin(admin));
+        }
+
+        [HttpGet]
+        [Route("get-admins")]
+        public HttpResponseMessage GetAdmins()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.RequestAdmins(), "application/json");
+        }
+
+        [HttpPut]
+        [Route("update-admin")]
+        public HttpResponseMessage UpdateAdmin([FromBody] UserDTO admin)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.ModifyAdmin(admin));
+        }
+
+        [HttpPut]
+        [Route("remove-admin")]
+        public HttpResponseMessage RemoveAdmin([FromBody] UserDTO admin)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.DeleteAdmin(admin));
+        }
+        #endregion
+
     }
 }

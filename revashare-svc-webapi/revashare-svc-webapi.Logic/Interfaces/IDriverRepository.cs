@@ -25,7 +25,7 @@ namespace revashare_svc_webapi.Logic.Interfaces {
 
     bool ModifyDriver(UserDTO driverToUpdate);
 
-    bool DeleteDriver(UserDTO driverToRemove);
+    bool DeleteDriver(UserDTO driverToRemove);    
 
     }
 }

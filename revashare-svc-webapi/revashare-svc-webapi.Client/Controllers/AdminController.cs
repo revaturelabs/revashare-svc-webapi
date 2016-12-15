@@ -62,5 +62,64 @@ namespace revashare_svc_webapi.Client.Controllers
         }
         #endregion
 
+        #region Driver CRUD Methods
+        [HttpPost]
+        [Route("add-driver")]
+        public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertDriver(driver));
+        }
+
+        [HttpGet]
+        [Route("get-drivers")]
+        public HttpResponseMessage GetDrivers()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.RequestDrivers(), "application/json");
+        }
+
+        [HttpPut]
+        [Route("update-driver")]
+        public HttpResponseMessage UpdateDriver([FromBody] UserDTO driver)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.ModifyDriver(driver));
+        }
+
+        [HttpPost]
+        [Route("remove-driver")]
+        public HttpResponseMessage RemoveDriver([FromBody] UserDTO driver)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.DeleteDriver(driver));
+        }
+        #endregion
+
+        #region Rider CRUD Methods
+        [HttpPost]
+        [Route("add-rider")]
+        public HttpResponseMessage AddRider([FromBody] UserDTO rider)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.InsertRider(rider));
+        }
+
+        [HttpGet]
+        [Route("get-riders")]
+        public HttpResponseMessage GetRiders()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.RequestRiders(), "application/json");
+        }
+
+        [HttpPut]
+        [Route("update-rider")]
+        public HttpResponseMessage UpdateRider([FromBody] UserDTO rider)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.ModifyRider(rider));
+        }
+
+        [HttpPost]
+        [Route("remove-rider")]
+        public HttpResponseMessage RemoveRider([FromBody] UserDTO rider)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.DeleteRider(rider));
+        }
+        #endregion
     }
 }

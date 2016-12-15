@@ -21,14 +21,10 @@ namespace revashare_svc_webapi.Logic {
       throw new NotImplementedException();
     }
 
-    #region Driver CRUD Methods
-    public bool InsertDriver(UserDTO driverToAdd) {
-      return true;
-    }
-
-    public List<UserDTO> RequestDrivers() {
-      return new List<UserDTO>();
-    }
+        public bool ModifyDriverProfile(UserDTO driverToUpdate)
+        {
+            return true;
+        }
 
     public bool ModifyDriver(UserDTO driverToUpdate) {
       return true;

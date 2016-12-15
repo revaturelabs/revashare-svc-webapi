@@ -13,6 +13,8 @@ namespace revashare_svc_webapi.Logic.Interfaces {
 
     bool SetAvailability();
 
+    bool ModifyDriverProfile(UserDTO driverToUpdate);
+
     bool ScheduleRide(RideDTO ride);
 
     bool CancelRide(RideDTO ride);

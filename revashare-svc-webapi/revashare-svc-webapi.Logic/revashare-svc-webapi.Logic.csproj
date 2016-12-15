@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DriverLogic.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
+    <Compile Include="Interfaces\IRegisterLogic.cs" />
     <Compile Include="Interfaces\IRider.cs" />
     <Compile Include="Interfaces\IServiceClient.cs" />
     <Compile Include="Mappers\ApartmentMapper.cs" />
@@ -72,6 +73,8 @@
     <Compile Include="RiderLogic\RiderLogicUser.cs" />
     <Compile Include="RiderLogic\RiderLogicUserInfo.cs" />
     <Compile Include="RiderLogic\RiderLogicVehicle.cs" />
+    <Compile Include="RegisterLogic.cs" />
+    <Compile Include="RiderLogic.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -13,9 +13,9 @@ namespace revashare_svc_webapi.Logic.Models {
 
     public string Message { get; set; }
 
-    public int DriverId { get; set; }
+    public string DriverId { get; set; }
 
-    public int RiderId { get; set; }
+    public string RiderId { get; set; }
 
     public UserDTO Driver { get; set; }
 

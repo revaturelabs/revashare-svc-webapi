@@ -21,10 +21,12 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
       #region Rides
       List<RideDTO> getAvailableRides(string startLocation);
-
+      List<RideDTO> getRides();
       int getAvailableSeatsInRide(RideDTO ride);
 
       RideDTO getCurrentSelectedRide(RideDTO ride);
+
+
       #endregion
 
       #region RideRider
@@ -50,7 +52,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
 
       //bool modifyCurrentSelectedRide(UserDTO user, RideDTO ride);
-      bool requestToBeDriver(UserDTO user);
+      bool requestToBeDriver(DriverEnrollDTO user);
       //bool modifyRiderInfo(UserDTO user);
 
    }

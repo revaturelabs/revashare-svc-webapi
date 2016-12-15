@@ -17,7 +17,7 @@ namespace revashare_svc_webapi.Logic.RiderLogic
       }
 
 
-      public bool requestToBeDriver(UserDTO user)
+      public bool requestToBeDriver(DriverEnrollDTO enroll)
       {
          throw new NotImplementedException();
       }

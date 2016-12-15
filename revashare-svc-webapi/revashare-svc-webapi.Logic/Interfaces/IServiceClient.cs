@@ -14,11 +14,12 @@ namespace revashare_svc_webapi.Logic.Interfaces
       List<ApartmentDAO> GetApartments();
       bool InsertApartment(ApartmentDAO apartment);
       bool UpdateApartment(ApartmentDAO apartment);
+      ApartmentDAO getApartmentByName(string name);
 
-      //bool deleteFlag(FlagDAO flag);     
-      //List<FlagDAO> GetFlags();
-      //bool InsertFlag(FlagDAO flag);     
-      //bool UpdateFlag(FlagDAO flag);
+      bool deleteFlag(FlagDAO flag);
+      List<FlagDAO> GetFlags();
+      bool InsertFlag(FlagDAO flag);
+      bool UpdateFlag(FlagDAO flag);
 
       List<RideDAO> GetRides();
       bool InsertRide(RideDAO ride);

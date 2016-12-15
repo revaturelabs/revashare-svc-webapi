@@ -12,7 +12,7 @@ namespace revashare_svc_webapi.Logic.RiderLogic
    {
       public bool fileComplaintAboutDriver(FlagDTO flag )
       {
-         throw new NotImplementedException();
+         return sc.InsertFlag(Mappers.FlagMapper.mapToFlagDAO(flag));
       }
    }
 }

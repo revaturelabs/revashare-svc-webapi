@@ -17,7 +17,8 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.Apartment =ApartmentMapper.mapToApartmentDTO(b.Apartment);
          a.Email = b.Email;
          a.Name = b.Name;
-         a.PhoneNumber = b.PhoneNumber;         
+         a.PhoneNumber = b.PhoneNumber;  
+               
          return a;
       }
 

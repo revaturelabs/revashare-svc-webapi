@@ -545,5 +545,37 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
         public System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync() {
             return base.Channel.GetAllFlagsAsync();
         }
+        
+        public bool CreateFlag(revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.CreateFlag(flag);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CreateFlagAsync(revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.CreateFlagAsync(flag);
+        }
+        
+        public revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO GetFlagByID(int id) {
+            return base.Channel.GetFlagByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO> GetFlagByIDAsync(int id) {
+            return base.Channel.GetFlagByIDAsync(id);
+        }
+        
+        public revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO[] GetAllFlags() {
+            return base.Channel.GetAllFlags();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync() {
+            return base.Channel.GetAllFlagsAsync();
+        }
+        
+        public bool MarkFlagAsRead(revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.MarkFlagAsRead(flag);
+        }
+        
+        public System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.MarkFlagAsReadAsync(flag);
+        }
     }
 }

@@ -712,6 +712,115 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FlagDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class FlagDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DriverIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FlagIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RiderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DriverID {
+            get {
+                return this.DriverIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DriverIDField, value) != true)) {
+                    this.DriverIDField = value;
+                    this.RaisePropertyChanged("DriverID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlagID {
+            get {
+                return this.FlagIDField;
+            }
+            set {
+                if ((this.FlagIDField.Equals(value) != true)) {
+                    this.FlagIDField = value;
+                    this.RaisePropertyChanged("FlagID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RiderID {
+            get {
+                return this.RiderIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RiderIDField, value) != true)) {
+                    this.RiderIDField = value;
+                    this.RaisePropertyChanged("RiderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RevaShareServiceReference.IRevaShareDataService")]
     public interface IRevaShareDataService {
@@ -1134,6 +1243,38 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         
         public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync() {
             return base.Channel.GetAllFlagsAsync();
+        }
+        
+        public bool CreateFlag(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.CreateFlag(flag);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CreateFlagAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.CreateFlagAsync(flag);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO GetFlagByID(int id) {
+            return base.Channel.GetFlagByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO> GetFlagByIDAsync(int id) {
+            return base.Channel.GetFlagByIDAsync(id);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[] GetAllFlags() {
+            return base.Channel.GetAllFlags();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync() {
+            return base.Channel.GetAllFlagsAsync();
+        }
+        
+        public bool MarkFlagAsRead(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.MarkFlagAsRead(flag);
+        }
+        
+        public System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.MarkFlagAsReadAsync(flag);
         }
     }
 }

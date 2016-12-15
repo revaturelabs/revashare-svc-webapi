@@ -16,20 +16,14 @@ namespace revashare_svc_webapi.Client.Controllers {
       this.repo = repo;
     }
 
-    [HttpPost]
-    [Route("report")]
-    public HttpResponseMessage Post([FromBody]FlagDTO flag) {
-      try {
-        return Request.CreateResponse(HttpStatusCode.OK, this.repo.ReportRider(flag));
-      }
-      catch (Exception) {
-        return Request.CreateResponse(HttpStatusCode.BadRequest);
-      }
-    }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="vehicle"></param>
+    /// <returns></returns>
     [HttpPut]
-    [Route("update/vehicle")]
-    public HttpResponseMessage Put([FromBody]VehicleDTO vehicle) {
+    [Route("updatevehicle")]
+    public HttpResponseMessage UpdateVehicleInfo([FromBody]VehicleDTO vehicle) {
       try {
         return Request.CreateResponse(HttpStatusCode.OK, this.repo.UpdateVehicleInfo(vehicle));
       }
@@ -38,8 +32,61 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="flag"></param>
+    /// <returns></returns>
     [HttpPost]
-    [Route("schedule")]
+    [Route("reportrider")]
+    public HttpResponseMessage ReportRider([FromBody]FlagDTO flag) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.ReportRider(flag));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="ride"></param>
+    /// <returns></returns>
+    [HttpPost]
+    [Route("setavailability")]
+    public HttpResponseMessage SetAvailability([FromBody]RideDTO ride) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.SetAvailability(ride));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="driver"></param>
+    /// <returns></returns>
+    [HttpPut]
+    [Route("updatedriverprofile")]
+    public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.UpdateDriverProfile(driver));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="ride"></param>
+    /// <returns></returns>
+    [HttpPost]
+    [Route("scheduleride")]
     public HttpResponseMessage ScheduleRide([FromBody]RideDTO ride) {
       try {
         return Request.CreateResponse(HttpStatusCode.OK, this.repo.ScheduleRide(ride));
@@ -49,8 +96,13 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="ride"></param>
+    /// <returns></returns>
     [HttpPost]
-    [Route("cancel")]
+    [Route("cancelride")]
     public HttpResponseMessage CancelRide([FromBody]RideDTO ride) {
       try {
         return Request.CreateResponse(HttpStatusCode.OK, this.repo.CancelRide(ride));
@@ -60,26 +112,26 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
-    [HttpPost]
-    [Route("addcar")]
-    public HttpResponseMessage AddCar([FromBody]VehicleDTO vehicle) {
+    [HttpGet]
+    [Route("viewpassengers")]
+    public HttpResponseMessage ViewPassengers() {
       try {
-        return Request.CreateResponse(HttpStatusCode.OK, this.repo.AddVehicle(vehicle));
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.ViewPassengers());
       }
       catch (Exception) {
         return Request.CreateResponse(HttpStatusCode.BadRequest);
       }
     }
-    // DELETE: api/Driver/5
-    public void Delete(int id) {
-    }
 
-        [HttpPut]
-        [Route("update-driver-profile")]
-        public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.repo.ModifyDriverProfile(driver));
-        }
-
+    [HttpPost]
+    [Route("acceptpassenger")]
+    public HttpResponseMessage AcceptPassenger([FromBody]SeatDTO rider) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.AcceptPassenger(rider));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
     }
+  }
 }

@@ -9,6 +9,8 @@ using revashare_svc_webapi.Logic.RevaShareServiceReference;
 
 namespace revashare_svc_webapi.Logic {
   public class DriverLogic : IDriverRepository {
+    private RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
+
     public bool UpdateVehicleInfo(VehicleDTO vehicle) {
       throw new NotImplementedException();
     }

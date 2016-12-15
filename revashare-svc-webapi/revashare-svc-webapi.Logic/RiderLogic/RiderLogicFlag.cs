@@ -10,7 +10,7 @@ namespace revashare_svc_webapi.Logic.RiderLogic
 {
    public partial class RiderLogic:IRider
    {
-      bool fileComplaintAboutDriver(FlagDTO flag )
+      public bool fileComplaintAboutDriver(FlagDTO flag )
       {
          throw new NotImplementedException();
       }

@@ -1,4 +1,5 @@
 ﻿using revashare_svc_webapi.Logic.Interfaces;
+using revashare_svc_webapi.Logic.ModelDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,7 @@ namespace revashare_svc_webapi.Logic.Models
         public string Phone { get; set; }
 
         public UserDTO User { get; set; }
+
+        public ApartmentDTO Apartment { get; set; }
    }
 }

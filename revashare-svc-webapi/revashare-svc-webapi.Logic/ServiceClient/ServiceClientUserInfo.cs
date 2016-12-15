@@ -12,22 +12,22 @@ namespace revashare_svc_webapi.Logic.ServiceClient
    {
       //public bool deleteUserInfo(UserInfoDAO info)
       //{
-      //   rs.deleteUserInfo(info);
+      //   return rs.deleteUserInfo(info);
       //}
 
       //public List<UserInfoDAO> GetUserInfos()
       //{
-      //   rs.GetUserInfos();
+      //   return rs.GetUserInfos();
       //}
 
       //public bool InsertUserInfo(UserInfoDAO info)
       //{
-      //   rs.InsertUserInfo(info);
+      //   return rs.InsertUserInfo(info);
       //}
 
       //public bool UpdateUserInfo(UserInfoDAO info)
       //{
-      //   rs.UpdateUserInfo(info);
+      //   return rs.UpdateUserInfo(info);
       //}
    }
 }

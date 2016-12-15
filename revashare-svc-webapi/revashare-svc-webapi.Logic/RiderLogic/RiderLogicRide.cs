@@ -9,35 +9,39 @@ using revashare_svc_webapi.Logic.ModelDTO;
 
 namespace revashare_svc_webapi.Logic.RiderLogic
 {
-   /*
+   
    public partial class RiderLogic : IRider
    {
-      
-      
-
       public List<RideDTO> getAvailableRides(string startLocation)
       {
-         //List<ApartmentDTO> apartmentList = getApartments();
-         throw new NotImplementedException();
+         var list = sc.getRidesByLocation();
+         var ret = new List<RideDTO>();
+         foreach (var item in list)
+         {
+            ret.Add(Mappers.RideMapper.mapToRideDTO(item));
+         }
+         return ret;
+      }
+      public List<RideDTO> getRides()
+      {
+         var list = sc.GetRides();
+         var toReturn = new List<RideDTO>();
+         foreach (var item in list)
+         {
+            toReturn.Add(Mappers.RideMapper.mapToRideDTO(item));
+         }
+         return toReturn;
       }
 
       public int getAvailableSeatsInRide(RideDTO ride)
       {
-         throw new NotImplementedException();
+         return sc.getAvailableSeatsByRide(Mappers.RideMapper.mapToRideDAO(ride));
       }
 
-      public RideDTO getCurrentSelectedRide(UserDTO user)
+      public RideDTO getCurrentSelectedRide(RideDTO ride)
       {
-         throw new NotImplementedException();
-      }
-
-     
-
-      
-
-      
-
-     
+         return getRides().Where(m => m.Vehicle.LicensePlate.Equals(ride.Vehicle.LicensePlate)).FirstOrDefault();
+      }     
    }
-   */
+   
 }

@@ -10,40 +10,42 @@ namespace revashare_svc_webapi.Logic.Interfaces
 {
    public interface IServiceClient
    {
-      //public bool deleteApartment(ApartmentDAO apartment);
-      //public List<ApartmentDAO> GetApartments();
-      //public bool InsertApartment(ApartmentDAO apartment);
-      //public bool UpdateApartment(ApartmentDAO apartment);
+      bool DeleteApartment(ApartmentDAO apartment);
+      List<ApartmentDAO> GetApartments();
+      bool InsertApartment(ApartmentDAO apartment);
+      bool UpdateApartment(ApartmentDAO apartment);
 
-      //public bool deleteFlag(FlagDAO flag);     
-      //public List<FlagDTO> GetFlags();     
-      //public bool InsertFlag(FlagDAO flag);     
-      //public bool UpdateFlag(FlagDAO flag);
+      //bool deleteFlag(FlagDAO flag);     
+      //List<FlagDAO> GetFlags();
+      //bool InsertFlag(FlagDAO flag);     
+      //bool UpdateFlag(FlagDAO flag);
 
-      //List<RideDTO> GetRides();
-      //bool InsertRide(RideDAO ride);
-      //bool UpdateRide(RideDAO ride);
-      //bool deleteRide(RideDAO ride);
+      List<RideDAO> GetRides();
+      bool InsertRide(RideDAO ride);
+      bool UpdateRide(RideDAO ride);
+      bool DeleteRide(RideDAO ride);
+      List<RideDAO> getRidesByLocation();
+      int getAvailableSeatsByRide(RideDAO ride);
 
-      //List<RideRiderDAO> GetRideRiders();
-      //bool InsertRideRider(UserDAO rider, string user);
-      //bool UpdateRideRider(RideRiderDAO rideRider);
-      //bool deleteRideRider(RideRiderDAO rr);
+      List<RideRidersDAO> GetRideRiders();
+      bool InsertRideRider(UserDAO rider, RideDAO ride);
+      bool UpdateRideRider(RideRidersDAO rideRider);
+      bool DeleteRideRider(RideRidersDAO rr);
 
-      //public bool deleteUser(UserDAO user);     
-      //public List<RideDAO> GetUsers();    
-      //public bool InsertUser(UserDAO user);  
-      //public bool UpdateUser(UserDAO user);
+      bool DeleteUser(UserDAO user);
+      List<UserDAO> GetUsers();
+      bool InsertUser(UserDAO user);
+      bool UpdateUser(UserDAO user);
 
-      //public bool deleteUserInfo(UserInfoDAO info);   
-      //public List<UserInfoDAO> GetUserInfos(); 
-      //public bool InsertUserInfo(UserInfoDAO info);
-      //public bool UpdateUserInfo(UserInfoDAO info);
+      //bool deleteUserInfo(UserInfoDAO info);   
+      //List<UserInfoDAO> GetUserInfos(); 
+      //bool InsertUserInfo(UserInfoDAO info);
+      //bool UpdateUserInfo(UserInfoDAO info);
 
-      //public bool deleteVehicle(VehicleDAO v);  
-      //public List<VehicleDAO> GetVehicle();     
-      //public bool InsertVehicle(VehicleDAO v); 
-      //public bool UpdateVehicle(VehicleDAO v);
+      bool DeleteVehicle(VehicleDAO v);
+      List<VehicleDAO> GetVehicle();
+      bool InsertVehicle(VehicleDAO v);
+      bool UpdateVehicle(VehicleDAO v);
 
    }
 }

@@ -49,6 +49,7 @@
     <Compile Include="Mappers\FlagMapper.cs" />
     <Compile Include="Mappers\RideMapper.cs" />
     <Compile Include="Mappers\RideRiderMapper.cs" />
+    <Compile Include="Mappers\UserInfoMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\VehicleMapper.cs" />
     <Compile Include="Models\RideRiderDTO.cs" />

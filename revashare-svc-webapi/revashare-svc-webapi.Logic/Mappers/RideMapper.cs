@@ -10,7 +10,7 @@ namespace revashare_svc_webapi.Logic.Mappers
 {
     public class RideMapper
     {
-        /*
+        
         public static RideDTO mapToRideDTO(RideDAO b)
         {
             var a = new RideDTO();
@@ -18,6 +18,7 @@ namespace revashare_svc_webapi.Logic.Mappers
             a.IsOnTime = b.IsOnTime;
             a.StartOfWeekDate = b.StartOfWeek;
             a.Vehicle = VehicleMapper.mapToVehicleDTO(b.Vehicle);
+            
             return a;
         }
 
@@ -30,6 +31,6 @@ namespace revashare_svc_webapi.Logic.Mappers
             a.Vehicle = VehicleMapper.mapToVehicleDAO(b.Vehicle);
             return a;
         }
-        */
+        
     }
 }

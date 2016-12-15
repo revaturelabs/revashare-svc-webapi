@@ -8,8 +8,6 @@ namespace revashare_svc_webapi.Logic.ModelDTO
 {
    public class ApartmentDTO
    {
-      public string Id { get; set; }
-
       public string Latitude { get; set; }
 
       public string Longitude { get; set; }

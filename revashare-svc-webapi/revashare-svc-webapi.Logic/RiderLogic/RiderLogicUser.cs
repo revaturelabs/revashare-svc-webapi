@@ -11,14 +11,20 @@ namespace revashare_svc_webapi.Logic.RiderLogic
    {
       public List<UserDTO> getUsers()
       {
-         throw new NotImplementedException();
+         var list = sc.GetUsers();
+         var ret = new List<UserDTO>();
+         foreach (var item in list)
+         {
+            ret.Add(Mappers.UserMapper.mapToUserDTO(item));
+         }
+         return ret;
       }
 
 
 
       public bool modifyUserInfo(UserDTO user)
       {
-         throw new NotImplementedException();
+         return sc.UpdateUser(Mappers.UserMapper.mapToUserDAO(user));
       }
    }
 }

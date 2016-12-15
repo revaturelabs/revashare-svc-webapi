@@ -10,14 +10,20 @@ namespace revashare_svc_webapi.Logic.RiderLogic
 {
    public partial class RiderLogic:IRider
    {
-      List<ApartmentDTO> getApartments()
+      public List<ApartmentDTO> getApartments()
       {
-         throw new NotImplementedException();
+         var list = sc.GetApartments();
+         var a = new List<ApartmentDTO>();
+         foreach (var item in list)
+         {
+            a.Add(Mappers.ApartmentMapper.mapToApartmentDTO(item));
+         }
+         return a;
       }
 
-      ApartmentDTO getApartmentByName(string name)
+      public ApartmentDTO getApartmentByName(string name)
       {
-         throw new NotImplementedException();
+         return getApartments().Where(m => m.Name.Equals(name)).FirstOrDefault();
       }
    }
 }

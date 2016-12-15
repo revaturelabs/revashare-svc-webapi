@@ -20,5 +20,7 @@ namespace revashare_svc_webapi.Logic.Models {
        public int Capacity { get; set; }
 
        public UserDTO Owner { get; set; }
+
+       public int OwnerId { get; set; }
    }
 }

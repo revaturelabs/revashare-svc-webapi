@@ -11,26 +11,39 @@ namespace revashare_svc_webapi.Logic.ServiceClient
    public partial class ServiceClient : IServiceClient
    {
 
-      //public bool deleteRide(RideDAO ride)
-      //{
-      //   //rs.
-      //   rs.deleteRide(ride);
-      //}
+      public bool DeleteRide(RideDAO ride)
+      {
 
-      //public List<RideDAO> GetRides()
-      //{
-      //   rs.GetRides();
-      //}
+         //return rs.deleteRide(ride);
+         throw new NotImplementedException();
+      }
 
-      //public bool InsertRide(RideDAO ride)
-      //{
-      //   rs.InsertRide(ride);
-      //}
+      public List<RideDAO> GetRides()
+      {
+         //return rs.GetRides();
+         throw new NotImplementedException();
+      }
 
-      //public bool UpdateRide(RideDAO ride)
-      //{
-      //   rs.UpdateRide(ride);
-      //}
+      public bool InsertRide(RideDAO ride)
+      {
+         //return rs.InsertRide(ride);
+         throw new NotImplementedException();
+      }
 
+      public bool UpdateRide(RideDAO ride)
+      {
+         //return rs.UpdateRide(ride);
+         throw new NotImplementedException();
+      }
+      public List<RideDAO> getRidesByLocation()
+      {
+         //return rs.GetRidesByLocation();
+         throw new NotImplementedException();
+      }
+      public int getAvailableSeatsByRide(RideDAO ride)
+      {
+         //return rs.getAvailableSeatsByRide(ride);
+         throw new NotImplementedException();
+      }
    }
 }

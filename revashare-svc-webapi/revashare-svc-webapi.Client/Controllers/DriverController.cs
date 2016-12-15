@@ -10,7 +10,7 @@ using System.Web.Http;
 namespace revashare_svc_webapi.Client.Controllers {
   [RoutePrefix("driver")]
   public class DriverController : ApiController {
-    private readonly IDriverRepository repo;
+  private readonly IDriverRepository repo;
 
     public DriverController(IDriverRepository repo) {
       this.repo = repo;

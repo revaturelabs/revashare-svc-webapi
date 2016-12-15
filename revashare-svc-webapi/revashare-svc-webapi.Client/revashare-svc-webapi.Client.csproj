@@ -341,16 +341,16 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\revashare-svc-webapi.Logic\revashare-svc-webapi.Logic.csproj">
-      <Project>{041018A7-B63A-4B34-B907-6D3D822DC084}</Project>
-      <Name>revashare-svc-webapi.Logic</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\RevaShareServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\revashare-svc-webapi.Logic\revashare-svc-webapi.Logic.csproj">
+      <Project>{041018A7-B63A-4B34-B907-6D3D822DC084}</Project>
+      <Name>revashare-svc-webapi.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

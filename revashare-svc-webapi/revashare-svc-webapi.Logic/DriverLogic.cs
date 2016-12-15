@@ -30,7 +30,7 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
-    public bool SetAvailability() {
+    public bool SetAvailability(RideDTO ride) {
       try {
         return true;
       }
@@ -39,16 +39,7 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
-    public bool ModifyDriverProfile(UserDTO driverToUpdate) {
-      try {
-        return true;
-      }
-      catch (Exception) {
-        return false;
-      }
-    }
-
-    public bool DeleteDriver(UserDTO driverToRemove) {
+    public bool UpdateDriverProfile(UserDTO driver) {
       try {
         return true;
       }
@@ -73,33 +64,6 @@ namespace revashare_svc_webapi.Logic {
       }
       catch (Exception) {
         return false;
-      }
-    }
-
-    public bool AddVehicle(VehicleDTO vehicle) {
-      try {
-        return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
-      }
-      catch (Exception) {
-        return false;
-      }
-    }
-
-    public bool InsertDriver(UserDTO driverToAdd) {
-      try {
-        return true;
-      }
-      catch (Exception) {
-        return false;
-      }
-    }
-
-    public List<UserDTO> RequestDrivers() {
-      try {
-        return new List<UserDTO>();
-      }
-      catch (Exception) {
-        return null;
       }
     }
   }

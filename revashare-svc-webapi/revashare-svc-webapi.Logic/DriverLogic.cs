@@ -6,36 +6,52 @@ using System.Text;
 using System.Threading.Tasks;
 using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.Mappers;
 
 namespace revashare_svc_webapi.Logic {
   public class DriverLogic : IDriverRepository {
     private RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
 
     public bool UpdateVehicleInfo(VehicleDTO vehicle) {
-      throw new NotImplementedException();
+      try {
+        return svc.UpdateVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
     public bool ReportRider(FlagDTO flag) {
-      throw new NotImplementedException();
+      try {
+        return true;
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
     public bool SetAvailability() {
-      throw new NotImplementedException();
+      try {
+        return true;
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
-        public bool ModifyDriverProfile(UserDTO driverToUpdate)
-        {
-            return true;
-        }
-
-    public bool ModifyDriver(UserDTO driverToUpdate) {
-      return true;
+    public bool ModifyDriverProfile(UserDTO driverToUpdate) {
+      try {
+        return true;
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
     public bool DeleteDriver(UserDTO driverToRemove) {
       return true;
     }
-    
+
 
     public bool ScheduleRide(RideDTO ride) {
       throw new NotImplementedException();
@@ -49,14 +65,12 @@ namespace revashare_svc_webapi.Logic {
       throw new NotImplementedException();
     }
 
-      public bool InsertDriver(UserDTO driverToAdd)
-      {
-         throw new NotImplementedException();
-      }
+    public bool InsertDriver(UserDTO driverToAdd) {
+      throw new NotImplementedException();
+    }
 
-      public List<UserDTO> RequestDrivers()
-      {
-         throw new NotImplementedException();
-      }
-   }
+    public List<UserDTO> RequestDrivers() {
+      throw new NotImplementedException();
+    }
+  }
 }

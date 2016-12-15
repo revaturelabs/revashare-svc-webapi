@@ -48,5 +48,18 @@ namespace revashare_svc_webapi.Logic
         }
         #endregion
 
+    public bool ScheduleRide(RideDTO ride) {
+      throw new NotImplementedException();
     }
+
+    public bool CancelRide(RideDTO ride) {
+      throw new NotImplementedException();
+    }
+
+    public bool AddVehicle(VehicleDTO vehicle) {
+      throw new NotImplementedException();
+    }
+
+
+  }
 }

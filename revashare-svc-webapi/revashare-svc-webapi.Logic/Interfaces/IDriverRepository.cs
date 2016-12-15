@@ -12,6 +12,12 @@ namespace revashare_svc_webapi.Logic.Interfaces {
     bool ReportRider(FlagDTO flag);
 
     bool SetAvailability();
+
+    bool ScheduleRide(RideDTO ride);
+
+    bool CancelRide(RideDTO ride);
+
+    bool AddVehicle(VehicleDTO vehicle);
    
     bool InsertDriver(UserDTO driverToAdd);
 

@@ -38,6 +38,38 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
+    [HttpPost]
+    [Route("schedule")]
+    public HttpResponseMessage ScheduleRide([FromBody]RideDTO ride) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.ScheduleRide(ride));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    [HttpPost]
+    [Route("cancel")]
+    public HttpResponseMessage CancelRide([FromBody]RideDTO ride) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.CancelRide(ride));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    [HttpPost]
+    [Route("addcar")]
+    public HttpResponseMessage AddCar([FromBody]VehicleDTO vehicle) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.AddVehicle(vehicle));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
     // DELETE: api/Driver/5
     public void Delete(int id) {
     }

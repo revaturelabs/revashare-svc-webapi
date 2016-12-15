@@ -11,7 +11,7 @@ namespace revashare_svc_webapi.Logic.Mappers
    public static class RideRiderMapper
    {
 
-      public static RideRiderDTO mapToRideRiderDTO(RideRidersDAO b)
+      /*public static RideRiderDTO mapToRideRiderDTO(RideRidersDAO b)
       {
          var a = new RideRiderDTO();
          a.Accepted = b.Accepted;
@@ -27,7 +27,7 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.Ride = RideMapper.mapToRideDAO(b.Ride);
          a.Rider = UserMapper.mapToUserDAO(b.Rider);
          return a;
-      }
+      }*/
 
    }
 }

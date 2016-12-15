@@ -174,30 +174,6 @@ namespace revashare_svc_webapi.Tests.RevaShareServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteApartmentResponse")]
         System.Threading.Tasks.Task<bool> DeleteApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Create", ReplyAction="http://tempuri.org/IRevaShareDataService/CreateResponse")]
-        bool Create(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Create", ReplyAction="http://tempuri.org/IRevaShareDataService/CreateResponse")]
-        System.Threading.Tasks.Task<bool> CreateAsync(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/GetFlagResponse")]
-        revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO GetFlag(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/GetFlagResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO> GetFlagAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListFlags", ReplyAction="http://tempuri.org/IRevaShareDataService/ListFlagsResponse")]
-        revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO[] ListFlags();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListFlags", ReplyAction="http://tempuri.org/IRevaShareDataService/ListFlagsResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO[]> ListFlagsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
-        bool MarkFlagAsRead(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
-        System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRide", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideResponse")]
         revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO passRide();
         
@@ -384,38 +360,6 @@ namespace revashare_svc_webapi.Tests.RevaShareServiceReference {
         
         public System.Threading.Tasks.Task<bool> DeleteApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment) {
             return base.Channel.DeleteApartmentAsync(apartment);
-        }
-        
-        public bool Create(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.Create(flag);
-        }
-        
-        public System.Threading.Tasks.Task<bool> CreateAsync(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.CreateAsync(flag);
-        }
-        
-        public revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO GetFlag(int id) {
-            return base.Channel.GetFlag(id);
-        }
-        
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO> GetFlagAsync(int id) {
-            return base.Channel.GetFlagAsync(id);
-        }
-        
-        public revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO[] ListFlags() {
-            return base.Channel.ListFlags();
-        }
-        
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO[]> ListFlagsAsync() {
-            return base.Channel.ListFlagsAsync();
-        }
-        
-        public bool MarkFlagAsRead(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.MarkFlagAsRead(flag);
-        }
-        
-        public System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.MarkFlagAsReadAsync(flag);
         }
         
         public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO passRide() {

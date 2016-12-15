@@ -18,5 +18,9 @@ namespace revashare_svc_webapi.Logic.Interfaces {
     bool ScheduleRide(RideDTO ride);
 
     bool CancelRide(RideDTO ride);
+
+    List<SeatDTO> ViewPassengers();
+
+    bool AcceptPassenger(SeatDTO rider;
     }
 }

@@ -103,6 +103,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource" />
+    <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
+    <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService.wsdl" />
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService.xsd">
       <SubType>Designer</SubType>

@@ -45,9 +45,8 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
 
       bool modifyCurrentSelectedRide(UserDTO user, RideDTO ride);
-      bool requestToBeDriver(UserDTO user);//
+      bool requestToBeDriver(UserDTO user);
       bool modifyRiderInfo(UserDTO user);
-      */
 
    }
 }

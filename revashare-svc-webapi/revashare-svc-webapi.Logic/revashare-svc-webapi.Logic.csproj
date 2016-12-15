@@ -74,7 +74,6 @@
     <Compile Include="RiderLogic\RiderLogicUserInfo.cs" />
     <Compile Include="RiderLogic\RiderLogicVehicle.cs" />
     <Compile Include="RegisterLogic.cs" />
-    <Compile Include="RiderLogic.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,6 +102,9 @@
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -110,6 +112,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

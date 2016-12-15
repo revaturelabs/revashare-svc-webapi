@@ -33,7 +33,6 @@ namespace revashare_svc_webapi.Logic {
     public bool DeleteDriver(UserDTO driverToRemove) {
       return true;
     }
-    #endregion
 
     public bool ScheduleRide(RideDTO ride) {
       throw new NotImplementedException();
@@ -46,5 +45,15 @@ namespace revashare_svc_webapi.Logic {
     public bool AddVehicle(VehicleDTO vehicle) {
       throw new NotImplementedException();
     }
-  }
+
+        public bool InsertDriver(UserDTO driverToAdd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<UserDTO> RequestDrivers()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

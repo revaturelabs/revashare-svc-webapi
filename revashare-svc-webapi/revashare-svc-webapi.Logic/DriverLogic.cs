@@ -49,28 +49,58 @@ namespace revashare_svc_webapi.Logic {
     }
 
     public bool DeleteDriver(UserDTO driverToRemove) {
-      return true;
+      try {
+        return true;
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
 
     public bool ScheduleRide(RideDTO ride) {
-      throw new NotImplementedException();
+      try {
+        return svc.AddRide(RideMapper.mapToRideDAO(ride));
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
     public bool CancelRide(RideDTO ride) {
-      throw new NotImplementedException();
+      try {
+        return svc.DeleteRide(RideMapper.mapToRideDAO(ride).RideID.ToString());
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
     public bool AddVehicle(VehicleDTO vehicle) {
-      throw new NotImplementedException();
+      try {
+        return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
     public bool InsertDriver(UserDTO driverToAdd) {
-      throw new NotImplementedException();
+      try {
+        return true;
+      }
+      catch (Exception) {
+        return false;
+      }
     }
 
     public List<UserDTO> RequestDrivers() {
-      throw new NotImplementedException();
+      try {
+        return new List<UserDTO>();
+      }
+      catch (Exception) {
+        return null;
+      }
     }
   }
 }

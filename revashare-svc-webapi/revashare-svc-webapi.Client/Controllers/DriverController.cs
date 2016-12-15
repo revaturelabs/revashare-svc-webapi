@@ -16,9 +16,20 @@ namespace revashare_svc_webapi.Client.Controllers {
       this.repo = repo;
     }
 
+    [HttpPut]
+    [Route("updatevehicle")]
+    public HttpResponseMessage UpdateVehicleInfo([FromBody]VehicleDTO vehicle) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.UpdateVehicleInfo(vehicle));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
     [HttpPost]
-    [Route("report")]
-    public HttpResponseMessage Post([FromBody]FlagDTO flag) {
+    [Route("reportrider")]
+    public HttpResponseMessage ReportRider([FromBody]FlagDTO flag) {
       try {
         return Request.CreateResponse(HttpStatusCode.OK, this.repo.ReportRider(flag));
       }
@@ -27,11 +38,22 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
-    [HttpPut]
-    [Route("update/vehicle")]
-    public HttpResponseMessage Put([FromBody]VehicleDTO vehicle) {
+    [HttpPost]
+    [Route("setavailability")]
+    public HttpResponseMessage SetAvailability([FromBody]RideDTO ride) {
       try {
-        return Request.CreateResponse(HttpStatusCode.OK, this.repo.UpdateVehicleInfo(vehicle));
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.SetAvailability(ride));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    [HttpPut]
+    [Route("updatedriverprofile")]
+    public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.UpdateDriverProfile(driver));
       }
       catch (Exception) {
         return Request.CreateResponse(HttpStatusCode.BadRequest);
@@ -59,27 +81,5 @@ namespace revashare_svc_webapi.Client.Controllers {
         return Request.CreateResponse(HttpStatusCode.BadRequest);
       }
     }
-
-    [HttpPost]
-    [Route("addcar")]
-    public HttpResponseMessage AddCar([FromBody]VehicleDTO vehicle) {
-      try {
-        return Request.CreateResponse(HttpStatusCode.OK, this.repo.AddVehicle(vehicle));
-      }
-      catch (Exception) {
-        return Request.CreateResponse(HttpStatusCode.BadRequest);
-      }
-    }
-    // DELETE: api/Driver/5
-    public void Delete(int id) {
-    }
-
-        [HttpPut]
-        [Route("update-driver-profile")]
-        public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.repo.ModifyDriverProfile(driver));
-        }
-
-    }
+  }
 }

@@ -84,5 +84,14 @@ namespace revashare_svc_webapi.Logic {
         return false;
       }
     }
+
+    public VehicleDTO ViewVehicleInfo(UserDTO driver) {
+      try {
+        return null;
+      }
+      catch (Exception) {
+        return null;
+      }
+    }
   }
 }

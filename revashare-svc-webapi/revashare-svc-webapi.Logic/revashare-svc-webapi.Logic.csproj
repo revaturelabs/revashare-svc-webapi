@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DriverLogic.cs" />
+    <Compile Include="Interfaces\IRegisterLogic.cs" />
     <Compile Include="Interfaces\IRider.cs" />
     <Compile Include="Interfaces\IServiceClient.cs" />
     <Compile Include="Mappers\ApartmentMapper.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Models\ApartmentDTO.cs" />
     <Compile Include="Models\UserInfoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterLogic.cs" />
     <Compile Include="RiderLogic.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

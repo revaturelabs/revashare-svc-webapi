@@ -33,5 +33,49 @@ namespace revashare_svc_webapi.Logic
             return true;
         }
         #endregion
+
+        #region Driver CRUD Methods
+        public bool InsertDriver(UserDTO driverToAdd)
+        {
+            return true;
+        }
+
+        public List<UserDTO> RequestDrivers()
+        {
+            return new List<UserDTO>();
+        }
+
+        public bool ModifyDriver(UserDTO driverToUpdate)
+        {
+            return true;
+        }
+
+        public bool DeleteDriver(UserDTO driverToRemove)
+        {
+            return true;
+        }
+        #endregion
+
+        #region Rider CRUD Methods
+        public bool InsertRider(UserDTO riderToAdd)
+        {
+            return true;
+        }
+
+        public List<UserDTO> RequestRiders()
+        {
+            return new List<UserDTO>();
+        }
+
+        public bool ModifyRider(UserDTO riderToUpdate)
+        {
+            return true;
+        }
+
+        public bool DeleteRider(UserDTO riderToRemove)
+        {
+            return true;
+        }
+        #endregion
     }
 }

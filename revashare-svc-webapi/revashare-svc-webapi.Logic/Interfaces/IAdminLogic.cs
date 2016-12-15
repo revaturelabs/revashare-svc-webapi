@@ -15,5 +15,17 @@ namespace revashare_svc_webapi.Logic.Interfaces
         List<UserDTO> RequestAdmins();
         bool ModifyAdmin(UserDTO adminToUpdate);
         bool DeleteAdmin(UserDTO adminToRemove);
+
+        //Driver CRUD Methods
+        bool InsertDriver(UserDTO driverToAdd);
+        List<UserDTO> RequestDrivers();
+        bool ModifyDriver(UserDTO driverToUpdate);
+        bool DeleteDriver(UserDTO driverToRemove);
+
+        //Rider CRUD Methods
+        bool InsertRider(UserDTO riderToAdd);
+        List<UserDTO> RequestRiders();
+        bool ModifyRider(UserDTO riderToUpdate);
+        bool DeleteRider(UserDTO riderToRemove);
     }
 }

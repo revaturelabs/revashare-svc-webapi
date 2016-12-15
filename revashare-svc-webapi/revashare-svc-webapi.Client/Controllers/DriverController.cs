@@ -16,6 +16,17 @@ namespace revashare_svc_webapi.Client.Controllers {
       this.repo = repo;
     }
 
+    [HttpGet]
+    [Route("viewvehicle")]
+    public HttpResponseMessage ViewVehicleInfo([FromBody]UserDTO driver) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.ViewVehicleInfo(driver));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
     /// <summary>
     /// 
     /// </summary>

@@ -12,6 +12,26 @@ namespace revashare_svc_webapi.Logic
 {
     public class AdminLogic : IAdminLogic
     {
-        
+        #region Admin CRUD Methods
+        public bool InsertAdmin(UserDTO adminToAdd)
+        {
+            return true;
+        }
+
+        public List<UserDTO> RequestAdmins()
+        {
+            return new List<UserDTO>();
+        }
+
+        public bool ModifyAdmin(UserDTO adminToUpdate)
+        {
+            return true;
+        }
+
+        public bool DeleteAdmin(UserDTO adminToRemove)
+        {
+            return true;
+        }
+        #endregion
     }
 }

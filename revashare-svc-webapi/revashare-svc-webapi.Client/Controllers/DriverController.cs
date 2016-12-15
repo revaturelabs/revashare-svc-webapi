@@ -8,22 +8,12 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace revashare_svc_webapi.Client.Controllers {
-  [RoutePrefix("rider")]
+  [RoutePrefix("driver")]
   public class DriverController : ApiController {
     private readonly IDriverRepository repo;
 
     public DriverController(IDriverRepository repo) {
       this.repo = repo;
-    }
-
-    // GET: api/Driver
-    public IEnumerable<string> Get() {
-      return new string[] { "value1", "value2" };
-    }
-
-    // GET: api/Driver/5
-    public string Get(int id) {
-      return "value";
     }
 
     [HttpPost]

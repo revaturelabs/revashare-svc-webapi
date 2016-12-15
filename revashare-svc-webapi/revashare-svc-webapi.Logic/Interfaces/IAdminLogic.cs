@@ -10,6 +10,10 @@ namespace revashare_svc_webapi.Logic.Interfaces
 {
     public interface IAdminLogic
     {
-
+        //Admin CRUD Methods
+        bool InsertAdmin(UserDTO adminToAdd);
+        List<UserDTO> RequestAdmins();
+        bool ModifyAdmin(UserDTO adminToUpdate);
+        bool DeleteAdmin(UserDTO adminToRemove);
     }
 }

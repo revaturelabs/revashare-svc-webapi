@@ -22,6 +22,10 @@ namespace revashare_svc_webapi.Logic.ServiceClient
          //return rs.GetApartments();
          throw new NotImplementedException();
       }
+      public ApartmentDAO getApartmentByName(string name)
+      {
+         return rs.GetApartmentByName(name);
+      }
 
       public bool InsertApartment(ApartmentDAO apartment)
       {

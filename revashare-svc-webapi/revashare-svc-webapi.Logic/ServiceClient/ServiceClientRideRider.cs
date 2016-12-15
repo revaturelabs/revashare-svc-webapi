@@ -19,20 +19,20 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public List<RideRidersDAO> GetRideRiders()
       {
-         //return rs.GetRideRiders();
-         throw new NotImplementedException();
+         return rs.GetRideRiders().ToList();
       }
 
       public bool InsertRideRider(UserDAO rider, RideDAO ride)
       {
-         //return rs.InsertRideRider(rr);
-         throw new NotImplementedException();
+         
+         
+         return rs.AddRideRiders(rider,ride);
+         
       }
 
       public bool UpdateRideRider(RideRidersDAO rr)
       {
-         //return rs.UpdateRideRider(rr);
-         throw new NotImplementedException();
+         return rs.UpdateRideRider(rr);         
       }
 
    }

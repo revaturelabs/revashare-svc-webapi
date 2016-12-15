@@ -42,23 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DriverLogic.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Interfaces\IRegisterLogic.cs" />
-    <Compile Include="Interfaces\IRider.cs" />
     <Compile Include="Interfaces\IServiceClient.cs" />
     <Compile Include="Mappers\ApartmentMapper.cs" />
     <Compile Include="Mappers\FlagMapper.cs" />
     <Compile Include="Mappers\RideMapper.cs" />
     <Compile Include="Mappers\RideRiderMapper.cs" />
+    <Compile Include="Mappers\RoleMapper.cs" />
     <Compile Include="Mappers\UserInfoMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\VehicleMapper.cs" />
     <Compile Include="MessageLogic.cs" />
+    <Compile Include="Models\DriverEnrollDTO.cs" />
     <Compile Include="Models\RideRiderDTO.cs" />
+    <Compile Include="Models\RoleDTO.cs" />
+    <Compile Include="Models\SeatDTO.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Models\RideDTO.cs" />
-    <Compile Include="Interfaces\IDriverRepository.cs" />
     <Compile Include="Models\FlagDTO.cs" />
     <Compile Include="Models\VehicleDTO.cs" />
     <Compile Include="AdminLogic.cs" />
@@ -66,15 +67,7 @@
     <Compile Include="Models\ApartmentDTO.cs" />
     <Compile Include="Models\UserInfoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RiderLogic\RiderLogic.cs" />
     <Compile Include="RegisterLogic.cs" />
-    <Compile Include="RiderLogic\RiderLogicApartment.cs" />
-    <Compile Include="RiderLogic\RiderLogicFlag.cs" />
-    <Compile Include="RiderLogic\RiderLogicRide.cs" />
-    <Compile Include="RiderLogic\RiderLogicRideRider.cs" />
-    <Compile Include="RiderLogic\RiderLogicUser.cs" />
-    <Compile Include="RiderLogic\RiderLogicUserInfo.cs" />
-    <Compile Include="RiderLogic\RiderLogicVehicle.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

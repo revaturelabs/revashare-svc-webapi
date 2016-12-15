@@ -24,14 +24,12 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public bool InsertVehicle(VehicleDAO v)
       {
-         //return rs.InsertVehicle(v);
-         throw new NotImplementedException();
+         return rs.AddVehicle(v);
       }
 
       public bool UpdateVehicle(VehicleDAO v)
       {
-         //return rs.UpdateVehicle(v);
-         throw new NotImplementedException();
+         return rs.UpdateVehicle(v);
       }
    }
    

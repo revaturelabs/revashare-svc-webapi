@@ -9,8 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace revashare_svc_webapi.Client.RevaShareServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

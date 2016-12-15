@@ -41,7 +41,9 @@ namespace revashare_svc_webapi.Logic.RiderLogic
       public RideDTO getCurrentSelectedRide(RideDTO ride)
       {
          return getRides().Where(m => m.Vehicle.LicensePlate.Equals(ride.Vehicle.LicensePlate)).FirstOrDefault();
-      }     
+      }
+
+      
    }
    
 }

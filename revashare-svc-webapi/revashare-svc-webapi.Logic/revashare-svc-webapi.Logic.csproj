@@ -62,7 +62,14 @@
     <Compile Include="Models\ApartmentDTO.cs" />
     <Compile Include="Models\UserInfoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RiderLogic.cs" />
+    <Compile Include="RiderLogic\RiderLogicApartment.cs" />
+    <Compile Include="RiderLogic\RiderLogic.cs" />
+    <Compile Include="RiderLogic\RiderLogicFlag.cs" />
+    <Compile Include="RiderLogic\RiderLogicRide.cs" />
+    <Compile Include="RiderLogic\RiderLogicRideRider.cs" />
+    <Compile Include="RiderLogic\RiderLogicUser.cs" />
+    <Compile Include="RiderLogic\RiderLogicUserInfo.cs" />
+    <Compile Include="RiderLogic\RiderLogicVehicle.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

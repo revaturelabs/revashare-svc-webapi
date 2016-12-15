@@ -1,4 +1,5 @@
-﻿using System;
+﻿using revashare_svc_webapi.Logic.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,7 @@ namespace revashare_svc_webapi.Logic.Models
         public string Email { get; set; }
 
         public string Phone { get; set; }
-    }
+
+        public UserDTO User { get; set; }
+   }
 }

@@ -26,14 +26,12 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public bool InsertRide(RideDAO ride)
       {
-         //return rs.InsertRide(ride);
-         throw new NotImplementedException();
+         return rs.AddRide(ride);         
       }
 
       public bool UpdateRide(RideDAO ride)
       {
-         //return rs.UpdateRide(ride);
-         throw new NotImplementedException();
+         return rs.UpdateRide(ride);         
       }
       public List<RideDAO> getRidesByLocation()
       {

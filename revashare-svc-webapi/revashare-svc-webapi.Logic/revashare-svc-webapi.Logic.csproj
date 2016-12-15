@@ -51,11 +51,15 @@
     <Compile Include="Mappers\FlagMapper.cs" />
     <Compile Include="Mappers\RideMapper.cs" />
     <Compile Include="Mappers\RideRiderMapper.cs" />
+    <Compile Include="Mappers\RoleMapper.cs" />
     <Compile Include="Mappers\UserInfoMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\VehicleMapper.cs" />
     <Compile Include="MessageLogic.cs" />
+    <Compile Include="Models\DriverEnrollDTO.cs" />
     <Compile Include="Models\RideRiderDTO.cs" />
+    <Compile Include="Models\RoleDTO.cs" />
+    <Compile Include="Models\SeatDTO.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Models\RideDTO.cs" />
     <Compile Include="Interfaces\IDriverRepository.cs" />
@@ -106,6 +110,9 @@
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -113,9 +120,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

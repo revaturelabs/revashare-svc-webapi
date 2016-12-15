@@ -104,6 +104,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO.datasource" />
+    <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO.datasource" />
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource" />
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
@@ -117,9 +118,6 @@
     </None>
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

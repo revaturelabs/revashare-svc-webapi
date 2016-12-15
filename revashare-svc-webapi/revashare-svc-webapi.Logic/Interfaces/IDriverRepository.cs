@@ -12,6 +12,14 @@ namespace revashare_svc_webapi.Logic.Interfaces {
     bool ReportRider(FlagDTO flag);
 
     bool SetAvailability();
+
+    bool ModifyDriverProfile(UserDTO driverToUpdate);
+
+    bool ScheduleRide(RideDTO ride);
+
+    bool CancelRide(RideDTO ride);
+
+    bool AddVehicle(VehicleDTO vehicle);
    
     bool InsertDriver(UserDTO driverToAdd);
 
@@ -19,7 +27,7 @@ namespace revashare_svc_webapi.Logic.Interfaces {
 
     bool ModifyDriver(UserDTO driverToUpdate);
 
-    bool DeleteDriver(UserDTO driverToRemove);
+    bool DeleteDriver(UserDTO driverToRemove);    
 
     }
 }

@@ -38,39 +38,48 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
+    [HttpPost]
+    [Route("schedule")]
+    public HttpResponseMessage ScheduleRide([FromBody]RideDTO ride) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.ScheduleRide(ride));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    [HttpPost]
+    [Route("cancel")]
+    public HttpResponseMessage CancelRide([FromBody]RideDTO ride) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.CancelRide(ride));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
+
+    [HttpPost]
+    [Route("addcar")]
+    public HttpResponseMessage AddCar([FromBody]VehicleDTO vehicle) {
+      try {
+        return Request.CreateResponse(HttpStatusCode.OK, this.repo.AddVehicle(vehicle));
+      }
+      catch (Exception) {
+        return Request.CreateResponse(HttpStatusCode.BadRequest);
+      }
+    }
     // DELETE: api/Driver/5
     public void Delete(int id) {
     }
 
-    #region Driver CRUD Methods
-        [HttpPost]
-        [Route("add-driver")]
-        public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.repo.InsertDriver(driver));
-        }
-
-        [HttpGet]
-        [Route("get-drivers")]
-        public HttpResponseMessage GetDrivers()
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.repo.RequestDrivers(), "application/json");
-        }
-
         [HttpPut]
-        [Route("update-driver")]
-        public HttpResponseMessage UpdateDriver([FromBody] UserDTO driver)
+        [Route("update-driver-profile")]
+        public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, this.repo.ModifyDriver(driver));
+            return Request.CreateResponse(HttpStatusCode.OK, this.repo.ModifyDriverProfile(driver));
         }
-
-        [HttpPost]
-        [Route("remove-driver")]
-        public HttpResponseMessage RemoveDriver([FromBody] UserDTO driver)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, this.repo.DeleteDriver(driver));
-        }
-        #endregion
 
     }
 }

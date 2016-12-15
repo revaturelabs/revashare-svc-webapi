@@ -93,10 +93,34 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
         System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO> GetApartmentByNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRide", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideResponse")]
-        revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO passRide();
+        revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO passRide();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRide", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO> passRideAsync();
+        System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO> passRideAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddRide", ReplyAction="http://tempuri.org/IRevaShareDataService/AddRideResponse")]
+        bool AddRide(revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddRide", ReplyAction="http://tempuri.org/IRevaShareDataService/AddRideResponse")]
+        System.Threading.Tasks.Task<bool> AddRideAsync(revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateRide", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateRideResponse")]
+        bool UpdateRide(revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateRide", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateRideResponse")]
+        System.Threading.Tasks.Task<bool> UpdateRideAsync(revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteRide", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteRideResponse")]
+        bool DeleteRide(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteRide", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteRideResponse")]
+        System.Threading.Tasks.Task<bool> DeleteRideAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetRideRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetRideRidersResponse")]
+        revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO[] GetRideRiders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetRideRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetRideRidersResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO[]> GetRideRidersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddRide", ReplyAction="http://tempuri.org/IRevaShareDataService/AddRideResponse")]
         bool AddRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
@@ -129,7 +153,7 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
         System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO> GetRideRiderByIdAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideRiderResponse")]
-        revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO passRideRider();
+        revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO passRideRider();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideRiderResponse")]
         System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO> passRideRiderAsync();
@@ -248,7 +272,7 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
             return base.Channel.passRide();
         }
         
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO> passRideAsync() {
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO> passRideAsync() {
             return base.Channel.passRideAsync();
         }
         
@@ -292,11 +316,11 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
             return base.Channel.GetRideRiderByIdAsync(id);
         }
         
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO passRideRider() {
+        public revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO passRideRider() {
             return base.Channel.passRideRider();
         }
         
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO> passRideRiderAsync() {
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO> passRideRiderAsync() {
             return base.Channel.passRideRiderAsync();
         }
         

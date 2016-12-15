@@ -36,17 +36,13 @@ namespace revashare_svc_webapi.Logic.Interfaces
       bool DeleteUser(UserDAO user);
       List<UserDAO> GetUsers();
       bool InsertUser(UserDAO user);
-      bool UpdateUser(UserDAO user);
-
-      //bool deleteUserInfo(UserInfoDAO info);   
-      //List<UserInfoDAO> GetUserInfos(); 
-      //bool InsertUserInfo(UserInfoDAO info);
-      //bool UpdateUserInfo(UserInfoDAO info);
+      bool UpdateUser(UserDAO user);     
 
       bool DeleteVehicle(VehicleDAO v);
       List<VehicleDAO> GetVehicle();
       bool InsertVehicle(VehicleDAO v);
       bool UpdateVehicle(VehicleDAO v);
 
+      bool RequestToBeDriver(UserDAO user);
    }
 }

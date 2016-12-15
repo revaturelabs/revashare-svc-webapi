@@ -14,6 +14,7 @@ namespace revashare_svc_webapi.Logic.Models
       public ApartmentDTO Apartment { get; set; }
       public string Email { get; set; }
       public int ApartmentId { get; set; }
-
+      public List<RoleDTO> Roles { get; set; }
+      public string UserName { get; set; }
    }
 }

@@ -60,7 +60,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool CancelRide(RideDTO ride) {
       try {
-        return svc.DeleteRide(RideMapper.mapToRideDAO(ride).RideID.ToString());
+        return svc.DeleteRide(RideMapper.mapToRideDAO(ride));
       }
       catch (Exception) {
         return false;

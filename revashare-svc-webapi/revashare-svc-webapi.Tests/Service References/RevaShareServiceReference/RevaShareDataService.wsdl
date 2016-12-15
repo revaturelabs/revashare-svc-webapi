@@ -55,30 +55,6 @@
   <wsdl:message name="IRevaShareDataService_DeleteApartment_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteApartmentResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_Create_InputMessage">
-    <wsdl:part name="parameters" element="tns:Create" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_Create_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetFlag_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetFlag" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetFlag_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetFlagResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_ListFlags_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListFlags" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_ListFlags_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListFlagsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_MarkFlagAsRead_InputMessage">
-    <wsdl:part name="parameters" element="tns:MarkFlagAsRead" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_MarkFlagAsRead_OutputMessage">
-    <wsdl:part name="parameters" element="tns:MarkFlagAsReadResponse" />
-  </wsdl:message>
   <wsdl:message name="IRevaShareDataService_passRide_InputMessage">
     <wsdl:part name="parameters" element="tns:passRide" />
   </wsdl:message>
@@ -207,22 +183,6 @@
     <wsdl:operation name="DeleteApartment">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteApartment" message="tns:IRevaShareDataService_DeleteApartment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteApartmentResponse" message="tns:IRevaShareDataService_DeleteApartment_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Create">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Create" message="tns:IRevaShareDataService_Create_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/CreateResponse" message="tns:IRevaShareDataService_Create_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetFlag">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetFlag" message="tns:IRevaShareDataService_GetFlag_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetFlagResponse" message="tns:IRevaShareDataService_GetFlag_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ListFlags">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ListFlags" message="tns:IRevaShareDataService_ListFlags_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ListFlagsResponse" message="tns:IRevaShareDataService_ListFlags_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="MarkFlagAsRead">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead" message="tns:IRevaShareDataService_MarkFlagAsRead_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse" message="tns:IRevaShareDataService_MarkFlagAsRead_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="passRide">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/passRide" message="tns:IRevaShareDataService_passRide_InputMessage" />
@@ -356,42 +316,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteApartment">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteApartment" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Create">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Create" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetFlag">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetFlag" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListFlags">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ListFlags" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MarkFlagAsRead">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

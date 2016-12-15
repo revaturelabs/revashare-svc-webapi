@@ -101,5 +101,22 @@ namespace revashare_svc_webapi.Logic
             return new List<UserDTO>();
         }
         #endregion
+
+        #region User Reporting
+        public List<FlagDTO> GetUserReports()
+        {
+            return new List<FlagDTO>();
+        }
+
+        public bool RemoveReport(FlagDTO reportToRemove)
+        {
+            return true;
+        }
+
+        public bool RemoveDriverPrivileges(FlagDTO reportForUser)
+        {
+            return true;
+        }
+        #endregion
     }
 }

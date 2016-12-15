@@ -38,7 +38,7 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         private revashare_svc_webapi.Logic.RevaShareServiceReference.RoleDAO[] RolesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserIDField;
+        private string UserNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -116,14 +116,14 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserID {
+        public string UserName {
             get {
-                return this.UserIDField;
+                return this.UserNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.UserIDField, value) != true)) {
-                    this.UserIDField = value;
-                    this.RaisePropertyChanged("UserID");
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
                 }
             }
         }
@@ -148,9 +148,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ApartmentIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LatitudeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -166,19 +163,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ApartmentID {
-            get {
-                return this.ApartmentIDField;
-            }
-            set {
-                if ((this.ApartmentIDField.Equals(value) != true)) {
-                    this.ApartmentIDField = value;
-                    this.RaisePropertyChanged("ApartmentID");
-                }
             }
         }
         
@@ -262,6 +246,301 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
                 if ((object.ReferenceEquals(this.TypeField, value) != true)) {
                     this.TypeField = value;
                     this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RideDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class RideDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan DepartureTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsOnTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime StartOfWeekField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO VehicleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan DepartureTime {
+            get {
+                return this.DepartureTimeField;
+            }
+            set {
+                if ((this.DepartureTimeField.Equals(value) != true)) {
+                    this.DepartureTimeField = value;
+                    this.RaisePropertyChanged("DepartureTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsOnTime {
+            get {
+                return this.IsOnTimeField;
+            }
+            set {
+                if ((this.IsOnTimeField.Equals(value) != true)) {
+                    this.IsOnTimeField = value;
+                    this.RaisePropertyChanged("IsOnTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime StartOfWeek {
+            get {
+                return this.StartOfWeekField;
+            }
+            set {
+                if ((this.StartOfWeekField.Equals(value) != true)) {
+                    this.StartOfWeekField = value;
+                    this.RaisePropertyChanged("StartOfWeek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO Vehicle {
+            get {
+                return this.VehicleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehicleField, value) != true)) {
+                    this.VehicleField = value;
+                    this.RaisePropertyChanged("Vehicle");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VehicleDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class VehicleDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CapacityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ColorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LicensePlateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MakeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO OwnerField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Capacity {
+            get {
+                return this.CapacityField;
+            }
+            set {
+                if ((this.CapacityField.Equals(value) != true)) {
+                    this.CapacityField = value;
+                    this.RaisePropertyChanged("Capacity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Color {
+            get {
+                return this.ColorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColorField, value) != true)) {
+                    this.ColorField = value;
+                    this.RaisePropertyChanged("Color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LicensePlate {
+            get {
+                return this.LicensePlateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LicensePlateField, value) != true)) {
+                    this.LicensePlateField = value;
+                    this.RaisePropertyChanged("LicensePlate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Make {
+            get {
+                return this.MakeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MakeField, value) != true)) {
+                    this.MakeField = value;
+                    this.RaisePropertyChanged("Make");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Model {
+            get {
+                return this.ModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelField, value) != true)) {
+                    this.ModelField = value;
+                    this.RaisePropertyChanged("Model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Owner {
+            get {
+                return this.OwnerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OwnerField, value) != true)) {
+                    this.OwnerField = value;
+                    this.RaisePropertyChanged("Owner");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RideRidersDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class RideRidersDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AcceptedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO RideField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO RiderField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Accepted {
+            get {
+                return this.AcceptedField;
+            }
+            set {
+                if ((this.AcceptedField.Equals(value) != true)) {
+                    this.AcceptedField = value;
+                    this.RaisePropertyChanged("Accepted");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO Ride {
+            get {
+                return this.RideField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RideField, value) != true)) {
+                    this.RideField = value;
+                    this.RaisePropertyChanged("Ride");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Rider {
+            get {
+                return this.RiderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RiderField, value) != true)) {
+                    this.RiderField = value;
+                    this.RaisePropertyChanged("Rider");
                 }
             }
         }
@@ -385,333 +664,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RideDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
-    [System.SerializableAttribute()]
-    public partial class RideDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan DepartureTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsOnTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RideIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StartOfWeekField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO VehicleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.TimeSpan DepartureTime {
-            get {
-                return this.DepartureTimeField;
-            }
-            set {
-                if ((this.DepartureTimeField.Equals(value) != true)) {
-                    this.DepartureTimeField = value;
-                    this.RaisePropertyChanged("DepartureTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsOnTime {
-            get {
-                return this.IsOnTimeField;
-            }
-            set {
-                if ((this.IsOnTimeField.Equals(value) != true)) {
-                    this.IsOnTimeField = value;
-                    this.RaisePropertyChanged("IsOnTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RideID {
-            get {
-                return this.RideIDField;
-            }
-            set {
-                if ((this.RideIDField.Equals(value) != true)) {
-                    this.RideIDField = value;
-                    this.RaisePropertyChanged("RideID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime StartOfWeek {
-            get {
-                return this.StartOfWeekField;
-            }
-            set {
-                if ((this.StartOfWeekField.Equals(value) != true)) {
-                    this.StartOfWeekField = value;
-                    this.RaisePropertyChanged("StartOfWeek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO Vehicle {
-            get {
-                return this.VehicleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VehicleField, value) != true)) {
-                    this.VehicleField = value;
-                    this.RaisePropertyChanged("Vehicle");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VehicleDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
-    [System.SerializableAttribute()]
-    public partial class VehicleDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CapacityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ColorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LicensePlateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MakeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO OwnerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VehicleIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Capacity {
-            get {
-                return this.CapacityField;
-            }
-            set {
-                if ((this.CapacityField.Equals(value) != true)) {
-                    this.CapacityField = value;
-                    this.RaisePropertyChanged("Capacity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Color {
-            get {
-                return this.ColorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ColorField, value) != true)) {
-                    this.ColorField = value;
-                    this.RaisePropertyChanged("Color");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LicensePlate {
-            get {
-                return this.LicensePlateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LicensePlateField, value) != true)) {
-                    this.LicensePlateField = value;
-                    this.RaisePropertyChanged("LicensePlate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Make {
-            get {
-                return this.MakeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MakeField, value) != true)) {
-                    this.MakeField = value;
-                    this.RaisePropertyChanged("Make");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Model {
-            get {
-                return this.ModelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModelField, value) != true)) {
-                    this.ModelField = value;
-                    this.RaisePropertyChanged("Model");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Owner {
-            get {
-                return this.OwnerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OwnerField, value) != true)) {
-                    this.OwnerField = value;
-                    this.RaisePropertyChanged("Owner");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VehicleID {
-            get {
-                return this.VehicleIDField;
-            }
-            set {
-                if ((this.VehicleIDField.Equals(value) != true)) {
-                    this.VehicleIDField = value;
-                    this.RaisePropertyChanged("VehicleID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RideRidersDAO", Namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models")]
-    [System.SerializableAttribute()]
-    public partial class RideRidersDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AcceptedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO RideField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO RiderField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Accepted {
-            get {
-                return this.AcceptedField;
-            }
-            set {
-                if ((this.AcceptedField.Equals(value) != true)) {
-                    this.AcceptedField = value;
-                    this.RaisePropertyChanged("Accepted");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO Ride {
-            get {
-                return this.RideField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RideField, value) != true)) {
-                    this.RideField = value;
-                    this.RaisePropertyChanged("Ride");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Rider {
-            get {
-                return this.RiderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RiderField, value) != true)) {
-                    this.RiderField = value;
-                    this.RaisePropertyChanged("Rider");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RevaShareServiceReference.IRevaShareDataService")]
     public interface IRevaShareDataService {
@@ -763,30 +715,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteApartmentResponse")]
         System.Threading.Tasks.Task<bool> DeleteApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Create", ReplyAction="http://tempuri.org/IRevaShareDataService/CreateResponse")]
-        bool Create(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Create", ReplyAction="http://tempuri.org/IRevaShareDataService/CreateResponse")]
-        System.Threading.Tasks.Task<bool> CreateAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/GetFlagResponse")]
-        revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO GetFlag(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/GetFlagResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO> GetFlagAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListFlags", ReplyAction="http://tempuri.org/IRevaShareDataService/ListFlagsResponse")]
-        revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[] ListFlags();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListFlags", ReplyAction="http://tempuri.org/IRevaShareDataService/ListFlagsResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> ListFlagsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
-        bool MarkFlagAsRead(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
-        System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/passRide", ReplyAction="http://tempuri.org/IRevaShareDataService/passRideResponse")]
         revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO passRide();
@@ -974,38 +902,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         
         public System.Threading.Tasks.Task<bool> DeleteApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment) {
             return base.Channel.DeleteApartmentAsync(apartment);
-        }
-        
-        public bool Create(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.Create(flag);
-        }
-        
-        public System.Threading.Tasks.Task<bool> CreateAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.CreateAsync(flag);
-        }
-        
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO GetFlag(int id) {
-            return base.Channel.GetFlag(id);
-        }
-        
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO> GetFlagAsync(int id) {
-            return base.Channel.GetFlagAsync(id);
-        }
-        
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[] ListFlags() {
-            return base.Channel.ListFlags();
-        }
-        
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> ListFlagsAsync() {
-            return base.Channel.ListFlagsAsync();
-        }
-        
-        public bool MarkFlagAsRead(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.MarkFlagAsRead(flag);
-        }
-        
-        public System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.MarkFlagAsReadAsync(flag);
         }
         
         public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO passRide() {

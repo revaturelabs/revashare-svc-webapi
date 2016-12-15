@@ -106,6 +106,9 @@
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

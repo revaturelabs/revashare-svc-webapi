@@ -13,6 +13,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
       public string PhoneNumber { get; set; }      
       public ApartmentDTO Apartment { get; set; }
       public string Email { get; set; }
+      public int ApartmentId { get; set; }
 
    }
 }

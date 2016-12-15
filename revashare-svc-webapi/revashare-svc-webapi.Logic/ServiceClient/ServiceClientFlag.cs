@@ -12,22 +12,26 @@ namespace revashare_svc_webapi.Logic.ServiceClient
    {
       //public bool deleteFlag(FlagDAO flag)
       //{
-      //   rs.deleteFlag(flag);
+      //   //return rs.deleteFlag(flag);
+      //   throw new NotImplementedException();
       //}
 
-      //public List<FlagDTO> GetFlags()
+      //public List<FlagDAO> GetFlags()
       //{
-      //   rs.GetFlags();
+      //   //return rs.GetFlags();
+      //   throw new NotImplementedException();
       //}
 
       //public bool InsertFlag(FlagDAO flag)
       //{
-      //   rs.InsertFlag(flag);
+      //   //return rs.InsertFlag(flag);
+      //   throw new NotImplementedException();
       //}
 
       //public bool UpdateFlag(FlagDAO flag)
       //{
-      //   rs.UpdateFlag(flag);
+      //   //return rs.UpdateFlag(flag);
+      //   throw new NotImplementedException();
       //}
    }
 }

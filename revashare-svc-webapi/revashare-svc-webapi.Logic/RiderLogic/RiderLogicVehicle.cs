@@ -12,11 +12,18 @@ namespace revashare_svc_webapi.Logic.RiderLogic
    {
       public List<VehicleDTO> getVehicles()
       {
-
+         var list = sc.GetVehicle();
+         var ret = new List<VehicleDTO>();
+         foreach (var item in list)
+         {
+            ret.Add(Mappers.VehicleMapper.mapToVehicleDTO(item));
+         }
+         return ret;
       }
-      public VehicleDTO getVehicleByOwner(UserDTO user)
+      public VehicleDTO getVehicleByOwner(UserDTO owner)
       {
-
+         var ret = getVehicles().Where(m => m.Owner.Name.Equals(owner.Name)).FirstOrDefault();
+         return ret;
       }
    }
 }

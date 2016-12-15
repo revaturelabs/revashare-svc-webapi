@@ -24,7 +24,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
       int getAvailableSeatsInRide(RideDTO ride);
 
-      RideDTO getCurrentSelectedRide(UserDTO user);
+      RideDTO getCurrentSelectedRide(RideDTO ride);
       #endregion
 
       #region RideRider
@@ -41,6 +41,11 @@ namespace revashare_svc_webapi.Logic.Interfaces
       #region UserInfo
       List<UserInfoDTO> getUserInfos();
       UserInfoDTO getUserInfoByUser(UserDTO user);
+      #endregion
+
+      #region Vehicle
+      List<VehicleDTO> getVehicles();
+      VehicleDTO getVehicleByOwner(UserDTO user);
       #endregion
 
 

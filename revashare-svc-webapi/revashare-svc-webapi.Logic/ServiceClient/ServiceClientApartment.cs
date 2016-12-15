@@ -11,24 +11,28 @@ namespace revashare_svc_webapi.Logic.ServiceClient
    public partial class ServiceClient:IServiceClient
    {
       RevaShareDataServiceClient rs = new RevaShareDataServiceClient();
-      //public bool deleteApartment(ApartmentDAO apartment)
-      //{
-      //   return rs.DeleteApartment(apartment);
-      //}
+      public bool DeleteApartment(ApartmentDAO apartment)
+      {
+         //return rs.DeleteApartment(apartment);
+         throw new NotImplementedException();
+      }
 
-      //public List<ApartmentDAO> GetApartments()
-      //{
-      //   return rs.GetApartments();
-      //}
+      public List<ApartmentDAO> GetApartments()
+      {
+         //return rs.GetApartments();
+         throw new NotImplementedException();
+      }
 
-      //public bool InsertApartment(ApartmentDAO apartment)
-      //{
-      //   return rs.InsertApartment(apartment);
-      //}
+      public bool InsertApartment(ApartmentDAO apartment)
+      {
+         //return rs.InsertApartment(apartment);
+         throw new NotImplementedException();
+      }
 
-      //public bool UpdateApartment(ApartmentDAO apartment)
-      //{
-      //   return rs.UpdateApartment(apartment);
-      //}
+      public bool UpdateApartment(ApartmentDAO apartment)
+      {
+         //return rs.UpdateApartment(apartment);
+         throw new NotImplementedException();
+      }
    }
 }

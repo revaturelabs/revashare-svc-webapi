@@ -10,25 +10,29 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
    public partial class ServiceClient:IServiceClient
    {
-   //   public bool deleteVehicle(VehicleDAO v)
-   //   {
-   //      return rs.deleteVehicle(v);
-   //   }
+      public bool DeleteVehicle(VehicleDAO v)
+      {
+         //return rs.deleteVehicle(v);
+         throw new NotImplementedException();
+      }
 
-   //   public List<VehicleDAO> GetVehicle()
-   //   {
-   //      return rs.GetVehicle();
-   //   }
+      public List<VehicleDAO> GetVehicle()
+      {
+         //return rs.GetVehicle();
+         throw new NotImplementedException();
+      }
 
-   //   public bool InsertVehicle(VehicleDAO v)
-   //   {
-   //      return rs.InsertVehicle(v);
-   //   }
+      public bool InsertVehicle(VehicleDAO v)
+      {
+         //return rs.InsertVehicle(v);
+         throw new NotImplementedException();
+      }
 
-   //   public bool UpdateVehicle(VehicleDAO v)
-   //   {
-   //      return rs.UpdateVehicle(v);
-   //   }
+      public bool UpdateVehicle(VehicleDAO v)
+      {
+         //return rs.UpdateVehicle(v);
+         throw new NotImplementedException();
+      }
    }
    
 }

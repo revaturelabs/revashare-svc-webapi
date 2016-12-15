@@ -1,4 +1,5 @@
 ﻿using revashare_svc_webapi.Logic.Interfaces;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,26 +10,30 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
    public partial class ServiceClient : IServiceClient
    {
-      
-      //public bool DeleteRideRider(RideRiderDAO rr)
-      //{
-      //   rs.DeleteRideRider(rr);
-      //}
 
-      //public List<RideRiderDAO> GetRideRiders()
-      //{
-      //   rs.GetRideRiders();
-      //}
+      public bool DeleteRideRider(RideRidersDAO rr)
+      {
+         //return rs.DeleteRideRider(rr);
+         throw new NotImplementedException();
+      }
 
-      //public bool InsertRideRider(RideRiderDAO rr)
-      //{
-      //   rs.InsertRideRider(rr);
-      //}
+      public List<RideRidersDAO> GetRideRiders()
+      {
+         //return rs.GetRideRiders();
+         throw new NotImplementedException();
+      }
 
-      //public bool UpdateRideRider(RideRiderDAO rr)
-      //{
-      //   rs.UpdateRideRider(rr);
-      //}
-      
+      public bool InsertRideRider(UserDAO rider, RideDAO ride)
+      {
+         //return rs.InsertRideRider(rr);
+         throw new NotImplementedException();
+      }
+
+      public bool UpdateRideRider(RideRidersDAO rr)
+      {
+         //return rs.UpdateRideRider(rr);
+         throw new NotImplementedException();
+      }
+
    }
 }

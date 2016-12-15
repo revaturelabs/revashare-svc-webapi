@@ -11,19 +11,24 @@ namespace revashare_svc_webapi.Logic.RiderLogic
    public partial class RiderLogic : IRider
    {
       public bool addRiderToRide(RideDTO ride, UserDTO rider)
-      {
-         throw new NotImplementedException();
-         //return sc.InsertRideRider(Mappers.RideMapper.mapToRideDAO(ride), Mappers.RiderMapper.mapToRiderDAO(rider));
+      {         
+         return sc.InsertRideRider(Mappers.UserMapper.mapToUserDAO(rider), Mappers.RideMapper.mapToRideDAO(ride));
       }
 
-      public bool removeRiderFromRide(UserDTO user, RideDTO ride)
+      public bool removeRiderFromRide(UserDTO rider, RideDTO ride)
       {
-         throw new NotImplementedException();
+         return sc.InsertRideRider(Mappers.UserMapper.mapToUserDAO(rider), Mappers.RideMapper.mapToRideDAO(ride));
       }
 
-      public List<RideRiderDTO> getRideRidersByUser(UserDTO user)
+      public List<RideRiderDTO> getRideRidersByUser(UserDTO rider)
       {
-         throw new NotImplementedException();
+         var list = sc.GetRideRiders().Where(m => m.Rider.Name.Equals(rider.Name));
+         var ret = new List<RideRiderDTO>();
+         foreach (var item in list)
+         {
+            ret.Add(Mappers.RideRiderMapper.mapToRideRiderDTO(item));
+         }
+         return ret;
       }
    }
 }

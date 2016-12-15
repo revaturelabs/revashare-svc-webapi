@@ -27,5 +27,14 @@ namespace revashare_svc_webapi.Logic.Interfaces
         List<UserDTO> RequestRiders();
         bool ModifyRider(UserDTO riderToUpdate);
         bool DeleteRider(UserDTO riderToRemove);
+
+        //User Approval
+        bool ApproveUser(UserDTO userToApprove);
+        List<UserDTO> GetPendingRiders();
+        List<UserDTO> GetPendingDrivers();
+        List<UserDTO> GetPendingAdmins();
+
+        //User Reporting
+
     }
 }

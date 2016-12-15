@@ -32,7 +32,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
         }
 
-        #region Admin CRUD Methods
+        #region Admin CRUD
         [HttpPost]
         [Route("add-admin")]
         public HttpResponseMessage AddAdmin([FromBody] UserDTO admin)
@@ -62,7 +62,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
         #endregion
 
-        #region Driver CRUD Methods
+        #region Driver CRUD
         [HttpPost]
         [Route("add-driver")]
         public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
@@ -92,7 +92,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
         #endregion
 
-        #region Rider CRUD Methods
+        #region Rider CRUD
         [HttpPost]
         [Route("add-rider")]
         public HttpResponseMessage AddRider([FromBody] UserDTO rider)
@@ -119,6 +119,36 @@ namespace revashare_svc_webapi.Client.Controllers
         public HttpResponseMessage RemoveRider([FromBody] UserDTO rider)
         {
             return Request.CreateResponse(HttpStatusCode.OK, this.Repo.DeleteRider(rider));
+        }
+        #endregion
+
+        #region User Approval
+        [HttpPost]
+        [Route("approve-user")]
+        public HttpResponseMessage ApproveUser([FromBody] UserDTO user)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.ApproveUser(user));
+        }
+
+        [HttpGet]
+        [Route("pending-riders")]
+        public HttpResponseMessage PendingRiders()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.GetPendingRiders(), "application/json");
+        }
+
+        [HttpGet]
+        [Route("pending-drivers")]
+        public HttpResponseMessage PendingDrivers()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.GetPendingDrivers(), "application/json");
+        }
+
+        [HttpGet]
+        [Route("pending-admins")]
+        public HttpResponseMessage PendingAdmins()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.GetPendingAdmins(), "application/json");
         }
         #endregion
     }

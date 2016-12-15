@@ -12,6 +12,8 @@ namespace revashare_svc_webapi.Logic
 {
     public class AdminLogic : IAdminLogic
     {
+        private RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+
         #region Admin CRUD Methods
         public bool InsertAdmin(UserDTO adminToAdd)
         {
@@ -75,6 +77,28 @@ namespace revashare_svc_webapi.Logic
         public bool DeleteRider(UserDTO riderToRemove)
         {
             return true;
+        }
+        #endregion
+
+        #region User Approval
+        public bool ApproveUser(UserDTO userToApprove)
+        {
+            return true;
+        }
+
+        public List<UserDTO> GetPendingRiders()
+        {
+            return new List<UserDTO>();
+        }
+
+        public List<UserDTO> GetPendingDrivers()
+        {
+            return new List<UserDTO>();
+        }
+
+        public List<UserDTO> GetPendingAdmins()
+        {
+            return new List<UserDTO>();
         }
         #endregion
     }

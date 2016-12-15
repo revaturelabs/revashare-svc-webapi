@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DriverLogic.cs" />
+    <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Interfaces\IRider.cs" />
     <Compile Include="Interfaces\IServiceClient.cs" />
     <Compile Include="Mappers\ApartmentMapper.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Mappers\RideRiderMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\VehicleMapper.cs" />
+    <Compile Include="MessageLogic.cs" />
     <Compile Include="Models\RideRiderDTO.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Models\RideDTO.cs" />

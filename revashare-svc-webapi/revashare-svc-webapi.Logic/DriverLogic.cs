@@ -68,11 +68,21 @@ namespace revashare_svc_webapi.Logic {
     }
 
     public List<SeatDTO> ViewPassengers() {
-      throw new NotImplementedException();
+      try {
+        return null;
+      }
+      catch (Exception) {
+        return null;
+      }
     }
 
     public bool AcceptPassenger(SeatDTO rider) {
-      throw new NotImplementedException();
+      try {
+        return true;
+      }
+      catch (Exception) {
+        return false;
+      }
     }
   }
 }

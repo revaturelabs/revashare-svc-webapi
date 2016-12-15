@@ -26,8 +26,8 @@ namespace revashare_svc_webapi.Tests {
       var ctrl = new DriverController(mock.Object);
       ctrl.Request = Substitute.For<HttpRequestMessage>();
       ctrl.Configuration = Substitute.For<HttpConfiguration>();
-      HttpResponseMessage res = ctrl.Put(new VehicleDTO());
-
+      HttpResponseMessage res = ctrl.UpdateVehicleInfo(new VehicleDTO());
+   
       Assert.Equal(res.StatusCode, HttpStatusCode.OK);
     }
 
@@ -40,7 +40,7 @@ namespace revashare_svc_webapi.Tests {
       var ctrl = new DriverController(mock.Object);
       ctrl.Request = Substitute.For<HttpRequestMessage>();
       ctrl.Configuration = Substitute.For<HttpConfiguration>();
-      HttpResponseMessage res = ctrl.Post(new FlagDTO());
+      HttpResponseMessage res = ctrl.ReportRider(new FlagDTO());
 
       Assert.Equal(res.StatusCode, HttpStatusCode.OK);
     }

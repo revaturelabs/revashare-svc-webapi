@@ -21,7 +21,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     /// </summary>
     /// <param name="vehicle"></param>
     /// <returns></returns>
-    [HttpPut]
+    [HttpPost]
     [Route("updatevehicle")]
     public HttpResponseMessage UpdateVehicleInfo([FromBody]VehicleDTO vehicle) {
       try {
@@ -69,7 +69,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     /// </summary>
     /// <param name="driver"></param>
     /// <returns></returns>
-    [HttpPut]
+    [HttpPost]
     [Route("updatedriverprofile")]
     public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver) {
       try {
@@ -112,6 +112,10 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     [HttpGet]
     [Route("viewpassengers")]
     public HttpResponseMessage ViewPassengers() {
@@ -123,6 +127,11 @@ namespace revashare_svc_webapi.Client.Controllers {
       }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="rider"></param>
+    /// <returns></returns>
     [HttpPost]
     [Route("acceptpassenger")]
     public HttpResponseMessage AcceptPassenger([FromBody]SeatDTO rider) {

@@ -17,7 +17,13 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.Apartment =ApartmentMapper.mapToApartmentDTO(b.Apartment);
          a.Email = b.Email;
          a.Name = b.Name;
-         a.PhoneNumber = b.PhoneNumber;  
+         a.PhoneNumber = b.PhoneNumber;
+         a.Roles = new List<RoleDTO>();
+         foreach (var item in b.Roles)
+         {
+            a.Roles.Add(RoleMapper.mapToRoleDTO(item));
+         }
+         a.UserName = b.UserName;
                
          return a;
       }
@@ -29,6 +35,11 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.Email = b.Email;
          a.Name = b.Name;
          a.PhoneNumber = b.PhoneNumber;
+         a.Roles = new RoleDAO[3];
+         for (int i = 0; i < b.Roles.Count; i++)
+         {
+            a.Roles[i] = RoleMapper.mapToRoleDAO(b.Roles[i]);
+         }
 
          return a;
       }

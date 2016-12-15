@@ -33,5 +33,11 @@ namespace revashare_svc_webapi.Logic.ServiceClient
          //return rs.UpdateUser(user);
          throw new NotImplementedException();
       }
+
+      bool RequestToBeDriver(UserDAO user)
+      {
+         //return rs.RequestToBeDriver(user);
+         throw new NotImplementedException();
+      }
    }
 }

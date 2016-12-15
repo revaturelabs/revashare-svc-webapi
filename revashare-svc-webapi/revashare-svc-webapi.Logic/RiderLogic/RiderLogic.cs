@@ -16,10 +16,12 @@ namespace revashare_svc_webapi.Logic.RiderLogic
          sc = client;
       }
 
-
       public bool requestToBeDriver(DriverEnrollDTO enroll)
-      {
-         throw new NotImplementedException();
+      {        
+         enroll.MyCar.Owner = enroll.User;
+         var insert = sc.InsertVehicle(Mappers.VehicleMapper.mapToVehicleDAO(enroll.MyCar));
+         var request = sc.RequestToBeDriver(Mappers.UserMapper.mapToUserDAO(enroll.User));
+         return (insert && request);
       }
    }
 }

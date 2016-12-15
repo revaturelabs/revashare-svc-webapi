@@ -53,7 +53,6 @@
     <Compile Include="Mappers\RideMapper.cs" />
     <Compile Include="Mappers\RideRiderMapper.cs" />
     <Compile Include="Mappers\RoleMapper.cs" />
-    <Compile Include="Mappers\UserInfoMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\VehicleMapper.cs" />
     <Compile Include="MessageLogic.cs" />
@@ -68,7 +67,6 @@
     <Compile Include="AdminLogic.cs" />
     <Compile Include="Interfaces\IAdminLogic.cs" />
     <Compile Include="Models\ApartmentDTO.cs" />
-    <Compile Include="Models\UserInfoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterLogic.cs" />
     <Compile Include="RiderLogic\RiderLogic.cs" />
@@ -89,7 +87,6 @@
     <Compile Include="ServiceClient\ServiceClientRide.cs" />
     <Compile Include="ServiceClient\ServiceClientRideRider.cs" />
     <Compile Include="ServiceClient\ServiceClientUser.cs" />
-    <Compile Include="ServiceClient\ServiceClientUserInfo.cs" />
     <Compile Include="ServiceClient\ServiceClientVehicle.cs" />
   </ItemGroup>
   <ItemGroup>

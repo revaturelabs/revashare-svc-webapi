@@ -26,7 +26,6 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
       RideDTO getCurrentSelectedRide(RideDTO ride);
 
-
       #endregion
 
       #region RideRider
@@ -38,18 +37,12 @@ namespace revashare_svc_webapi.Logic.Interfaces
       #region User
       List<UserDTO> getUsers();
       bool modifyUserInfo(UserDTO user);
-      #endregion
-
-      #region UserInfo
-      List<UserInfoDTO> getUserInfos();
-      UserInfoDTO getUserInfoByUser(UserDTO user);
-      #endregion
+      #endregion      
 
       #region Vehicle
       List<VehicleDTO> getVehicles();
       VehicleDTO getVehicleByOwner(UserDTO user);
       #endregion
-
 
       //bool modifyCurrentSelectedRide(UserDTO user, RideDTO ride);
       bool requestToBeDriver(DriverEnrollDTO user);

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Interfaces {
   public interface IDriverRepository {
+    VehicleDTO ViewVehicleInfo(UserDTO driver);
+
     bool UpdateVehicleInfo(VehicleDTO vehicle);
 
     bool ReportRider(FlagDTO flag);

@@ -1,4 +1,5 @@
-﻿using revashare_svc_webapi.Logic.Models;
+﻿using revashare_svc_webapi.Logic.ModelDTO;
+using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,42 @@ namespace revashare_svc_webapi.Logic.Interfaces
 {
    public interface IRider
    {
+      #region Apartment
+      List<ApartmentDTO> getApartments();
+      ApartmentDTO getApartmentByName(string name);
+      #endregion
+
+      #region Flag
+      bool fileComplaintAboutDriver(FlagDTO flag);
+      #endregion
+
+      #region Rides
       List<RideDTO> getAvailableRides(string startLocation);
-      RideDTO getCurrentSelectedRide(UserDTO user);
-      bool modifyCurrentSelectedRide(UserDTO user, RideDTO ride);
-      bool addRiderToRide(RideDTO ride, UserDTO rider);
+
       int getAvailableSeatsInRide(RideDTO ride);
+
+      RideDTO getCurrentSelectedRide(UserDTO user);
+      #endregion
+
+      #region RideRider
+      bool addRiderToRide(RideDTO ride, UserDTO rider);
       bool removeRiderFromRide(UserDTO user, RideDTO ride);
-      bool requestToBeDriver(UserDTO user);
+      List<RideRiderDTO> getRideRidersByUser(UserDTO user);
+      #endregion
+
+      #region User
+      List<UserDTO> getUsers();
+      bool modifyUserInfo(UserDTO user);
+      #endregion
+
+      #region UserInfo
+      List<UserInfoDTO> getUserInfos();
+      UserInfoDTO getUserInfoByUser(UserDTO user);
+      #endregion
+
+
+      bool modifyCurrentSelectedRide(UserDTO user, RideDTO ride);
+      bool requestToBeDriver(UserDTO user);//
       bool modifyRiderInfo(UserDTO user);
       
 

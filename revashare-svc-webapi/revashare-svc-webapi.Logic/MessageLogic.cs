@@ -19,9 +19,9 @@ namespace revashare_svc_webapi.Logic {
         client.DeliveryMethod = SmtpDeliveryMethod.Network;
         client.UseDefaultCredentials = false;
         client.EnableSsl = true;
-        client.Credentials = new System.Net.NetworkCredential("sent@idk.com", "pw");
+        client.Credentials = new System.Net.NetworkCredential("sender@idk.com", "pw");
 
-        MailMessage msg = new MailMessage("sent@idk.com", ride.Vehicle.Owner.Email);
+        MailMessage msg = new MailMessage("sender@idk.com", ride.Vehicle.Owner.Email);
         msg.Subject = rider.Name + "has dropped";
         msg.Body = ride.Vehicle.Owner.Name;
 

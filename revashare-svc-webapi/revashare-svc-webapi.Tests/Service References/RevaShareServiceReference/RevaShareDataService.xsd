@@ -32,6 +32,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RoleDAO" nillable="true" type="tns:RoleDAO" />
+  <xs:complexType name="ArrayOfUserDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDAO" nillable="true" type="tns:UserDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDAO" nillable="true" type="tns:ArrayOfUserDAO" />
   <xs:complexType name="ArrayOfApartmentDAO">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ApartmentDAO" nillable="true" type="tns:ApartmentDAO" />
@@ -40,7 +46,7 @@
   <xs:element name="ArrayOfApartmentDAO" nillable="true" type="tns:ArrayOfApartmentDAO" />
   <xs:complexType name="RideDAO">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DepartureTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="DepartureTime" nillable="true" type="ser:duration" />
       <xs:element minOccurs="0" name="IsOnTime" type="xs:boolean" />
       <xs:element minOccurs="0" name="StartOfWeek" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Vehicle" nillable="true" type="tns:VehicleDAO" />
@@ -58,6 +64,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VehicleDAO" nillable="true" type="tns:VehicleDAO" />
+  <xs:complexType name="ArrayOfRideDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RideDAO" nillable="true" type="tns:RideDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRideDAO" nillable="true" type="tns:ArrayOfRideDAO" />
   <xs:complexType name="ArrayOfRideRidersDAO">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="RideRidersDAO" nillable="true" type="tns:RideRidersDAO" />

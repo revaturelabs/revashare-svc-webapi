@@ -75,7 +75,6 @@
     <Compile Include="RiderLogic\RiderLogicRide.cs" />
     <Compile Include="RiderLogic\RiderLogicRideRider.cs" />
     <Compile Include="RiderLogic\RiderLogicUser.cs" />
-    <Compile Include="RiderLogic\RiderLogicUserInfo.cs" />
     <Compile Include="RiderLogic\RiderLogicVehicle.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

@@ -9,7 +9,7 @@ namespace revashare_svc_webapi.Logic.Models
    public class RideDTO
    {      
       public DateTime StartOfWeekDate { get; set; }
-      public TimeSpan DepartureTime { get; set; }
+      public TimeSpan? DepartureTime { get; set; }
       public bool IsOnTime { get; set; }
       public virtual VehicleDTO Vehicle { get; set; }
       public int VehicleId { get; set; }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53fded03-a043-4bd6-9a52-85776794fc40" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16627aca-23a4-4de4-be28-d4a104beafa2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RevaShareDataService.xsd" MetadataType="Schema" ID="2d113186-dd4e-4442-aaf9-27255ec69e8e" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd2" />
-    <MetadataFile FileName="RevaShareDataService.wsdl" MetadataType="Wsdl" ID="09874aa1-f976-4436-b212-c221989dc9b7" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?wsdl" />
-    <MetadataFile FileName="RevaShareDataService1.xsd" MetadataType="Schema" ID="11689d68-b277-41fe-9f66-761d144b24e2" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd0" />
-    <MetadataFile FileName="RevaShareDataService2.xsd" MetadataType="Schema" ID="eac23eb6-89d0-4eca-80b6-611e4f175cf8" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RevaShareDataService.xsd" MetadataType="Schema" ID="2ae5a9ea-3c30-45d9-a1d8-f192bd367ab9" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RevaShareDataService.wsdl" MetadataType="Wsdl" ID="e03b8cdb-f27d-424b-a02b-4a221add8d23" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?wsdl" />
+    <MetadataFile FileName="RevaShareDataService1.xsd" MetadataType="Schema" ID="36ffdbd4-4488-4d7c-a0fe-6e76c7a2dfb3" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RevaShareDataService2.xsd" MetadataType="Schema" ID="05fe47cd-bcfc-4ce4-84f8-f1f2c7b421ff" SourceId="1" SourceUrl="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

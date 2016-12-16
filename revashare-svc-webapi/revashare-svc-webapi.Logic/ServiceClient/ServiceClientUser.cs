@@ -34,7 +34,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
          throw new NotImplementedException();
       }
 
-      bool RequestToBeDriver(UserDAO user)
+      public bool RequestToBeDriver(UserDAO user)
       {
          //return rs.RequestToBeDriver(user);
          throw new NotImplementedException();

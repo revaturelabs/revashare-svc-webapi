@@ -18,37 +18,8 @@ namespace revashare_svc_webapi.Client.Controllers
       {
          riderLogic = logic;
       }
-
-      // GET api/rider
-      [HttpGet]
-      public void Get()
-      {         
-      }
-
-      // GET api/rider/5
-      //public string Get(int id)
-      //{
-      //   return "value";
-      //}
-
-      // POST api/rider>
-      [HttpPost]
-      public void Post([FromBody]string value)
-      {
-      }
-
-      // PUT api/<controller>/5
-      [HttpPut]
-      public void Put(int id, [FromBody]string value)
-      {
-      }
-
-      // DELETE api/<controller>/5
-      [HttpDelete]
-      public void Delete(int id)
-      {
-      }
-
+            
+      //Post api/rider/get-rides
       [HttpPost]
       [Route("get-rides")]
       public HttpResponseMessage GetRides([FromBody] string location)
@@ -79,6 +50,7 @@ namespace revashare_svc_webapi.Client.Controllers
          return ret;
       }
 
+      //Post api/rider/add-ride
       [HttpPost]
       [Route("add-ride")]
       public HttpResponseMessage AddRide([FromBody] SeatDTO seat)
@@ -86,6 +58,7 @@ namespace revashare_svc_webapi.Client.Controllers
          return Request.CreateResponse(HttpStatusCode.OK, riderLogic.addRiderToRide(seat.ride, seat.rider));
       }
 
+      //Post api/rider/remove-ride
       [HttpPost]
       [Route("remove-ride")]
       public HttpResponseMessage RemoveRide([FromBody] SeatDTO seat)
@@ -93,6 +66,7 @@ namespace revashare_svc_webapi.Client.Controllers
          return Request.CreateResponse(HttpStatusCode.OK, riderLogic.removeRiderFromRide(seat.rider, seat.ride));
       }
 
+      //Post api/rider/user-rides
       [HttpPost]
       [Route("user-rides")]
       public HttpResponseMessage UserRides([FromBody] UserDTO user)
@@ -100,6 +74,7 @@ namespace revashare_svc_webapi.Client.Controllers
           return Request.CreateResponse(HttpStatusCode.OK, riderLogic.getRideRidersByUser(user), "application/json");
       }
 
+      //Post api/rider/save-user
       [HttpPost]
       [Route("save-user")]
       public HttpResponseMessage SaveUser([FromBody] UserDTO user)
@@ -107,6 +82,7 @@ namespace revashare_svc_webapi.Client.Controllers
          return Request.CreateResponse(HttpStatusCode.OK, riderLogic.modifyUserInfo(user));
       }
 
+      //Post api/rider/apply-for-driver
       [HttpPost]
       [Route("apply-for-driver")]
       public HttpResponseMessage ApplyForDriver([FromBody] DriverEnrollDTO enroll)

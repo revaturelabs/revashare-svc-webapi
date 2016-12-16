@@ -49,9 +49,23 @@ namespace revashare_svc_webapi.Tests
         public void Test_WCF_GetUserReports()
         {
             RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+            RoleDAO[] roles = new RoleDAO[3];
+            RoleDAO newRole = new RoleDAO();
+            newRole.Type = "Rider";
+            roles[0] = newRole;
+            FlagDAO newFlag = new FlagDAO()
+            {
+                Driver = new UserDAO { Name = "ray", Apartment = new ApartmentDAO { Name = "apt", Latitude = "1.1", Longitude = "2.2" }, Email = "ray@gmail.com", PhoneNumber = "747-231-7281", Roles = roles, UserName = "Ray" },
+                FlagID = 2,
+                Message = "Flag message",
+                Type = "flagType",
+                Rider = new UserDAO { Name = "raydriver", Apartment = new ApartmentDAO { Name = "apt2", Latitude = "1.3", Longitude = "2.2" }, Email = "ray@gmail.com", PhoneNumber = "747-231-7281", Roles = roles, UserName = "Ray" }
+            };
+
+            dataClient.CreateFlag(newFlag);
 
             List<FlagDAO> acquiredFlags = dataClient.GetAllFlags().ToList();
-
+              
             Assert.NotNull(acquiredFlags);
         }
 

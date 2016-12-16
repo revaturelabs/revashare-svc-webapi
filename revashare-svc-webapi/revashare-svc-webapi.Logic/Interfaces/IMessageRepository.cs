@@ -10,5 +10,9 @@ namespace revashare_svc_webapi.Logic.Interfaces {
     bool NotifyNewPassenger(RideDTO ride, UserDTO rider);
 
     bool NotifyDropPassenger(RideDTO ride, UserDTO rider);
+
+    bool NotifyInactiveDriver(RideDTO ride, UserDTO driver);
+
+    bool ResetPassword(UserDTO user);
   }
 }

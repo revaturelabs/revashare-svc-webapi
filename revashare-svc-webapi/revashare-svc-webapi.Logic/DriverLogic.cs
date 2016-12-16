@@ -12,6 +12,15 @@ namespace revashare_svc_webapi.Logic {
   public class DriverLogic : IDriverRepository {
     private RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
 
+    public VehicleDTO ViewVehicleInfo(UserDTO driver) {
+      try {
+        return null;
+      }
+      catch (Exception) {
+        return null;
+      }
+    }
+
     public bool UpdateVehicleInfo(VehicleDTO vehicle) {
       try {
         return svc.UpdateVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
@@ -82,15 +91,6 @@ namespace revashare_svc_webapi.Logic {
       }
       catch (Exception) {
         return false;
-      }
-    }
-
-    public VehicleDTO ViewVehicleInfo(UserDTO driver) {
-      try {
-        return null;
-      }
-      catch (Exception) {
-        return null;
       }
     }
   }

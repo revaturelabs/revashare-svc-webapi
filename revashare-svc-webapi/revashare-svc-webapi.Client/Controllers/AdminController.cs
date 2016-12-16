@@ -131,24 +131,47 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
         [HttpGet]
-        [Route("pending-riders")]
-        public HttpResponseMessage PendingRiders()
+        [Route("get-pending-riders")]
+        public HttpResponseMessage GetPendingRiders()
         {
             return Request.CreateResponse(HttpStatusCode.OK, this.Repo.GetPendingRiders(), "application/json");
         }
 
         [HttpGet]
-        [Route("pending-drivers")]
-        public HttpResponseMessage PendingDrivers()
+        [Route("get-pending-drivers")]
+        public HttpResponseMessage GetPendingDrivers()
         {
             return Request.CreateResponse(HttpStatusCode.OK, this.Repo.GetPendingDrivers(), "application/json");
         }
 
         [HttpGet]
-        [Route("pending-admins")]
-        public HttpResponseMessage PendingAdmins()
+        [Route("get-pending-admins")]
+        public HttpResponseMessage GetPendingAdmins()
         {
             return Request.CreateResponse(HttpStatusCode.OK, this.Repo.GetPendingAdmins(), "application/json");
+        }
+        #endregion
+
+        #region User Reporting
+        [HttpGet]
+        [Route("get-user-reports")]
+        public HttpResponseMessage UserReports()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.GetUserReports(), "application/json");
+        }
+
+        [HttpPost]
+        [Route("remove-report")]
+        public HttpResponseMessage RemoveReport([FromBody] FlagDTO report)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.RemoveReport(report));
+        }
+
+        [HttpPost]
+        [Route("remove-driver-privileges")]
+        public HttpResponseMessage RemoveDriverPrivileges([FromBody] FlagDTO report)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, this.Repo.RemoveDriverPrivileges(report));
         }
         #endregion
     }

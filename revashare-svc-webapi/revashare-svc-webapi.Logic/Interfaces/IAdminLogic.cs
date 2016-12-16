@@ -34,6 +34,8 @@ namespace revashare_svc_webapi.Logic.Interfaces
         List<UserDTO> GetPendingAdmins();
 
         //User Reporting
-
+        List<FlagDTO> GetUserReports();
+        bool RemoveReport(FlagDTO reportToRemove);
+        bool RemoveDriverPrivileges(FlagDTO reportForUser);
     }
 }

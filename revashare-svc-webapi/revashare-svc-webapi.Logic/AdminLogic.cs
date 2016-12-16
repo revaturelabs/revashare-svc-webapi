@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.Mappers;
 
 namespace revashare_svc_webapi.Logic
 {
@@ -98,6 +99,33 @@ namespace revashare_svc_webapi.Logic
         public List<UserDTO> GetPendingAdmins()
         {
             return new List<UserDTO>();
+        }
+        #endregion
+
+        #region User Reporting
+        public List<FlagDTO> GetUserReports()
+        {
+            List<FlagDAO> allFlagsDAO = dataClient.GetAllFlags().ToList();
+            List<FlagDTO> allFlagsDTO = new List<FlagDTO>();
+            FlagDTO temp = new FlagDTO();
+
+            foreach (FlagDAO flag in allFlagsDAO)
+            {
+                temp = FlagMapper.mapToFlagDTO(flag);
+                allFlagsDTO.Add(temp);
+            }
+
+            return allFlagsDTO;
+        }
+
+        public bool RemoveReport(FlagDTO reportToRemove)
+        {
+            return true;
+        }
+
+        public bool RemoveDriverPrivileges(FlagDTO reportForUser)
+        {
+            return true;
         }
         #endregion
     }

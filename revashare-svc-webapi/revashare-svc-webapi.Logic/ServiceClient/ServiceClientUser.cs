@@ -25,10 +25,9 @@ namespace revashare_svc_webapi.Logic.ServiceClient
          //return rs.UpdateUser(user);
          throw new NotImplementedException();
       }
-      public bool RequestToBeDriver(UserDAO user)
+      public bool RequestToBeDriver(string user)
       {
-         //return rs.RequestToBeDriver(user);
-         throw new NotImplementedException();
+         return rs.RequestToBeDriver(user);
       }
       public bool Login(string UserName, string Password)
       {
@@ -38,10 +37,10 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       {
          return rs.register(user, UserName, Password);
       }
-      public bool UpdateUserRole(string UserName, string role)
-      {
-         return rs.UpdateUserRole(UserName, role);
-      }
+      //public bool UpdateUserRole(string UserName, string role)
+      //{
+      //   return rs.UpdateUserRole(UserName, role);
+      //}
       public bool AproveDriver(string UserName)
       {
          return rs.ApproveDriver(UserName);

@@ -7,12 +7,6 @@
       <xsd:import schemaLocation="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IRevaShareDataService_passUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:passUser" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_passUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:passUserResponse" />
-  </wsdl:message>
   <wsdl:message name="IRevaShareDataService_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
@@ -31,12 +25,6 @@
   <wsdl:message name="IRevaShareDataService_DeleteUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_UpdateUserRole_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateUserRole" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_UpdateUserRole_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateUserRoleResponse" />
-  </wsdl:message>
   <wsdl:message name="IRevaShareDataService_ApproveDriver_InputMessage">
     <wsdl:part name="parameters" element="tns:ApproveDriver" />
   </wsdl:message>
@@ -49,6 +37,12 @@
   <wsdl:message name="IRevaShareDataService_ApproveUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:ApproveUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_RequestToBeDriver_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestToBeDriver" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_RequestToBeDriver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestToBeDriverResponse" />
+  </wsdl:message>
   <wsdl:message name="IRevaShareDataService_PendingRegistrations_InputMessage">
     <wsdl:part name="parameters" element="tns:PendingRegistrations" />
   </wsdl:message>
@@ -60,6 +54,18 @@
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_OutputMessage">
     <wsdl:part name="parameters" element="tns:PendingDriverApprovalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_GetApartmentByName_InputMessage">
     <wsdl:part name="parameters" element="tns:GetApartmentByName" />
@@ -91,12 +97,6 @@
   <wsdl:message name="IRevaShareDataService_DeleteApartment_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteApartmentResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_passRide_InputMessage">
-    <wsdl:part name="parameters" element="tns:passRide" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_passRide_OutputMessage">
-    <wsdl:part name="parameters" element="tns:passRideResponse" />
-  </wsdl:message>
   <wsdl:message name="IRevaShareDataService_AddRide_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRide" />
   </wsdl:message>
@@ -115,17 +115,23 @@
   <wsdl:message name="IRevaShareDataService_DeleteRide_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRideResponse" />
   </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ListRidesAtApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListRidesAtApartment" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ListRidesAtApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListRidesAtApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetOpenSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenSeats" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetOpenSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenSeatsResponse" />
+  </wsdl:message>
   <wsdl:message name="IRevaShareDataService_GetRideRiders_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRideRiders" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_GetRideRiders_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRideRidersResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_passRideRider_InputMessage">
-    <wsdl:part name="parameters" element="tns:passRideRider" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_passRideRider_OutputMessage">
-    <wsdl:part name="parameters" element="tns:passRideRiderResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_AddRideRiders_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRideRiders" />
@@ -188,10 +194,6 @@
     <wsdl:part name="parameters" element="tns:GetAllFlagsResponse" />
   </wsdl:message>
   <wsdl:portType name="IRevaShareDataService">
-    <wsdl:operation name="passUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/passUser" message="tns:IRevaShareDataService_passUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/passUserResponse" message="tns:IRevaShareDataService_passUser_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Login" message="tns:IRevaShareDataService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/LoginResponse" message="tns:IRevaShareDataService_Login_OutputMessage" />
@@ -204,10 +206,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUser" message="tns:IRevaShareDataService_DeleteUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUserResponse" message="tns:IRevaShareDataService_DeleteUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateUserRole">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserRole" message="tns:IRevaShareDataService_UpdateUserRole_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserRoleResponse" message="tns:IRevaShareDataService_UpdateUserRole_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ApproveDriver">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriver" message="tns:IRevaShareDataService_ApproveDriver_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriverResponse" message="tns:IRevaShareDataService_ApproveDriver_OutputMessage" />
@@ -216,6 +214,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUser" message="tns:IRevaShareDataService_ApproveUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUserResponse" message="tns:IRevaShareDataService_ApproveUser_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RequestToBeDriver">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriver" message="tns:IRevaShareDataService_RequestToBeDriver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriverResponse" message="tns:IRevaShareDataService_RequestToBeDriver_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PendingRegistrations">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrations" message="tns:IRevaShareDataService_PendingRegistrations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrationsResponse" message="tns:IRevaShareDataService_PendingRegistrations_OutputMessage" />
@@ -223,6 +225,14 @@
     <wsdl:operation name="PendingDriverApprovals">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" message="tns:IRevaShareDataService_PendingDriverApprovals_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovalsResponse" message="tns:IRevaShareDataService_PendingDriverApprovals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUser" message="tns:IRevaShareDataService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserResponse" message="tns:IRevaShareDataService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdatePassword" message="tns:IRevaShareDataService_UpdatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdatePasswordResponse" message="tns:IRevaShareDataService_UpdatePassword_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetApartmentByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetApartmentByName" message="tns:IRevaShareDataService_GetApartmentByName_InputMessage" />
@@ -244,10 +254,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteApartment" message="tns:IRevaShareDataService_DeleteApartment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteApartmentResponse" message="tns:IRevaShareDataService_DeleteApartment_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="passRide">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/passRide" message="tns:IRevaShareDataService_passRide_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/passRideResponse" message="tns:IRevaShareDataService_passRide_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="AddRide">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/AddRide" message="tns:IRevaShareDataService_AddRide_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AddRideResponse" message="tns:IRevaShareDataService_AddRide_OutputMessage" />
@@ -260,13 +266,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteRide" message="tns:IRevaShareDataService_DeleteRide_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteRideResponse" message="tns:IRevaShareDataService_DeleteRide_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ListRidesAtApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartment" message="tns:IRevaShareDataService_ListRidesAtApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentResponse" message="tns:IRevaShareDataService_ListRidesAtApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetOpenSeats" message="tns:IRevaShareDataService_GetOpenSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetOpenSeatsResponse" message="tns:IRevaShareDataService_GetOpenSeats_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetRideRiders">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetRideRiders" message="tns:IRevaShareDataService_GetRideRiders_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetRideRidersResponse" message="tns:IRevaShareDataService_GetRideRiders_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="passRideRider">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/passRideRider" message="tns:IRevaShareDataService_passRideRider_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/passRideRiderResponse" message="tns:IRevaShareDataService_passRideRider_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRideRiders">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/AddRideRiders" message="tns:IRevaShareDataService_AddRideRiders_InputMessage" />
@@ -311,15 +321,6 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IRevaShareDataService" type="tns:IRevaShareDataService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="passUser">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/passUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Login" style="document" />
       <wsdl:input>
@@ -347,15 +348,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateUserRole">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateUserRole" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="ApproveDriver">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveDriver" style="document" />
       <wsdl:input>
@@ -374,6 +366,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RequestToBeDriver">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/RequestToBeDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PendingRegistrations">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingRegistrations" style="document" />
       <wsdl:input>
@@ -385,6 +386,24 @@
     </wsdl:operation>
     <wsdl:operation name="PendingDriverApprovals">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdatePassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -437,15 +456,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="passRide">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/passRide" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="AddRide">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/AddRide" style="document" />
       <wsdl:input>
@@ -473,8 +483,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetRideRiders">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetRideRiders" style="document" />
+    <wsdl:operation name="ListRidesAtApartment">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -482,8 +492,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="passRideRider">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/passRideRider" style="document" />
+    <wsdl:operation name="GetOpenSeats">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetOpenSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRideRiders">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetRideRiders" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

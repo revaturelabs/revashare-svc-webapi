@@ -35,9 +35,12 @@ namespace revashare_svc_webapi.Logic.RiderLogic
       {
          var list = sc.GetRideRiders();
          var ret = new List<RideRiderDTO>();
-         foreach (var item in list)
+         if (list != null)
          {
-            ret.Add(Mappers.RideRiderMapper.mapToRideRiderDTO(item));
+            foreach (var item in list)
+            {
+               ret.Add(Mappers.RideRiderMapper.mapToRideRiderDTO(item));
+            }           
          }
          return ret;
       }

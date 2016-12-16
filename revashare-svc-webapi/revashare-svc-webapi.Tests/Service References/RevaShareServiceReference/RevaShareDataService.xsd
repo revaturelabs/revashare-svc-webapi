@@ -64,6 +64,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VehicleDAO" nillable="true" type="tns:VehicleDAO" />
+  <xs:complexType name="ArrayOfRideDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RideDAO" nillable="true" type="tns:RideDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRideDAO" nillable="true" type="tns:ArrayOfRideDAO" />
   <xs:complexType name="ArrayOfRideRidersDAO">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="RideRidersDAO" nillable="true" type="tns:RideRidersDAO" />

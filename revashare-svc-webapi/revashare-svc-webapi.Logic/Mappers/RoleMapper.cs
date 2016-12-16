@@ -13,14 +13,22 @@ namespace revashare_svc_webapi.Logic.Mappers
       public static RoleDTO mapToRoleDTO(RoleDAO b)
       {
          var a = new RoleDTO();
-         a.Type = b.Type;
+         if (b != null)
+         {
+            a.Type = b.Type;
+         }
+         
          return a;
       }
 
       public static RoleDAO mapToRoleDAO(RoleDTO b)
       {
          var a = new RoleDAO();
-         a.Type = b.Type;
+         if(b!=null)
+         {
+            a.Type = b.Type;
+         }
+         
          return a;
       }
    }

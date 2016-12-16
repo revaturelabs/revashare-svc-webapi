@@ -1,5 +1,8 @@
-﻿using revashare_svc_webapi.Logic.Interfaces;
+﻿using revashare_svc_webapi.Logic;
+using revashare_svc_webapi.Logic.Interfaces;
 using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RiderLogic;
+using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +17,13 @@ namespace revashare_svc_webapi.Client.Controllers
    {
       private IRider riderLogic;
 
-      public RiderController(IRider logic)
+      public RiderController()
       {
-         riderLogic = logic;
+         riderLogic = new RiderLogic(new ServiceClient());
+      }
+      public RiderController(IRider RL)
+      {
+         riderLogic = RL;
       }
             
       //Post api/rider/get-rides

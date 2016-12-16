@@ -14,33 +14,43 @@ namespace revashare_svc_webapi.Logic.Mappers
       public static UserDTO mapToUserDTO(UserDAO b)
       {
          var a = new UserDTO();
-         a.Apartment =ApartmentMapper.mapToApartmentDTO(b.Apartment);
+         if(b.Apartment!=null)
+         {
+            a.Apartment =ApartmentMapper.mapToApartmentDTO(b.Apartment);
+         }         
          a.Email = b.Email;
          a.Name = b.Name;
          a.PhoneNumber = b.PhoneNumber;
          a.Roles = new List<RoleDTO>();
-         foreach (var item in b.Roles)
+         if(b.Roles!=null)
          {
-            a.Roles.Add(RoleMapper.mapToRoleDTO(item));
-         }
-         a.UserName = b.UserName;
-               
+            foreach (var item in b.Roles)
+            {
+               a.Roles.Add(RoleMapper.mapToRoleDTO(item));
+            }
+         }        
+         a.UserName = b.UserName;               
          return a;
       }
 
       public static UserDAO mapToUserDAO(UserDTO b)
       {
          var a = new UserDAO();
-         a.Apartment = ApartmentMapper.mapToApartmentDAO(b.Apartment);
+         if(b.Apartment!=null)
+         {
+            a.Apartment = ApartmentMapper.mapToApartmentDAO(b.Apartment);
+         }         
          a.Email = b.Email;
          a.Name = b.Name;
          a.PhoneNumber = b.PhoneNumber;
          a.Roles = new RoleDAO[3];
-         for (int i = 0; i < b.Roles.Count; i++)
+         if (b.Roles != null)
          {
-            a.Roles[i] = RoleMapper.mapToRoleDAO(b.Roles[i]);
+            for (int i = 0; i < b.Roles.Count; i++)
+            {
+               a.Roles[i] = RoleMapper.mapToRoleDAO(b.Roles[i]);
+            }
          }
-
          return a;
       }
    }

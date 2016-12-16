@@ -18,7 +18,10 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.LicensePlate = b.LicensePlate;
          a.Make = b.Make;
          a.Model = b.Model;
-         a.Owner = UserMapper.mapToUserDTO(b.Owner);
+         if(b.Owner!=null)
+         {
+            a.Owner = UserMapper.mapToUserDTO(b.Owner);
+         }         
          return a;
       }
 
@@ -30,7 +33,10 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.LicensePlate = b.LicensePlate;
          a.Make = b.Make;
          a.Model = b.Model;
-         a.Owner = UserMapper.mapToUserDAO(b.Owner);
+         if(b.Owner!=null)
+         {
+            a.Owner = UserMapper.mapToUserDAO(b.Owner);
+         }         
          return a;
       }
    }

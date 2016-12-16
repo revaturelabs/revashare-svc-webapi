@@ -26,7 +26,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
       bool InsertRide(RideDAO ride);
       bool UpdateRide(RideDAO ride);
       bool DeleteRide(RideDAO ride);
-      List<RideDAO> getRidesByLocation();
+      List<RideDAO> getRidesByLocation(string name);
       int getAvailableSeatsByRide(RideDAO ride);
 
       List<RideRidersDAO> GetRideRiders();
@@ -40,7 +40,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
       bool UpdateUser(UserDAO user);
       bool Login(string UserName, string Password);
       bool Register(UserDAO user, string UserName, string Password);
-      bool UpdateUserRole(string UserName, string role);
+      //bool UpdateUserRole(string UserName, string role);
       bool AproveDriver(string UserName);
       bool AproveUser(string UserName);
       List<UserDAO> PendingRegistrations();
@@ -51,6 +51,6 @@ namespace revashare_svc_webapi.Logic.Interfaces
       bool InsertVehicle(VehicleDAO v);
       bool UpdateVehicle(VehicleDAO v);
 
-      bool RequestToBeDriver(UserDAO user);
+      bool RequestToBeDriver(string user);
    }
 }

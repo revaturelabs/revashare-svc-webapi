@@ -14,7 +14,7 @@ namespace revashare_svc_webapi.Logic.RiderLogic
    {
       public List<RideDTO> getAvailableRides(string startLocation)
       {
-         var list = sc.getRidesByLocation();
+         var list = sc.getRidesByLocation(startLocation);
          var ret = new List<RideDTO>();
          foreach (var item in list)
          {

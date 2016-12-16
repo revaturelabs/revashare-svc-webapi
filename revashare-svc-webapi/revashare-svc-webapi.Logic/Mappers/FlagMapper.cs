@@ -14,11 +14,15 @@ namespace revashare_svc_webapi.Logic.Mappers
       public static FlagDTO mapToFlagDTO(FlagDAO b)
       {
          var a = new FlagDTO();
-         a.Driver = UserMapper.mapToUserDTO(b.Driver);
-         //a.DriverId = b.DriverID;
+         if (b.Driver != null)
+         {
+            a.Driver = UserMapper.mapToUserDTO(b.Driver);
+         }
          a.Message = b.Message;
-         a.Rider = UserMapper.mapToUserDTO(b.Rider);
-         //a.RiderId = b.RiderID;
+         if (b.Rider != null)
+         {
+            a.Rider = UserMapper.mapToUserDTO(b.Rider);
+         }
          a.Type = b.Type;
          a.FlagId=b.FlagID;
          return a;
@@ -27,10 +31,15 @@ namespace revashare_svc_webapi.Logic.Mappers
       public static FlagDAO mapToFlagDAO(FlagDTO b)
       {
          var a = new FlagDAO();
-         a.Driver = UserMapper.mapToUserDAO(b.Driver); 
+         if (b.Driver != null)
+         {
+            a.Driver = UserMapper.mapToUserDAO(b.Driver);
+         }
          a.Message = b.Message;
-         //a.Rider = b.Rider;
-         a.Rider = UserMapper.mapToUserDAO(b.Rider);
+         if (b.Rider != null)
+         {
+            a.Rider = UserMapper.mapToUserDAO(b.Rider);
+         }
          a.Type = b.Type;
          a.FlagID = b.FlagId;
          return a;

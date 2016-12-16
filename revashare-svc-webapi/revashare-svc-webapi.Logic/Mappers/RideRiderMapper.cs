@@ -15,8 +15,14 @@ namespace revashare_svc_webapi.Logic.Mappers
       {
          var a = new RideRiderDTO();
          a.Accepted = b.Accepted;
-         a.Ride = RideMapper.mapToRideDTO( b.Ride);
-         a.Rider = UserMapper.mapToUserDTO( b.Rider);
+         if(b.Ride!=null)
+         {
+            a.Ride = RideMapper.mapToRideDTO( b.Ride);
+         }
+         if (b.Rider != null)
+         {
+            a.Rider = UserMapper.mapToUserDTO( b.Rider);
+         }
          return a;
       }
 
@@ -24,8 +30,14 @@ namespace revashare_svc_webapi.Logic.Mappers
       {
          var a = new RideRidersDAO();
          a.Accepted = b.Accepted;
-         a.Ride = RideMapper.mapToRideDAO(b.Ride);
-         a.Rider = UserMapper.mapToUserDAO(b.Rider);
+         if(b.Ride!=null)
+         {
+            a.Ride = RideMapper.mapToRideDAO(b.Ride);
+         }
+         if (b.Rider != null)
+         {
+            a.Rider = UserMapper.mapToUserDAO(b.Rider);
+         }         
          return a;
       }
       

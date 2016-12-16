@@ -32,10 +32,9 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       {
          return rs.UpdateRide(ride);         
       }
-      public List<RideDAO> getRidesByLocation()
+      public List<RideDAO> getRidesByLocation(string name)
       {
-         //return rs.GetRidesByLocation();
-         throw new NotImplementedException();
+         return rs.ListRidesAtApartment(name).ToList();
       }
       public int getAvailableSeatsByRide(RideDAO ride)
       {

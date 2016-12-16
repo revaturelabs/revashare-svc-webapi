@@ -20,6 +20,7 @@ namespace revashare_svc_webapi.Logic.Mappers
          a.Rider = UserMapper.mapToUserDTO(b.Rider);
          //a.RiderId = b.RiderID;
          a.Type = b.Type;
+         a.FlagId=b.FlagID;
          return a;
       }
 
@@ -31,6 +32,7 @@ namespace revashare_svc_webapi.Logic.Mappers
          //a.Rider = b.Rider;
          a.Rider = UserMapper.mapToUserDAO(b.Rider);
          a.Type = b.Type;
+         a.FlagID = b.FlagId;
          return a;
       }
    }

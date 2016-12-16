@@ -14,8 +14,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       public bool DeleteRide(RideDAO ride)
       {
 
-         //return rs.deleteRide(ride);
-         throw new NotImplementedException();
+         return rs.DeleteRide(ride);
       }
 
       public List<RideDAO> GetRides()
@@ -43,5 +42,6 @@ namespace revashare_svc_webapi.Logic.ServiceClient
          //return rs.getAvailableSeatsByRide(ride);
          throw new NotImplementedException();
       }
+      
    }
 }

@@ -13,27 +13,115 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="logIn">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="logInResponse">
+  <xs:element name="Login">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="logInResult" nillable="true" type="q2:UserDAO" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="register">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="user" nillable="true" type="q2:UserDAO" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="registerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="registerResult" nillable="true" type="q3:UserDAO" />
+        <xs:element minOccurs="0" name="registerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="role" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserRoleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveDriver">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveDriverResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApproveDriverResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApproveUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendingRegistrations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendingRegistrationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingRegistrationsResult" nillable="true" type="q3:ArrayOfUserDAO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendingDriverApprovals">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendingDriverApprovalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingDriverApprovalsResult" nillable="true" type="q4:ArrayOfUserDAO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -47,14 +135,14 @@
   <xs:element name="GetApartmentByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetApartmentByNameResult" nillable="true" type="q4:ApartmentDAO" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetApartmentByNameResult" nillable="true" type="q5:ApartmentDAO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddApartment">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q5:ApartmentDAO" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q6:ApartmentDAO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -73,14 +161,14 @@
   <xs:element name="ListApartmentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ListApartmentsResult" nillable="true" type="q6:ArrayOfApartmentDAO" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ListApartmentsResult" nillable="true" type="q7:ArrayOfApartmentDAO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateApartment">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q7:ApartmentDAO" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q8:ApartmentDAO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -94,7 +182,7 @@
   <xs:element name="DeleteApartment">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q8:ApartmentDAO" />
+        <xs:element minOccurs="0" name="apartment" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

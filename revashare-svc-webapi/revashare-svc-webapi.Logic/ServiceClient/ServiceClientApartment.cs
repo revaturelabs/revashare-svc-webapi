@@ -13,14 +13,12 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       RevaShareDataServiceClient rs = new RevaShareDataServiceClient();
       public bool DeleteApartment(ApartmentDAO apartment)
       {
-         //return rs.DeleteApartment(apartment);
-         throw new NotImplementedException();
+         return rs.DeleteApartment(apartment.Name);
       }
 
       public List<ApartmentDAO> GetApartments()
       {
-         //return rs.GetApartments();
-         throw new NotImplementedException();
+         return rs.ListApartments().ToList();
       }
       public ApartmentDAO getApartmentByName(string name)
       {
@@ -29,14 +27,12 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public bool InsertApartment(ApartmentDAO apartment)
       {
-         //return rs.InsertApartment(apartment);
-         throw new NotImplementedException();
+         return rs.AddApartment(apartment);
       }
 
       public bool UpdateApartment(ApartmentDAO apartment)
       {
-         //return rs.UpdateApartment(apartment);
-         throw new NotImplementedException();
+         return rs.UpdateApartment(apartment);
       }
    }
 }

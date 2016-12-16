@@ -1,4 +1,4 @@
-﻿using revashare_svc_webapi.Logic.ModelDTO;
+﻿using revashare_svc_webapi.Logic.Model;
 using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
@@ -32,6 +32,10 @@ namespace revashare_svc_webapi.Logic.Interfaces
       bool addRiderToRide(RideDTO ride, UserDTO rider);
       bool removeRiderFromRide(UserDTO user, RideDTO ride);
       List<RideRiderDTO> getRideRidersByUser(UserDTO user);
+      List<RideRiderDTO> getRideRiders();
+      List<UserDTO> GetRidersByRide(RideDTO ride);
+      int getOccupiedSeatsByRide(RideDTO ride);
+
       #endregion
 
       #region User

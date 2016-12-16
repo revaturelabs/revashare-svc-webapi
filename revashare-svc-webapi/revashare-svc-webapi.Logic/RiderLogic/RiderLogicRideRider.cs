@@ -30,5 +30,32 @@ namespace revashare_svc_webapi.Logic.RiderLogic
          }
          return ret;
       }
+
+      public List<RideRiderDTO> getRideRiders()
+      {
+         var list = sc.GetRideRiders();
+         var ret = new List<RideRiderDTO>();
+         foreach (var item in list)
+         {
+            ret.Add(Mappers.RideRiderMapper.mapToRideRiderDTO(item));
+         }
+         return ret;
+      }
+      public List<UserDTO> GetRidersByRide(RideDTO ride)
+      {
+         var rr = getRideRiders().Where(m => m.Ride.Vehicle.LicensePlate.Equals(ride.Vehicle.LicensePlate));
+         var riders = new List<UserDTO>();
+         foreach (var item in rr)
+         {
+            riders.Add(item.Rider);
+         }
+         return riders;
+      }
+      public int getOccupiedSeatsByRide(RideDTO ride)
+      {
+         var rr = getRideRiders().Where(m => m.Ride.Vehicle.LicensePlate.Equals(ride.Vehicle.LicensePlate)).ToList();
+         var occupied = rr.Count;
+         return occupied;
+      }
    }
 }

@@ -19,20 +19,22 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public List<FlagDAO> GetFlags()
       {
-         //return rs.GetFlags();
-         throw new NotImplementedException();
+         return rs.GetAllFlags().ToList();
       }
 
       public bool InsertFlag(FlagDAO flag)
       {
-         //return rs.InsertFlag(flag);
-         throw new NotImplementedException();
+         return rs.CreateFlag(flag);
       }
 
       public bool UpdateFlag(FlagDAO flag)
       {
          //return rs.UpdateFlag(flag);
          throw new NotImplementedException();
+      }
+      public FlagDAO GetFlagsById(FlagDAO flag)
+      {
+         return rs.GetFlagByID(flag.FlagID);
       }
    }
 }

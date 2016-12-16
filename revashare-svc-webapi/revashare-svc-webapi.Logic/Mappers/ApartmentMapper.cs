@@ -1,4 +1,4 @@
-﻿using revashare_svc_webapi.Logic.ModelDTO;
+﻿using revashare_svc_webapi.Logic.Model;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using System;
 using System.Collections.Generic;

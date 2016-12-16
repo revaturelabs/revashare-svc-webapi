@@ -13,8 +13,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public bool DeleteRideRider(RideRidersDAO rr)
       {
-         //return rs.DeleteRideRider(rr);
-         throw new NotImplementedException();
+         return rs.DeleteRideRider(rr);
       }
 
       public List<RideRidersDAO> GetRideRiders()
@@ -23,17 +22,17 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       }
 
       public bool InsertRideRider(UserDAO rider, RideDAO ride)
-      {
-         
-         
-         return rs.AddRideRiders(rider,ride);
-         
+      {         
+         return rs.AddRideRiders(rider,ride);         
       }
 
       public bool UpdateRideRider(RideRidersDAO rr)
       {
          return rs.UpdateRideRider(rr);         
       }
-
+      public bool Accept(RideRidersDAO rr)
+      {
+         return rs.Accept(rr);
+      }
    }
 }

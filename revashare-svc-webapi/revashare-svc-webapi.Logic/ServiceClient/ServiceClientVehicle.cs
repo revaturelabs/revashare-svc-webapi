@@ -12,8 +12,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
    {
       public bool DeleteVehicle(VehicleDAO v)
       {
-         //return rs.deleteVehicle(v);
-         throw new NotImplementedException();
+         return rs.DeleteVehicle(v);
       }
 
       public List<VehicleDAO> GetVehicle()

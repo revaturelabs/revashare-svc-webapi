@@ -1,5 +1,5 @@
 ﻿using revashare_svc_webapi.Logic.Interfaces;
-using revashare_svc_webapi.Logic.ModelDTO;
+using revashare_svc_webapi.Logic.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

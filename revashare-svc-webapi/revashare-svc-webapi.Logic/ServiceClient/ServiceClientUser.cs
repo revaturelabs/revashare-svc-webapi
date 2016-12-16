@@ -12,32 +12,51 @@ namespace revashare_svc_webapi.Logic.ServiceClient
    {
       public bool DeleteUser(UserDAO user)
       {
-         //return rs.deleteUser(ride);
-         throw new NotImplementedException();
+         return rs.DeleteUser(user.Name);
       }
 
       public List<UserDAO> GetUsers()
       {
-         //return rs.GetUsers();
+         //return rs.getusers();
          throw new NotImplementedException();
       }
-
-      public bool InsertUser(UserDAO user)
-      {
-         //return rs.InsertUser(ride);
-         throw new NotImplementedException();
-      }
-
       public bool UpdateUser(UserDAO user)
       {
          //return rs.UpdateUser(user);
          throw new NotImplementedException();
       }
-
-      bool RequestToBeDriver(UserDAO user)
+      public bool RequestToBeDriver(UserDAO user)
       {
          //return rs.RequestToBeDriver(user);
          throw new NotImplementedException();
+      }
+      public bool Login(string UserName, string Password)
+      {
+        return rs.Login(UserName, Password);
+      }
+      public bool Register(UserDAO user, string UserName, string Password)
+      {
+         return rs.register(user, UserName, Password);
+      }
+      public bool UpdateUserRole(string UserName, string role)
+      {
+         return rs.UpdateUserRole(UserName, role);
+      }
+      public bool AproveDriver(string UserName)
+      {
+         return rs.ApproveDriver(UserName);
+      }
+      public bool AproveUser(string UserName)
+      {
+         return rs.ApproveUser(UserName);
+      }
+      public List<UserDAO> PendingRegistrations()
+      {
+         return rs.PendingRegistrations().ToList();
+      }
+      public List<UserDAO> PendingDriverAprovals()
+      {
+         return rs.PendingDriverApprovals().ToList();
       }
    }
 }

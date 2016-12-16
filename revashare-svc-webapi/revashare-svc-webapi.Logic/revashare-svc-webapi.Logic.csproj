@@ -56,9 +56,12 @@
     <Compile Include="Mappers\VehicleMapper.cs" />
     <Compile Include="MessageLogic.cs" />
     <Compile Include="Models\DriverEnrollDTO.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Ride.cs" />
     <Compile Include="Models\RideRiderDTO.cs" />
     <Compile Include="Models\RoleDTO.cs" />
     <Compile Include="Models\SeatDTO.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Models\RideDTO.cs" />
     <Compile Include="Models\FlagDTO.cs" />

@@ -20,5 +20,6 @@ namespace revashare_svc_webapi.Logic.Models {
     public UserDTO Driver { get; set; }
 
     public UserDTO Rider { get; set; }
+    public int FlagId { get; set; }
    }
 }

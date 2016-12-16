@@ -13,17 +13,53 @@
   <wsdl:message name="IRevaShareDataService_passUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:passUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_logIn_InputMessage">
-    <wsdl:part name="parameters" element="tns:logIn" />
+  <wsdl:message name="IRevaShareDataService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_logIn_OutputMessage">
-    <wsdl:part name="parameters" element="tns:logInResponse" />
+  <wsdl:message name="IRevaShareDataService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_register_InputMessage">
     <wsdl:part name="parameters" element="tns:register" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_register_OutputMessage">
     <wsdl:part name="parameters" element="tns:registerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveDriver_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveDriver" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveDriver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveUser" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingRegistrations_InputMessage">
+    <wsdl:part name="parameters" element="tns:PendingRegistrations" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingRegistrations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PendingRegistrationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_InputMessage">
+    <wsdl:part name="parameters" element="tns:PendingDriverApprovals" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PendingDriverApprovalsResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_GetApartmentByName_InputMessage">
     <wsdl:part name="parameters" element="tns:GetApartmentByName" />
@@ -156,13 +192,37 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/passUser" message="tns:IRevaShareDataService_passUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/passUserResponse" message="tns:IRevaShareDataService_passUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="logIn">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/logIn" message="tns:IRevaShareDataService_logIn_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/logInResponse" message="tns:IRevaShareDataService_logIn_OutputMessage" />
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Login" message="tns:IRevaShareDataService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/LoginResponse" message="tns:IRevaShareDataService_Login_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="register">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/register" message="tns:IRevaShareDataService_register_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/registerResponse" message="tns:IRevaShareDataService_register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUser" message="tns:IRevaShareDataService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUserResponse" message="tns:IRevaShareDataService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserRole" message="tns:IRevaShareDataService_UpdateUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserRoleResponse" message="tns:IRevaShareDataService_UpdateUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveDriver">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriver" message="tns:IRevaShareDataService_ApproveDriver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriverResponse" message="tns:IRevaShareDataService_ApproveDriver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUser" message="tns:IRevaShareDataService_ApproveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUserResponse" message="tns:IRevaShareDataService_ApproveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PendingRegistrations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrations" message="tns:IRevaShareDataService_PendingRegistrations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrationsResponse" message="tns:IRevaShareDataService_PendingRegistrations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PendingDriverApprovals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" message="tns:IRevaShareDataService_PendingDriverApprovals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovalsResponse" message="tns:IRevaShareDataService_PendingDriverApprovals_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetApartmentByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetApartmentByName" message="tns:IRevaShareDataService_GetApartmentByName_InputMessage" />
@@ -260,8 +320,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="logIn">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/logIn" style="document" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -271,6 +331,60 @@
     </wsdl:operation>
     <wsdl:operation name="register">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRole">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveDriver">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendingRegistrations">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingRegistrations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendingDriverApprovals">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -20,6 +20,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
       List<FlagDAO> GetFlags();
       bool InsertFlag(FlagDAO flag);
       bool UpdateFlag(FlagDAO flag);
+      FlagDAO GetFlagsById(FlagDAO flag);
 
       List<RideDAO> GetRides();
       bool InsertRide(RideDAO ride);
@@ -32,11 +33,18 @@ namespace revashare_svc_webapi.Logic.Interfaces
       bool InsertRideRider(UserDAO rider, RideDAO ride);
       bool UpdateRideRider(RideRidersDAO rideRider);
       bool DeleteRideRider(RideRidersDAO rr);
+      bool Accept(RideRidersDAO rr);
 
       bool DeleteUser(UserDAO user);
       List<UserDAO> GetUsers();
-      bool InsertUser(UserDAO user);
-      bool UpdateUser(UserDAO user);     
+      bool UpdateUser(UserDAO user);
+      bool Login(string UserName, string Password);
+      bool Register(UserDAO user, string UserName, string Password);
+      bool UpdateUserRole(string UserName, string role);
+      bool AproveDriver(string UserName);
+      bool AproveUser(string UserName);
+      List<UserDAO> PendingRegistrations();
+      List<UserDAO> PendingDriverAprovals();
 
       bool DeleteVehicle(VehicleDAO v);
       List<VehicleDAO> GetVehicle();

@@ -53,7 +53,30 @@ namespace revashare_svc_webapi.Client.Controllers
       [Route("get-rides")]
       public HttpResponseMessage GetRides([FromBody] string location)
       {
-         return Request.CreateResponse(HttpStatusCode.OK, riderLogic.getAvailableRides(location), "application/json");
+         return Request.CreateResponse(HttpStatusCode.OK, getRidesHelper(location), "application/json");
+      }
+      private List<Ride> getRidesHelper(string location)
+      {
+         var a = riderLogic.getAvailableRides(location);
+         var ret = new List<Ride>();
+
+         foreach (var item in a)
+         {
+            var x = new Ride();
+            x.Capacity = item.Vehicle.Capacity;
+            x.CurrentlySeated = riderLogic.getOccupiedSeatsByRide(item);
+            x.DepartureTime = item.DepartureTime;
+            x.Driver = new User();
+            x.Driver.AccountType = item.Vehicle.Owner.Roles.FirstOrDefault().Type;
+            x.Driver.Email=item.Vehicle.Owner.Email;
+            x.Driver.Apartment = item.Vehicle.Owner.Apartment;
+            x.Driver.Name = item.Vehicle.Owner.Name;
+            x.Driver.PhoneNumber = item.Vehicle.Owner.PhoneNumber;            
+            x.Vehicle = item.Vehicle;
+            var riders = riderLogic.GetRidersByRide(item);
+            ret.Add(x);
+         }
+         return ret;
       }
 
       [HttpPost]

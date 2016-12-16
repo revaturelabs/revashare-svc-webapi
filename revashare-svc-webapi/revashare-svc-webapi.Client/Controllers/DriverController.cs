@@ -16,6 +16,11 @@ namespace revashare_svc_webapi.Client.Controllers {
       this.repo = repo;
     }
 
+    /// <summary>
+    /// Allows driver to view personal vehicle info
+    /// </summary>
+    /// <param name="driver"></param>
+    /// <returns></returns>
     [HttpGet]
     [Route("viewvehicle")]
     public HttpResponseMessage ViewVehicleInfo([FromBody]UserDTO driver) {
@@ -28,7 +33,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to update vehicle info
     /// </summary>
     /// <param name="vehicle"></param>
     /// <returns></returns>
@@ -44,7 +49,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to report rider
     /// </summary>
     /// <param name="flag"></param>
     /// <returns></returns>
@@ -60,7 +65,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to change availability of ride
     /// </summary>
     /// <param name="ride"></param>
     /// <returns></returns>
@@ -76,7 +81,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to update profile
     /// </summary>
     /// <param name="driver"></param>
     /// <returns></returns>
@@ -92,7 +97,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to schedule ride
     /// </summary>
     /// <param name="ride"></param>
     /// <returns></returns>
@@ -108,7 +113,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to cancel ride
     /// </summary>
     /// <param name="ride"></param>
     /// <returns></returns>
@@ -124,7 +129,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to view passenger list for ride (accepted/not accepted)
     /// </summary>
     /// <returns></returns>
     [HttpGet]
@@ -139,7 +144,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     }
 
     /// <summary>
-    /// 
+    /// Allows driver to accept passenger
     /// </summary>
     /// <param name="rider"></param>
     /// <returns></returns>

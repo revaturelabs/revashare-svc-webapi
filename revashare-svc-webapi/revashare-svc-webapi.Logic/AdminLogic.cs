@@ -27,7 +27,14 @@ namespace revashare_svc_webapi.Logic
 
         public bool ModifyAdmin(UserDTO adminToUpdate)
         {
-            return true;
+            var updataUser = UserMapper.mapToUserDAO(adminToUpdate);
+
+            if(dataClient.UpdateUser(updataUser))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public bool DeleteAdmin(UserDTO adminToRemove)

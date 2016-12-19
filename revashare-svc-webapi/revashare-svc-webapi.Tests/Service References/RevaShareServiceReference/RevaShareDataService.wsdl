@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RevaShareDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRevaShareDataService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_register_InputMessage">
+    <wsdl:part name="parameters" element="tns:register" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveDriver_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveDriver" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveDriver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveUser" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ApproveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_RequestToBeDriver_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestToBeDriver" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_RequestToBeDriver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestToBeDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingRegistrations_InputMessage">
+    <wsdl:part name="parameters" element="tns:PendingRegistrations" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingRegistrations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PendingRegistrationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_InputMessage">
+    <wsdl:part name="parameters" element="tns:PendingDriverApprovals" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PendingDriverApprovalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetApartmentByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApartmentByName" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetApartmentByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApartmentByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddApartment" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ListApartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListApartments" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ListApartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListApartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApartment" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApartment" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddRide_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRide" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddRide_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateRide_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRide" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateRide_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteRide_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRide" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteRide_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ListRidesAtApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListRidesAtApartment" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_ListRidesAtApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListRidesAtApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetOpenSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenSeats" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetOpenSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetRideRiders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRideRiders" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetRideRiders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRideRidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddRideRiders_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRideRiders" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddRideRiders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRideRidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateRideRider_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRideRider" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateRideRider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRideRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_Accept_InputMessage">
+    <wsdl:part name="parameters" element="tns:Accept" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_Accept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteRideRider_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRideRider" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteRideRider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRideRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_AddVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_DeleteVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_CreateFlag_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFlag" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_CreateFlag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetFlagByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlagByID" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetFlagByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlagByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetAllFlags_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFlags" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_GetAllFlags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFlagsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRevaShareDataService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Login" message="tns:IRevaShareDataService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/LoginResponse" message="tns:IRevaShareDataService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/register" message="tns:IRevaShareDataService_register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/registerResponse" message="tns:IRevaShareDataService_register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUser" message="tns:IRevaShareDataService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUserResponse" message="tns:IRevaShareDataService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveDriver">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriver" message="tns:IRevaShareDataService_ApproveDriver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriverResponse" message="tns:IRevaShareDataService_ApproveDriver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUser" message="tns:IRevaShareDataService_ApproveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUserResponse" message="tns:IRevaShareDataService_ApproveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestToBeDriver">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriver" message="tns:IRevaShareDataService_RequestToBeDriver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriverResponse" message="tns:IRevaShareDataService_RequestToBeDriver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PendingRegistrations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrations" message="tns:IRevaShareDataService_PendingRegistrations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrationsResponse" message="tns:IRevaShareDataService_PendingRegistrations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PendingDriverApprovals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" message="tns:IRevaShareDataService_PendingDriverApprovals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovalsResponse" message="tns:IRevaShareDataService_PendingDriverApprovals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUser" message="tns:IRevaShareDataService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserResponse" message="tns:IRevaShareDataService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdatePassword" message="tns:IRevaShareDataService_UpdatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdatePasswordResponse" message="tns:IRevaShareDataService_UpdatePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApartmentByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetApartmentByName" message="tns:IRevaShareDataService_GetApartmentByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetApartmentByNameResponse" message="tns:IRevaShareDataService_GetApartmentByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/AddApartment" message="tns:IRevaShareDataService_AddApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AddApartmentResponse" message="tns:IRevaShareDataService_AddApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListApartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ListApartments" message="tns:IRevaShareDataService_ListApartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ListApartmentsResponse" message="tns:IRevaShareDataService_ListApartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateApartment" message="tns:IRevaShareDataService_UpdateApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateApartmentResponse" message="tns:IRevaShareDataService_UpdateApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteApartment" message="tns:IRevaShareDataService_DeleteApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteApartmentResponse" message="tns:IRevaShareDataService_DeleteApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRide">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/AddRide" message="tns:IRevaShareDataService_AddRide_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AddRideResponse" message="tns:IRevaShareDataService_AddRide_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRide">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateRide" message="tns:IRevaShareDataService_UpdateRide_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateRideResponse" message="tns:IRevaShareDataService_UpdateRide_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRide">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteRide" message="tns:IRevaShareDataService_DeleteRide_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteRideResponse" message="tns:IRevaShareDataService_DeleteRide_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRidesAtApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartment" message="tns:IRevaShareDataService_ListRidesAtApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentResponse" message="tns:IRevaShareDataService_ListRidesAtApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetOpenSeats" message="tns:IRevaShareDataService_GetOpenSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetOpenSeatsResponse" message="tns:IRevaShareDataService_GetOpenSeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRideRiders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetRideRiders" message="tns:IRevaShareDataService_GetRideRiders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetRideRidersResponse" message="tns:IRevaShareDataService_GetRideRiders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRideRiders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/AddRideRiders" message="tns:IRevaShareDataService_AddRideRiders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AddRideRidersResponse" message="tns:IRevaShareDataService_AddRideRiders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRideRider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateRideRider" message="tns:IRevaShareDataService_UpdateRideRider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateRideRiderResponse" message="tns:IRevaShareDataService_UpdateRideRider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Accept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Accept" message="tns:IRevaShareDataService_Accept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AcceptResponse" message="tns:IRevaShareDataService_Accept_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRideRider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteRideRider" message="tns:IRevaShareDataService_DeleteRideRider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteRideRiderResponse" message="tns:IRevaShareDataService_DeleteRideRider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/AddVehicle" message="tns:IRevaShareDataService_AddVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AddVehicleResponse" message="tns:IRevaShareDataService_AddVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateVehicle" message="tns:IRevaShareDataService_UpdateVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateVehicleResponse" message="tns:IRevaShareDataService_UpdateVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteVehicle" message="tns:IRevaShareDataService_DeleteVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteVehicleResponse" message="tns:IRevaShareDataService_DeleteVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/CreateFlag" message="tns:IRevaShareDataService_CreateFlag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/CreateFlagResponse" message="tns:IRevaShareDataService_CreateFlag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlagByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetFlagByID" message="tns:IRevaShareDataService_GetFlagByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetFlagByIDResponse" message="tns:IRevaShareDataService_GetFlagByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFlags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAllFlags" message="tns:IRevaShareDataService_GetAllFlags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAllFlagsResponse" message="tns:IRevaShareDataService_GetAllFlags_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRevaShareDataService" type="tns:IRevaShareDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveDriver">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToBeDriver">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/RequestToBeDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendingRegistrations">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingRegistrations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendingDriverApprovals">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveDriver">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToBeDriver">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/RequestToBeDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendingRegistrations">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingRegistrations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendingDriverApprovals">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApartmentByName">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetApartmentByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApartment">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/AddApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListApartments">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ListApartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApartment">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApartment">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRide">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/AddRide" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRide">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateRide" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRide">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteRide" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRidesAtApartment">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenSeats">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetOpenSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRideRiders">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetRideRiders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRideRiders">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/AddRideRiders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRideRider">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateRideRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Accept">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Accept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRideRider">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteRideRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVehicle">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/AddVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicle">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehicle">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFlag">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/CreateFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlagByID">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetFlagByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFlags">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetAllFlags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RevaShareDataService">
+    <wsdl:port name="BasicHttpBinding_IRevaShareDataService" binding="tns:BasicHttpBinding_IRevaShareDataService">
+      <soap:address location="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

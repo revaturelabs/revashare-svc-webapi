@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UserDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apartment" nillable="true" type="tns:ApartmentDAO" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRoleDAO" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDAO" nillable="true" type="tns:UserDAO" />
+  <xs:complexType name="ApartmentDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApartmentDAO" nillable="true" type="tns:ApartmentDAO" />
+  <xs:complexType name="ArrayOfRoleDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleDAO" nillable="true" type="tns:RoleDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleDAO" nillable="true" type="tns:ArrayOfRoleDAO" />
+  <xs:complexType name="RoleDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleDAO" nillable="true" type="tns:RoleDAO" />
+  <xs:complexType name="ArrayOfUserDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDAO" nillable="true" type="tns:UserDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDAO" nillable="true" type="tns:ArrayOfUserDAO" />
+  <xs:complexType name="ArrayOfApartmentDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApartmentDAO" nillable="true" type="tns:ApartmentDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApartmentDAO" nillable="true" type="tns:ArrayOfApartmentDAO" />
+  <xs:complexType name="RideDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartureTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="IsOnTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StartOfWeek" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Vehicle" nillable="true" type="tns:VehicleDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RideDAO" nillable="true" type="tns:RideDAO" />
+  <xs:complexType name="VehicleDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Capacity" type="xs:int" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="tns:UserDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleDAO" nillable="true" type="tns:VehicleDAO" />
+  <xs:complexType name="ArrayOfRideDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RideDAO" nillable="true" type="tns:RideDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRideDAO" nillable="true" type="tns:ArrayOfRideDAO" />
+  <xs:complexType name="ArrayOfRideRidersDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RideRidersDAO" nillable="true" type="tns:RideRidersDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRideRidersDAO" nillable="true" type="tns:ArrayOfRideRidersDAO" />
+  <xs:complexType name="RideRidersDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accepted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Ride" nillable="true" type="tns:RideDAO" />
+      <xs:element minOccurs="0" name="Rider" nillable="true" type="tns:UserDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RideRidersDAO" nillable="true" type="tns:RideRidersDAO" />
+  <xs:complexType name="FlagDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Driver" nillable="true" type="tns:UserDAO" />
+      <xs:element minOccurs="0" name="FlagID" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rider" nillable="true" type="tns:UserDAO" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlagDAO" nillable="true" type="tns:FlagDAO" />
+  <xs:complexType name="ArrayOfFlagDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlagDAO" nillable="true" type="tns:FlagDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlagDAO" nillable="true" type="tns:ArrayOfFlagDAO" />
+</xs:schema>

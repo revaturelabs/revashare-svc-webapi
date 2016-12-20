@@ -10,27 +10,17 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 {
     public partial class AdminLogic : IAdmin
     {
-        private IServiceClient sc;
-        public AdminLogic(IServiceClient client)
-        {
-            sc = client;
-        }
-
-        public bool InsertAdmin(UserDTO adminToAdd)
+        public List<FlagDTO> GetUserReports()
         {
             throw new NotImplementedException();
         }
 
-        public List<UserDTO> RequestAdmins()
+        public bool RemoveReport(FlagDTO reportToRemove)
         {
             throw new NotImplementedException();
         }
 
-        public bool ModifyAdmin(UserDTO adminToUpdate)
-        {
-            throw new NotImplementedException();
-        }
-        public bool DeleteAdmin(UserDTO adminToRemove)
+        public bool RemoveDriverPrivileges(FlagDTO reportForUser)
         {
             throw new NotImplementedException();
         }

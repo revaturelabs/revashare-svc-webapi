@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminLogic\AdminLogic.cs" />
+    <Compile Include="AdminLogic\AdminLogicApproval.cs" />
+    <Compile Include="AdminLogic\AdminLogicDriver.cs" />
+    <Compile Include="AdminLogic\AdminLogicReport.cs" />
+    <Compile Include="AdminLogic\AdminLogicRider.cs" />
     <Compile Include="DriverLogic.cs" />
     <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IDriverRepository.cs" />

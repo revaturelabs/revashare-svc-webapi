@@ -1,6 +1,8 @@
 ﻿using revashare_svc_webapi.Logic;
+using revashare_svc_webapi.Logic.AdminLogic;
 using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ using Xunit;
 
 namespace revashare_svc_webapi.Tests
 {
-  
+
   public class FlagTests
   {
     [Fact]
@@ -21,16 +23,17 @@ namespace revashare_svc_webapi.Tests
       List<FlagDAO> getflags = dataClient.GetAllFlags().ToList();
 
       Assert.NotNull(getflags);
-            
+
     }
 
 
     [Fact]
     public void test_GetFlags_AdminLogic()
     {
-      AdminLogic admLogic = new AdminLogic();
+      ServiceClient sc = new ServiceClient();
+      AdminLogic admLogic = new AdminLogic(sc);
       var a = admLogic.GetUserReports();
-         
+
 
       Assert.NotEmpty(a);
 

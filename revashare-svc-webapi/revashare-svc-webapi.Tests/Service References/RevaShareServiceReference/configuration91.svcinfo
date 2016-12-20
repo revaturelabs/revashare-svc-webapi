@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="5y/Le5v48GfDIBaAltHocqy1Zd0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="7R77W3ZO84rZ8RxGUFjS/fUShLk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IRevaShareDataService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IRevaShareDataService" contract="RevaShareServiceReference.IRevaShareDataService" bindingType="basicHttpBinding" address="http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc" bindingConfiguration="BasicHttpBinding_IRevaShareDataService">
+    <endpoint name="BasicHttpBinding_IRevaShareDataService" contract="RevaShareServiceReference.IRevaShareDataService" bindingType="basicHttpBinding" address="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc" bindingConfiguration="BasicHttpBinding_IRevaShareDataService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://ec2-34-193-194-23.compute-1.amazonaws.com/TeamDB-RevaShare/RevaShareDataService.svc</serializedValue>
+          <serializedValue>http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

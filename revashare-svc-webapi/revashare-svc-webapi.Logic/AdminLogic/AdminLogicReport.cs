@@ -1,5 +1,7 @@
 ﻿using revashare_svc_webapi.Logic.Interfaces;
+using revashare_svc_webapi.Logic.Mappers;
 using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,15 @@ namespace revashare_svc_webapi.Logic.AdminLogic
     {
         public List<FlagDTO> GetUserReports()
         {
-            throw new NotImplementedException();
+            List<FlagDAO> allFlagsDAO = sc.GetFlags();
+            List<FlagDTO> allFlagsDTO = new List<FlagDTO>();
+
+            foreach (FlagDAO flag in allFlagsDAO)
+            {
+                allFlagsDTO.Add(FlagMapper.mapToFlagDTO(flag));
+            }
+
+            return allFlagsDTO;
         }
 
         public bool RemoveReport(FlagDTO reportToRemove)

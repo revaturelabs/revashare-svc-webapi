@@ -1,4 +1,5 @@
 ﻿using revashare_svc_webapi.Logic.Interfaces;
+using revashare_svc_webapi.Logic.Mappers;
 using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,13 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
         public bool ModifyAdmin(UserDTO adminToUpdate)
         {
-            throw new NotImplementedException();
+            var updateUser = UserMapper.mapToUserDAO(adminToUpdate);
+
+            return sc.ModifyAdmin(updateUser);
         }
-        public bool DeleteAdmin(UserDTO adminToRemove)
+        public bool DeleteAdmin(string UserName)
         {
-            throw new NotImplementedException();
+            return sc.DeleteAdmin(UserName);
         }
     }
 }

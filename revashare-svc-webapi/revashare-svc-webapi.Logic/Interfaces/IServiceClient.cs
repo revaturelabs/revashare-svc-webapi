@@ -51,7 +51,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool InsertAdmin(UserDAO adminToAdd);
         List<UserDAO> RequestAdmins();
         bool ModifyAdmin(UserDAO adminToUpdate);
-        bool DeleteAdmin(UserDAO adminToRemove);
+        bool DeleteAdmin(string UserName);
         bool AproveDriver(string UserName);
         bool AproveUser(string UserName);
         List<UserDAO> PendingRegistrations();

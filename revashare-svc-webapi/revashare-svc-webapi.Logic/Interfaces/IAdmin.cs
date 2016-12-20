@@ -13,7 +13,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool InsertAdmin(UserDTO adminToAdd);
         List<UserDTO> RequestAdmins();
         bool ModifyAdmin(UserDTO adminToUpdate);
-        bool DeleteAdmin(UserDTO adminToRemove);
+        bool DeleteAdmin(string UserName);
 
         //Driver CRUD Methods
         bool InsertDriver(UserDTO driverToAdd);

@@ -36,14 +36,14 @@ namespace revashare_svc_webapi.Tests
 
     }
 
-    [Fact]
-    public void test_RemoveReport_AdminLogic()
-    {
-      AdminLogic admLogic = new AdminLogic();
+    //[Fact]
+    //public void test_RemoveReport_AdminLogic()
+    //{
+    //  AdminLogic admLogic = new AdminLogic();
 
 
 
-    }
+    //}
 
 
 

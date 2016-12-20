@@ -17,6 +17,14 @@ namespace revashare_svc_webapi.Logic
         #region Admin CRUD Methods
         public bool InsertAdmin(UserDTO adminToAdd)
         {
+            /*var newAdmin = UserMapper.mapToUserDAO(adminToAdd);
+
+            if(dataClient.AddAdmin(newAdmin))
+            {
+                return true;
+            }
+
+            return false;*/
             return true;
         }
 

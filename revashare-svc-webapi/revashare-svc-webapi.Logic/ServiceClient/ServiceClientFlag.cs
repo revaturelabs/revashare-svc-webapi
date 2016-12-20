@@ -13,8 +13,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
    {
       public bool deleteFlag(FlagDAO flag)
       {
-         //return rs.deleteFlag(flag);
-         throw new NotImplementedException();
+            return rs.MarkFlagAsRead(flag);
       }
 
       public List<FlagDAO> GetFlags()

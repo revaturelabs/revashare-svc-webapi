@@ -15,9 +15,9 @@ namespace revashare_svc_webapi.Logic.RiderLogic
          return sc.InsertRideRider(Mappers.UserMapper.mapToUserDAO(rider), Mappers.RideMapper.mapToRideDAO(ride));
       }
 
-      public bool removeRiderFromRide(UserDTO rider, RideDTO ride)
+      public bool removeRiderFromRide(RideRiderDTO rider)
       {
-         return sc.InsertRideRider(Mappers.UserMapper.mapToUserDAO(rider), Mappers.RideMapper.mapToRideDAO(ride));
+         return sc.DeleteRideRider(Mappers.RideRiderMapper.mapToRideRiderDAO(rider));
       }
 
       public List<RideRiderDTO> getRideRidersByUser(UserDTO rider)

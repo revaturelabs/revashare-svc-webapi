@@ -30,7 +30,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
       #region RideRider
       bool addRiderToRide(RideDTO ride, UserDTO rider);
-      bool removeRiderFromRide(UserDTO user, RideDTO ride);
+      bool removeRiderFromRide(RideRiderDTO rider);
       List<RideRiderDTO> getRideRidersByUser(UserDTO user);
       List<RideRiderDTO> getRideRiders();
       List<UserDTO> GetRidersByRide(RideDTO ride);

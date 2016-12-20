@@ -68,9 +68,9 @@ namespace revashare_svc_webapi.Client.Controllers
       //Post api/rider/remove-ride
       [HttpPost]
       [Route("remove-ride")]
-      public HttpResponseMessage RemoveRide([FromBody] SeatDTO seat)
+      public HttpResponseMessage RemoveRide([FromBody] RideRiderDTO seat)
       {
-         return Request.CreateResponse(HttpStatusCode.OK, riderLogic.removeRiderFromRide(seat.rider, seat.ride));
+         return Request.CreateResponse(HttpStatusCode.OK, riderLogic.removeRiderFromRide(seat));
       }
 
       //Post api/rider/user-rides

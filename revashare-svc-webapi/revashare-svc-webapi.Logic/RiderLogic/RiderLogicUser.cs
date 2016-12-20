@@ -21,8 +21,6 @@ namespace revashare_svc_webapi.Logic.RiderLogic
          return ret;
       }
 
-
-
       public bool modifyUserInfo(UserDTO user)
       {
          return sc.UpdateUser(Mappers.UserMapper.mapToUserDAO(user));

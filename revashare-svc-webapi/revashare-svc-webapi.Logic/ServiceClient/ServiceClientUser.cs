@@ -22,8 +22,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       }
       public bool UpdateUser(UserDAO user)
       {
-         //return rs.UpdateUser(user);
-         throw new NotImplementedException();
+         return rs.UpdateUser(user);
       }
       public bool RequestToBeDriver(string user)
       {
@@ -35,7 +34,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       }
       public bool Register(UserDAO user, string UserName, string Password)
       {
-         return rs.register(user, UserName, Password);
+         return rs.RegisterUser(user, UserName, Password);
       }
       //public bool UpdateUserRole(string UserName, string role)
       //{

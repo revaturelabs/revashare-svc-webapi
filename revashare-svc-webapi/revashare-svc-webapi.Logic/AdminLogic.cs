@@ -17,19 +17,34 @@ namespace revashare_svc_webapi.Logic
         #region Admin CRUD Methods
         public bool InsertAdmin(UserDTO adminToAdd)
         {
-            /*var newAdmin = UserMapper.mapToUserDAO(adminToAdd);
+            /* --- Waiting on WCF Function ---
+            var newAdmin = UserMapper.mapToUserDAO(adminToAdd);
 
             if(dataClient.AddAdmin(newAdmin))
             {
                 return true;
             }
 
-            return false;*/
+            return false;
+            */
+
             return true;
         }
 
         public List<UserDTO> RequestAdmins()
         {
+            /* --- Waiting on WCF Function ---
+            List<UserDTO> requestedAdmins = new List<UserDTO>();
+
+            foreach (var user in dataClient.GetAdmins())
+            {
+                var admin = UserMapper.mapToUserDTO(user);
+                requestedAdmins.Add(admin);
+            }
+
+            return requestedAdmins;
+            */
+
             return new List<UserDTO>();
         }
 

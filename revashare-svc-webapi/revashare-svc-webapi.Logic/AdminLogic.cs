@@ -52,7 +52,7 @@ namespace revashare_svc_webapi.Logic
         {
             var updataUser = UserMapper.mapToUserDAO(adminToUpdate);
 
-            if(dataClient.UpdateUser(updataUser))
+            if (dataClient.UpdateUser(updataUser))
             {
                 return true;
             }
@@ -62,7 +62,7 @@ namespace revashare_svc_webapi.Logic
 
         public bool DeleteAdmin(UserDTO adminToRemove)
         {
-            return true;
+            return dataClient.DeleteUser(adminToRemove.UserName);
         }
         #endregion
 

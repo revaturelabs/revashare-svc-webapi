@@ -273,6 +273,9 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         private System.Nullable<System.TimeSpan> DepartureTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsAmRideField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsOnTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -300,6 +303,19 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
                 if ((this.DepartureTimeField.Equals(value) != true)) {
                     this.DepartureTimeField = value;
                     this.RaisePropertyChanged("DepartureTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsAmRide {
+            get {
+                return this.IsAmRideField;
+            }
+            set {
+                if ((this.IsAmRideField.Equals(value) != true)) {
+                    this.IsAmRideField = value;
+                    this.RaisePropertyChanged("IsAmRide");
                 }
             }
         }

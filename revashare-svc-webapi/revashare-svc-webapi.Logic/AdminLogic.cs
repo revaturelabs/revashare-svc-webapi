@@ -20,12 +20,7 @@ namespace revashare_svc_webapi.Logic
             /* --- Waiting on WCF Function ---
             var newAdmin = UserMapper.mapToUserDAO(adminToAdd);
 
-            if(dataClient.AddAdmin(newAdmin))
-            {
-                return true;
-            }
-
-            return false;
+            return dataClient.AddAdmin(newAdmin);
             */
 
             return true;
@@ -52,12 +47,7 @@ namespace revashare_svc_webapi.Logic
         {
             var updataUser = UserMapper.mapToUserDAO(adminToUpdate);
 
-            if (dataClient.UpdateUser(updataUser))
-            {
-                return true;
-            }
-
-            return false;
+            return dataClient.UpdateUser(updataUser);
         }
 
         public bool DeleteAdmin(UserDTO adminToRemove)

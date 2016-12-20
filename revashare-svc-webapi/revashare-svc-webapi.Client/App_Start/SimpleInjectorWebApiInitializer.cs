@@ -31,6 +31,7 @@ namespace revashare_svc_webapi.Client.App_Start
             // For instance:
             // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
             container.Register<IAdminLogic, AdminLogic>(Lifestyle.Transient);
+            container.Register<IDriverRepository, DriverLogic>(Lifestyle.Transient);
         }
     }
 }

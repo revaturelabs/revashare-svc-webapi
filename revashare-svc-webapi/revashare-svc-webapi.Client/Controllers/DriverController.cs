@@ -31,6 +31,19 @@ namespace revashare_svc_webapi.Client.Controllers {
         return Request.CreateResponse(HttpStatusCode.BadRequest);
       }
     }
+        [HttpPost]
+        [Route("addvehicle")]
+        public HttpResponseMessage AddVehicle([FromBody] VehicleDTO vehicle)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, this.repo.AddVehicle(vehicle));
+            }
+            catch
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+        }
 
     /// <summary>
     /// Allows driver to update vehicle info

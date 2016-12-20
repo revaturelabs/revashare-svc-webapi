@@ -21,6 +21,17 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
+        public bool AddVehicle(VehicleDTO vehicle)
+        {
+            try
+            {
+                return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
+            }
+            catch
+            {
+                return false;
+            }
+        }
     public bool UpdateVehicleInfo(VehicleDTO vehicle) {
       try {
         return svc.UpdateVehicle(VehicleMapper.mapToVehicleDAO(vehicle));

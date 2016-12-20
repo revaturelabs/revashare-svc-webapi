@@ -24,5 +24,6 @@ namespace revashare_svc_webapi.Logic.Interfaces {
     List<SeatDTO> ViewPassengers();
 
     bool AcceptPassenger(RideRiderDTO rider);
+        bool AddVehicle(VehicleDTO vehicle);
     }
 }

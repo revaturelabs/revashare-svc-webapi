@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="AdminTests.cs" />
     <Compile Include="DriverTests.cs" />
+    <Compile Include="FlagTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RiderTests.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">

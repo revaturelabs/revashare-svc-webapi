@@ -33,8 +33,9 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -317,16 +318,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Service References\RevaShareServiceReference\RevaShareDataService.wsdl" />
-    <None Include="Service References\RevaShareServiceReference\RevaShareDataService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\RevaShareDataService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\RevaShareDataService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

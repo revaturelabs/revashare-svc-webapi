@@ -11,24 +11,24 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
     public partial class ServiceClient : IServiceClient
     {
-        public bool InsertAdmin(UserDTO adminToAdd)
+        public bool InsertAdmin(UserDAO adminToAdd)
         {
             return true;
         }
 
-        public List<UserDTO> RequestAdmins()
+        public List<UserDAO> RequestAdmins()
         {
-            return new List<UserDTO>();
+            return new List<UserDAO>();
         }
 
-        public bool ModifyAdmin(UserDTO adminToUpdate)
+        public bool ModifyAdmin(UserDAO adminToUpdate)
         {
-            return true;
+            return rs.UpdateUser(adminToUpdate);
         }
 
-        public bool DeleteAdmin(UserDTO adminToRemove)
+        public bool DeleteAdmin(string UserName)
         {
-            return true;
+            return rs.DeleteUser(UserName);
         }
 
         public bool AproveDriver(string UserName)

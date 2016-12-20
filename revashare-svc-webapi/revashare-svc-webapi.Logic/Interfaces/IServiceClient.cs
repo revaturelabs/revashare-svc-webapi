@@ -48,10 +48,10 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool RequestToBeDriver(string user);
 
         // Admin Methods
-        bool InsertAdmin(UserDTO adminToAdd);
-        List<UserDTO> RequestAdmins();
-        bool ModifyAdmin(UserDTO adminToUpdate);
-        bool DeleteAdmin(UserDTO adminToRemove);
+        bool InsertAdmin(UserDAO adminToAdd);
+        List<UserDAO> RequestAdmins();
+        bool ModifyAdmin(UserDAO adminToUpdate);
+        bool DeleteAdmin(UserDAO adminToRemove);
         bool AproveDriver(string UserName);
         bool AproveUser(string UserName);
         List<UserDAO> PendingRegistrations();

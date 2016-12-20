@@ -17,29 +17,31 @@ namespace revashare_svc_webapi.Logic
         #region Admin CRUD Methods
         public bool InsertAdmin(UserDTO adminToAdd)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public List<UserDTO> RequestAdmins()
         {
-            return new List<UserDTO>();
+            throw new NotImplementedException();
         }
 
         public bool ModifyAdmin(UserDTO adminToUpdate)
         {
-            return true;
+            var updataUser = UserMapper.mapToUserDAO(adminToUpdate);
+
+            return dataClient.UpdateUser(updataUser);
         }
 
         public bool DeleteAdmin(UserDTO adminToRemove)
         {
-            return true;
+            return dataClient.DeleteUser(adminToRemove.UserName);
         }
         #endregion
 
         #region Driver CRUD Methods
         public bool InsertDriver(UserDTO driverToAdd)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public List<UserDTO> RequestDrivers()
@@ -49,56 +51,56 @@ namespace revashare_svc_webapi.Logic
 
         public bool ModifyDriver(UserDTO driverToUpdate)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public bool DeleteDriver(UserDTO driverToRemove)
         {
-            return true;
+            throw new NotImplementedException();
         }
         #endregion
 
         #region Rider CRUD Methods
         public bool InsertRider(UserDTO riderToAdd)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public List<UserDTO> RequestRiders()
         {
-            return new List<UserDTO>();
+            throw new NotImplementedException();
         }
 
         public bool ModifyRider(UserDTO riderToUpdate)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public bool DeleteRider(UserDTO riderToRemove)
         {
-            return true;
+            throw new NotImplementedException();
         }
         #endregion
 
         #region User Approval
         public bool ApproveUser(UserDTO userToApprove)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public List<UserDTO> GetPendingRiders()
         {
-            return new List<UserDTO>();
+            throw new NotImplementedException();
         }
 
         public List<UserDTO> GetPendingDrivers()
         {
-            return new List<UserDTO>();
+            throw new NotImplementedException();
         }
 
         public List<UserDTO> GetPendingAdmins()
         {
-            return new List<UserDTO>();
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -120,12 +122,12 @@ namespace revashare_svc_webapi.Logic
 
         public bool RemoveReport(FlagDTO reportToRemove)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public bool RemoveDriverPrivileges(FlagDTO reportForUser)
         {
-            return true;
+            throw new NotImplementedException();
         }
         #endregion
     }

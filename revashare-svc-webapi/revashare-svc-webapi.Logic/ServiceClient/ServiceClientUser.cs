@@ -37,25 +37,5 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       {
          return rs.register(user, UserName, Password);
       }
-      //public bool UpdateUserRole(string UserName, string role)
-      //{
-      //   return rs.UpdateUserRole(UserName, role);
-      //}
-      public bool AproveDriver(string UserName)
-      {
-         return rs.ApproveDriver(UserName);
-      }
-      public bool AproveUser(string UserName)
-      {
-         return rs.ApproveUser(UserName);
-      }
-      public List<UserDAO> PendingRegistrations()
-      {
-         return rs.PendingRegistrations().ToList();
-      }
-      public List<UserDAO> PendingDriverAprovals()
-      {
-         return rs.PendingDriverApprovals().ToList();
-      }
    }
 }

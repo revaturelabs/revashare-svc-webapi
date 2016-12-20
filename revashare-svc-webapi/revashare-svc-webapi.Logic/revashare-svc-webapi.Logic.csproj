@@ -42,7 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogic\AdminLogic.cs" />
+    <Compile Include="AdminLogic\AdminLogicApproval.cs" />
+    <Compile Include="AdminLogic\AdminLogicDriver.cs" />
+    <Compile Include="AdminLogic\AdminLogicReport.cs" />
+    <Compile Include="AdminLogic\AdminLogicRider.cs" />
     <Compile Include="DriverLogic.cs" />
+    <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IDriverRepository.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Interfaces\IRegisterLogic.cs" />
@@ -67,8 +73,6 @@
     <Compile Include="Models\RideDTO.cs" />
     <Compile Include="Models\FlagDTO.cs" />
     <Compile Include="Models\VehicleDTO.cs" />
-    <Compile Include="AdminLogic.cs" />
-    <Compile Include="Interfaces\IAdminLogic.cs" />
     <Compile Include="Models\ApartmentDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterLogic.cs" />
@@ -84,6 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ServiceClient\ServiceClientAdmin.cs" />
     <Compile Include="ServiceClient\ServiceClientApartment.cs" />
     <Compile Include="ServiceClient\ServiceClientFlag.cs" />
     <Compile Include="ServiceClient\ServiceClientRide.cs" />

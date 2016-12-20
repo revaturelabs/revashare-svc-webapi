@@ -150,7 +150,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     /// <returns></returns>
     [HttpPost]
     [Route("acceptpassenger")]
-    public HttpResponseMessage AcceptPassenger([FromBody]SeatDTO rider) {
+    public HttpResponseMessage AcceptPassenger([FromBody]RideRiderDTO rider) {
       try {
         return Request.CreateResponse(HttpStatusCode.OK, this.repo.AcceptPassenger(rider));
       }

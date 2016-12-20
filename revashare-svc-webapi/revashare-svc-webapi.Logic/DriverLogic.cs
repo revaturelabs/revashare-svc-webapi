@@ -32,7 +32,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool ReportRider(FlagDTO flag) {
       try {
-        return true;
+        return svc.CreateFlag(FlagMapper.mapToFlagDAO(flag));
       }
       catch (Exception) {
         return false;
@@ -41,7 +41,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool SetAvailability(RideDTO ride) {
       try {
-        return true;
+        return svc.UpdateRide(RideMapper.mapToRideDAO(ride));
       }
       catch (Exception) {
         return false;
@@ -50,7 +50,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool UpdateDriverProfile(UserDTO driver) {
       try {
-        return true;
+        return svc.UpdateUser(UserMapper.mapToUserDAO(driver));
       }
       catch (Exception) {
         return false;
@@ -85,9 +85,9 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
-    public bool AcceptPassenger(SeatDTO rider) {
+    public bool AcceptPassenger(RideRiderDTO rider) {
       try {
-        return true;
+        return svc.Accept(RideRiderMapper.mapToRideRiderDAO(rider));
       }
       catch (Exception) {
         return false;

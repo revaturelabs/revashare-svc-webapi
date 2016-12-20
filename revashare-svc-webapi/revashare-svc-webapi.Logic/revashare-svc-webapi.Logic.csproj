@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DriverLogic.cs" />
+    <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IDriverRepository.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Interfaces\IRegisterLogic.cs" />
@@ -84,6 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ServiceClient\ServiceClientAdmin.cs" />
     <Compile Include="ServiceClient\ServiceClientApartment.cs" />
     <Compile Include="ServiceClient\ServiceClientFlag.cs" />
     <Compile Include="ServiceClient\ServiceClientRide.cs" />

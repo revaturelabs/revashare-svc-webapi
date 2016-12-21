@@ -24,7 +24,19 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
         public List<UserDTO> RequestAdmins()
         {
-            throw new NotImplementedException();
+            List<UserDTO> requestedAdmins = new List<UserDTO>();
+
+            foreach (var admin in sc.RequestAdmins())
+            {
+                requestedAdmins.Add(UserMapper.mapToUserDTO(admin));
+            }
+
+            return requestedAdmins;
+        }
+
+        public UserDTO RequestAdmin(string UserName)
+        {
+            return UserMapper.mapToUserDTO(sc.RequestAdmin(UserName));
         }
 
         public bool ModifyAdmin(UserDTO adminToUpdate)

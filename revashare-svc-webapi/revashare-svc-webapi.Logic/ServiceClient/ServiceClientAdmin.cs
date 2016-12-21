@@ -13,12 +13,17 @@ namespace revashare_svc_webapi.Logic.ServiceClient
     {
         public bool InsertAdmin(UserDAO adminToAdd)
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public List<UserDAO> RequestAdmins()
         {
-            return new List<UserDAO>();
+            return rs.GetAdmins().ToList();
+        }
+
+        public UserDAO RequestAdmin(string UserName)
+        {
+            return rs.GetAdminByUsername(UserName);
         }
 
         public bool ModifyAdmin(UserDAO adminToUpdate)

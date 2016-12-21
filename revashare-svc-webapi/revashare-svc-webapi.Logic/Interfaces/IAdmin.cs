@@ -12,6 +12,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         //Admin CRUD Methods
         bool InsertAdmin(UserDTO adminToAdd);
         List<UserDTO> RequestAdmins();
+        UserDTO RequestAdmin(string UserName);
         bool ModifyAdmin(UserDTO adminToUpdate);
         bool DeleteAdmin(string UserName);
 

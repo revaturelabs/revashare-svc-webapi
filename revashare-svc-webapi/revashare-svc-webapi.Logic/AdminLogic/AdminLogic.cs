@@ -1,6 +1,7 @@
 ﻿using revashare_svc_webapi.Logic.Interfaces;
 using revashare_svc_webapi.Logic.Mappers;
 using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,9 +42,27 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
         public bool ModifyAdmin(UserDTO adminToUpdate)
         {
-            var updateUser = UserMapper.mapToUserDAO(adminToUpdate);
+            var apartments = sc.GetApartments();
+            ApartmentDAO newApartment = null;
 
-            return sc.ModifyAdmin(updateUser);
+            foreach (var apartment in apartments)
+            {
+                if(apartment.Name == adminToUpdate.Apartment.Name)
+                {
+                    newApartment = apartment;
+                }
+            }
+
+            if (newApartment != null)
+            {
+                var updateUser = UserMapper.mapToUserDAO(adminToUpdate);
+
+                return sc.ModifyAdmin(updateUser);
+            }
+            else
+            {
+                return false;
+            }
         }
         public bool DeleteAdmin(string UserName)
         {

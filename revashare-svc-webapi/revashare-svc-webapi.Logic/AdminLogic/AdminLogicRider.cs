@@ -10,10 +10,6 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 {
     public partial class AdminLogic : IAdmin
     {
-        public bool InsertRider(UserDTO riderToAdd)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<UserDTO> RequestRiders()
         {

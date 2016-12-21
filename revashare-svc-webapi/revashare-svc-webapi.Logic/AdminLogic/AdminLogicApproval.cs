@@ -12,7 +12,12 @@ namespace revashare_svc_webapi.Logic.AdminLogic
     {
         public bool ApproveUser(UserDTO userToApprove)
         {
-            throw new NotImplementedException();
+            return sc.AproveUser(userToApprove.UserName);
+        }
+        
+        public bool ApproveDriver(UserDTO driverToApprove)
+        {
+            return sc.AproveDriver(driverToApprove.UserName);
         }
 
         public List<UserDTO> GetPendingRiders()
@@ -21,11 +26,6 @@ namespace revashare_svc_webapi.Logic.AdminLogic
         }
 
         public List<UserDTO> GetPendingDrivers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<UserDTO> GetPendingAdmins()
         {
             throw new NotImplementedException();
         }

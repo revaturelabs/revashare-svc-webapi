@@ -60,11 +60,11 @@ namespace revashare_svc_webapi.Client.Controllers
         #endregion
 
         #region Driver CRUD
-        [HttpPost]
-        [Route("add-driver")]
-        public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
+        [HttpGet]
+        [Route("get-driver")]
+        public HttpResponseMessage GetDriver([FromUri] string username)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertDriver(driver));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RequestDriver(username), "application/json");
         }
 
         [HttpGet]
@@ -90,13 +90,6 @@ namespace revashare_svc_webapi.Client.Controllers
         #endregion
 
         #region Rider CRUD
-        [HttpPost]
-        [Route("add-rider")]
-        public HttpResponseMessage AddRider([FromBody] UserDTO rider)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertRider(rider));
-        }
-
         [HttpGet]
         [Route("get-riders")]
         public HttpResponseMessage GetRiders()
@@ -127,6 +120,13 @@ namespace revashare_svc_webapi.Client.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveUser(user));
         }
 
+        [HttpPost]
+        [Route("approve-driver")]
+        public HttpResponseMessage ApproveDriver([FromBody] UserDTO user)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveDriver(user));
+        }
+
         [HttpGet]
         [Route("get-pending-riders")]
         public HttpResponseMessage GetPendingRiders()
@@ -139,13 +139,6 @@ namespace revashare_svc_webapi.Client.Controllers
         public HttpResponseMessage GetPendingDrivers()
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetPendingDrivers(), "application/json");
-        }
-
-        [HttpGet]
-        [Route("get-pending-admins")]
-        public HttpResponseMessage GetPendingAdmins()
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetPendingAdmins(), "application/json");
         }
         #endregion
 

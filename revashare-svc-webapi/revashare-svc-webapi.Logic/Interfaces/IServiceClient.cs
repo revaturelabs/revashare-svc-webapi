@@ -41,6 +41,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
         // User Methods
         bool DeleteUser(UserDAO user);
+        UserDAO GetUser(string UserName);
         List<UserDAO> GetUsers();
         bool UpdateUser(UserDAO user);
         bool Login(string UserName, string Password);

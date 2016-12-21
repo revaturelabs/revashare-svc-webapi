@@ -113,24 +113,6 @@
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO.datasource" />
     <None Include="Service References\RevaShareServiceReference\RevaShareDataService11.wsdl" />
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.ApartmentDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.FlagDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.RideDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.RideRidersDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.UserDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Tests.RevaShareServiceReference.VehicleDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\revashare-svc-webapi.Client\revashare-svc-webapi.Client.csproj">

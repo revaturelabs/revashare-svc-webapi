@@ -5,6 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<GenericObjectDataSource DisplayName="VehicleDAO" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>revashare_svc_webapi.Tests.RevaShareServiceReference.VehicleDAO</TypeInfo>
+<GenericObjectDataSource DisplayName="UserDAO" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <TypeInfo>revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO, revashare-svc-webapi.Logic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

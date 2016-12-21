@@ -67,6 +67,7 @@
       <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,7 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\revashare-svc-webapi.Client\revashare-svc-webapi.Client.csproj">
-      <Project>{34e7218f-4dd5-45bd-a16d-693c538ba3aa}</Project>
+      <Project>{02bff377-42d4-4d2a-8e8e-2fb54d45c0a2}</Project>
       <Name>revashare-svc-webapi.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\revashare-svc-webapi.Logic\revashare-svc-webapi.Logic.csproj">

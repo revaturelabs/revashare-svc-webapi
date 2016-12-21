@@ -23,7 +23,7 @@ namespace revashare_svc_webapi.Client.Controllers {
     /// <returns></returns>
     [HttpGet]
     [Route("viewvehicle")]
-    public HttpResponseMessage ViewVehicleInfo([FromBody]UserDTO driver) {
+    public HttpResponseMessage ViewVehicleInfo(string driver) {
       try {
         return Request.CreateResponse(HttpStatusCode.OK, this.repo.ViewVehicleInfo(driver));
       }

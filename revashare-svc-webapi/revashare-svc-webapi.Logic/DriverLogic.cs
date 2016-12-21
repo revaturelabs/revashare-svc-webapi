@@ -12,9 +12,17 @@ namespace revashare_svc_webapi.Logic {
   public class DriverLogic : IDriverRepository {
     private RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
 
-    public VehicleDTO ViewVehicleInfo(UserDTO driver) {
+    public VehicleDTO ViewVehicleInfo(string driver) {
       try {
-        return null;
+                var vehicles = svc.GetVehicles();
+                foreach (var item in vehicles)
+                {
+                    if(item.Owner.UserName == driver)
+                    {
+                        return Mappers.VehicleMapper.mapToVehicleDTO(item);
+                    }
+                }
+                return null;
       }
       catch (Exception) {
         return null;
@@ -23,14 +31,8 @@ namespace revashare_svc_webapi.Logic {
 
         public bool AddVehicle(VehicleDTO vehicle)
         {
-            try
-            {
-                return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
-            }
-            catch
-            {
-                return false;
-            }
+            VehicleDAO something = Mappers.VehicleMapper.mapToVehicleDAO(vehicle);
+             return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
         }
     public bool UpdateVehicleInfo(VehicleDTO vehicle) {
       try {
@@ -89,7 +91,7 @@ namespace revashare_svc_webapi.Logic {
 
     public List<SeatDTO> ViewPassengers() {
       try {
-        return null;
+                return null;
       }
       catch (Exception) {
         return null;

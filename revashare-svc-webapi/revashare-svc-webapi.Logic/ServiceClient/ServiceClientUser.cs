@@ -29,13 +29,13 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       {
          return rs.RequestToBeDriver(user);
       }
-      public bool Login(string UserName, string Password)
+      public UserDAO Login(string UserName, string Password)
       {
-        return rs.Login(UserName, Password);
+        return rs.Login(UserName,Password);
       }
       public bool Register(UserDAO user, string UserName, string Password)
       {
-         return rs.register(user, UserName, Password);
+         return rs.RegisterUser(user, UserName, Password);
       }
       //public bool UpdateUserRole(string UserName, string role)
       //{

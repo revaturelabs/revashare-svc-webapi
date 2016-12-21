@@ -69,5 +69,16 @@ namespace revashare_svc_webapi.Tests
             Assert.NotNull(acquiredFlags);
         }
 
+        [Fact]
+        public void test_GetFlags()
+        {
+            RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+
+            List<FlagDAO> getflags = dataClient.GetAllFlags().ToList();
+
+            Assert.NotNull(getflags);
+
+        }
+
     }
 }

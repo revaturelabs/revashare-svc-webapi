@@ -35,7 +35,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       }
       public bool Register(UserDAO user, string UserName, string Password)
       {
-         return rs.register(user, UserName, Password);
+         return rs.RegisterUser(user, UserName, Password);
       }
    }
 }

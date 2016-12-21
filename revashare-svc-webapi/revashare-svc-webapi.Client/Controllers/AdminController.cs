@@ -120,6 +120,13 @@ namespace revashare_svc_webapi.Client.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveUser(user));
         }
 
+        [HttpPost]
+        [Route("approve-driver")]
+        public HttpResponseMessage ApproveDriver([FromBody] UserDTO user)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveDriver(user));
+        }
+
         [HttpGet]
         [Route("get-pending-riders")]
         public HttpResponseMessage GetPendingRiders()

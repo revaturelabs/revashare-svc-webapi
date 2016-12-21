@@ -17,18 +17,20 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool DeleteAdmin(string UserName);
 
         //Driver CRUD Methods
-        List<UserDTO> RequestDrivers();
         UserDTO RequestDriver(string UserName);
+        List<UserDTO> RequestDrivers();
         bool ModifyDriver(UserDTO driverToUpdate);
         bool DeleteDriver(UserDTO driverToRemove);
 
         //Rider CRUD Methods
+        UserDTO RequestRider(string UserName);
         List<UserDTO> RequestRiders();
         bool ModifyRider(UserDTO riderToUpdate);
         bool DeleteRider(UserDTO riderToRemove);
 
         //User Approval
         bool ApproveUser(UserDTO userToApprove);
+        bool ApproveDriver(UserDTO driverToApprove);
         List<UserDTO> GetPendingRiders();
         List<UserDTO> GetPendingDrivers();
 

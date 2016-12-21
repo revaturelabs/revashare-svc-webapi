@@ -12,14 +12,14 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 {
     public partial class AdminLogic : IAdmin
     {
-        public List<UserDTO> RequestDrivers()
-        {
-            throw new NotImplementedException();
-        }
-
         public UserDTO RequestDriver(string UserName)
         {
             return UserMapper.mapToUserDTO(sc.GetUser(UserName));
+        }
+
+        public List<UserDTO> RequestDrivers()
+        {
+            throw new NotImplementedException();
         }
 
         public bool ModifyDriver(UserDTO driverToUpdate)

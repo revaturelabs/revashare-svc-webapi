@@ -18,7 +18,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         ApartmentDAO getApartmentByName(string name);
 
         // Flag Methods
-        bool deleteFlag(FlagDAO flag);
+        bool DeleteFlag(FlagDAO flag);
         List<FlagDAO> GetFlags();
         bool InsertFlag(FlagDAO flag);
         bool UpdateFlag(FlagDAO flag);

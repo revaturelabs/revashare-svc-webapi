@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="17ffb7b2-4e69-4761-9028-a8b915f0a7f6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="38af017f-d3ed-4509-978d-1395b0b342b0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,7 +22,7 @@
     <MetadataSource Address="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RevaShareDataService11.wsdl" MetadataType="Wsdl" ID="e8ca7669-1651-4fe4-95f7-a8376edd8c1d" SourceId="1" SourceUrl="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" />
+    <MetadataFile FileName="RevaShareDataService.wsdl" MetadataType="Wsdl" ID="b1e0bcb4-c51b-4426-8d18-3c4021e1a1ef" SourceId="1" SourceUrl="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

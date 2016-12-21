@@ -40,6 +40,21 @@ namespace revashare_svc_webapi.Tests
     }
 
 
+    //[Fact]
+    //public void test_RemoveReport_AdminLogic()
+    //{
+    //  ServiceClient sc = new ServiceClient();
+    //  AdminLogic admLogic = new AdminLogic(sc);
+    //  FlagDTO reportNumber = new FlagDTO { FlagId = 22 };
+
+    //  bool actual = admLogic.RemoveReport(reportNumber);
+
+
+    //  Assert.True(actual);
+
+
+    //}
+
 
   }
 }

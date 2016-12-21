@@ -27,6 +27,7 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
     public bool RemoveReport(FlagDTO flag)
     {
+      
       throw new NotImplementedException();
 
     }

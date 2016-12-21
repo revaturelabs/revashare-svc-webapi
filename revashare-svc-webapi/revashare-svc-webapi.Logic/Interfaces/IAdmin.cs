@@ -17,13 +17,12 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool DeleteAdmin(string UserName);
 
         //Driver CRUD Methods
-        bool InsertDriver(UserDTO driverToAdd);
         List<UserDTO> RequestDrivers();
+        UserDTO RequestDriver(string UserName);
         bool ModifyDriver(UserDTO driverToUpdate);
         bool DeleteDriver(UserDTO driverToRemove);
 
         //Rider CRUD Methods
-        bool InsertRider(UserDTO riderToAdd);
         List<UserDTO> RequestRiders();
         bool ModifyRider(UserDTO riderToUpdate);
         bool DeleteRider(UserDTO riderToRemove);
@@ -32,7 +31,6 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool ApproveUser(UserDTO userToApprove);
         List<UserDTO> GetPendingRiders();
         List<UserDTO> GetPendingDrivers();
-        List<UserDTO> GetPendingAdmins();
 
         //User Reporting
         List<FlagDTO> GetUserReports();

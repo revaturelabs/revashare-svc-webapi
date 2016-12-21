@@ -24,10 +24,5 @@ namespace revashare_svc_webapi.Logic.AdminLogic
         {
             throw new NotImplementedException();
         }
-
-        public List<UserDTO> GetPendingAdmins()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

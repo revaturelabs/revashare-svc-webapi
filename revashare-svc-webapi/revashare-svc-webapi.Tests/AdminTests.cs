@@ -22,31 +22,31 @@ namespace revashare_svc_webapi.Tests
 {
   public class AdminTests
   {
-    [Fact]
-    public void Test_AddDriver_AdminController()
-    {
-      var mock = new Mock<IAdmin>();
-      mock.Setup(a => a.InsertDriver(new UserDTO())).Returns(true);
-      var ctrl = new AdminController(mock.Object);
+    //[Fact]
+    //public void Test_AddDriver_AdminController()
+    //{
+    //  var mock = new Mock<IAdmin>();
+    //  mock.Setup(a => a.InsertDriver(new UserDTO())).Returns(true);
+    //  var ctrl = new AdminController(mock.Object);
 
-      ctrl.Request = Substitute.For<HttpRequestMessage>();
-      ctrl.Configuration = Substitute.For<HttpConfiguration>();
-      HttpResponseMessage res = ctrl.AddDriver(new UserDTO());
+    //  ctrl.Request = Substitute.For<HttpRequestMessage>();
+    //  ctrl.Configuration = Substitute.For<HttpConfiguration>();
+    //  HttpResponseMessage res = ctrl.AddDriver(new UserDTO());
 
-      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
-    }
+    //  Assert.Equal(res.StatusCode, HttpStatusCode.OK);
+    //}
 
-    [Fact]
-    public void Test_AddDriver_AdminLogic()
-    {
-      ServiceClient sc = new ServiceClient();
-      AdminLogic admLogic = new AdminLogic(sc);
-      UserDTO testDriver = new UserDTO { Name = "TestDriver2" };
+    //[Fact]
+    //public void Test_AddDriver_AdminLogic()
+    //{
+    //  ServiceClient sc = new ServiceClient();
+    //  AdminLogic admLogic = new AdminLogic(sc);
+    //  UserDTO testDriver = new UserDTO { Name = "TestDriver2" };
 
-      bool actual = admLogic.InsertDriver(testDriver);
+    //  bool actual = admLogic.InsertDriver(testDriver);
 
-      Assert.True(actual);
-    }
+    //  Assert.True(actual);
+    //}
 
     [Fact]
     public void Test_WCF_GetUserReports()

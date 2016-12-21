@@ -47,21 +47,5 @@ namespace revashare_svc_webapi.Tests
     }
 
 
-    [Fact]
-    public void test_RemoveReport_AdminController()
-    {
-      var mock = new Mock<IAdmin>();
-      mock.Setup(a => a.RemoveReport(new FlagDTO())).Returns(true);
-      var ctrl = new AdminController(mock.Object);
-
-      ctrl.Request = Substitute.For<HttpRequestMessage>();
-      ctrl.Configuration = Substitute.For<HttpConfiguration>();
-      HttpResponseMessage res = ctrl.RemoveReport(new FlagDTO());
-
-      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
-
-      }
-
-
     }
   }

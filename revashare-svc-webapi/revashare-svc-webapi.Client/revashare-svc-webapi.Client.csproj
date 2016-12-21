@@ -34,7 +34,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -283,6 +284,7 @@
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
     <Content Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
+    <None Include="Properties\PublishProfiles\RevaShare.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

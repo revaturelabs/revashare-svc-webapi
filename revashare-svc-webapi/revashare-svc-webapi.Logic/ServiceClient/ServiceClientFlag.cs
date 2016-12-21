@@ -11,7 +11,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
    public partial class ServiceClient :IServiceClient
    {
-      public bool deleteFlag(FlagDAO flag)
+      public bool DeleteFlag(FlagDAO flag)
       {
          //return rs.deleteFlag(flag);
          throw new NotImplementedException();

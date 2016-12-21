@@ -1,13 +1,20 @@
-﻿using revashare_svc_webapi.Logic;
+﻿using Moq;
+using NSubstitute;
+using revashare_svc_webapi.Client.Controllers;
+using revashare_svc_webapi.Logic;
 using revashare_svc_webapi.Logic.AdminLogic;
+using revashare_svc_webapi.Logic.Interfaces;
 using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Xunit;
 
 namespace revashare_svc_webapi.Tests
@@ -40,21 +47,21 @@ namespace revashare_svc_webapi.Tests
     }
 
 
-    //[Fact]
-    //public void test_RemoveReport_AdminLogic()
-    //{
-    //  ServiceClient sc = new ServiceClient();
-    //  AdminLogic admLogic = new AdminLogic(sc);
-    //  FlagDTO reportNumber = new FlagDTO { FlagId = 22 };
+    [Fact]
+    public void test_RemoveReport_AdminController()
+    {
+      var mock = new Mock<IAdmin>();
+      mock.Setup(a => a.RemoveReport(new FlagDTO())).Returns(true);
+      var ctrl = new AdminController(mock.Object);
 
-    //  bool actual = admLogic.RemoveReport(reportNumber);
+      ctrl.Request = Substitute.For<HttpRequestMessage>();
+      ctrl.Configuration = Substitute.For<HttpConfiguration>();
+      HttpResponseMessage res = ctrl.RemoveReport(new FlagDTO());
+
+      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
+
+      }
 
 
-    //  Assert.True(actual);
-
-
-    //}
-
-
+    }
   }
-}

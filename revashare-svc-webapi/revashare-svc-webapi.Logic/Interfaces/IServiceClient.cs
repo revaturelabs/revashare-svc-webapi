@@ -44,7 +44,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         UserDAO GetUser(string UserName);
         List<UserDAO> GetUsers();
         bool UpdateUser(UserDAO user);
-        bool Login(string UserName, string Password);
+        UserDAO Login(string UserName, string Password);
         bool Register(UserDAO user, string UserName, string Password);
         bool RequestToBeDriver(string user);
 

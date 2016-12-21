@@ -15,7 +15,12 @@ namespace revashare_svc_webapi.Client.Controllers
     [RoutePrefix("api/admin")]
     public class AdminController : ApiController
     {
-        private readonly IAdmin adminLogic;
+        private IAdmin adminLogic;
+
+        public AdminController()
+        {
+            adminLogic = new AdminLogic(new ServiceClient());
+        }
 
         public AdminController(IAdmin AL)
         {
@@ -28,13 +33,6 @@ namespace revashare_svc_webapi.Client.Controllers
         public HttpResponseMessage AddAdmin([FromBody] UserDTO admin)
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin));
-        }
-
-        [HttpGet]
-        [Route("get-admin")]
-        public HttpResponseMessage GetAdmin([FromUri] string username)
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RequestAdmin(username), "application/json");
         }
 
         [HttpGet]
@@ -60,12 +58,15 @@ namespace revashare_svc_webapi.Client.Controllers
         #endregion
 
         #region Driver CRUD
+
+        /*
         [HttpPost]
         [Route("add-driver")]
         public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertDriver(driver));
         }
+        */
 
         [HttpGet]
         [Route("get-drivers")]
@@ -90,12 +91,14 @@ namespace revashare_svc_webapi.Client.Controllers
         #endregion
 
         #region Rider CRUD
+        /*
         [HttpPost]
         [Route("add-rider")]
         public HttpResponseMessage AddRider([FromBody] UserDTO rider)
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertRider(rider));
         }
+        */
 
         [HttpGet]
         [Route("get-riders")]
@@ -141,12 +144,14 @@ namespace revashare_svc_webapi.Client.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetPendingDrivers(), "application/json");
         }
 
+        /*
         [HttpGet]
         [Route("get-pending-admins")]
         public HttpResponseMessage GetPendingAdmins()
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetPendingAdmins(), "application/json");
         }
+        */
         #endregion
 
         #region User Reporting

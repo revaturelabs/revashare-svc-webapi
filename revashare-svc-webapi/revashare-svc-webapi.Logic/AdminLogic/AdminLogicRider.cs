@@ -1,5 +1,7 @@
 ﻿using revashare_svc_webapi.Logic.Interfaces;
+using revashare_svc_webapi.Logic.Mappers;
 using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,9 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 {
     public partial class AdminLogic : IAdmin
     {
-        public bool InsertRider(UserDTO riderToAdd)
+        public UserDTO RequestRider(string UserName)
         {
-            throw new NotImplementedException();
+            return UserMapper.mapToUserDTO(sc.GetUser(UserName));
         }
 
         public List<UserDTO> RequestRiders()
@@ -22,12 +24,32 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
         public bool ModifyRider(UserDTO riderToUpdate)
         {
-            throw new NotImplementedException();
+            var apartments = sc.GetApartments();
+            ApartmentDAO newApartment = null;
+
+            foreach (var apartment in apartments)
+            {
+                if (apartment.Name == riderToUpdate.Apartment.Name)
+                {
+                    newApartment = apartment;
+                }
+            }
+
+            if (newApartment != null)
+            {
+                var updateUser = UserMapper.mapToUserDAO(riderToUpdate);
+
+                return sc.ModifyAdmin(updateUser);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool DeleteRider(UserDTO riderToRemove)
         {
-            throw new NotImplementedException();
+            return sc.DeleteUser(UserMapper.mapToUserDAO(riderToRemove));
         }
     }
 }

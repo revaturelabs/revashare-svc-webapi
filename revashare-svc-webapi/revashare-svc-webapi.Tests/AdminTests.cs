@@ -20,68 +20,33 @@ using Xunit;
 
 namespace revashare_svc_webapi.Tests
 {
-    public class AdminTests
+  public class AdminTests
+  {
+
+
+    [Fact]
+    public void Test_WCF_GetUserReports()
     {
-        [Fact]
-        public void Test_AddDriver_AdminController()
-        {
-            var mock = new Mock<IAdmin>();
-            mock.Setup(a => a.InsertDriver(new UserDTO())).Returns(true);
-            var ctrl = new AdminController(mock.Object);
+      RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+      RoleDAO[] roles = new RoleDAO[3];
+      RoleDAO newRole = new RoleDAO();
+      newRole.Type = "Rider";
+      roles[0] = newRole;
+      FlagDAO newFlag = new FlagDAO()
+      {
+        Driver = new UserDAO { Name = "ray", Apartment = new ApartmentDAO { Name = "apt", Latitude = "1.1", Longitude = "2.2" }, Email = "ray@gmail.com", PhoneNumber = "747-231-7281", Roles = roles, UserName = "Ray" },
+        FlagID = 2,
+        Message = "Flag message",
+        Type = "flagType",
+        Rider = new UserDAO { Name = "raydriver", Apartment = new ApartmentDAO { Name = "apt2", Latitude = "1.3", Longitude = "2.2" }, Email = "ray@gmail.com", PhoneNumber = "747-231-7281", Roles = roles, UserName = "Ray" }
+      };
 
-            ctrl.Request = Substitute.For<HttpRequestMessage>();
-            ctrl.Configuration = Substitute.For<HttpConfiguration>();
-            HttpResponseMessage res = ctrl.AddDriver(new UserDTO());
+      dataClient.CreateFlag(newFlag);
 
-            Assert.Equal(res.StatusCode, HttpStatusCode.OK);
-        }
+      List<FlagDAO> acquiredFlags = dataClient.GetAllFlags().ToList();
 
-        [Fact]
-        public void Test_AddDriver_AdminLogic()
-        {
-            ServiceClient sc = new ServiceClient();
-            AdminLogic admLogic = new AdminLogic(sc);
-            UserDTO testDriver = new UserDTO { Name = "TestDriver2" };
-
-            bool actual = admLogic.InsertDriver(testDriver);
-
-            Assert.True(actual);
-        }
-
-        [Fact]
-        public void Test_WCF_GetUserReports()
-        {
-            RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
-            RoleDAO[] roles = new RoleDAO[3];
-            RoleDAO newRole = new RoleDAO();
-            newRole.Type = "Rider";
-            roles[0] = newRole;
-            FlagDAO newFlag = new FlagDAO()
-            {
-                Driver = new UserDAO { Name = "ray", Apartment = new ApartmentDAO { Name = "apt", Latitude = "1.1", Longitude = "2.2" }, Email = "ray@gmail.com", PhoneNumber = "747-231-7281", Roles = roles, UserName = "Ray" },
-                FlagID = 2,
-                Message = "Flag message",
-                Type = "flagType",
-                Rider = new UserDAO { Name = "raydriver", Apartment = new ApartmentDAO { Name = "apt2", Latitude = "1.3", Longitude = "2.2" }, Email = "ray@gmail.com", PhoneNumber = "747-231-7281", Roles = roles, UserName = "Ray" }
-            };
-
-            dataClient.CreateFlag(newFlag);
-
-            List<FlagDAO> acquiredFlags = dataClient.GetAllFlags().ToList();
-              
-            Assert.NotNull(acquiredFlags);
-        }
-
-        [Fact]
-        public void test_GetFlags()
-        {
-            RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
-
-            List<FlagDAO> getflags = dataClient.GetAllFlags().ToList();
-
-            Assert.NotNull(getflags);
-
-        }
-
+      Assert.NotNull(acquiredFlags);
     }
+
+  }
 }

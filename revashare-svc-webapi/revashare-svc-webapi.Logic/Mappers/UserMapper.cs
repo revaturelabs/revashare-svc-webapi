@@ -51,7 +51,7 @@ namespace revashare_svc_webapi.Logic.Mappers
                a.Roles[i] = RoleMapper.mapToRoleDAO(b.Roles[i]);
             }
          }
-         a.UserName = b.UserName;
+         a.UserName = b.UserName;  
          return a;
       }
    }

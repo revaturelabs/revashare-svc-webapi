@@ -9,10 +9,11 @@ using System.Net;
 //using Microsoft.AspNet.Identity;
 using System.Threading;
 using System.Linq;
+using System.Web.Http.Cors;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
-    
+
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {

@@ -17,6 +17,7 @@ namespace revashare_svc_webapi.Logic.Mappers
             a.DepartureTime = b.DepartureTime;
             a.IsOnTime = b.IsOnTime;
             a.StartOfWeekDate = b.StartOfWeek;
+            a.IsAMRide = b.IsAmRide;
             if (b.Vehicle != null)
             {
                a.Vehicle = VehicleMapper.mapToVehicleDTO(b.Vehicle);
@@ -30,6 +31,7 @@ namespace revashare_svc_webapi.Logic.Mappers
             a.DepartureTime = b.DepartureTime;
             a.IsOnTime = b.IsOnTime;
             a.StartOfWeek = b.StartOfWeekDate;
+            a.IsAmRide = b.IsAMRide;
             if(b.Vehicle!=null)
             {
                a.Vehicle = VehicleMapper.mapToVehicleDAO(b.Vehicle);

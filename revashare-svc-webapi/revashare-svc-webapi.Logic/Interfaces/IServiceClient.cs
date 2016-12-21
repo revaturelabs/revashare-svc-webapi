@@ -18,7 +18,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         ApartmentDAO getApartmentByName(string name);
 
         // Flag Methods
-        bool deleteFlag(FlagDAO flag);
+        bool DeleteFlag(FlagDAO flag);
         List<FlagDAO> GetFlags();
         bool InsertFlag(FlagDAO flag);
         bool UpdateFlag(FlagDAO flag);
@@ -41,6 +41,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
         // User Methods
         bool DeleteUser(UserDAO user);
+        UserDAO GetUser(string UserName);
         List<UserDAO> GetUsers();
         bool UpdateUser(UserDAO user);
         bool Login(string UserName, string Password);

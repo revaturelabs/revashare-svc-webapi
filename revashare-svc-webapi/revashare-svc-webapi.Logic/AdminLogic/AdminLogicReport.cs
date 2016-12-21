@@ -27,7 +27,7 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
         public bool RemoveReport(FlagDTO reportToRemove)
         {
-            throw new NotImplementedException();
+            return sc.DeleteFlag(FlagMapper.mapToFlagDAO(reportToRemove));
         }
 
         public bool RemoveDriverPrivileges(FlagDTO reportForUser)

@@ -25,10 +25,10 @@ namespace revashare_svc_webapi.Logic.AdminLogic
       return allFlagsDTO;
     }
 
-    public bool RemoveReport(FlagDAO flag)
+    public bool RemoveReport(FlagDTO flag)
     {
-      return sc.deleteFlag(flag);
-            
+      throw new NotImplementedException();
+
     }
 
     public bool RemoveDriverPrivileges(FlagDTO reportForUser)

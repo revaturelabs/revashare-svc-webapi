@@ -80,6 +80,15 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
+        public RideDTO getSingleRide(RideDTO ride)
+        {
+            var location = svc.GetUserByUsername(ride.Vehicle.Owner.UserName);
+            var rides = svc.ListRidesAtApartment(location.Apartment.Name);
+            return Mappers.RideMapper.mapToRideDTO(rides.Where(x => x.Vehicle.Owner.UserName == ride.Vehicle.Owner.UserName
+                                            && x.IsAmRide == ride.IsAMRide
+                                            && x.StartOfWeek == ride.StartOfWeekDate).FirstOrDefault());
+        }
+
     public bool CancelRide(RideDTO ride) {
       try {
         return svc.DeleteRide(RideMapper.mapToRideDAO(ride));
@@ -89,10 +98,17 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
-    public List<SeatDTO> ViewPassengers() {
-      try {
-                return null;
-      }
+    public List<UserDTO> ViewPassengers(RideDTO ride) {
+            try
+            {
+                List<UserDTO> members = new List<UserDTO>();
+                var riders = svc.getRidersInRide(Mappers.RideMapper.mapToRideDAO(ride));
+                foreach (var item in riders)
+                {
+                    members.Add(Mappers.UserMapper.mapToUserDTO(item));
+                }
+                return members;
+            }
       catch (Exception) {
         return null;
       }

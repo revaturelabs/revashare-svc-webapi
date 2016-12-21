@@ -139,6 +139,7 @@ namespace revashare_svc_webapi.Client.Controllers
         {
             try
             {
+                ride.Vehicle = this.repo.ViewVehicleInfo(ride.Vehicle.Owner.UserName);
                 return Request.CreateResponse(HttpStatusCode.OK, this.repo.ScheduleRide(ride));
             }
             catch (Exception)
@@ -147,6 +148,19 @@ namespace revashare_svc_webapi.Client.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("getRide")]
+        public HttpResponseMessage GetDriverRide([FromBody]RideDTO ride)
+        {
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, this.repo.getSingleRide(ride));
+            }
+            catch
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+        }
         /// <summary>
         /// Allows driver to cancel ride
         /// </summary>
@@ -170,13 +184,13 @@ namespace revashare_svc_webapi.Client.Controllers
         /// Allows driver to view passenger list for ride (accepted/not accepted)
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpPost]
         [Route("viewpassengers")]
-        public HttpResponseMessage ViewPassengers()
+        public HttpResponseMessage ViewPassengers(RideDTO ride)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.ViewPassengers());
+                return Request.CreateResponse(HttpStatusCode.OK, this.repo.ViewPassengers(ride));
             }
             catch (Exception)
             {

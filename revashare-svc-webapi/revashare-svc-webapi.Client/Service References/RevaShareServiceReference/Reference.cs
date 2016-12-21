@@ -195,11 +195,11 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateRideRiderResponse")]
         System.Threading.Tasks.Task<bool> UpdateRideRiderAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Accept", ReplyAction="http://tempuri.org/IRevaShareDataService/AcceptResponse")]
-        bool Accept(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AcceptRideRequest", ReplyAction="http://tempuri.org/IRevaShareDataService/AcceptRideRequestResponse")]
+        bool AcceptRideRequest(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Accept", ReplyAction="http://tempuri.org/IRevaShareDataService/AcceptResponse")]
-        System.Threading.Tasks.Task<bool> AcceptAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AcceptRideRequest", ReplyAction="http://tempuri.org/IRevaShareDataService/AcceptRideRequestResponse")]
+        System.Threading.Tasks.Task<bool> AcceptRideRequestAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteRideRiderResponse")]
         bool DeleteRideRider(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
@@ -535,12 +535,12 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
             return base.Channel.UpdateRideRiderAsync(riderider);
         }
         
-        public bool Accept(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
-            return base.Channel.Accept(riderider);
+        public bool AcceptRideRequest(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.AcceptRideRequest(riderider);
         }
         
-        public System.Threading.Tasks.Task<bool> AcceptAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
-            return base.Channel.AcceptAsync(riderider);
+        public System.Threading.Tasks.Task<bool> AcceptRideRequestAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.AcceptRideRequestAsync(riderider);
         }
         
         public bool DeleteRideRider(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {

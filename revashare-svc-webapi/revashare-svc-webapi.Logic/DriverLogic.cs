@@ -116,7 +116,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool AcceptPassenger(RideRiderDTO rider) {
       try {
-        return svc.Accept(RideRiderMapper.mapToRideRiderDAO(rider));
+        return svc.AcceptRideRequest(RideRiderMapper.mapToRideRiderDAO(rider));
       }
       catch (Exception) {
         return false;

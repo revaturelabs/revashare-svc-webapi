@@ -419,17 +419,17 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="Accept">
+      <xs:element name="AcceptRideRequest">
         <xs:complexType>
           <xs:sequence>
             <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="riderider" nillable="true" type="q26:RideRidersDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="AcceptResponse">
+      <xs:element name="AcceptRideRequestResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="AcceptResult" type="xs:boolean" />
+            <xs:element minOccurs="0" name="AcceptRideRequestResult" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -915,11 +915,11 @@
   <wsdl:message name="IRevaShareDataService_UpdateRideRider_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateRideRiderResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_Accept_InputMessage">
-    <wsdl:part name="parameters" element="tns:Accept" />
+  <wsdl:message name="IRevaShareDataService_AcceptRideRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptRideRequest" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_Accept_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AcceptResponse" />
+  <wsdl:message name="IRevaShareDataService_AcceptRideRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptRideRequestResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_DeleteRideRider_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRideRider" />
@@ -1108,9 +1108,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateRideRider" message="tns:IRevaShareDataService_UpdateRideRider_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateRideRiderResponse" message="tns:IRevaShareDataService_UpdateRideRider_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Accept">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Accept" message="tns:IRevaShareDataService_Accept_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AcceptResponse" message="tns:IRevaShareDataService_Accept_OutputMessage" />
+    <wsdl:operation name="AcceptRideRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/AcceptRideRequest" message="tns:IRevaShareDataService_AcceptRideRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/AcceptRideRequestResponse" message="tns:IRevaShareDataService_AcceptRideRequest_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteRideRider">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteRideRider" message="tns:IRevaShareDataService_DeleteRideRider_InputMessage" />
@@ -1429,8 +1429,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Accept">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Accept" style="document" />
+    <wsdl:operation name="AcceptRideRequest">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/AcceptRideRequest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

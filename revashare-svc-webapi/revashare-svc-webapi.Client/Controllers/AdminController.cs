@@ -15,12 +15,7 @@ namespace revashare_svc_webapi.Client.Controllers
     [RoutePrefix("api/admin")]
     public class AdminController : ApiController
     {
-        private IAdmin adminLogic;
-
-        public AdminController()
-        {
-            adminLogic = new AdminLogic(new ServiceClient());
-        }
+        private readonly IAdmin adminLogic;
 
         public AdminController(IAdmin AL)
         {
@@ -33,6 +28,13 @@ namespace revashare_svc_webapi.Client.Controllers
         public HttpResponseMessage AddAdmin([FromBody] UserDTO admin)
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin));
+        }
+
+        [HttpGet]
+        [Route("get-admin")]
+        public HttpResponseMessage GetAdmin([FromUri] string username)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RequestAdmin(username), "application/json");
         }
 
         [HttpGet]

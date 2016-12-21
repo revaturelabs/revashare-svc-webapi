@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Interfaces
 {
-    public interface IAdminLogic
+    public interface IAdmin
     {
         //Admin CRUD Methods
         bool InsertAdmin(UserDTO adminToAdd);
         List<UserDTO> RequestAdmins();
+        UserDTO RequestAdmin(string UserName);
         bool ModifyAdmin(UserDTO adminToUpdate);
-        bool DeleteAdmin(UserDTO adminToRemove);
+        bool DeleteAdmin(string UserName);
 
         //Driver CRUD Methods
         bool InsertDriver(UserDTO driverToAdd);

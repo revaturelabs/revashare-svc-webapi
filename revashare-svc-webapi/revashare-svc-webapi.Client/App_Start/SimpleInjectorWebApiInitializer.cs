@@ -7,6 +7,8 @@ namespace revashare_svc_webapi.Client.App_Start
     using SimpleInjector.Integration.WebApi;
     using Logic.Interfaces;
     using Logic;
+    using Logic.AdminLogic;
+    using Logic.ServiceClient;
 
     public static class SimpleInjectorWebApiInitializer
     {
@@ -30,7 +32,8 @@ namespace revashare_svc_webapi.Client.App_Start
         {
             // For instance:
             // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
-            container.Register<IAdminLogic, AdminLogic>(Lifestyle.Transient);
+            container.Register<IServiceClient, ServiceClient>(Lifestyle.Transient);
+            container.Register<IAdmin, AdminLogic>(Lifestyle.Transient);
             container.Register<IDriverRepository, DriverLogic>(Lifestyle.Transient);
         }
     }

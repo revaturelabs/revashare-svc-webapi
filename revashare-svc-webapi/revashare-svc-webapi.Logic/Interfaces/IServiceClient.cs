@@ -8,49 +8,60 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Interfaces
 {
-   public interface IServiceClient
-   {
-      bool DeleteApartment(ApartmentDAO apartment);
-      List<ApartmentDAO> GetApartments();
-      bool InsertApartment(ApartmentDAO apartment);
-      bool UpdateApartment(ApartmentDAO apartment);
-      ApartmentDAO getApartmentByName(string name);
+    public interface IServiceClient
+    {
+        // Apartment Methods
+        bool DeleteApartment(ApartmentDAO apartment);
+        List<ApartmentDAO> GetApartments();
+        bool InsertApartment(ApartmentDAO apartment);
+        bool UpdateApartment(ApartmentDAO apartment);
+        ApartmentDAO getApartmentByName(string name);
 
-      bool deleteFlag(FlagDAO flag);
-      List<FlagDAO> GetFlags();
-      bool InsertFlag(FlagDAO flag);
-      bool UpdateFlag(FlagDAO flag);
-      FlagDAO GetFlagsById(FlagDAO flag);
+        // Flag Methods
+        bool deleteFlag(FlagDAO flag);
+        List<FlagDAO> GetFlags();
+        bool InsertFlag(FlagDAO flag);
+        bool UpdateFlag(FlagDAO flag);
+        FlagDAO GetFlagsById(FlagDAO flag);
 
-      List<RideDAO> GetRides();
-      bool InsertRide(RideDAO ride);
-      bool UpdateRide(RideDAO ride);
-      bool DeleteRide(RideDAO ride);
-      List<RideDAO> getRidesByLocation(string name);
-      int getAvailableSeatsByRide(RideDAO ride);
+        // Ride Methods
+        List<RideDAO> GetRides();
+        bool InsertRide(RideDAO ride);
+        bool UpdateRide(RideDAO ride);
+        bool DeleteRide(RideDAO ride);
+        List<RideDAO> getRidesByLocation(string name);
+        int getAvailableSeatsByRide(RideDAO ride);
 
-      List<RideRidersDAO> GetRideRiders();
-      bool InsertRideRider(UserDAO rider, RideDAO ride);
-      bool UpdateRideRider(RideRidersDAO rideRider);
-      bool DeleteRideRider(RideRidersDAO rr);
-      bool Accept(RideRidersDAO rr);
+        // Ride Rider Methods
+        List<RideRidersDAO> GetRideRiders();
+        bool InsertRideRider(UserDAO rider, RideDAO ride);
+        bool UpdateRideRider(RideRidersDAO rideRider);
+        bool DeleteRideRider(RideRidersDAO rr);
+        bool Accept(RideRidersDAO rr);
 
-      bool DeleteUser(UserDAO user);
-      List<UserDAO> GetUsers();
-      bool UpdateUser(UserDAO user);
-      UserDAO Login(string UserName, string Password);
-      bool Register(UserDAO user, string UserName, string Password);
-      //bool UpdateUserRole(string UserName, string role);
-      bool AproveDriver(string UserName);
-      bool AproveUser(string UserName);
-      List<UserDAO> PendingRegistrations();
-      List<UserDAO> PendingDriverAprovals();
+        // User Methods
+        bool DeleteUser(UserDAO user);
+        List<UserDAO> GetUsers();
+        bool UpdateUser(UserDAO user);
+        bool Login(string UserName, string Password);
+        bool Register(UserDAO user, string UserName, string Password);
+        bool RequestToBeDriver(string user);
 
-      bool DeleteVehicle(VehicleDAO v);
-      List<VehicleDAO> GetVehicle();
-      bool InsertVehicle(VehicleDAO v);
-      bool UpdateVehicle(VehicleDAO v);
+        // Admin Methods
+        bool InsertAdmin(UserDAO adminToAdd);
+        List<UserDAO> RequestAdmins();
+        UserDAO RequestAdmin(string UserName);
+        bool ModifyAdmin(UserDAO adminToUpdate);
+        bool DeleteAdmin(string UserName);
+        bool AproveDriver(string UserName);
+        bool AproveUser(string UserName);
+        List<UserDAO> PendingRegistrations();
+        List<UserDAO> PendingDriverAprovals();
 
-      bool RequestToBeDriver(string user);
-   }
+        // Vehicle Methods
+        bool DeleteVehicle(VehicleDAO v);
+        List<VehicleDAO> GetVehicle();
+        bool InsertVehicle(VehicleDAO v);
+        bool UpdateVehicle(VehicleDAO v);
+    }
 }

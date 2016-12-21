@@ -2,9 +2,11 @@
 using NSubstitute;
 using revashare_svc_webapi.Client.Controllers;
 using revashare_svc_webapi.Logic;
+using revashare_svc_webapi.Logic.AdminLogic;
 using revashare_svc_webapi.Logic.Interfaces;
 using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,7 +25,7 @@ namespace revashare_svc_webapi.Tests
         [Fact]
         public void Test_AddDriver_AdminController()
         {
-            var mock = new Mock<IAdminLogic>();
+            var mock = new Mock<IAdmin>();
             mock.Setup(a => a.InsertDriver(new UserDTO())).Returns(true);
             var ctrl = new AdminController(mock.Object);
 
@@ -37,7 +39,8 @@ namespace revashare_svc_webapi.Tests
         [Fact]
         public void Test_AddDriver_AdminLogic()
         {
-            AdminLogic admLogic = new AdminLogic();
+            ServiceClient sc = new ServiceClient();
+            AdminLogic admLogic = new AdminLogic(sc);
             UserDTO testDriver = new UserDTO { Name = "TestDriver2" };
 
             bool actual = admLogic.InsertDriver(testDriver);

@@ -727,10 +727,10 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         System.Threading.Tasks.Task<bool> DeleteUserAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Login", ReplyAction="http://tempuri.org/IRevaShareDataService/LoginResponse")]
-        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Login(string username, string password);
+        bool Login(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Login", ReplyAction="http://tempuri.org/IRevaShareDataService/LoginResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> LoginAsync(string username, string password);
+        System.Threading.Tasks.Task<bool> LoginAsync(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ApproveDriver", ReplyAction="http://tempuri.org/IRevaShareDataService/ApproveDriverResponse")]
         bool ApproveDriver(string username);
@@ -876,12 +876,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteVehicle", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteVehicleResponse")]
         System.Threading.Tasks.Task<bool> DeleteVehicleAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetVehicles", ReplyAction="http://tempuri.org/IRevaShareDataService/GetVehiclesResponse")]
-        revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[] GetVehicles();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetVehicles", ReplyAction="http://tempuri.org/IRevaShareDataService/GetVehiclesResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[]> GetVehiclesAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/CreateFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/CreateFlagResponse")]
         bool CreateFlag(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
         
@@ -899,12 +893,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAllFlags", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAllFlagsResponse")]
         System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
-        bool MarkFlagAsRead(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
-        System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -990,11 +978,11 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
             return base.Channel.DeleteUserAsync(username);
         }
         
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Login(string username, string password) {
+        public bool Login(string username, string password) {
             return base.Channel.Login(username, password);
         }
         
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> LoginAsync(string username, string password) {
+        public System.Threading.Tasks.Task<bool> LoginAsync(string username, string password) {
             return base.Channel.LoginAsync(username, password);
         }
         
@@ -1190,14 +1178,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
             return base.Channel.DeleteVehicleAsync(vehicle);
         }
         
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[] GetVehicles() {
-            return base.Channel.GetVehicles();
-        }
-        
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[]> GetVehiclesAsync() {
-            return base.Channel.GetVehiclesAsync();
-        }
-        
         public bool CreateFlag(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
             return base.Channel.CreateFlag(flag);
         }
@@ -1220,14 +1200,6 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         
         public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync() {
             return base.Channel.GetAllFlagsAsync();
-        }
-        
-        public bool MarkFlagAsRead(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.MarkFlagAsRead(flag);
-        }
-        
-        public System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
-            return base.Channel.MarkFlagAsReadAsync(flag);
         }
     }
 }

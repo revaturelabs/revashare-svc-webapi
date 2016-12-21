@@ -22,7 +22,7 @@
     <MetadataSource Address="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RevaShareDataService1.wsdl" MetadataType="Wsdl" ID="29cafcdc-6732-464e-be31-e538afdcf873" SourceId="1" SourceUrl="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" />
+    <MetadataFile FileName="RevaShareDataService11.wsdl" MetadataType="Wsdl" ID="afef51e4-85e3-4ca7-9f62-abc13c6a0389" SourceId="1" SourceUrl="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

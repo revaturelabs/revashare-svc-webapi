@@ -13,25 +13,9 @@ namespace revashare_svc_webapi.Logic.ServiceClient
     {
         public bool InsertAdmin(UserDAO adminToAdd, string UserName, string Password)
         {
-            ApartmentDAO apartment = null;
+            UserDAO newAdmin = new UserDAO { Name = adminToAdd.Name, UserName = UserName, Email = adminToAdd.Email, PhoneNumber = adminToAdd.PhoneNumber, Apartment = null };
 
-            foreach(var apt in rs.ListApartments())
-            {
-                if(apt.Name == adminToAdd.Apartment.Name)
-                {
-                    apartment = apt;
-                }
-            }
-
-            if (apartment != null)
-            {
-                adminToAdd.Apartment = apartment;
-                return rs.AddAdmin(adminToAdd, UserName, Password);
-            }
-            else
-            {
-                return false;
-            }
+            return rs.AddAdmin(newAdmin, UserName, Password);
         }
 
         public List<UserDAO> RequestAdmins()
@@ -41,7 +25,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
         public UserDAO RequestAdmin(string UserName)
         {
-            return rs.GetAdminByUsername(UserName);
+            return rs.GetUserByUsername(UserName);
         }
 
         public bool ModifyAdmin(UserDAO adminToUpdate)

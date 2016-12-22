@@ -31,10 +31,15 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpPost]
         [Route("signup")]
-        public IHttpActionResult signup([FromUri] UserDTO userModel, string password)
+        public IHttpActionResult signup([FromBody] ViewModels.Account.SignupVM vm)
         {
 
-            bool success = client.RegisterUser(UserMapper.mapToUserDAO(userModel), userModel.UserName, password);
+            if (! vm.isValid())
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+
+            bool success = UserLogic.getInstance().registerUser(vm.user, vm.password);
 
             if (success)
             {
@@ -75,21 +80,18 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpPost]
         [Route("login")]
-        public IHttpActionResult login([FromUri] loginModel model)
+        public IHttpActionResult login([FromUri] ViewModels.Account.LoginVM vm)
         {
 
-            // get user from login
-            var user = UserLogic.getInstance().login(model.userName, model.password);
+            var user = UserLogic.getInstance().login(vm.userName, vm.password);
 
             if (user == null)
             {
-                // handle case where user could not login
                 return StatusCode(HttpStatusCode.BadRequest);
             }
 
             if (userSessionExists())
             {
-                // user is already logged in
                 return StatusCode(HttpStatusCode.BadRequest);
             }
 
@@ -130,13 +132,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        private bool userSessionExists()
-        {
-            var owinUser = userFactory.getUser(Request.GetOwinContext());
-            return owinUser != null;
-        }
-
-
+        [Authorize(Roles = "user")]
         [HttpGet]
         [Route("profile")]
         public UserDTO profile()
@@ -148,6 +144,16 @@ namespace revashare_svc_webapi.Client.Controllers
             return userData;
 
         }
+
+
+
+        #region helpers
+        private bool userSessionExists()
+        {
+            var owinUser = userFactory.getUser(Request.GetOwinContext());
+            return owinUser != null;
+        }
+        #endregion
 
     }
 

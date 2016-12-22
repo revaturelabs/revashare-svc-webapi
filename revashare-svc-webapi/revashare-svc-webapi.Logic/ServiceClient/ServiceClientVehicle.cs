@@ -17,8 +17,8 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public List<VehicleDAO> GetVehicle()
       {
-         //return rs.GetVehicle();
-         throw new NotImplementedException();
+         return rs.GetVehicles().ToList();
+         
       }
 
       public bool InsertVehicle(VehicleDAO v)

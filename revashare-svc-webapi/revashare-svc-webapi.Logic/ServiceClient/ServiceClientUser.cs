@@ -15,15 +15,15 @@ namespace revashare_svc_webapi.Logic.ServiceClient
             return rs.DeleteUser(user.Name);
         }
 
-        public UserDAO GetUser(string UserName)
+        public UserDAO GetUserByUsername(string UserName)
         {
             return rs.GetUserByUsername(UserName);
         }
 
         public List<UserDAO> GetUsers()
         {
-            //return rs.getusers();
-            throw new NotImplementedException();
+            return rs.GetAllUsers().ToList();
+            
         }
         public bool UpdateUser(UserDAO user)
         {

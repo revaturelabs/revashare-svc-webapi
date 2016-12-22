@@ -16,7 +16,7 @@ namespace revashare_svc_webapi.Client
             headers: "*",
             methods: "*");
 
-            config.EnableCors(cors);
+            //config.EnableCors(cors);
             
             // Web API configuration and services
 

@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IRegisterLogic.cs" />
     <Compile Include="Interfaces\IRider.cs" />
     <Compile Include="Interfaces\IServiceClient.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Mappers\ApartmentMapper.cs" />
     <Compile Include="Mappers\FlagMapper.cs" />
     <Compile Include="Mappers\RideMapper.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="ServiceClient\ServiceClientRideRider.cs" />
     <Compile Include="ServiceClient\ServiceClientUser.cs" />
     <Compile Include="ServiceClient\ServiceClientVehicle.cs" />
+    <Compile Include="UserLogic\UserLogic.cs" />
     <Compile Include="UserLogic.cs" />
   </ItemGroup>
   <ItemGroup>

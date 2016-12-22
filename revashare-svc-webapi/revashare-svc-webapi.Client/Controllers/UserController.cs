@@ -20,9 +20,23 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpGet]
         [Route("get-user")]
-        public HttpResponseMessage GetAdmin([FromUri] string username)
+        public HttpResponseMessage GetUser([FromUri] string username)
         {
             return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetUser(username), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-apartment")]
+        public HttpResponseMessage GetApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetApartment(name), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-apartments")]
+        public HttpResponseMessage GetApartments()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetApartments(), "application/json");
         }
     }
 }

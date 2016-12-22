@@ -6,7 +6,7 @@ using System.Security.Claims;
 using revashare_svc_webapi.Logic.RiderLogic;
 using revashare_svc_webapi.Logic.ServiceClient;
 using revashare_svc_webapi.Logic.Models;
-using revashare_svc_webapi.Logic.Model;
+
 
 namespace revashare_svc_webapi.Client.Models.OwinModels
 {

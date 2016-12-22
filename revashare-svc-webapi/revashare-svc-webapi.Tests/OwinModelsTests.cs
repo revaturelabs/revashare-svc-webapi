@@ -20,7 +20,7 @@ namespace revashare_svc_webapi.Tests
             Logic.Models.UserDTO userDTO = new Logic.Models.UserDTO()
             {
                 Name = "sample name",
-                Apartment = new Logic.Model.ApartmentDTO()
+                Apartment = new Logic.Models.ApartmentDTO()
                 {
                     Latitude = "123",
                     Longitude = "3234",

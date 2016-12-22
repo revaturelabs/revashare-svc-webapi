@@ -38,11 +38,11 @@ namespace revashare_svc_webapi.Logic.ServiceClient
         {
             if (rs.Login(UserName, Password) != null)
             {
-                return true;
+                return null;
             }
             else
             {
-                return false;
+                return null;
             }
         }
         public bool Register(UserDAO user, string UserName, string Password)

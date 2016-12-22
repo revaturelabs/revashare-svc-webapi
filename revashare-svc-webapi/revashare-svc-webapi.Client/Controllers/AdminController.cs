@@ -17,11 +17,6 @@ namespace revashare_svc_webapi.Client.Controllers
     {
         private IAdmin adminLogic;
 
-        public AdminController()
-        {
-            adminLogic = new AdminLogic(new ServiceClient());
-        }
-
         public AdminController(IAdmin AL)
         {
             adminLogic = AL;

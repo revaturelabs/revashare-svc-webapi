@@ -37,7 +37,7 @@ namespace revashare_svc_webapi.Client.Controllers
         public IHttpActionResult signup([FromUri] UserDTO userModel, string password)
         {
 
-            bool success = client.RegisterUser(userModel, userModel.UserName, password);
+            bool success = client.RegisterUser(UserMapper.mapToUserDAO(userModel), userModel.UserName, password);
 
             if (success)
             {
@@ -83,18 +83,17 @@ namespace revashare_svc_webapi.Client.Controllers
         public IHttpActionResult login([FromUri] loginModel model)
         {
             
-            // should get from login
+            // get user from login
             var user = client.Login(model.userName, model.password);
-
-            UserDTO userDTO = UserMapper.mapToUserDTO(user);
-
-            string userJson = JsonConvert.SerializeObject(userDTO);
 
             if (user == null)
             {
                 // handle case where user could not login
                 return StatusCode(HttpStatusCode.BadRequest);
             }
+
+            UserDTO userDTO = UserMapper.mapToUserDTO(user);
+            string userJson = JsonConvert.SerializeObject(userDTO);
 
             Claim[] claims = new Claim[]
             {
@@ -103,17 +102,11 @@ namespace revashare_svc_webapi.Client.Controllers
             };
 
             ClaimsIdentity identity = new ClaimsIdentity(claims, "ApplicationCookie");
-
-            // Add roles into claims
-            //List<Logic.RevaShareServiceReference.RoleDAO> roleList = new List<Logic.RevaShareServiceReference.RoleDAO>(user.Roles);
-            //var roleClaims = roleList.ConvertAll(x => new Claim(ClaimTypes.Role, x.Type));
-            //roleClaims.Add(new Claim(ClaimTypes.Role, "user"));
-            //identity.AddClaims(roleClaims);
+            identity.AddClaims(claims);
             
             var context = Request.GetOwinContext();
             var authManager = context.Authentication;
             authManager.SignIn(identity);
-            //authManager.SignIn(new AuthenticationProperties { IsPersistent = true }, identity);
             
             return Ok();
 

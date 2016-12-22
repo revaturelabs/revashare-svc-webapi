@@ -25,7 +25,7 @@ namespace revashare_svc_webapi.Tests
     public void test_getApartmentByName()
     {
       RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
-
+      
       string name = "abc";
       ApartmentDAO getApartmentByName = dataClient.GetApartmentByName(name);
 

@@ -269,17 +269,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\DriverModel.cs" />
     <Compile Include="Models\OwinModels\Admin.cs" />
     <Compile Include="Models\OwinModels\Driver.cs" />
     <Compile Include="Models\OwinModels\Rider.cs" />
     <Compile Include="Models\OwinModels\User.cs" />
     <Compile Include="Models\OwinModels\UserFactory.cs" />
-    <Compile Include="Models\PlaceModel.cs" />
-    <Compile Include="Models\TripModel.cs" />
-    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -287,6 +281,8 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Account\LoginVM.cs" />
+    <Compile Include="ViewModels\Account\SignupVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

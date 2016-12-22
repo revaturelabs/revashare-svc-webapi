@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
+using revashare_svc_webapi.Logic.Models;
 using System.Security.Claims;
-using System.Web;
 
 namespace revashare_svc_webapi.Client.Models.OwinModels
 {
@@ -28,24 +26,24 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
 
             ClaimsPrincipal principal = context.Authentication.User;
-
+            
             string roleName = principal.FindFirst(ClaimTypes.Role).Value;
 
             if (roleName.Equals(USER_TYPE))
             {
-                return new OwinModels.User(principal);
+                return new User(principal);
             }
             else if (roleName.Equals(RIDER_TYPE))
             {
-                return new OwinModels.Rider(principal);
+                return new Rider(principal);
             }
             else if (roleName.Equals(DRIVER_TYPE))
             {
-                return new OwinModels.Driver(principal);
+                return new Driver(principal);
             }
             else if (roleName.Equals(ADMIN_TYPE))
             {
-                return new OwinModels.Admin(principal);
+                return new Admin(principal);
             }
             else
             {

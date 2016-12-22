@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic
 {
+    /*
     public class UserLogic
     {
 
@@ -47,4 +48,5 @@ namespace revashare_svc_webapi.Logic
         }
 
     }
+    */
 }

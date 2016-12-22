@@ -100,7 +100,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             throw new MissingPermission();
         }
 
-        public virtual bool removeRiderFromRide(UserDTO rider, RideDTO ride)
+        public virtual bool removeRiderFromRide(RideRiderDTO rider)
         {
             throw new MissingPermission();
         }
@@ -206,7 +206,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         #region admin methods
 
-        public virtual bool InsertAdmin(UserDTO adminToAdd)
+        public virtual bool InsertAdmin(UserDTO adminToAdd, string password)
         {
             throw new MissingPermission();
         }

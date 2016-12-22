@@ -11,6 +11,8 @@ using revashare_svc_webapi.Logic.Models;
 using Newtonsoft.Json;
 using revashare_svc_webapi.Logic.Mappers;
 using revashare_svc_webapi.Logic;
+using revashare_svc_webapi.Logic.UserLogic;
+using revashare_svc_webapi.Logic.ServiceClient;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
@@ -39,7 +41,7 @@ namespace revashare_svc_webapi.Client.Controllers
                 return StatusCode(HttpStatusCode.BadRequest);
             }
 
-            bool success = UserLogic.getInstance().registerUser(vm.user, vm.password);
+            bool success = new UserLogic(new ServiceClient()).registerUser(vm.user, vm.password);
 
             if (success)
             {
@@ -83,7 +85,7 @@ namespace revashare_svc_webapi.Client.Controllers
         public IHttpActionResult login([FromUri] ViewModels.Account.LoginVM vm)
         {
 
-            var user = UserLogic.getInstance().login(vm.userName, vm.password);
+            var user = new UserLogic(new ServiceClient()).login(vm.userName, vm.password);
 
             if (user == null)
             {

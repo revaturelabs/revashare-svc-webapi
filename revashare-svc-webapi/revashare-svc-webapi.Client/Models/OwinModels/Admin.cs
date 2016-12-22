@@ -29,9 +29,9 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         }
 
 
-        public override bool InsertAdmin(UserDTO adminToAdd)
+        public override bool InsertAdmin(UserDTO adminToAdd, string password)
         {
-            return logic.InsertAdmin(adminToAdd);
+            return logic.InsertAdmin(adminToAdd, password);
         }
 
         public override List<UserDTO> RequestAdmins()

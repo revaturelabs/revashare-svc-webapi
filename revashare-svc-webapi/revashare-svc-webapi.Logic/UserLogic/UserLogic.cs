@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.Mappers;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
 
 namespace revashare_svc_webapi.Logic.UserLogic
 {
@@ -21,5 +22,19 @@ namespace revashare_svc_webapi.Logic.UserLogic
         {
             return UserMapper.mapToUserDTO(sc.GetUser(UserName));
         }
+
+        public bool registerUser(UserDTO user, string password)
+        {
+            UserDAO userDao = UserMapper.mapToUserDAO(user);
+            return sc.Register(userDao, user.UserName, password);
+        }
+
+
+        public UserDTO login(string userName, string password)
+        {
+            UserDAO user = sc.Login(userName, password);
+            return UserMapper.mapToUserDTO(user);
+        }
+
     }
 }

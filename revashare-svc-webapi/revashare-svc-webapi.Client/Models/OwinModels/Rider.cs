@@ -75,9 +75,9 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return logic.addRiderToRide(ride, rider);
         }
 
-        public override bool removeRiderFromRide(UserDTO rider, RideDTO ride)
+        public override bool removeRiderFromRide(RideRiderDTO rider)
         {
-            return logic.removeRiderFromRide(rider, ride);
+            return logic.removeRiderFromRide(rider);
         }
 
         public override List<RideRiderDTO> getRideRidersByUser(UserDTO rider)

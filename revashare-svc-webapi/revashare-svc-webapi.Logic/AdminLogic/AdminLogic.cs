@@ -12,7 +12,6 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 {
     public partial class AdminLogic : IAdmin
     {
-        // comment
         private IServiceClient sc;
         public AdminLogic(IServiceClient client)
         {

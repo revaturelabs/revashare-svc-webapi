@@ -42,14 +42,15 @@ namespace revashare_svc_webapi.Logic.Interfaces
         // User Methods
         bool DeleteUser(UserDAO user);
         UserDAO GetUser(string UserName);
-        List<UserDAO> GetUsers();
+        List<UserDAO> GetRiders();
+        List<UserDAO> GetDrivers();
         bool UpdateUser(UserDAO user);
         UserDAO Login(string UserName, string Password);
         bool Register(UserDAO user, string UserName, string Password);
         bool RequestToBeDriver(string user);
 
         // Admin Methods
-        bool InsertAdmin(UserDAO adminToAdd);
+        bool InsertAdmin(UserDAO adminToAdd, string UserName, string Password);
         List<UserDAO> RequestAdmins();
         UserDAO RequestAdmin(string UserName);
         bool ModifyAdmin(UserDAO adminToUpdate);

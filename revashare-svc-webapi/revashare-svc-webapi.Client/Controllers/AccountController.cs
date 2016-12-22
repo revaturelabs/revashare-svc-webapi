@@ -11,6 +11,7 @@ using System.Threading;
 using System.Linq;
 using System.Web.Http.Cors;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.Models;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
@@ -31,7 +32,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpPost]
         [Route("signup")]
-        public IHttpActionResult signup([FromUri] UserDAO userModel, string password)
+        public IHttpActionResult signup([FromUri] UserDTO userModel, string password)
         {
 
             bool success = client.RegisterUser(userModel, userModel.UserName, password);

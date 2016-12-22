@@ -88,6 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ServiceClient\ServiceClient.cs" />
     <Compile Include="ServiceClient\ServiceClientAdmin.cs" />
     <Compile Include="ServiceClient\ServiceClientApartment.cs" />
     <Compile Include="ServiceClient\ServiceClientFlag.cs" />

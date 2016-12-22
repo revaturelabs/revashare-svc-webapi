@@ -1,4 +1,5 @@
 ﻿using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Interfaces {
   public interface IDriverRepository {
-    VehicleDTO ViewVehicleInfo(UserDTO driver);
+    VehicleDTO ViewVehicleInfo(string driver);
 
+        RideDTO getSingleRide(RideDTO ride);
     bool UpdateVehicleInfo(VehicleDTO vehicle);
 
     bool ReportRider(FlagDTO flag);
@@ -21,8 +23,9 @@ namespace revashare_svc_webapi.Logic.Interfaces {
 
     bool CancelRide(RideDTO ride);
 
-    List<SeatDTO> ViewPassengers();
+    List<UserDTO> ViewPassengers(RideDTO ride);
 
-    bool AcceptPassenger(SeatDTO rider);
+    bool AcceptPassenger(RideRiderDTO rider);
+        bool AddVehicle(VehicleDTO vehicle);
     }
 }

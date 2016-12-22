@@ -3,7 +3,22 @@
   <wsdl:types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:import namespace="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" />
-      <xs:element name="RegisterUser">
+      <xs:element name="Login">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LoginResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="register">
         <xs:complexType>
           <xs:sequence>
             <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="user" nillable="true" type="q1:UserDAO" />
@@ -12,76 +27,10 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="RegisterUserResponse">
+      <xs:element name="registerResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="RegisterUserResult" type="xs:boolean" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAllUsers">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAllUsersResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q2:ArrayOfUserDAO" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetUserByUsername">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetUserByUsernameResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetUserByUsernameResult" nillable="true" type="q3:UserDAO" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAdmins">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAdminsResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetAdminsResult" nillable="true" type="q4:ArrayOfUserDAO" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAdminByUsername">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAdminByUsernameResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetAdminByUsernameResult" nillable="true" type="q5:UserDAO" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="UpdateUser">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="user" nillable="true" type="q6:UserDAO" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="UpdateUserResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="UpdateUserResult" type="xs:boolean" />
+            <xs:element minOccurs="0" name="registerResult" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -96,21 +45,6 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" name="DeleteUserResult" type="xs:boolean" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="Login">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
-            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="LoginResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -164,7 +98,7 @@
       <xs:element name="PendingRegistrationsResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingRegistrationsResult" nillable="true" type="q7:ArrayOfUserDAO" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingRegistrationsResult" nillable="true" type="q2:ArrayOfUserDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -176,7 +110,21 @@
       <xs:element name="PendingDriverApprovalsResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingDriverApprovalsResult" nillable="true" type="q8:ArrayOfUserDAO" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingDriverApprovalsResult" nillable="true" type="q3:ArrayOfUserDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="user" nillable="true" type="q4:UserDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateUserResult" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -206,14 +154,14 @@
       <xs:element name="GetApartmentByNameResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetApartmentByNameResult" nillable="true" type="q9:ApartmentDAO" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetApartmentByNameResult" nillable="true" type="q5:ApartmentDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="AddApartment">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q10:ApartmentDAO" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q6:ApartmentDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -232,14 +180,14 @@
       <xs:element name="ListApartmentsResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ListApartmentsResult" nillable="true" type="q11:ArrayOfApartmentDAO" />
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ListApartmentsResult" nillable="true" type="q7:ArrayOfApartmentDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="UpdateApartment">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q12:ApartmentDAO" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="apartment" nillable="true" type="q8:ApartmentDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -267,7 +215,7 @@
       <xs:element name="AddRide">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q13:RideDAO" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q9:RideDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -281,7 +229,7 @@
       <xs:element name="UpdateRide">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q14:RideDAO" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q10:RideDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -295,7 +243,7 @@
       <xs:element name="DeleteRide">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q15:RideDAO" />
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q11:RideDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -316,7 +264,7 @@
       <xs:element name="ListRidesAtApartmentResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ListRidesAtApartmentResult" nillable="true" type="q16:ArrayOfRideDAO" />
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ListRidesAtApartmentResult" nillable="true" type="q12:ArrayOfRideDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -343,15 +291,15 @@
       <xs:element name="GetRideRidersResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetRideRidersResult" nillable="true" type="q17:ArrayOfRideRidersDAO" />
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetRideRidersResult" nillable="true" type="q13:ArrayOfRideRidersDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="AddRideRiders">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="user" nillable="true" type="q18:UserDAO" />
-            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q19:RideDAO" />
+            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="user" nillable="true" type="q14:UserDAO" />
+            <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="ride" nillable="true" type="q15:RideDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -365,7 +313,7 @@
       <xs:element name="UpdateRideRider">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="riderider" nillable="true" type="q20:RideRidersDAO" />
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="riderider" nillable="true" type="q16:RideRidersDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -379,7 +327,7 @@
       <xs:element name="Accept">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="riderider" nillable="true" type="q21:RideRidersDAO" />
+            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="riderider" nillable="true" type="q17:RideRidersDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -393,7 +341,7 @@
       <xs:element name="DeleteRideRider">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="riderider" nillable="true" type="q22:RideRidersDAO" />
+            <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="riderider" nillable="true" type="q18:RideRidersDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -407,7 +355,7 @@
       <xs:element name="AddVehicle">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="vehicle" nillable="true" type="q23:VehicleDAO" />
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="vehicle" nillable="true" type="q19:VehicleDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -421,7 +369,7 @@
       <xs:element name="UpdateVehicle">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="vehicle" nillable="true" type="q24:VehicleDAO" />
+            <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="vehicle" nillable="true" type="q20:VehicleDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -435,7 +383,7 @@
       <xs:element name="DeleteVehicle">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="vehicle" nillable="true" type="q25:VehicleDAO" />
+            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="vehicle" nillable="true" type="q21:VehicleDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -449,7 +397,7 @@
       <xs:element name="CreateFlag">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="flag" nillable="true" type="q26:FlagDAO" />
+            <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="flag" nillable="true" type="q22:FlagDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -470,7 +418,7 @@
       <xs:element name="GetFlagByIDResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetFlagByIDResult" nillable="true" type="q27:FlagDAO" />
+            <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetFlagByIDResult" nillable="true" type="q23:FlagDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -482,7 +430,7 @@
       <xs:element name="GetAllFlagsResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetAllFlagsResult" nillable="true" type="q28:ArrayOfFlagDAO" />
+            <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetAllFlagsResult" nillable="true" type="q24:ArrayOfFlagDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -632,53 +580,23 @@
       <xs:element name="ArrayOfFlagDAO" nillable="true" type="tns:ArrayOfFlagDAO" />
     </xs:schema>
   </wsdl:types>
-  <wsdl:message name="IRevaShareDataService_RegisterUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  <wsdl:message name="IRevaShareDataService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_RegisterUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  <wsdl:message name="IRevaShareDataService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetAllUsers_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  <wsdl:message name="IRevaShareDataService_register_InputMessage">
+    <wsdl:part name="parameters" element="tns:register" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetAllUsers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetUserByUsername_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserByUsername" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetUserByUsername_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserByUsernameResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetAdmins_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAdmins" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetAdmins_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAdminsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetAdminByUsername_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAdminByUsername" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_GetAdminByUsername_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAdminByUsernameResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_UpdateUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateUser" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_UpdateUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  <wsdl:message name="IRevaShareDataService_register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_DeleteUser_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUser" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_DeleteUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_Login_InputMessage">
-    <wsdl:part name="parameters" element="tns:Login" />
-  </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_Login_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_ApproveDriver_InputMessage">
     <wsdl:part name="parameters" element="tns:ApproveDriver" />
@@ -709,6 +627,12 @@
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_OutputMessage">
     <wsdl:part name="parameters" element="tns:PendingDriverApprovalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IRevaShareDataService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_UpdatePassword_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePassword" />
@@ -843,37 +767,17 @@
     <wsdl:part name="parameters" element="tns:GetAllFlagsResponse" />
   </wsdl:message>
   <wsdl:portType name="IRevaShareDataService">
-    <wsdl:operation name="RegisterUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/RegisterUser" message="tns:IRevaShareDataService_RegisterUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/RegisterUserResponse" message="tns:IRevaShareDataService_RegisterUser_OutputMessage" />
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Login" message="tns:IRevaShareDataService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/LoginResponse" message="tns:IRevaShareDataService_Login_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllUsers">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAllUsers" message="tns:IRevaShareDataService_GetAllUsers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAllUsersResponse" message="tns:IRevaShareDataService_GetAllUsers_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetUserByUsername">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetUserByUsername" message="tns:IRevaShareDataService_GetUserByUsername_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetUserByUsernameResponse" message="tns:IRevaShareDataService_GetUserByUsername_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAdmins">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAdmins" message="tns:IRevaShareDataService_GetAdmins_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAdminsResponse" message="tns:IRevaShareDataService_GetAdmins_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAdminByUsername">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAdminByUsername" message="tns:IRevaShareDataService_GetAdminByUsername_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetAdminByUsernameResponse" message="tns:IRevaShareDataService_GetAdminByUsername_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUser" message="tns:IRevaShareDataService_UpdateUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserResponse" message="tns:IRevaShareDataService_UpdateUser_OutputMessage" />
+    <wsdl:operation name="register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/register" message="tns:IRevaShareDataService_register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/registerResponse" message="tns:IRevaShareDataService_register_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUser" message="tns:IRevaShareDataService_DeleteUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/DeleteUserResponse" message="tns:IRevaShareDataService_DeleteUser_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/Login" message="tns:IRevaShareDataService_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/LoginResponse" message="tns:IRevaShareDataService_Login_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ApproveDriver">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriver" message="tns:IRevaShareDataService_ApproveDriver_InputMessage" />
@@ -894,6 +798,10 @@
     <wsdl:operation name="PendingDriverApprovals">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" message="tns:IRevaShareDataService_PendingDriverApprovals_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovalsResponse" message="tns:IRevaShareDataService_PendingDriverApprovals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUser" message="tns:IRevaShareDataService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdateUserResponse" message="tns:IRevaShareDataService_UpdateUser_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdatePassword">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdatePassword" message="tns:IRevaShareDataService_UpdatePassword_InputMessage" />
@@ -986,8 +894,8 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IRevaShareDataService" type="tns:IRevaShareDataService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="RegisterUser">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/RegisterUser" style="document" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -995,44 +903,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllUsers">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetAllUsers" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetUserByUsername">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetUserByUsername" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAdmins">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetAdmins" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAdminByUsername">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetAdminByUsername" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateUser">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateUser" style="document" />
+    <wsdl:operation name="register">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/register" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1042,15 +914,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteUser">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/DeleteUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1096,6 +959,15 @@
     </wsdl:operation>
     <wsdl:operation name="PendingDriverApprovals">
       <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/UpdateUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -9,6 +9,7 @@ namespace revashare_svc_webapi.Client.Areas.HelpPage.Controllers
     /// <summary>
     /// The controller that will handle requests for the help page.
     /// </summary>
+    [System.Web.Mvc.AllowAnonymous]
     public class HelpController : Controller
     {
         private const string ErrorViewName = "Error";

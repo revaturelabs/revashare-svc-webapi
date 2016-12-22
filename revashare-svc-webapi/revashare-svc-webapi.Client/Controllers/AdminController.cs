@@ -25,9 +25,9 @@ namespace revashare_svc_webapi.Client.Controllers
         #region Admin CRUD
         [HttpPost]
         [Route("add-admin")]
-        public HttpResponseMessage AddAdmin([FromBody] UserDTO admin)
+        public HttpResponseMessage AddAdmin([FromBody] UserDTO admin, string username, string password)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin, username, password));
         }
 
         [HttpGet]

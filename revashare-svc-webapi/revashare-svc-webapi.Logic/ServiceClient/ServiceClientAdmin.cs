@@ -11,9 +11,9 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
     public partial class ServiceClient : IServiceClient
     {
-        public bool InsertAdmin(UserDAO adminToAdd)
+        public bool InsertAdmin(UserDAO adminToAdd, string UserName, string Password)
         {
-            throw new NotImplementedException();
+            return rs.AddAdmin(adminToAdd, UserName, Password);
         }
 
         public List<UserDAO> RequestAdmins()

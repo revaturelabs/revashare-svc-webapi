@@ -19,7 +19,14 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
         public List<UserDTO> RequestDrivers()
         {
-            throw new NotImplementedException();
+            List<UserDTO> drivers = new List<UserDTO>();
+
+            foreach (var user in sc.GetDrivers())
+            {
+                drivers.Add(UserMapper.mapToUserDTO(user));
+            }
+
+            return drivers;
         }
 
         public bool ModifyDriver(UserDTO driverToUpdate)

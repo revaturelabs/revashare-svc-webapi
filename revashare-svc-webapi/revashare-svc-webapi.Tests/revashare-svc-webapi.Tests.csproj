@@ -105,6 +105,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="UserTests.cs" />
     <Compile Include="VehicleTests.cs" />
   </ItemGroup>
   <ItemGroup>

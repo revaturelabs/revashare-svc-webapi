@@ -96,12 +96,15 @@
     <Compile Include="DriverTests.cs" />
     <Compile Include="FlagTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RideRiderTests.cs" />
     <Compile Include="RiderTests.cs" />
+    <Compile Include="RideTests.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="VehicleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

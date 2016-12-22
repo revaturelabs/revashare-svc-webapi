@@ -1,4 +1,5 @@
-﻿using System;
+﻿using revashare_svc_webapi.Logic.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -8,6 +9,8 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 {
     public class User : ClaimsPrincipal
     {
+
+
 
         public string userName
         {
@@ -33,7 +36,6 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             return false;
         }
-
 
     }
 }

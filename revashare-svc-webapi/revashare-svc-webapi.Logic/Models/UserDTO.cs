@@ -10,7 +10,7 @@ namespace revashare_svc_webapi.Logic.Models
    public class UserDTO
    {
       public string Name { get; set; }
-      public string PhoneNumber { get; set; }      
+      public string PhoneNumber { get; set; }
       public ApartmentDTO Apartment { get; set; }
       public string Email { get; set; }
       public int ApartmentId { get; set; }

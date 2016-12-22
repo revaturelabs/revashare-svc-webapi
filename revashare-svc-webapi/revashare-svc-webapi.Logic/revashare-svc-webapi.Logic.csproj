@@ -64,7 +64,6 @@
     <Compile Include="MessageLogic.cs" />
     <Compile Include="Models\DriverEnrollDTO.cs" />
     <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\OwinModels.cs" />
     <Compile Include="Models\Ride.cs" />
     <Compile Include="Models\RideRiderDTO.cs" />
     <Compile Include="Models\RoleDTO.cs" />

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Web;
+﻿using System.Security.Claims;
 
 namespace revashare_svc_webapi.Client.Models.OwinModels
 {
@@ -33,19 +29,19 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
             if (roleName.Equals(USER_TYPE))
             {
-                return new OwinModels.User(principal);
+                return new User(principal);
             }
             else if (roleName.Equals(RIDER_TYPE))
             {
-                return new OwinModels.Rider(principal);
+                return new Rider(principal);
             }
             else if (roleName.Equals(DRIVER_TYPE))
             {
-                return new OwinModels.Driver(principal);
+                return new Driver(principal);
             }
             else if (roleName.Equals(ADMIN_TYPE))
             {
-                return new OwinModels.Admin(principal);
+                return new Admin(principal);
             }
             else
             {

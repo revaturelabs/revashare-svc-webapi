@@ -38,6 +38,17 @@ namespace revashare_svc_webapi.Tests
     //}
 
     [Fact]
+    public void test_GetAdmins()
+    {
+      RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+
+      List<UserDAO> getAdmins = dataClient.GetAdmins().ToList();
+
+      Assert.NotNull(getAdmins);
+
+    }
+
+    [Fact]
     public void Test_WCF_GetUserReports()
     {
       RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();

@@ -51,12 +51,6 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAdmins", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAdminsResponse")]
         System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetAdminsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAdminByUsername", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAdminByUsernameResponse")]
-        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO GetAdminByUsername(string username);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAdminByUsername", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAdminByUsernameResponse")]
-        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> GetAdminByUsernameAsync(string username);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateUser", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateUserResponse")]
         bool UpdateUser(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user);
         
@@ -365,14 +359,6 @@ namespace revashare_svc_webapi.Client.RevaShareServiceReference {
         
         public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetAdminsAsync() {
             return base.Channel.GetAdminsAsync();
-        }
-        
-        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO GetAdminByUsername(string username) {
-            return base.Channel.GetAdminByUsername(username);
-        }
-        
-        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> GetAdminByUsernameAsync(string username) {
-            return base.Channel.GetAdminByUsernameAsync(username);
         }
         
         public bool UpdateUser(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user) {

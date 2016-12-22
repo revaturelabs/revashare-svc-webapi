@@ -3,14 +3,10 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
-using Microsoft.Owin.Security;
 using revashare_svc_webapi.Client.Models;
 using System.Net;
-//using Microsoft.AspNet.Identity;
 using System.Threading;
 using System.Linq;
-using System.Web.Http.Cors;
-using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using revashare_svc_webapi.Logic.Models;
 using Newtonsoft.Json;
 using revashare_svc_webapi.Logic.Mappers;
@@ -51,7 +47,6 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        //[AllowAnonymous]
         [HttpGet]
         [Route("test")]
         public IHttpActionResult test()
@@ -77,7 +72,6 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpPost]
         [Route("login")]
         public IHttpActionResult login([FromUri] loginModel model)
@@ -91,6 +85,13 @@ namespace revashare_svc_webapi.Client.Controllers
                 // handle case where user could not login
                 return StatusCode(HttpStatusCode.BadRequest);
             }
+
+            if (userSessionExists())
+            {
+                // user is already logged in
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+
 
             UserDTO userDTO = UserMapper.mapToUserDTO(user);
             string userJson = JsonConvert.SerializeObject(userDTO);
@@ -113,18 +114,28 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [Authorize(Roles = "user")]
-        [HttpGet]
+        [HttpPost]
         [Route("logout")]
         public IHttpActionResult logout()
         {
             var ctx = Request.GetOwinContext();
             var authManager = ctx.Authentication;
 
+            if (userSessionExists())
+            {
+                return StatusCode(HttpStatusCode.Forbidden);
+            }
+
             authManager.SignOut("ApplicationCookie");
             return Ok();
         }
 
+
+        private bool userSessionExists()
+        {
+            var owinUser = userFactory.getUser(Request.GetOwinContext());
+            return owinUser != null;
+        }
 
     }
 

@@ -52,12 +52,14 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return false;
         }
 
+
+        #region rider methods
+
         public virtual bool requestToBeDriver(DriverEnrollDTO enroll)
         {
             throw new MissingPermission();
         }
 
-        #region rider methods
         public virtual List<ApartmentDTO> getApartments()
         {
             throw new MissingPermission();

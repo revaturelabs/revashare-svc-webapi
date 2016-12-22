@@ -10,6 +10,7 @@ using System.Linq;
 using revashare_svc_webapi.Logic.Models;
 using Newtonsoft.Json;
 using revashare_svc_webapi.Logic.Mappers;
+using revashare_svc_webapi.Logic;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
@@ -76,9 +77,9 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("login")]
         public IHttpActionResult login([FromUri] loginModel model)
         {
-            
+
             // get user from login
-            var user = client.Login(model.userName, model.password);
+            var user = UserLogic.getInstance().login(model.userName, model.password);
 
             if (user == null)
             {
@@ -92,9 +93,7 @@ namespace revashare_svc_webapi.Client.Controllers
                 return StatusCode(HttpStatusCode.BadRequest);
             }
 
-
-            UserDTO userDTO = UserMapper.mapToUserDTO(user);
-            string userJson = JsonConvert.SerializeObject(userDTO);
+            string userJson = JsonConvert.SerializeObject(user);
 
             Claim[] claims = new Claim[]
             {
@@ -135,6 +134,19 @@ namespace revashare_svc_webapi.Client.Controllers
         {
             var owinUser = userFactory.getUser(Request.GetOwinContext());
             return owinUser != null;
+        }
+
+
+        [HttpGet]
+        [Route("profile")]
+        public UserDTO profile()
+        {
+
+            var user = userFactory.getUser(Request.GetOwinContext());
+            UserDTO userData = user.getUserDetails();
+
+            return userData;
+
         }
 
     }

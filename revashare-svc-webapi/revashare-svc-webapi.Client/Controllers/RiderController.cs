@@ -17,7 +17,7 @@ namespace revashare_svc_webapi.Client.Controllers
    {
       private IRider riderLogic;
 
-      public RiderController()
+      private RiderController()
       {
          riderLogic = new RiderLogic(new ServiceClient());
       }
@@ -27,9 +27,10 @@ namespace revashare_svc_webapi.Client.Controllers
       }
             
       //Post api/rider/get-rides
+      //works
       [HttpPost]
       [Route("get-rides")]
-      public HttpResponseMessage GetRides([FromBody] string location)
+      public HttpResponseMessage GetRides([FromUri] string location)
       {
          return Request.CreateResponse(HttpStatusCode.OK, getRidesHelper(location), "application/json");
       }

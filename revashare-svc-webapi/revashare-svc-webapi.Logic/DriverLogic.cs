@@ -102,6 +102,7 @@ namespace revashare_svc_webapi.Logic {
             try
             {
                 List<UserDTO> members = new List<UserDTO>();
+                ride = getSingleRide(ride);
                 var riders = svc.getRidersInRide(Mappers.RideMapper.mapToRideDAO(ride));
                 foreach (var item in riders)
                 {

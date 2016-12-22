@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Models
 {
+
    public class User
    {
       public string Name { get; set; }

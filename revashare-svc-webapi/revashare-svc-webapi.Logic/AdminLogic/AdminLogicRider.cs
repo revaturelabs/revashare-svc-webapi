@@ -19,7 +19,14 @@ namespace revashare_svc_webapi.Logic.AdminLogic
 
         public List<UserDTO> RequestRiders()
         {
-            throw new NotImplementedException();
+            List<UserDTO> riders = new List<UserDTO>();
+
+            foreach (var user in sc.GetRiders())
+            {
+                riders.Add(UserMapper.mapToUserDTO(user));
+            }
+
+            return riders;
         }
 
         public bool ModifyRider(UserDTO riderToUpdate)

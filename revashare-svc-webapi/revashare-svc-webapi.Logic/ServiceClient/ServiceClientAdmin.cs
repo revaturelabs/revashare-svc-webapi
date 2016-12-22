@@ -11,9 +11,27 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 {
     public partial class ServiceClient : IServiceClient
     {
-        public bool InsertAdmin(UserDAO adminToAdd)
+        public bool InsertAdmin(UserDAO adminToAdd, string UserName, string Password)
         {
-            throw new NotImplementedException();
+            ApartmentDAO apartment = null;
+
+            foreach(var apt in rs.ListApartments())
+            {
+                if(apt.Name == adminToAdd.Apartment.Name)
+                {
+                    apartment = apt;
+                }
+            }
+
+            if (apartment != null)
+            {
+                adminToAdd.Apartment = apartment;
+                return rs.AddAdmin(adminToAdd, UserName, Password);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<UserDAO> RequestAdmins()

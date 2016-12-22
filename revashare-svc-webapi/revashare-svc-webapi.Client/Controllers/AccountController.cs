@@ -12,6 +12,8 @@ using System.Linq;
 using System.Web.Http.Cors;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using revashare_svc_webapi.Logic.Models;
+using Newtonsoft.Json;
+using revashare_svc_webapi.Logic.Mappers;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
@@ -84,6 +86,10 @@ namespace revashare_svc_webapi.Client.Controllers
             // should get from login
             var user = client.Login(model.userName, model.password);
 
+            UserDTO userDTO = UserMapper.mapToUserDTO(user);
+
+            string userJson = JsonConvert.SerializeObject(userDTO);
+
             if (user == null)
             {
                 // handle case where user could not login
@@ -93,8 +99,7 @@ namespace revashare_svc_webapi.Client.Controllers
             Claim[] claims = new Claim[]
             {
                 new Claim(ClaimTypes.Role, "user"),
-                new Claim(ClaimTypes.Name, user.Name),
-                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.UserData, userJson)
             };
 
             ClaimsIdentity identity = new ClaimsIdentity(claims, "ApplicationCookie");

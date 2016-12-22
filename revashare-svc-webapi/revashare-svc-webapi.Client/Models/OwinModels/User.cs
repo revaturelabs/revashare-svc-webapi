@@ -1,4 +1,5 @@
-﻿using revashare_svc_webapi.Logic.Model;
+﻿using Newtonsoft.Json;
+using revashare_svc_webapi.Logic.Model;
 using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
     public class User : ClaimsPrincipal
     {
 
-
+        protected UserDTO userDetails;
 
         public string userName
         {
@@ -30,7 +31,14 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         public User(ClaimsPrincipal principal) : base(principal)
         {
+            string userJson = principal.FindFirst(ClaimTypes.UserData).Value;
+            this.userDetails = JsonConvert.DeserializeObject<UserDTO>(userJson);
+        }
 
+
+        public UserDTO getUserDetails()
+        {
+            return this.userDetails;
         }
 
 

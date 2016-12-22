@@ -274,7 +274,6 @@
     <Compile Include="Models\DriverModel.cs" />
     <Compile Include="Models\OwinModels\Admin.cs" />
     <Compile Include="Models\OwinModels\Driver.cs" />
-    <Compile Include="Models\OwinModels\OwinModels.cs" />
     <Compile Include="Models\OwinModels\Rider.cs" />
     <Compile Include="Models\OwinModels\User.cs" />
     <Compile Include="Models\OwinModels\UserFactory.cs" />

@@ -19,8 +19,8 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
       public List<RideDAO> GetRides()
       {
-         //return rs.GetRides();
-         throw new NotImplementedException();
+         return rs.GetAllRides().ToList();
+         
       }
 
       public bool InsertRide(RideDAO ride)

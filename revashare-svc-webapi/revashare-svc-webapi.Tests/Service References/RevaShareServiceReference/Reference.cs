@@ -8,3 +8,683 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+namespace revashare_svc_webapi.Tests.RevaShareServiceReference {
+    
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RevaShareServiceReference.IRevaShareDataService")]
+    public interface IRevaShareDataService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/RegisterUser", ReplyAction="http://tempuri.org/IRevaShareDataService/RegisterUserResponse")]
+        bool RegisterUser(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/RegisterUser", ReplyAction="http://tempuri.org/IRevaShareDataService/RegisterUserResponse")]
+        System.Threading.Tasks.Task<bool> RegisterUserAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAllUsers", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAllUsersResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetAllUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAllUsers", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAllUsersResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetAllUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetUserByUsername", ReplyAction="http://tempuri.org/IRevaShareDataService/GetUserByUsernameResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO GetUserByUsername(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetUserByUsername", ReplyAction="http://tempuri.org/IRevaShareDataService/GetUserByUsernameResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> GetUserByUsernameAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetRidersResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetRiders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetRidersResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetRidersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetDrivers", ReplyAction="http://tempuri.org/IRevaShareDataService/GetDriversResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetDrivers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetDrivers", ReplyAction="http://tempuri.org/IRevaShareDataService/GetDriversResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetDriversAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAdmins", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAdminsResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetAdmins();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAdmins", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAdminsResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetAdminsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAdminByUsername", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAdminByUsernameResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO GetAdminByUsername(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAdminByUsername", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAdminByUsernameResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> GetAdminByUsernameAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateUser", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateUserResponse")]
+        bool UpdateUser(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateUser", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateUserResponse")]
+        System.Threading.Tasks.Task<bool> UpdateUserAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteUser", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteUserResponse")]
+        bool DeleteUser(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteUser", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteUserResponse")]
+        System.Threading.Tasks.Task<bool> DeleteUserAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddAdmin", ReplyAction="http://tempuri.org/IRevaShareDataService/AddAdminResponse")]
+        bool AddAdmin(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddAdmin", ReplyAction="http://tempuri.org/IRevaShareDataService/AddAdminResponse")]
+        System.Threading.Tasks.Task<bool> AddAdminAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Login", ReplyAction="http://tempuri.org/IRevaShareDataService/LoginResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Login(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/Login", ReplyAction="http://tempuri.org/IRevaShareDataService/LoginResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> LoginAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ApproveDriver", ReplyAction="http://tempuri.org/IRevaShareDataService/ApproveDriverResponse")]
+        bool ApproveDriver(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ApproveDriver", ReplyAction="http://tempuri.org/IRevaShareDataService/ApproveDriverResponse")]
+        System.Threading.Tasks.Task<bool> ApproveDriverAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ApproveRider", ReplyAction="http://tempuri.org/IRevaShareDataService/ApproveRiderResponse")]
+        bool ApproveRider(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ApproveRider", ReplyAction="http://tempuri.org/IRevaShareDataService/ApproveRiderResponse")]
+        System.Threading.Tasks.Task<bool> ApproveRiderAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriver", ReplyAction="http://tempuri.org/IRevaShareDataService/RequestToBeDriverResponse")]
+        bool RequestToBeDriver(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriver", ReplyAction="http://tempuri.org/IRevaShareDataService/RequestToBeDriverResponse")]
+        System.Threading.Tasks.Task<bool> RequestToBeDriverAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/RemoveDriverPrivileges", ReplyAction="http://tempuri.org/IRevaShareDataService/RemoveDriverPrivilegesResponse")]
+        bool RemoveDriverPrivileges(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/RemoveDriverPrivileges", ReplyAction="http://tempuri.org/IRevaShareDataService/RemoveDriverPrivilegesResponse")]
+        System.Threading.Tasks.Task<bool> RemoveDriverPrivilegesAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetPendingRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetPendingRidersResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetPendingRiders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetPendingRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetPendingRidersResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetPendingRidersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetPendingDrivers", ReplyAction="http://tempuri.org/IRevaShareDataService/GetPendingDriversResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetPendingDrivers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetPendingDrivers", ReplyAction="http://tempuri.org/IRevaShareDataService/GetPendingDriversResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetPendingDriversAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdatePassword", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdatePasswordResponse")]
+        bool UpdatePassword(string username, string currentPassword, string newPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdatePassword", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdatePasswordResponse")]
+        System.Threading.Tasks.Task<bool> UpdatePasswordAsync(string username, string currentPassword, string newPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetApartmentByName", ReplyAction="http://tempuri.org/IRevaShareDataService/GetApartmentByNameResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO GetApartmentByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetApartmentByName", ReplyAction="http://tempuri.org/IRevaShareDataService/GetApartmentByNameResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO> GetApartmentByNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/AddApartmentResponse")]
+        bool AddApartment(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/AddApartmentResponse")]
+        System.Threading.Tasks.Task<bool> AddApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListApartments", ReplyAction="http://tempuri.org/IRevaShareDataService/ListApartmentsResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO[] ListApartments();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListApartments", ReplyAction="http://tempuri.org/IRevaShareDataService/ListApartmentsResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO[]> ListApartmentsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateApartmentResponse")]
+        bool UpdateApartment(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateApartmentResponse")]
+        System.Threading.Tasks.Task<bool> UpdateApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteApartmentResponse")]
+        bool DeleteApartment(string apartment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteApartmentResponse")]
+        System.Threading.Tasks.Task<bool> DeleteApartmentAsync(string apartment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddRide", ReplyAction="http://tempuri.org/IRevaShareDataService/AddRideResponse")]
+        bool AddRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddRide", ReplyAction="http://tempuri.org/IRevaShareDataService/AddRideResponse")]
+        System.Threading.Tasks.Task<bool> AddRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAllRides", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAllRidesResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] GetAllRides();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAllRides", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAllRidesResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> GetAllRidesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateRide", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateRideResponse")]
+        bool UpdateRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateRide", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateRideResponse")]
+        System.Threading.Tasks.Task<bool> UpdateRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteRide", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteRideResponse")]
+        bool DeleteRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteRide", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteRideResponse")]
+        System.Threading.Tasks.Task<bool> DeleteRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] ListRidesAtApartment(string apartmentName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartment", ReplyAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> ListRidesAtApartmentAsync(string apartmentName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetOpenSeats", ReplyAction="http://tempuri.org/IRevaShareDataService/GetOpenSeatsResponse")]
+        int GetOpenSeats(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetOpenSeats", ReplyAction="http://tempuri.org/IRevaShareDataService/GetOpenSeatsResponse")]
+        System.Threading.Tasks.Task<int> GetOpenSeatsAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentAM", ReplyAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentAMResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] ListRidesAtApartmentAM(string apartmentName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentAM", ReplyAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentAMResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> ListRidesAtApartmentAMAsync(string apartmentName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentPM", ReplyAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentPMResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] ListRidesAtApartmentPM(string apartmentName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentPM", ReplyAction="http://tempuri.org/IRevaShareDataService/ListRidesAtApartmentPMResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> ListRidesAtApartmentPMAsync(string apartmentName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetRideRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetRideRidersResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO[] GetRideRiders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetRideRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/GetRideRidersResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO[]> GetRideRidersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddRideRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/AddRideRidersResponse")]
+        bool AddRideRiders(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddRideRiders", ReplyAction="http://tempuri.org/IRevaShareDataService/AddRideRidersResponse")]
+        System.Threading.Tasks.Task<bool> AddRideRidersAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateRideRiderResponse")]
+        bool UpdateRideRider(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateRideRiderResponse")]
+        System.Threading.Tasks.Task<bool> UpdateRideRiderAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AcceptRideRequest", ReplyAction="http://tempuri.org/IRevaShareDataService/AcceptRideRequestResponse")]
+        bool AcceptRideRequest(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AcceptRideRequest", ReplyAction="http://tempuri.org/IRevaShareDataService/AcceptRideRequestResponse")]
+        System.Threading.Tasks.Task<bool> AcceptRideRequestAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteRideRiderResponse")]
+        bool DeleteRideRider(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteRideRider", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteRideRiderResponse")]
+        System.Threading.Tasks.Task<bool> DeleteRideRiderAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/getRidersInRide", ReplyAction="http://tempuri.org/IRevaShareDataService/getRidersInRideResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] getRidersInRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/getRidersInRide", ReplyAction="http://tempuri.org/IRevaShareDataService/getRidersInRideResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> getRidersInRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddVehicle", ReplyAction="http://tempuri.org/IRevaShareDataService/AddVehicleResponse")]
+        bool AddVehicle(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/AddVehicle", ReplyAction="http://tempuri.org/IRevaShareDataService/AddVehicleResponse")]
+        System.Threading.Tasks.Task<bool> AddVehicleAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateVehicle", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateVehicleResponse")]
+        bool UpdateVehicle(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateVehicle", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateVehicleResponse")]
+        System.Threading.Tasks.Task<bool> UpdateVehicleAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteVehicle", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteVehicleResponse")]
+        bool DeleteVehicle(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/DeleteVehicle", ReplyAction="http://tempuri.org/IRevaShareDataService/DeleteVehicleResponse")]
+        System.Threading.Tasks.Task<bool> DeleteVehicleAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetVehicles", ReplyAction="http://tempuri.org/IRevaShareDataService/GetVehiclesResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[] GetVehicles();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetVehicles", ReplyAction="http://tempuri.org/IRevaShareDataService/GetVehiclesResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[]> GetVehiclesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/CreateFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/CreateFlagResponse")]
+        bool CreateFlag(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/CreateFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/CreateFlagResponse")]
+        System.Threading.Tasks.Task<bool> CreateFlagAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetFlagByID", ReplyAction="http://tempuri.org/IRevaShareDataService/GetFlagByIDResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO GetFlagByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetFlagByID", ReplyAction="http://tempuri.org/IRevaShareDataService/GetFlagByIDResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO> GetFlagByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAllFlags", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAllFlagsResponse")]
+        revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[] GetAllFlags();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/GetAllFlags", ReplyAction="http://tempuri.org/IRevaShareDataService/GetAllFlagsResponse")]
+        System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
+        bool MarkFlagAsRead(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/MarkFlagAsRead", ReplyAction="http://tempuri.org/IRevaShareDataService/MarkFlagAsReadResponse")]
+        System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateFlagResponse")]
+        bool UpdateFlag(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRevaShareDataService/UpdateFlag", ReplyAction="http://tempuri.org/IRevaShareDataService/UpdateFlagResponse")]
+        System.Threading.Tasks.Task<bool> UpdateFlagAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRevaShareDataServiceChannel : revashare_svc_webapi.Tests.RevaShareServiceReference.IRevaShareDataService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RevaShareDataServiceClient : System.ServiceModel.ClientBase<revashare_svc_webapi.Tests.RevaShareServiceReference.IRevaShareDataService>, revashare_svc_webapi.Tests.RevaShareServiceReference.IRevaShareDataService {
+        
+        public RevaShareDataServiceClient() {
+        }
+        
+        public RevaShareDataServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public RevaShareDataServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RevaShareDataServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RevaShareDataServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool RegisterUser(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password) {
+            return base.Channel.RegisterUser(user, username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterUserAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password) {
+            return base.Channel.RegisterUserAsync(user, username, password);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetAllUsers() {
+            return base.Channel.GetAllUsers();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetAllUsersAsync() {
+            return base.Channel.GetAllUsersAsync();
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO GetUserByUsername(string username) {
+            return base.Channel.GetUserByUsername(username);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> GetUserByUsernameAsync(string username) {
+            return base.Channel.GetUserByUsernameAsync(username);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetRiders() {
+            return base.Channel.GetRiders();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetRidersAsync() {
+            return base.Channel.GetRidersAsync();
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetDrivers() {
+            return base.Channel.GetDrivers();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetDriversAsync() {
+            return base.Channel.GetDriversAsync();
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetAdmins() {
+            return base.Channel.GetAdmins();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetAdminsAsync() {
+            return base.Channel.GetAdminsAsync();
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO GetAdminByUsername(string username) {
+            return base.Channel.GetAdminByUsername(username);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> GetAdminByUsernameAsync(string username) {
+            return base.Channel.GetAdminByUsernameAsync(username);
+        }
+        
+        public bool UpdateUser(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user) {
+            return base.Channel.UpdateUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateUserAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user) {
+            return base.Channel.UpdateUserAsync(user);
+        }
+        
+        public bool DeleteUser(string username) {
+            return base.Channel.DeleteUser(username);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteUserAsync(string username) {
+            return base.Channel.DeleteUserAsync(username);
+        }
+        
+        public bool AddAdmin(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password) {
+            return base.Channel.AddAdmin(user, username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddAdminAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, string username, string password) {
+            return base.Channel.AddAdminAsync(user, username, password);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO Login(string username, string password) {
+            return base.Channel.Login(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO> LoginAsync(string username, string password) {
+            return base.Channel.LoginAsync(username, password);
+        }
+        
+        public bool ApproveDriver(string username) {
+            return base.Channel.ApproveDriver(username);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ApproveDriverAsync(string username) {
+            return base.Channel.ApproveDriverAsync(username);
+        }
+        
+        public bool ApproveRider(string username) {
+            return base.Channel.ApproveRider(username);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ApproveRiderAsync(string username) {
+            return base.Channel.ApproveRiderAsync(username);
+        }
+        
+        public bool RequestToBeDriver(string username) {
+            return base.Channel.RequestToBeDriver(username);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RequestToBeDriverAsync(string username) {
+            return base.Channel.RequestToBeDriverAsync(username);
+        }
+        
+        public bool RemoveDriverPrivileges(string username) {
+            return base.Channel.RemoveDriverPrivileges(username);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveDriverPrivilegesAsync(string username) {
+            return base.Channel.RemoveDriverPrivilegesAsync(username);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetPendingRiders() {
+            return base.Channel.GetPendingRiders();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetPendingRidersAsync() {
+            return base.Channel.GetPendingRidersAsync();
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] GetPendingDrivers() {
+            return base.Channel.GetPendingDrivers();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> GetPendingDriversAsync() {
+            return base.Channel.GetPendingDriversAsync();
+        }
+        
+        public bool UpdatePassword(string username, string currentPassword, string newPassword) {
+            return base.Channel.UpdatePassword(username, currentPassword, newPassword);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdatePasswordAsync(string username, string currentPassword, string newPassword) {
+            return base.Channel.UpdatePasswordAsync(username, currentPassword, newPassword);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO GetApartmentByName(string name) {
+            return base.Channel.GetApartmentByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO> GetApartmentByNameAsync(string name) {
+            return base.Channel.GetApartmentByNameAsync(name);
+        }
+        
+        public bool AddApartment(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment) {
+            return base.Channel.AddApartment(apartment);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment) {
+            return base.Channel.AddApartmentAsync(apartment);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO[] ListApartments() {
+            return base.Channel.ListApartments();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO[]> ListApartmentsAsync() {
+            return base.Channel.ListApartmentsAsync();
+        }
+        
+        public bool UpdateApartment(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment) {
+            return base.Channel.UpdateApartment(apartment);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateApartmentAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO apartment) {
+            return base.Channel.UpdateApartmentAsync(apartment);
+        }
+        
+        public bool DeleteApartment(string apartment) {
+            return base.Channel.DeleteApartment(apartment);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteApartmentAsync(string apartment) {
+            return base.Channel.DeleteApartmentAsync(apartment);
+        }
+        
+        public bool AddRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.AddRide(ride);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.AddRideAsync(ride);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] GetAllRides() {
+            return base.Channel.GetAllRides();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> GetAllRidesAsync() {
+            return base.Channel.GetAllRidesAsync();
+        }
+        
+        public bool UpdateRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.UpdateRide(ride);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.UpdateRideAsync(ride);
+        }
+        
+        public bool DeleteRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.DeleteRide(ride);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.DeleteRideAsync(ride);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] ListRidesAtApartment(string apartmentName) {
+            return base.Channel.ListRidesAtApartment(apartmentName);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> ListRidesAtApartmentAsync(string apartmentName) {
+            return base.Channel.ListRidesAtApartmentAsync(apartmentName);
+        }
+        
+        public int GetOpenSeats(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.GetOpenSeats(ride);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOpenSeatsAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.GetOpenSeatsAsync(ride);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] ListRidesAtApartmentAM(string apartmentName) {
+            return base.Channel.ListRidesAtApartmentAM(apartmentName);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> ListRidesAtApartmentAMAsync(string apartmentName) {
+            return base.Channel.ListRidesAtApartmentAMAsync(apartmentName);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[] ListRidesAtApartmentPM(string apartmentName) {
+            return base.Channel.ListRidesAtApartmentPM(apartmentName);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO[]> ListRidesAtApartmentPMAsync(string apartmentName) {
+            return base.Channel.ListRidesAtApartmentPMAsync(apartmentName);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO[] GetRideRiders() {
+            return base.Channel.GetRideRiders();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO[]> GetRideRidersAsync() {
+            return base.Channel.GetRideRidersAsync();
+        }
+        
+        public bool AddRideRiders(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.AddRideRiders(user, ride);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddRideRidersAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO user, revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.AddRideRidersAsync(user, ride);
+        }
+        
+        public bool UpdateRideRider(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.UpdateRideRider(riderider);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateRideRiderAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.UpdateRideRiderAsync(riderider);
+        }
+        
+        public bool AcceptRideRequest(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.AcceptRideRequest(riderider);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AcceptRideRequestAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.AcceptRideRequestAsync(riderider);
+        }
+        
+        public bool DeleteRideRider(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.DeleteRideRider(riderider);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteRideRiderAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO riderider) {
+            return base.Channel.DeleteRideRiderAsync(riderider);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[] getRidersInRide(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.getRidersInRide(ride);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO[]> getRidersInRideAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO ride) {
+            return base.Channel.getRidersInRideAsync(ride);
+        }
+        
+        public bool AddVehicle(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle) {
+            return base.Channel.AddVehicle(vehicle);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddVehicleAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle) {
+            return base.Channel.AddVehicleAsync(vehicle);
+        }
+        
+        public bool UpdateVehicle(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle) {
+            return base.Channel.UpdateVehicle(vehicle);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateVehicleAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle) {
+            return base.Channel.UpdateVehicleAsync(vehicle);
+        }
+        
+        public bool DeleteVehicle(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle) {
+            return base.Channel.DeleteVehicle(vehicle);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteVehicleAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO vehicle) {
+            return base.Channel.DeleteVehicleAsync(vehicle);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[] GetVehicles() {
+            return base.Channel.GetVehicles();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO[]> GetVehiclesAsync() {
+            return base.Channel.GetVehiclesAsync();
+        }
+        
+        public bool CreateFlag(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.CreateFlag(flag);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CreateFlagAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.CreateFlagAsync(flag);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO GetFlagByID(int id) {
+            return base.Channel.GetFlagByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO> GetFlagByIDAsync(int id) {
+            return base.Channel.GetFlagByIDAsync(id);
+        }
+        
+        public revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[] GetAllFlags() {
+            return base.Channel.GetAllFlags();
+        }
+        
+        public System.Threading.Tasks.Task<revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO[]> GetAllFlagsAsync() {
+            return base.Channel.GetAllFlagsAsync();
+        }
+        
+        public bool MarkFlagAsRead(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.MarkFlagAsRead(flag);
+        }
+        
+        public System.Threading.Tasks.Task<bool> MarkFlagAsReadAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.MarkFlagAsReadAsync(flag);
+        }
+        
+        public bool UpdateFlag(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.UpdateFlag(flag);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFlagAsync(revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO flag) {
+            return base.Channel.UpdateFlagAsync(flag);
+        }
+    }
+}

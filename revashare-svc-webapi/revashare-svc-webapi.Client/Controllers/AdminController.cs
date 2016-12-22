@@ -25,9 +25,9 @@ namespace revashare_svc_webapi.Client.Controllers
         #region Admin CRUD
         [HttpPost]
         [Route("add-admin")]
-        public HttpResponseMessage AddAdmin([FromBody] UserDTO admin, string username, string password)
+        public HttpResponseMessage AddAdmin([FromBody] UserDTO admin, string password)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin, username, password));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin, admin.UserName, password));
         }
 
         [HttpGet]
@@ -128,10 +128,10 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
         [HttpPost]
-        [Route("approve-user")]
+        [Route("approve-driver")]
         public HttpResponseMessage ApproveDriver([FromBody] UserDTO user)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveUser(user));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveDriver(user));
         }
 
         [HttpGet]

@@ -12,7 +12,7 @@ namespace revashare_svc_webapi.Logic.RiderLogic
    {
       public List<UserDTO> getUsers()
       {
-         var list = sc.GetUsers();
+         var list = sc.GetRiders();
          var ret = new List<UserDTO>();
          foreach (var item in list)
          {

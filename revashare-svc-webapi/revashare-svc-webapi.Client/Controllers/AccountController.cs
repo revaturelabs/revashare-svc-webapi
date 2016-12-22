@@ -20,10 +20,12 @@ namespace revashare_svc_webapi.Client.Controllers
     {
 
         private RevaShareServiceReference.RevaShareDataServiceClient client;
+        private Models.OwinModels.UserFactory userFactory;
 
         public AccountController()
         {
             this.client = new RevaShareServiceReference.RevaShareDataServiceClient();
+            this.userFactory = Models.OwinModels.UserFactory.getFactory();
         }
 
 
@@ -52,6 +54,10 @@ namespace revashare_svc_webapi.Client.Controllers
         public IHttpActionResult test()
         {
 
+            Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
+            var owinUser = userFactory.getUser(Request.GetOwinContext());
+
+
             var prinicpal = (ClaimsPrincipal)Thread.CurrentPrincipal;
             var role = prinicpal.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault();
 
@@ -69,7 +75,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
 
         [AllowAnonymous]
-        [HttpGet]
+        [HttpPost]
         [Route("login")]
         public IHttpActionResult login([FromUri] loginModel model)
         {

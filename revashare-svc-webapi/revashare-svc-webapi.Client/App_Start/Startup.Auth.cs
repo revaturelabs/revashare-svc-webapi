@@ -17,8 +17,8 @@ namespace revashare_svc_webapi.Client
                 AuthenticationType = "ApplicationCookie",
                 CookieName = "revashareAuth",
                 CookieSecure = CookieSecureOption.Never,
-                LoginPath = new PathString("/api/account/login"),
-                LogoutPath = new PathString("/api/account/logout")
+                //LoginPath = new PathString("/api/account/login"),
+                //LogoutPath = new PathString("/api/account/logout")
             });
 
         }

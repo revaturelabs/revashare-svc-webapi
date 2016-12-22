@@ -43,16 +43,16 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
         public bool AproveUser(string UserName)
         {
-            return rs.ApproveUser(UserName);
+            return rs.ApproveRider(UserName);
         }
         public List<UserDAO> PendingRegistrations()
         {
-            return rs.PendingRegistrations().ToList();
+            return rs.GetPendingRiders().ToList();
         }
 
         public List<UserDAO> PendingDriverAprovals()
         {
-            return rs.PendingDriverApprovals().ToList();
+            return rs.GetPendingDrivers().ToList();
         }
     }
 }

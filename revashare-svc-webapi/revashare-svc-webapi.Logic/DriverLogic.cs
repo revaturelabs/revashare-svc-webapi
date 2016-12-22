@@ -117,6 +117,11 @@ namespace revashare_svc_webapi.Logic {
 
     public bool AcceptPassenger(RideRiderDTO rider) {
       try {
+                var ride = getSingleRide(rider.Ride);
+                var passenger = svc.GetUserByUsername(rider.Rider.UserName);
+                rider.Ride = ride;
+                rider.Rider = Mappers.UserMapper.mapToUserDTO(passenger);
+                rider.Accepted = true;
         return svc.AcceptRideRequest(RideRiderMapper.mapToRideRiderDAO(rider));
       }
       catch (Exception) {

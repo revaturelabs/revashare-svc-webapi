@@ -12,15 +12,28 @@ namespace revashare_svc_webapi.Logic {
   public class DriverLogic : IDriverRepository {
     private RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
 
-    public VehicleDTO ViewVehicleInfo(UserDTO driver) {
+    public VehicleDTO ViewVehicleInfo(string driver) {
       try {
-        return null;
+                var vehicles = svc.GetVehicles();
+                foreach (var item in vehicles)
+                {
+                    if(item.Owner.UserName == driver)
+                    {
+                        return Mappers.VehicleMapper.mapToVehicleDTO(item);
+                    }
+                }
+                return null;
       }
       catch (Exception) {
         return null;
       }
     }
 
+        public bool AddVehicle(VehicleDTO vehicle)
+        {
+            VehicleDAO something = Mappers.VehicleMapper.mapToVehicleDAO(vehicle);
+             return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
+        }
     public bool UpdateVehicleInfo(VehicleDTO vehicle) {
       try {
         return svc.UpdateVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
@@ -32,7 +45,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool ReportRider(FlagDTO flag) {
       try {
-        return true;
+        return svc.CreateFlag(FlagMapper.mapToFlagDAO(flag));
       }
       catch (Exception) {
         return false;
@@ -41,7 +54,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool SetAvailability(RideDTO ride) {
       try {
-        return true;
+        return svc.UpdateRide(RideMapper.mapToRideDAO(ride));
       }
       catch (Exception) {
         return false;
@@ -50,7 +63,7 @@ namespace revashare_svc_webapi.Logic {
 
     public bool UpdateDriverProfile(UserDTO driver) {
       try {
-        return true;
+        return svc.UpdateUser(UserMapper.mapToUserDAO(driver));
       }
       catch (Exception) {
         return false;
@@ -67,6 +80,15 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
+        public RideDTO getSingleRide(RideDTO ride)
+        {
+            var location = svc.GetUserByUsername(ride.Vehicle.Owner.UserName);
+            var rides = svc.ListRidesAtApartment(location.Apartment.Name);
+            return Mappers.RideMapper.mapToRideDTO(rides.Where(x => x.Vehicle.Owner.UserName == ride.Vehicle.Owner.UserName
+                                            && x.IsAmRide == ride.IsAMRide
+                                            && x.StartOfWeek == ride.StartOfWeekDate).FirstOrDefault());
+        }
+
     public bool CancelRide(RideDTO ride) {
       try {
         return svc.DeleteRide(RideMapper.mapToRideDAO(ride));
@@ -76,18 +98,25 @@ namespace revashare_svc_webapi.Logic {
       }
     }
 
-    public List<SeatDTO> ViewPassengers() {
-      try {
-        return null;
-      }
+    public List<UserDTO> ViewPassengers(RideDTO ride) {
+            try
+            {
+                List<UserDTO> members = new List<UserDTO>();
+                var riders = svc.getRidersInRide(Mappers.RideMapper.mapToRideDAO(ride));
+                foreach (var item in riders)
+                {
+                    members.Add(Mappers.UserMapper.mapToUserDTO(item));
+                }
+                return members;
+            }
       catch (Exception) {
         return null;
       }
     }
 
-    public bool AcceptPassenger(SeatDTO rider) {
+    public bool AcceptPassenger(RideRiderDTO rider) {
       try {
-        return true;
+        return svc.AcceptRideRequest(RideRiderMapper.mapToRideRiderDAO(rider));
       }
       catch (Exception) {
         return false;

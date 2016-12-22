@@ -32,7 +32,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
       }
       public bool Accept(RideRidersDAO rr)
       {
-         return rs.Accept(rr);
+         return rs.AcceptRideRequest(rr);
       }
    }
 }

@@ -19,8 +19,7 @@ namespace revashare_svc_webapi.Logic.Models {
 
        public int Capacity { get; set; }
 
+        // may need to take this out and create new model to pass to UI
        public UserDTO Owner { get; set; }
-
-       public int OwnerId { get; set; }
    }
 }

@@ -176,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO.datasource" />
+    <Content Include="revashare_svc_webapi.Logic.RevaShareServiceReference.FlagDAO.datasource" />
+    <Content Include="revashare_svc_webapi.Logic.RevaShareServiceReference.RideDAO.datasource" />
+    <Content Include="revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
+    <Content Include="revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
+    <Content Include="revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO.datasource" />
     <None Include="Service References\RevaShareServiceReference\configuration91.svcinfo" />
     <None Include="Service References\RevaShareServiceReference\configuration.svcinfo" />
     <None Include="Service References\RevaShareServiceReference\Reference.svcmap">
@@ -183,24 +189,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Web.config" />
-    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.ApartmentDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.FlagDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.RideDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.RideRidersDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.UserDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Client.RevaShareServiceReference.VehicleDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

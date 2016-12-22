@@ -144,17 +144,17 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="ApproveUser">
+      <xs:element name="ApproveRider">
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="ApproveUserResponse">
+      <xs:element name="ApproveRiderResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="ApproveUserResult" type="xs:boolean" />
+            <xs:element minOccurs="0" name="ApproveRiderResult" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -172,27 +172,27 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="PendingRegistrations">
+      <xs:element name="GetPendingRiders">
         <xs:complexType>
           <xs:sequence />
         </xs:complexType>
       </xs:element>
-      <xs:element name="PendingRegistrationsResponse">
+      <xs:element name="GetPendingRidersResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingRegistrationsResult" nillable="true" type="q9:ArrayOfUserDAO" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetPendingRidersResult" nillable="true" type="q9:ArrayOfUserDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="PendingDriverApprovals">
+      <xs:element name="GetPendingDrivers">
         <xs:complexType>
           <xs:sequence />
         </xs:complexType>
       </xs:element>
-      <xs:element name="PendingDriverApprovalsResponse">
+      <xs:element name="GetPendingDriversResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="PendingDriverApprovalsResult" nillable="true" type="q10:ArrayOfUserDAO" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RevaShare.DataClient.Models" minOccurs="0" name="GetPendingDriversResult" nillable="true" type="q10:ArrayOfUserDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -795,11 +795,11 @@
   <wsdl:message name="IRevaShareDataService_ApproveDriver_OutputMessage">
     <wsdl:part name="parameters" element="tns:ApproveDriverResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_ApproveUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:ApproveUser" />
+  <wsdl:message name="IRevaShareDataService_ApproveRider_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveRider" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_ApproveUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ApproveUserResponse" />
+  <wsdl:message name="IRevaShareDataService_ApproveRider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveRiderResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_RequestToBeDriver_InputMessage">
     <wsdl:part name="parameters" element="tns:RequestToBeDriver" />
@@ -807,17 +807,17 @@
   <wsdl:message name="IRevaShareDataService_RequestToBeDriver_OutputMessage">
     <wsdl:part name="parameters" element="tns:RequestToBeDriverResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_PendingRegistrations_InputMessage">
-    <wsdl:part name="parameters" element="tns:PendingRegistrations" />
+  <wsdl:message name="IRevaShareDataService_GetPendingRiders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingRiders" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_PendingRegistrations_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PendingRegistrationsResponse" />
+  <wsdl:message name="IRevaShareDataService_GetPendingRiders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingRidersResponse" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_InputMessage">
-    <wsdl:part name="parameters" element="tns:PendingDriverApprovals" />
+  <wsdl:message name="IRevaShareDataService_GetPendingDrivers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingDrivers" />
   </wsdl:message>
-  <wsdl:message name="IRevaShareDataService_PendingDriverApprovals_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PendingDriverApprovalsResponse" />
+  <wsdl:message name="IRevaShareDataService_GetPendingDrivers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingDriversResponse" />
   </wsdl:message>
   <wsdl:message name="IRevaShareDataService_UpdatePassword_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePassword" />
@@ -1028,21 +1028,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriver" message="tns:IRevaShareDataService_ApproveDriver_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveDriverResponse" message="tns:IRevaShareDataService_ApproveDriver_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ApproveUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUser" message="tns:IRevaShareDataService_ApproveUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveUserResponse" message="tns:IRevaShareDataService_ApproveUser_OutputMessage" />
+    <wsdl:operation name="ApproveRider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveRider" message="tns:IRevaShareDataService_ApproveRider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/ApproveRiderResponse" message="tns:IRevaShareDataService_ApproveRider_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RequestToBeDriver">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriver" message="tns:IRevaShareDataService_RequestToBeDriver_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/RequestToBeDriverResponse" message="tns:IRevaShareDataService_RequestToBeDriver_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PendingRegistrations">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrations" message="tns:IRevaShareDataService_PendingRegistrations_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingRegistrationsResponse" message="tns:IRevaShareDataService_PendingRegistrations_OutputMessage" />
+    <wsdl:operation name="GetPendingRiders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetPendingRiders" message="tns:IRevaShareDataService_GetPendingRiders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetPendingRidersResponse" message="tns:IRevaShareDataService_GetPendingRiders_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PendingDriverApprovals">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" message="tns:IRevaShareDataService_PendingDriverApprovals_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/PendingDriverApprovalsResponse" message="tns:IRevaShareDataService_PendingDriverApprovals_OutputMessage" />
+    <wsdl:operation name="GetPendingDrivers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/GetPendingDrivers" message="tns:IRevaShareDataService_GetPendingDrivers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRevaShareDataService/GetPendingDriversResponse" message="tns:IRevaShareDataService_GetPendingDrivers_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdatePassword">
       <wsdl:input wsaw:Action="http://tempuri.org/IRevaShareDataService/UpdatePassword" message="tns:IRevaShareDataService_UpdatePassword_InputMessage" />
@@ -1249,8 +1249,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ApproveUser">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveUser" style="document" />
+    <wsdl:operation name="ApproveRider">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/ApproveRider" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1267,8 +1267,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PendingRegistrations">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingRegistrations" style="document" />
+    <wsdl:operation name="GetPendingRiders">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetPendingRiders" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1276,8 +1276,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PendingDriverApprovals">
-      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/PendingDriverApprovals" style="document" />
+    <wsdl:operation name="GetPendingDrivers">
+      <soap:operation soapAction="http://tempuri.org/IRevaShareDataService/GetPendingDrivers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

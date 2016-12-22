@@ -31,6 +31,13 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
         [HttpGet]
+        [Route("get-admin")]
+        public HttpResponseMessage GetAdmin([FromUri] string username)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RequestAdmin(username), "application/json");
+        }
+
+        [HttpGet]
         [Route("get-admins")]
         public HttpResponseMessage GetAdmins()
         {
@@ -53,15 +60,12 @@ namespace revashare_svc_webapi.Client.Controllers
         #endregion
 
         #region Driver CRUD
-
-        /*
-        [HttpPost]
-        [Route("add-driver")]
-        public HttpResponseMessage AddDriver([FromBody] UserDTO driver)
+        [HttpGet]
+        [Route("get-driver")]
+        public HttpResponseMessage GetDriver([FromUri] string username)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertDriver(driver));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RequestDriver(username), "application/json");
         }
-        */
 
         [HttpGet]
         [Route("get-drivers")]
@@ -86,14 +90,12 @@ namespace revashare_svc_webapi.Client.Controllers
         #endregion
 
         #region Rider CRUD
-        /*
-        [HttpPost]
-        [Route("add-rider")]
-        public HttpResponseMessage AddRider([FromBody] UserDTO rider)
+        [HttpGet]
+        [Route("get-rider")]
+        public HttpResponseMessage GetRider([FromUri] string username)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertRider(rider));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RequestRider(username), "application/json");
         }
-        */
 
         [HttpGet]
         [Route("get-riders")]
@@ -125,6 +127,13 @@ namespace revashare_svc_webapi.Client.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveUser(user));
         }
 
+        [HttpPost]
+        [Route("approve-user")]
+        public HttpResponseMessage ApproveDriver([FromBody] UserDTO user)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveUser(user));
+        }
+
         [HttpGet]
         [Route("get-pending-riders")]
         public HttpResponseMessage GetPendingRiders()
@@ -138,15 +147,6 @@ namespace revashare_svc_webapi.Client.Controllers
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetPendingDrivers(), "application/json");
         }
-
-        /*
-        [HttpGet]
-        [Route("get-pending-admins")]
-        public HttpResponseMessage GetPendingAdmins()
-        {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetPendingAdmins(), "application/json");
-        }
-        */
         #endregion
 
         #region User Reporting

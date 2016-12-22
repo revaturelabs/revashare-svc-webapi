@@ -14,7 +14,7 @@ namespace revashare_svc_webapi.Logic.AdminLogic
     {
         public UserDTO RequestRider(string UserName)
         {
-            return UserMapper.mapToUserDTO(sc.GetUserByUsername(UserName));
+            return UserMapper.mapToUserDTO(sc.GetUser(UserName));
         }
 
         public List<UserDTO> RequestRiders()

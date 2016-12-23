@@ -8,31 +8,31 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.ServiceClient
 {
-   public partial class ServiceClient:IServiceClient
-   {
-      RevaShareDataServiceClient rs = new RevaShareDataServiceClient();
-      public bool DeleteApartment(ApartmentDAO apartment)
-      {
-         return rs.DeleteApartment(apartment.Name);
-      }
+    public partial class ServiceClient : IServiceClient
+    {
+        RevaShareDataServiceClient rs = new RevaShareDataServiceClient();
+        public bool DeleteApartment(ApartmentDAO apartment)
+        {
+            return rs.DeleteApartment(apartment.Name);
+        }
 
-      public List<ApartmentDAO> GetApartments()
-      {
-         return rs.ListApartments().ToList();
-      }
-      public ApartmentDAO getApartmentByName(string name)
-      {
-         return rs.GetApartmentByName(name);
-      }
+        public List<ApartmentDAO> GetApartments()
+        {
+            return rs.ListApartments().ToList();
+        }
+        public ApartmentDAO getApartmentByName(string name)
+        {
+            return rs.GetApartmentByName(name);
+        }
 
-      public bool InsertApartment(ApartmentDAO apartment)
-      {
-         return rs.AddApartment(apartment);
-      }
+        public bool InsertApartment(ApartmentDAO apartment)
+        {
+            return rs.AddApartment(apartment);
+        }
 
-      public bool UpdateApartment(ApartmentDAO apartment)
-      {
-         return rs.UpdateApartment(apartment);
-      }
-   }
+        public bool UpdateApartment(ApartmentDAO apartment)
+        {
+            return rs.UpdateApartment(apartment);
+        }
+    }
 }

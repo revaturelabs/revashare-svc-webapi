@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminLogic\AdminLogic.cs" />
+    <Compile Include="AdminLogic\AdminLogicApartment.cs" />
     <Compile Include="AdminLogic\AdminLogicApproval.cs" />
     <Compile Include="AdminLogic\AdminLogicDriver.cs" />
     <Compile Include="AdminLogic\AdminLogicReport.cs" />

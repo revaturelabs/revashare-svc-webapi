@@ -103,7 +103,7 @@ namespace revashare_svc_webapi.Tests
         public void test_login()
         {
 
-            var user = client.Login("jimbob", "jimbob");
+            var user = client.Login("a_new_username", "sample_password");
 
             Assert.NotNull(user);
 

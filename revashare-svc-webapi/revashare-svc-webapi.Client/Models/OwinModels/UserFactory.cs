@@ -26,8 +26,15 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
 
             ClaimsPrincipal principal = context.Authentication.User;
-            
-            string roleName = principal.FindFirst(ClaimTypes.Role).Value;
+
+            Claim role = principal.FindFirst(ClaimTypes.Role);
+
+            if (role == null)
+            {
+                return null;
+            }
+
+            string roleName = role.Value;
 
             if (roleName.Equals(USER_TYPE))
             {

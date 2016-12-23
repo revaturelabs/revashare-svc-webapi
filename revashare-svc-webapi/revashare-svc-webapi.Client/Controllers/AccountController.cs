@@ -117,6 +117,7 @@ namespace revashare_svc_webapi.Client.Controllers
             }
 
             authManager.SignOut("ApplicationCookie");
+
             return Ok();
         }
 

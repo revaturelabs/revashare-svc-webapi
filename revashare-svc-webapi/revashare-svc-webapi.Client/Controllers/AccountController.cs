@@ -136,6 +136,30 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
+        [Authorize(Roles = "user")]
+        [HttpPost]
+        [Route("driverUpgrade")]
+        public IHttpActionResult driverUpgrade(VehicleDTO car)
+        {
+
+            var user = userFactory.getUser(Request.GetOwinContext());
+
+            bool success = user.requestToBeDriver(car);
+
+            if (success)
+            {
+                return Ok();
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+
+        }
+
+
+
+
         #region helpers
         private bool userSessionExists()
         {

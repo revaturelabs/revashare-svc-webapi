@@ -35,16 +35,16 @@ namespace revashare_svc_webapi.Tests
 
     }
 
-    //[Fact]
-    //public void test_GetUsers_RiderLogic()
-    //{
-    //  ServiceClient sc = new ServiceClient();
-    //  RiderLogic rdrLogic = new RiderLogic(sc);
-    //  var a = rdrLogic.getUsers();
+    [Fact]
+    public void test_GetUsers_RiderLogic()
+    {
+      ServiceClient sc = new ServiceClient();
+      RiderLogic rdrLogic = new RiderLogic(sc);
+      var a = rdrLogic.getUsers();
 
-    //  Assert.NotEmpty(a);
+      Assert.NotEmpty(a);
 
-    //}
+    }
 
   }
 }

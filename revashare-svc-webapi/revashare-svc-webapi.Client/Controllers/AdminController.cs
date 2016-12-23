@@ -27,7 +27,7 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("add-admin")]
         public HttpResponseMessage AddAdmin([FromBody] UserDTO admin, string password)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin, admin.UserName, password));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertAdmin(admin, password));
         }
 
         [HttpGet]
@@ -169,6 +169,43 @@ namespace revashare_svc_webapi.Client.Controllers
         public HttpResponseMessage RemoveDriverPrivileges([FromBody] FlagDTO report)
         {
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveDriverPrivileges(report));
+        }
+        #endregion
+
+        #region Apartment
+        [HttpPost]
+        [Route("add-apartment")]
+        public HttpResponseMessage AddApartment([FromBody] ApartmentDTO apt)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.AddApartment(apt));
+        }
+
+        [HttpGet]
+        [Route("get-apartment")]
+        public HttpResponseMessage GetApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetApartment(name), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-apartments")]
+        public HttpResponseMessage GetApartments()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetApartments(), "application/json");
+        }
+
+        [HttpPut]
+        [Route("update-apartment")]
+        public HttpResponseMessage UpdateApartment([FromBody] ApartmentDTO apt)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.UpdateApartment(apt));
+        }
+
+        [HttpPut]
+        [Route("remove-apartment")]
+        public HttpResponseMessage RemoveApartment([FromBody] ApartmentDTO apt)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveApartment(apt));
         }
         #endregion
     }

@@ -10,7 +10,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
     public interface IAdmin
     {
         //Admin CRUD Methods
-        bool InsertAdmin(UserDTO adminToAdd, string UserName, string Password);
+        bool InsertAdmin(UserDTO adminToAdd, string Password);
         List<UserDTO> RequestAdmins();
         UserDTO RequestAdmin(string UserName);
         bool ModifyAdmin(UserDTO adminToUpdate);
@@ -38,5 +38,12 @@ namespace revashare_svc_webapi.Logic.Interfaces
         List<FlagDTO> GetUserReports();
         bool RemoveReport(FlagDTO reportToRemove);
         bool RemoveDriverPrivileges(FlagDTO reportForUser);
+
+        //Apartment Methods
+        bool AddApartment(ApartmentDTO apt);
+        ApartmentDTO GetApartment(string name);
+        List<ApartmentDTO> GetApartments();
+        bool UpdateApartment(ApartmentDTO apt);
+        bool RemoveApartment(ApartmentDTO apt);
     }
 }

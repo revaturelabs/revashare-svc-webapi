@@ -18,6 +18,25 @@ namespace revashare_svc_webapi.Client.Controllers
             userLogic = UL;
         }
 
+
+        [HttpGet]
+        [Route("profile")]
+        public IHttpActionResult profile()
+        {
+
+            Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
+            var owinUser = userFactory.getUser(Request.GetOwinContext());
+
+            if (owinUser == null)
+            {
+                return StatusCode(HttpStatusCode.Unauthorized);
+            }
+
+            return Json(owinUser.getProfile());
+
+        }
+
+
         [HttpGet]
         [Route("get-user")]
         public HttpResponseMessage GetUser([FromUri] string username)
@@ -37,6 +56,27 @@ namespace revashare_svc_webapi.Client.Controllers
         public HttpResponseMessage GetApartments()
         {
             return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetApartments(), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-rides-by-apartment")]
+        public HttpResponseMessage GetRidesByApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetRidesByApartment(name), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-morning-rides-by-apartment")]
+        public HttpResponseMessage GetMorningRidesByApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetMorningRidesByApartment(name), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-evening-rides-by-apartment")]
+        public HttpResponseMessage GetEveningRidesByApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetEveningRidesByApartment(name), "application/json");
         }
     }
 }

@@ -96,6 +96,7 @@
     <Compile Include="ApartmentTests.cs" />
     <Compile Include="DriverTests.cs" />
     <Compile Include="FlagTests.cs" />
+    <Compile Include="OwinModelsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RideRiderTests.cs" />
     <Compile Include="RideTests.cs" />

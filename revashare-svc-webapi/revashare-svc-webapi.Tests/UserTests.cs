@@ -1,6 +1,4 @@
 ﻿using revashare_svc_webapi.Logic.RevaShareServiceReference;
-using revashare_svc_webapi.Logic.RiderLogic;
-using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,39 +10,110 @@ namespace revashare_svc_webapi.Tests
 {
   public class UserTests
   {
-    [Fact]
-    public void test_getUsers()
-    {
-      RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
 
-      List<UserDAO> getUsers = dataClient.GetAllUsers().ToList();
+        private RevaShareDataServiceClient client;
 
-      Assert.NotNull(getUsers);
 
-    }
+        public UserTests()
+        {
+            this.client = new RevaShareDataServiceClient();
+        }
 
-    [Fact]
-    public void test_getUsersByUsername()
-    {
-      RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
 
-      string name = "johnbob";
-      UserDAO getUserByUsername = dataClient.GetUserByUsername(name);
+        [Fact]
+        public void test_getUsers()
+        {
+          
+          List<UserDAO> getUsers = client.GetAllUsers().ToList();
 
-      Assert.NotNull(getUserByUsername);
+          Assert.NotNull(getUsers);
 
-    }
+        }
 
-    [Fact]
-    public void test_GetUsers_RiderLogic()
-    {
-      ServiceClient sc = new ServiceClient();
-      RiderLogic rdrLogic = new RiderLogic(sc);
-      var a = rdrLogic.getUsers();
+        [Fact]
+        public void test_getUsersByUsername()
+        {
 
-      Assert.NotEmpty(a);
+          string name = "johnbob";
+          UserDAO getUserByUsername = client.GetUserByUsername(name);
 
-    }
+          Assert.NotNull(getUserByUsername);
+
+        }
+
+
+
+        [Fact]
+        public void test_create_delete_user()
+        {
+
+            string sampleUserName = "not_gonna_remember_this_either";
+
+            UserDAO new_user = new UserDAO()
+            {
+                Name = sampleUserName,
+                UserName = sampleUserName,
+                Apartment = new ApartmentDAO()
+                {
+                    Latitude = "1.1",
+                    Longitude = "2.2",
+                    Name = "abc"
+                },
+                Email = "asdf@g.com",
+                PhoneNumber = "5556667777",
+                Roles = new RoleDAO[] {
+                    new RoleDAO()
+                    {
+                        Type = "Rider"
+                    }
+                }
+            };
+
+            bool success = client.RegisterUser(new_user, sampleUserName, "test_password");
+
+            Assert.True(success);
+
+            var user = client.GetUserByUsername(sampleUserName);
+
+            Assert.NotNull(user);
+
+            bool successDelete = client.DeleteUser(sampleUserName);
+
+            Assert.True(successDelete);
+
+            user = client.GetUserByUsername(sampleUserName);
+
+            Assert.Null(user);
+
+        }
+
+
+
+        [Fact]
+        public void test_deleteUser()
+        {
+            bool success = client.DeleteUser("bbbbb");
+
+            Assert.True(success);
+        }
+
+
+
+        [Fact]
+        public void test_login()
+        {
+
+            var user = client.Login("a_new_username", "sample_password");
+
+            Assert.NotNull(user);
+
+            user.UserName = "asdfqwer";
+            bool success = client.RegisterUser(user, user.UserName, "a_totally_original_password");
+
+            Assert.True(success);
+
+        }
+
 
   }
 }

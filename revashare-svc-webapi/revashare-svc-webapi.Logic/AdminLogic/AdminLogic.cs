@@ -18,9 +18,9 @@ namespace revashare_svc_webapi.Logic.AdminLogic
             sc = client;
         }
 
-        public bool InsertAdmin(UserDTO adminToAdd, string UserName, string Password)
+        public bool InsertAdmin(UserDTO adminToAdd, string Password)
         {
-            return sc.InsertAdmin(UserMapper.mapToUserDAO(adminToAdd), UserName, Password);
+            return sc.InsertAdmin(UserMapper.mapToUserDAO(adminToAdd), adminToAdd.UserName, Password);
         }
 
         public List<UserDTO> RequestAdmins()

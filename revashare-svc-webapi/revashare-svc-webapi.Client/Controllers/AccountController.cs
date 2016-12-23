@@ -111,7 +111,7 @@ namespace revashare_svc_webapi.Client.Controllers
             var ctx = Request.GetOwinContext();
             var authManager = ctx.Authentication;
 
-            if (userSessionExists())
+            if (! userSessionExists())
             {
                 return StatusCode(HttpStatusCode.Forbidden);
             }

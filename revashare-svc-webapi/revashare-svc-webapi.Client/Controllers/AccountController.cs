@@ -82,7 +82,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpPost]
         [Route("login")]
-        public IHttpActionResult login([FromUri] ViewModels.Account.LoginVM vm)
+        public IHttpActionResult login([FromBody] ViewModels.Account.LoginVM vm)
         {
 
             var user = new UserLogic(new ServiceClient()).login(vm.userName, vm.password);
@@ -146,7 +146,6 @@ namespace revashare_svc_webapi.Client.Controllers
             return userData;
 
         }
-
 
 
         #region helpers

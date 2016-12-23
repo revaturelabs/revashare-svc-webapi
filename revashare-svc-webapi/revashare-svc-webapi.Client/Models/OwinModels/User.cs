@@ -54,7 +54,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         #region rider methods
 
-        public virtual bool requestToBeDriver(DriverEnrollDTO enroll)
+        public virtual bool requestToBeDriver(VehicleDTO car)
         {
             throw new MissingPermission();
         }

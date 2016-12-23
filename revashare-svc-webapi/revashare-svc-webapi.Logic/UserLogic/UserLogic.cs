@@ -50,6 +50,10 @@ namespace revashare_svc_webapi.Logic.UserLogic
         public UserDTO login(string userName, string password)
         {
             UserDAO user = sc.Login(userName, password);
+            if (user == null)
+            {
+                return null;
+            }
             return UserMapper.mapToUserDTO(user);
         }
 

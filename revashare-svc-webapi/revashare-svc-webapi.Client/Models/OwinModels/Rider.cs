@@ -30,9 +30,13 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return false;
         }
 
-        public override bool requestToBeDriver(DriverEnrollDTO enroll)
+        public override bool requestToBeDriver(VehicleDTO car)
         {
-            return logic.requestToBeDriver(enroll);
+            return logic.requestToBeDriver(new DriverEnrollDTO()
+            {
+                User = this.userDetails,
+                MyCar = car
+            });
         }
 
         public override List<ApartmentDTO> getApartments()

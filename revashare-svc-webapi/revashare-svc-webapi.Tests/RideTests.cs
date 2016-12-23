@@ -1,5 +1,6 @@
 ﻿using revashare_svc_webapi.Logic.AdminLogic;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.RiderLogic;
 using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,16 @@ namespace revashare_svc_webapi.Tests
 
     }
 
+    [Fact]
+    public void test_GetRides_RiderLogic()
+    {
+      ServiceClient sc = new ServiceClient();
+      RiderLogic rdrLogic = new RiderLogic(sc);
+      var a = rdrLogic.getRides();
 
+
+      Assert.NotEmpty(a);
+
+    }
   }
 }

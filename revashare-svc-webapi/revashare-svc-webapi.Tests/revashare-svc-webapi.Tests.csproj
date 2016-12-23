@@ -98,7 +98,6 @@
     <Compile Include="FlagTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RideRiderTests.cs" />
-    <Compile Include="RiderTests.cs" />
     <Compile Include="RideTests.cs" />
     <Compile Include="Service References\RevaShareServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

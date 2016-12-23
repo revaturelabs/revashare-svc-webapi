@@ -31,6 +31,9 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool DeleteRide(RideDAO ride);
         List<RideDAO> getRidesByLocation(string name);
         int getAvailableSeatsByRide(RideDAO ride);
+        List<RideDAO> GetRidesByApartment(string name);
+        List<RideDAO> GetMorningRidesByApartment(string name);
+        List<RideDAO> GetEveningRidesByApartment(string name);
 
         // Ride Rider Methods
         List<RideRidersDAO> GetRideRiders();

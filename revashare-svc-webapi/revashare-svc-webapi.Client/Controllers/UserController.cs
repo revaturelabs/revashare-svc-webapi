@@ -57,5 +57,26 @@ namespace revashare_svc_webapi.Client.Controllers
         {
             return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetApartments(), "application/json");
         }
+
+        [HttpGet]
+        [Route("get-rides-by-apartment")]
+        public HttpResponseMessage GetRidesByApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetRidesByApartment(name), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-morning-rides-by-apartment")]
+        public HttpResponseMessage GetMorningRidesByApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetMorningRidesByApartment(name), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-evening-rides-by-apartment")]
+        public HttpResponseMessage GetEveningRidesByApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetEveningRidesByApartment(name), "application/json");
+        }
     }
 }

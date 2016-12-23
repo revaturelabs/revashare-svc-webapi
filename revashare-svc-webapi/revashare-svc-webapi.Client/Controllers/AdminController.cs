@@ -171,5 +171,42 @@ namespace revashare_svc_webapi.Client.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveDriverPrivileges(report));
         }
         #endregion
+
+        #region Apartment
+        [HttpPost]
+        [Route("add-apartment")]
+        public HttpResponseMessage AddApartment([FromBody] ApartmentDTO apt)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.AddApartment(apt));
+        }
+
+        [HttpGet]
+        [Route("get-apartment")]
+        public HttpResponseMessage GetApartment([FromUri] string name)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetApartment(name), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-apartments")]
+        public HttpResponseMessage GetApartments()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetApartments(), "application/json");
+        }
+
+        [HttpPut]
+        [Route("update-apartment")]
+        public HttpResponseMessage UpdateApartment([FromBody] ApartmentDTO apt)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.UpdateApartment(apt));
+        }
+
+        [HttpPut]
+        [Route("remove-apartment")]
+        public HttpResponseMessage RemoveApartment([FromBody] ApartmentDTO apt)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveApartment(apt));
+        }
+        #endregion
     }
 }

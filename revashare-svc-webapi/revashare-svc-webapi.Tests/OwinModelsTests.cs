@@ -51,7 +51,7 @@ namespace revashare_svc_webapi.Tests
             ClaimsPrincipal principal = new ClaimsPrincipal(identity);
             User user = new User(principal);
 
-            Assert.Equal(user.getUserDetails().Name, userDTO.Name);
+            Assert.Equal(user.getProfile().Name, userDTO.Name);
 
         }
 

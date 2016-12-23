@@ -35,7 +35,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         }
 
 
-        public UserDTO getUserDetails()
+        public UserDTO getProfile()
         {
             return this.userDetails;
         }

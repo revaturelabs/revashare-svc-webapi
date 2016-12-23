@@ -63,19 +63,6 @@ namespace revashare_svc_webapi.Client.Controllers
             Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
             var owinUser = userFactory.getUser(Request.GetOwinContext());
 
-
-            var prinicpal = (ClaimsPrincipal)Thread.CurrentPrincipal;
-            var role = prinicpal.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault();
-
-            var identity = (ClaimsIdentity)User.Identity;
-            IEnumerable<Claim> claims = identity.Claims;
-            
-            var my_identity = this.User.Identity as ClaimsIdentity;
-            Claim firstRole = my_identity.FindFirst(ClaimTypes.Role);
-            IEnumerable<Claim> role_claim = my_identity.FindAll(ClaimTypes.Role);
-            IEnumerable<Claim> name_claim = my_identity.FindAll(ClaimTypes.Name);
-            IEnumerable<Claim> email_claim = my_identity.FindAll(ClaimTypes.Email);
-
             return Ok();
         }
 
@@ -141,7 +128,7 @@ namespace revashare_svc_webapi.Client.Controllers
         {
 
             var user = userFactory.getUser(Request.GetOwinContext());
-            UserDTO userData = user.getUserDetails();
+            UserDTO userData = user.getProfile();
 
             return userData;
 

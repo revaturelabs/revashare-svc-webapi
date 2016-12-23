@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using revashare_svc_webapi.Logic.Models;
-using revashare_svc_webapi.Logic.Model;
 
 namespace revashare_svc_webapi.Logic.RiderLogic
 {

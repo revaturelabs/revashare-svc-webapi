@@ -22,21 +22,7 @@ namespace revashare_svc_webapi.Tests
 {
   public class AdminTests
   {
-
-    //[Fact]
-    //public void Test_AddDriver_AdminController()
-    //{
-    //  var mock = new Mock<IAdmin>();
-    //  mock.Setup(a => a.InsertDriver(new UserDTO())).Returns(true);
-    //  var ctrl = new AdminController(mock.Object);
-
-    //  ctrl.Request = Substitute.For<HttpRequestMessage>();
-    //  ctrl.Configuration = Substitute.For<HttpConfiguration>();
-    //  HttpResponseMessage res = ctrl.AddDriver(new UserDTO());
-
-    //  Assert.Equal(res.StatusCode, HttpStatusCode.OK);
-    //}
-
+    
     [Fact]
     public void test_GetAdmins()
     {

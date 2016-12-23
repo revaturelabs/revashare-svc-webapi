@@ -3,7 +3,6 @@ using NSubstitute;
 using revashare_svc_webapi.Client.Controllers;
 using revashare_svc_webapi.Logic;
 using revashare_svc_webapi.Logic.Interfaces;
-using revashare_svc_webapi.Logic.Model;
 using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;

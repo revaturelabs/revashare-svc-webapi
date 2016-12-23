@@ -3,14 +3,16 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
-using Microsoft.Owin.Security;
 using revashare_svc_webapi.Client.Models;
 using System.Net;
-//using Microsoft.AspNet.Identity;
 using System.Threading;
 using System.Linq;
-using System.Web.Http.Cors;
-using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.Models;
+using Newtonsoft.Json;
+using revashare_svc_webapi.Logic.Mappers;
+using revashare_svc_webapi.Logic;
+using revashare_svc_webapi.Logic.UserLogic;
+using revashare_svc_webapi.Logic.ServiceClient;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
@@ -31,10 +33,15 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpPost]
         [Route("signup")]
-        public IHttpActionResult signup([FromUri] UserDAO userModel, string password)
+        public IHttpActionResult signup([FromBody] ViewModels.Account.SignupVM vm)
         {
 
-            bool success = client.RegisterUser(userModel, userModel.UserName, password);
+            if (! vm.isValid())
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+
+            bool success = new UserLogic(new ServiceClient()).registerUser(vm.user, vm.password);
 
             if (success)
             {
@@ -48,7 +55,6 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        //[AllowAnonymous]
         [HttpGet]
         [Route("test")]
         public IHttpActionResult test()
@@ -57,75 +63,110 @@ namespace revashare_svc_webapi.Client.Controllers
             Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
             var owinUser = userFactory.getUser(Request.GetOwinContext());
 
-
-            var prinicpal = (ClaimsPrincipal)Thread.CurrentPrincipal;
-            var role = prinicpal.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault();
-
-            var identity = (ClaimsIdentity)User.Identity;
-            IEnumerable<Claim> claims = identity.Claims;
-            
-            var my_identity = this.User.Identity as ClaimsIdentity;
-            Claim firstRole = my_identity.FindFirst(ClaimTypes.Role);
-            IEnumerable<Claim> role_claim = my_identity.FindAll(ClaimTypes.Role);
-            IEnumerable<Claim> name_claim = my_identity.FindAll(ClaimTypes.Name);
-            IEnumerable<Claim> email_claim = my_identity.FindAll(ClaimTypes.Email);
-
             return Ok();
         }
 
 
-        [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public IHttpActionResult login([FromUri] loginModel model)
+        public IHttpActionResult login([FromBody] ViewModels.Account.LoginVM vm)
         {
-            
-            // should get from login
-            var user = client.Login(model.userName, model.password);
+
+            var user = new UserLogic(new ServiceClient()).login(vm.userName, vm.password);
 
             if (user == null)
             {
-                // handle case where user could not login
                 return StatusCode(HttpStatusCode.BadRequest);
             }
+
+            if (userSessionExists())
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+
+            string userJson = JsonConvert.SerializeObject(user);
 
             Claim[] claims = new Claim[]
             {
                 new Claim(ClaimTypes.Role, "user"),
-                new Claim(ClaimTypes.Name, user.Name),
-                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.UserData, userJson)
             };
 
             ClaimsIdentity identity = new ClaimsIdentity(claims, "ApplicationCookie");
-
-            // Add roles into claims
-            //List<Logic.RevaShareServiceReference.RoleDAO> roleList = new List<Logic.RevaShareServiceReference.RoleDAO>(user.Roles);
-            //var roleClaims = roleList.ConvertAll(x => new Claim(ClaimTypes.Role, x.Type));
-            //roleClaims.Add(new Claim(ClaimTypes.Role, "user"));
-            //identity.AddClaims(roleClaims);
+            identity.AddClaims(claims);
             
             var context = Request.GetOwinContext();
             var authManager = context.Authentication;
             authManager.SignIn(identity);
-            //authManager.SignIn(new AuthenticationProperties { IsPersistent = true }, identity);
             
             return Ok();
 
         }
 
 
-        [Authorize(Roles = "user")]
-        [HttpGet]
+        [HttpPost]
         [Route("logout")]
         public IHttpActionResult logout()
         {
             var ctx = Request.GetOwinContext();
             var authManager = ctx.Authentication;
 
+            if (! userSessionExists())
+            {
+                return StatusCode(HttpStatusCode.Forbidden);
+            }
+
             authManager.SignOut("ApplicationCookie");
+
             return Ok();
         }
 
+
+        [Authorize(Roles = "user")]
+        [HttpGet]
+        [Route("profile")]
+        public UserDTO profile()
+        {
+
+            var user = userFactory.getUser(Request.GetOwinContext());
+            UserDTO userData = user.getProfile();
+
+            return userData;
+
+        }
+
+
+        [Authorize(Roles = "user")]
+        [HttpPost]
+        [Route("driverUpgrade")]
+        public IHttpActionResult driverUpgrade(VehicleDTO car)
+        {
+
+            var user = userFactory.getUser(Request.GetOwinContext());
+
+            bool success = user.requestToBeDriver(car);
+
+            if (success)
+            {
+                return Ok();
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+
+        }
+
+
+
+
+        #region helpers
+        private bool userSessionExists()
+        {
+            var owinUser = userFactory.getUser(Request.GetOwinContext());
+            return owinUser != null;
+        }
+        #endregion
 
     }
 

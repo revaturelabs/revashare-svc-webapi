@@ -90,6 +90,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ServiceClient\ServiceClient.cs" />
     <Compile Include="ServiceClient\ServiceClientAdmin.cs" />
     <Compile Include="ServiceClient\ServiceClientApartment.cs" />
     <Compile Include="ServiceClient\ServiceClientFlag.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="ServiceClient\ServiceClientUser.cs" />
     <Compile Include="ServiceClient\ServiceClientVehicle.cs" />
     <Compile Include="UserLogic\UserLogic.cs" />
+    <Compile Include="UserLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

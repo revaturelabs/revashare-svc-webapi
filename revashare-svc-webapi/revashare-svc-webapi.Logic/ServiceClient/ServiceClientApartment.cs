@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.ServiceClient
 {
-    public partial class ServiceClient : IServiceClient
-    {
-        RevaShareDataServiceClient rs = new RevaShareDataServiceClient();
-        public bool DeleteApartment(ApartmentDAO apartment)
-        {
-            return rs.DeleteApartment(apartment.Name);
-        }
+   public partial class ServiceClient:IServiceClient
+   {
+      public bool DeleteApartment(ApartmentDAO apartment)
+      {
+         return rs.DeleteApartment(apartment.Name);
+      }
 
         public List<ApartmentDAO> GetApartments()
         {

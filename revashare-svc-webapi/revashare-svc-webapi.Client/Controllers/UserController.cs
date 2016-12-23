@@ -18,6 +18,25 @@ namespace revashare_svc_webapi.Client.Controllers
             userLogic = UL;
         }
 
+
+        [HttpGet]
+        [Route("profile")]
+        public IHttpActionResult profile()
+        {
+
+            Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
+            var owinUser = userFactory.getUser(Request.GetOwinContext());
+
+            if (owinUser == null)
+            {
+                return StatusCode(HttpStatusCode.Unauthorized);
+            }
+
+            return Json(owinUser.getProfile());
+
+        }
+
+
         [HttpGet]
         [Route("get-user")]
         public HttpResponseMessage GetUser([FromUri] string username)

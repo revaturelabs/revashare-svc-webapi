@@ -711,6 +711,7 @@
           <xs:element minOccurs="0" name="DepartureTime" nillable="true" type="ser:duration" />
           <xs:element minOccurs="0" name="IsAmRide" type="xs:boolean" />
           <xs:element minOccurs="0" name="IsOnTime" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumberOfRidersInRide" type="xs:int" />
           <xs:element minOccurs="0" name="StartOfWeek" type="xs:dateTime" />
           <xs:element minOccurs="0" name="Vehicle" nillable="true" type="tns:VehicleDAO" />
         </xs:sequence>

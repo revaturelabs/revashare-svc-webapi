@@ -279,6 +279,9 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
         private bool IsOnTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NumberOfRidersInRideField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime StartOfWeekField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -329,6 +332,19 @@ namespace revashare_svc_webapi.Logic.RevaShareServiceReference {
                 if ((this.IsOnTimeField.Equals(value) != true)) {
                     this.IsOnTimeField = value;
                     this.RaisePropertyChanged("IsOnTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NumberOfRidersInRide {
+            get {
+                return this.NumberOfRidersInRideField;
+            }
+            set {
+                if ((this.NumberOfRidersInRideField.Equals(value) != true)) {
+                    this.NumberOfRidersInRideField = value;
+                    this.RaisePropertyChanged("NumberOfRidersInRide");
                 }
             }
         }

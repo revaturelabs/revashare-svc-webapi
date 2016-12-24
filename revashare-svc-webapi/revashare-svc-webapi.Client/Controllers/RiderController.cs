@@ -19,7 +19,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
       private RiderController()
       {
-         riderLogic = new RiderLogic(new ServiceClient());
+         riderLogic = new RiderLogic(ServiceClient.getClient());
       }
       public RiderController(IRider RL)
       {

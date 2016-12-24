@@ -17,7 +17,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         public Rider(ClaimsPrincipal principal) : base(principal)
         {
-            this.logic = new RiderLogic(new ServiceClient());
+            this.logic = new RiderLogic(ServiceClient.getClient());
         }
 
         public override bool isRider()

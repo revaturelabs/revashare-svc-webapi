@@ -37,7 +37,7 @@ namespace revashare_svc_webapi.Tests
     [Fact]
     public void test_GetFlags_AdminLogic()
     {
-      ServiceClient sc = new ServiceClient();
+      ServiceClient sc = ServiceClient.getClient();
       AdminLogic admLogic = new AdminLogic(sc);
       var a = admLogic.GetUserReports();
 

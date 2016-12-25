@@ -63,5 +63,12 @@ namespace revashare_svc_webapi.Logic.RiderLogic
             var occupied = rr.Count;
             return occupied;
         }
+
+        public bool acceptPassenger(RideRiderDTO rideRider)
+        {
+            return sc.AcceptRideRequest(Mappers.RideRiderMapper.mapToRideRiderDAO(rideRider));
+             
+        }
+
     }
 }

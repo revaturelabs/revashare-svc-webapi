@@ -6,26 +6,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace revashare_svc_webapi.Logic.Interfaces {
-  public interface IDriverRepository {
-    VehicleDTO ViewVehicleInfo(string driver);
+namespace revashare_svc_webapi.Logic.Interfaces
+{
+    public interface IDriverRepository
+    {
+        VehicleDTO ViewVehicleInfo(string driver);
 
         RideDTO getSingleRide(RideDTO ride);
-    bool UpdateVehicleInfo(VehicleDTO vehicle);
+        bool UpdateVehicleInfo(VehicleDTO vehicle);
 
-    bool ReportRider(FlagDTO flag);
+        bool ReportRider(FlagDTO flag);
 
-    bool SetAvailability(RideDTO ride);
+        bool SetAvailability(RideDTO ride);
 
-    bool UpdateDriverProfile(UserDTO driver);
+        bool UpdateDriverProfile(UserDTO driver);
 
-    bool ScheduleRide(RideDTO ride);
+        bool ScheduleRide(RideDTO ride);
 
-    bool CancelRide(RideDTO ride);
+        bool CancelRide(RideDTO ride);
 
-    List<UserDTO> ViewPassengers(RideDTO ride);
+        List<UserDTO> ViewPassengers(RideDTO ride);
 
-    bool AcceptPassenger(RideRiderDTO rider);
+        bool AcceptPassenger(RideRiderDTO rider);
+
         bool AddVehicle(VehicleDTO vehicle);
+
+        bool RemovePassenger(RideRiderDTO rideRider);
+  
     }
+
 }

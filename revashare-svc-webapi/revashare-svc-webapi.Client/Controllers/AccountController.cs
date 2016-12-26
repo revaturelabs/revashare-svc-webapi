@@ -41,7 +41,7 @@ namespace revashare_svc_webapi.Client.Controllers
                 return StatusCode(HttpStatusCode.BadRequest);
             }
 
-            bool success = new UserLogic(ServiceClient.getClient()).registerUser(vm.user, vm.password);
+            bool success = new UserLogic(new ServiceClient()).registerUser(vm.user, vm.password);
 
             if (success)
             {
@@ -72,7 +72,7 @@ namespace revashare_svc_webapi.Client.Controllers
         public IHttpActionResult login([FromBody] ViewModels.Account.LoginVM vm)
         {
 
-            var user = new UserLogic(ServiceClient.getClient()).login(vm.userName, vm.password);
+            var user = new UserLogic(new ServiceClient()).login(vm.userName, vm.password);
 
             if (user == null)
             {

@@ -11,23 +11,12 @@ namespace revashare_svc_webapi.Logic.ServiceClient
     {
 
         private RevaShareDataServiceClient rs;
-        private static ServiceClient client;
 
-        private ServiceClient()
+        public ServiceClient()
         {
             this.rs = new RevaShareDataServiceClient();
         }
 
-        public static ServiceClient getClient()
-        {
-            if (client == null)
-            {
-                client = new ServiceClient();
-            }
-
-            return client;
-
-        }
 
     }
 }

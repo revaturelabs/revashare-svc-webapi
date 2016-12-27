@@ -60,5 +60,17 @@ namespace revashare_svc_webapi.Tests
             Assert.True(resultAddAdmin && resultDeleteUser);
         }
 
+
+        [Fact]
+        public void test_approveRider()
+        {
+            RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
+
+            bool success = svc.ApproveRider("not_gonna_remember_this");
+
+            Assert.True(success);
+
+        }
+
     }
 }

@@ -20,7 +20,7 @@ namespace revashare_svc_webapi.Tests
 
         public RideTests()
         {
-            ServiceClient svc = ServiceClient.getClient();
+            ServiceClient svc = new ServiceClient();
 
             this.riderLogic = new RiderLogic(svc);
             this.driverLogic = new DriverLogic();
@@ -36,6 +36,25 @@ namespace revashare_svc_webapi.Tests
 
             Assert.NotNull(getRides);
 
+        }
+
+
+        [Fact]
+        public void test_insertRide()
+        {
+            RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+
+            bool success = dataClient.AddRide(new RideDAO()
+            {
+                DepartureTime = new TimeSpan(),
+                IsAmRide = true,
+                IsOnTime = true,
+                NumberOfRidersInRide = 0,
+                StartOfWeek = DateTime.Now,
+                Vehicle = dataClient.GetVehicles().First()
+            });
+
+            Assert.True(success);
         }
 
 

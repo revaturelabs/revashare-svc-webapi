@@ -15,12 +15,12 @@ namespace revashare_svc_webapi.Tests
 {
   public class RideRiderTests
   {
-        private RiderLogic svc;
+        private RiderLogic riderLogic;
         private DriverLogic driverLogic;
 
         public RideRiderTests()
         {
-            this.svc = new RiderLogic(ServiceClient.getClient());
+            this.riderLogic = new RiderLogic(new ServiceClient());
             this.driverLogic = new DriverLogic();
         }
 
@@ -29,7 +29,7 @@ namespace revashare_svc_webapi.Tests
         public void test_GetRideRiders()
         {
 
-            List<RideRiderDTO> getRideRiders = svc.getRideRiders();
+            List<RideRiderDTO> getRideRiders = riderLogic.getRideRiders();
 
             Assert.NotNull(getRideRiders);
 
@@ -43,17 +43,46 @@ namespace revashare_svc_webapi.Tests
         public void test_insertRideRider()
         {
 
-            List<UserDTO> riders = svc.getRiders();
-            List<RideDTO> rides = svc.getRides();
+            List<UserDTO> riders = riderLogic.getRiders();
+            List<RideDTO> rides = riderLogic.getRides();
 
-            UserDTO selectedRider = riders.Single(x => x.UserName.Equals("testrider"));
-            RideDTO selectedRide = rides.First();
+            UserDTO selectedRider = riders.Single(x => x.UserName.Equals("not_gonna_remember_this"));
+            RideDTO selectedRide = rides[1];
 
             
-            bool success = svc.addRiderToRide(selectedRide, selectedRider);
-
+            bool success = riderLogic.addRiderToRide(selectedRide, selectedRider);
+            
             Assert.True(success);
 
+        }
+
+
+        [Fact]
+        public void temp_test()
+        {
+            RevaShareDataServiceClient client = new RevaShareDataServiceClient();
+            UserDAO user = client.GetUserByUsername("fresh_new_user");
+            RideDAO ride = client.GetAllRides().First();
+            bool success = client.AddRideRiders(user, ride);
+            Assert.True(success);
+            
+        }
+
+
+        [Fact]
+        public void temp_test_acceptPassenger()
+        {
+            RevaShareDataServiceClient client = new RevaShareDataServiceClient();
+            RideDAO ride = client.GetAllRides()[1]; //.Single(x => x.Vehicle.LicensePlate.Equals("zxc-vbn"));
+            UserDAO rider = client.GetRiders().Single(x => x.UserName.Equals("another_original_username_two"));
+
+            bool success = client.AcceptRideRequest(new RideRidersDAO()
+            {
+                Ride = ride,
+                Rider = rider
+            });
+
+            Assert.True(success);
         }
 
 
@@ -61,10 +90,10 @@ namespace revashare_svc_webapi.Tests
         public void test_acceptRideRequest()
         {
 
-            RideDTO ride = svc.getRides().Single(x => x.Vehicle.LicensePlate.Equals("zxc-vbn"));
-            UserDTO rider = svc.getRiders().Single(x => x.UserName.Equals("testrider"));
+            RideDTO ride = riderLogic.getRides()[0]; //.Single(x => x.Vehicle.LicensePlate.Equals("zxc-vbn"));
+            UserDTO rider = riderLogic.getRiders().Single(x => x.UserName.Equals("fresh_new_user"));
 
-            bool success = svc.acceptPassenger(new RideRiderDTO()
+            bool success = riderLogic.acceptPassenger(new RideRiderDTO()
             {
                 Ride = ride,
                 Rider = rider
@@ -79,11 +108,11 @@ namespace revashare_svc_webapi.Tests
         public void test_removeRideRider()
         {
 
-            List<UserDTO> riders = svc.getRiders();
-            List<RideDTO> rides = svc.getRides();
+            List<UserDTO> riders = riderLogic.getRiders();
+            List<RideDTO> rides = riderLogic.getRides();
 
-            UserDTO selectedRider = riders.Single(x => x.UserName.Equals("testrider"));
-            RideDTO selectedRide = rides.First();
+            UserDTO selectedRider = riders.Single(x => x.UserName.Equals("another_original_username_two"));
+            RideDTO selectedRide = rides[1];
 
             bool success = driverLogic.RemovePassenger(new RideRiderDTO()
             {

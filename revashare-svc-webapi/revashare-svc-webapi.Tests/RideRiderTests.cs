@@ -37,7 +37,6 @@ namespace revashare_svc_webapi.Tests
 
     }
 
-
     [Fact]
     public void test_GetRideRidersByName_RiderLogic()
     {
@@ -51,7 +50,31 @@ namespace revashare_svc_webapi.Tests
 
     }
 
+    [Fact]
+    public void test_GetRidersByRide_RiderLogic()
+    {
+      ServiceClient sc = new ServiceClient();
+      RiderLogic rdrLogic = new RiderLogic(sc);
+      var LicensePlate = new RideDTO { Vehicle = new VehicleDTO{ LicensePlate = "zxc-vbn" } };
+      var a = rdrLogic.GetRidersByRide(LicensePlate);
 
+
+      Assert.NotEmpty(a);
+
+    }
+
+    [Fact]
+    public void test_getOccupiedSeatsByRide_RiderLogic()
+    {
+      ServiceClient sc = new ServiceClient();
+      RiderLogic rdrLogic = new RiderLogic(sc);
+      var LicensePlate = new RideDTO { Vehicle = new VehicleDTO { LicensePlate = "zxc-vbn" } };
+      var a = rdrLogic.getOccupiedSeatsByRide(LicensePlate);
+
+
+      Assert.NotNull(a);
+
+    }
 
   }
 }

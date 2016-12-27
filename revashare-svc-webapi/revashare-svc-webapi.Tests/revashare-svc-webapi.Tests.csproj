@@ -117,7 +117,7 @@
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.RideRidersDAO.datasource" />
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.UserDAO.datasource" />
     <None Include="Properties\DataSources\revashare_svc_webapi.Logic.RevaShareServiceReference.VehicleDAO.datasource" />
-    <None Include="Service References\RevaShareServiceReference\RevaShareDataService11.wsdl" />
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\revashare-svc-webapi.Client\revashare-svc-webapi.Client.csproj">

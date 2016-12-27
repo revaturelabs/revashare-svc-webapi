@@ -290,7 +290,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\RevaShareServiceReference\RevaShareDataService.wsdl" />
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService11.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

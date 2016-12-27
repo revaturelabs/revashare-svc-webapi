@@ -32,6 +32,9 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         public override bool requestToBeDriver(VehicleDTO car)
         {
+
+            car.Owner = this.getProfile();
+
             return logic.requestToBeDriver(new DriverEnrollDTO()
             {
                 User = this.userDetails,
@@ -44,76 +47,35 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return logic.getApartments();
         }
 
-        public override ApartmentDTO getApartmentByName(string name)
-        {
-            return logic.getApartmentByName(name);
-        }
-
         public override bool fileComplaintAboutDriver(FlagDTO flag)
         {
-            return logic.fileComplaintAboutDriver(flag);
-        }
 
-        public override List<RideDTO> getAvailableRides(string startLocation)
-        {
-            return logic.getAvailableRides(startLocation);
+            flag.Rider = this.getProfile();
+
+            return logic.fileComplaintAboutDriver(flag);
         }
 
         public override List<RideDTO> getRides()
         {
             return logic.getRides();
         }
-
-        public override int getAvailableSeatsInRide(RideDTO ride)
+        
+        public override bool bookRide(RideDTO ride)
         {
-            return logic.getAvailableSeatsInRide(ride);
+            return logic.addRiderToRide(ride, this.getProfile());
         }
 
-        public override RideDTO getCurrentSelectedRide(RideDTO ride)
+        public override bool unBookRide(RideDTO ride)
         {
-            return logic.getCurrentSelectedRide(ride);
+            return logic.removeRiderFromRide(new RideRiderDTO()
+            {
+                Ride = ride,
+                Rider = this.getProfile()
+            });
         }
-
-        public override bool addRiderToRide(RideDTO ride, UserDTO rider)
-        {
-            return logic.addRiderToRide(ride, rider);
-        }
-
-        public override bool removeRiderFromRide(RideRiderDTO rider)
-        {
-            return logic.removeRiderFromRide(rider);
-        }
-
-        public override List<RideRiderDTO> getRideRidersByUser(UserDTO rider)
-        {
-            return logic.getRideRidersByUser(rider);
-        }
-
-        public override List<RideRiderDTO> getRideRiders()
-        {
-            return logic.getRideRiders();
-        }
-
-        public override List<UserDTO> GetRidersByRide(RideDTO ride)
-        {
-            return logic.GetRidersByRide(ride);
-        }
-
-        public override int getOccupiedSeatsByRide(RideDTO ride)
-        {
-            return logic.getOccupiedSeatsByRide(ride);
-        }
-
         
 
 
-
-
-
-
-
-
-
-        }
+    }
 
 }

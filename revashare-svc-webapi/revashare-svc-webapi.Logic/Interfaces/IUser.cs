@@ -10,6 +10,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
     public interface IUser
     {
         UserDTO GetUser(string UserName);
+        List<UserDTO> GetUsers();
         ApartmentDTO GetApartment(string name);
         List<ApartmentDTO> GetApartments();
         List<RideDTO> GetRidesByApartment(string name);

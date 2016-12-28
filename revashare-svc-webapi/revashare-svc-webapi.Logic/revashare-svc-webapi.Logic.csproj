@@ -97,6 +97,8 @@
     <Compile Include="ServiceClient\ServiceClientVehicle.cs" />
     <Compile Include="UserLogic\UserLogic.cs" />
     <Compile Include="UserLogic.cs" />
+    <Compile Include="UserLogic\UserLogicApartment.cs" />
+    <Compile Include="UserLogic\UserLogicRide.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

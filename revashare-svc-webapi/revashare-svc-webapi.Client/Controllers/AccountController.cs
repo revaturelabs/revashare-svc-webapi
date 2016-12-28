@@ -147,6 +147,28 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [HttpPost]
+        [Route("updateProfileApartment")]
+        public IHttpActionResult updateProfileApartment(ApartmentDTO apartment)
+        {
+
+            var user = userFactory.getUser(Request.GetOwinContext());
+
+            bool success = user.updateProfileApartment(apartment);
+
+            if (success)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+        }
+
+
         #region helpers
         private bool userSessionExists()
         {

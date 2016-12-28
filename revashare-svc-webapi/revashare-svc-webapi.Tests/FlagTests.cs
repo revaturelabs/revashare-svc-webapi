@@ -20,32 +20,32 @@ using Xunit;
 namespace revashare_svc_webapi.Tests
 {
 
-  public class FlagTests
-  {
-    [Fact]
-    public void test_GetFlags()
+    public class FlagTests
     {
-      RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+        [Fact]
+        public void test_GetFlags()
+        {
+            RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
 
-      List<FlagDAO> getflags = dataClient.GetAllFlags().ToList();
+            List<FlagDAO> getflags = dataClient.GetAllFlags().ToList();
 
-      Assert.NotNull(getflags);
+            Assert.NotNull(getflags);
+
+        }
+
+
+        [Fact]
+        public void test_GetFlags_AdminLogic()
+        {
+            ServiceClient sc = new ServiceClient();
+            AdminLogic admLogic = new AdminLogic(sc);
+            var a = admLogic.GetUserReports();
+
+
+            Assert.NotEmpty(a);
+
+        }
+
 
     }
-
-
-    [Fact]
-    public void test_GetFlags_AdminLogic()
-    {
-      ServiceClient sc = new ServiceClient();
-      AdminLogic admLogic = new AdminLogic(sc);
-      var a = admLogic.GetUserReports();
-
-
-      Assert.NotEmpty(a);
-
-    }
-
-
-    }
-  }
+}

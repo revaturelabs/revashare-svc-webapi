@@ -10,12 +10,13 @@ namespace revashare_svc_webapi.Logic.ServiceClient
     public partial class ServiceClient
     {
 
-        RevaShareDataServiceClient rs;
+        private RevaShareDataServiceClient rs;
 
         public ServiceClient()
         {
             this.rs = new RevaShareDataServiceClient();
         }
+
 
     }
 }

@@ -1,4 +1,7 @@
-﻿using revashare_svc_webapi.Logic.RevaShareServiceReference;
+﻿using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.RiderLogic;
+using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +35,33 @@ namespace revashare_svc_webapi.Tests
       Assert.NotNull(getApartmentByName);
 
     }
+
+    [Fact]
+    public void test_GetApartments_RiderLogic()
+    {
+      ServiceClient sc = new ServiceClient();
+      RiderLogic rdrLogic = new RiderLogic(sc);
+      var a = rdrLogic.getApartments();
+
+
+      Assert.NotEmpty(a);
+
+    }
+    /*
+    [Fact]
+    public void test_GetApartmentByName_RiderLogic()
+    {
+      ServiceClient sc = new ServiceClient();
+      RiderLogic rdrLogic = new RiderLogic(sc);
+      var name = "abc";
+      
+      var a = rdrLogic.getApartmentByName(name);
+
+
+      Assert.NotEmpty(a);
+
+    }
+    */
 
   }
 }

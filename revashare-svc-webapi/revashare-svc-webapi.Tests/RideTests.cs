@@ -1,4 +1,5 @@
 ﻿using revashare_svc_webapi.Logic.AdminLogic;
+using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using revashare_svc_webapi.Logic.RiderLogic;
 using revashare_svc_webapi.Logic.ServiceClient;
@@ -25,6 +26,18 @@ namespace revashare_svc_webapi.Tests
     }
 
     [Fact]
+    public void test_getRidesByApartments()
+    {
+      RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
+      var name = "abc";
+      List<RideDAO> getRides = dataClient.ListRidesAtApartment(name).ToList();
+
+      Assert.NotNull(getRides);
+
+    }
+
+
+    [Fact]
     public void test_GetRides_RiderLogic()
     {
       ServiceClient sc = new ServiceClient();
@@ -35,5 +48,7 @@ namespace revashare_svc_webapi.Tests
       Assert.NotEmpty(a);
 
     }
+    
+
   }
 }

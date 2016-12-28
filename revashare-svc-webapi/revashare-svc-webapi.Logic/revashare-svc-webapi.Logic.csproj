@@ -47,6 +47,7 @@
     <Compile Include="AdminLogic\AdminLogicApproval.cs" />
     <Compile Include="AdminLogic\AdminLogicDriver.cs" />
     <Compile Include="AdminLogic\AdminLogicReport.cs" />
+    <Compile Include="AdminLogic\AdminLogicRide.cs" />
     <Compile Include="AdminLogic\AdminLogicRider.cs" />
     <Compile Include="DriverLogic.cs" />
     <Compile Include="Interfaces\IAdmin.cs" />

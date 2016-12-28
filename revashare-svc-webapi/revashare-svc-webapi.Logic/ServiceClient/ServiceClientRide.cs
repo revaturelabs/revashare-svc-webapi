@@ -13,14 +13,12 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
         public bool DeleteRide(RideDAO ride)
         {
-
             return rs.DeleteRide(ride);
         }
 
         public List<RideDAO> GetRides()
         {
             return rs.GetAllRides().ToList();
-
         }
 
         public bool InsertRide(RideDAO ride)
@@ -40,8 +38,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
 
         public int getAvailableSeatsByRide(RideDAO ride)
         {
-            //return rs.getAvailableSeatsByRide(ride);
-            throw new NotImplementedException();
+            return rs.GetOpenSeats(ride);
         }
 
         public List<RideDAO> GetRidesByApartment(string name)

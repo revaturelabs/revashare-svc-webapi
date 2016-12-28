@@ -28,6 +28,13 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool ModifyRider(UserDTO riderToUpdate);
         bool DeleteRider(UserDTO riderToRemove);
 
+        //Ride CRUD Methods
+        bool InsertRide(RideDTO ride);
+        RideDTO GetRide(RideDTO ride);
+        List<RideDTO> GetRides();
+        bool ModifyRide(RideDTO ride);
+        bool DeleteRide(RideDTO ride);
+
         //User Approval
         bool ApproveUser(UserDTO userToApprove);
         bool ApproveDriver(UserDTO driverToApprove);

@@ -48,9 +48,9 @@ namespace revashare_svc_webapi.Logic.AdminLogic
             return sc.DeleteFlag(FlagMapper.mapToFlagDAO(reportToRemove));
         }
 
-        public bool RemoveDriverPrivileges(UserDTO user)
+        public bool RemoveDriverPrivileges(string UserName)
         {
-            return sc.AproveUser(user.UserName);
+            return sc.DemoteDriver(UserName);
         }
     }
 }

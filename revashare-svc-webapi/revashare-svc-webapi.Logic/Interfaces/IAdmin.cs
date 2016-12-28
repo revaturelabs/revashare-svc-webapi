@@ -46,7 +46,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         FlagDTO GetReport(int id);
         List<FlagDTO> GetReports();
         bool RemoveReport(FlagDTO reportToRemove);
-        bool RemoveDriverPrivileges(UserDTO user);
+        bool RemoveDriverPrivileges(string UserName);
 
         //Apartment Methods
         bool AddApartment(ApartmentDTO apt);

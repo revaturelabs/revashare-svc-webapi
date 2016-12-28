@@ -217,9 +217,9 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpPost]
         [Route("remove-driver-privileges")]
-        public HttpResponseMessage RemoveDriverPrivileges([FromBody] UserDTO user)
+        public HttpResponseMessage RemoveDriverPrivileges([FromUri] string UserName)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveDriverPrivileges(user));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveDriverPrivileges(UserName));
         }
         #endregion
 

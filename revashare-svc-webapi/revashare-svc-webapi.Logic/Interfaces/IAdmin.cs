@@ -42,9 +42,11 @@ namespace revashare_svc_webapi.Logic.Interfaces
         List<UserDTO> GetPendingDrivers();
 
         //User Reporting
-        List<FlagDTO> GetUserReports();
+        List<FlagDTO> GetUserReports(UserDTO user);
+        FlagDTO GetReport(int id);
+        List<FlagDTO> GetReports();
         bool RemoveReport(FlagDTO reportToRemove);
-        bool RemoveDriverPrivileges(FlagDTO reportForUser);
+        bool RemoveDriverPrivileges(UserDTO user);
 
         //Apartment Methods
         bool AddApartment(ApartmentDTO apt);

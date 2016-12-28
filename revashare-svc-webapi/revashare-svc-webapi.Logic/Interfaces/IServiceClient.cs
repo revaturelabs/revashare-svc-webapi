@@ -22,7 +22,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         List<FlagDAO> GetFlags();
         bool InsertFlag(FlagDAO flag);
         bool UpdateFlag(FlagDAO flag);
-        FlagDAO GetFlagsById(FlagDAO flag);
+        FlagDAO GetFlagsById(int id);
 
         // Ride Methods
         List<RideDAO> GetRides();

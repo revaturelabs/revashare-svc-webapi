@@ -31,9 +31,9 @@ namespace revashare_svc_webapi.Logic.ServiceClient
          //return rs.UpdateFlag(flag);
          throw new NotImplementedException();
       }
-      public FlagDAO GetFlagsById(FlagDAO flag)
+      public FlagDAO GetFlagsById(int id)
       {
-         return rs.GetFlagByID(flag.FlagID);
+         return rs.GetFlagByID(id);
       }
    }
 }

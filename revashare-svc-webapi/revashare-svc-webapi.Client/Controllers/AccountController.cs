@@ -133,7 +133,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
 
         [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
-        [HttpPost]
+        [HttpGet]
         [Route("apartments")]
         public IHttpActionResult getApartments()
         {

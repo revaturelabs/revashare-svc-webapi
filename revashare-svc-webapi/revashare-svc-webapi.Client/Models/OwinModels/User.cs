@@ -280,7 +280,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             throw new MissingPermission();
         }
 
-        public virtual bool RemoveDriverPrivileges(UserDTO user)
+        public virtual bool RemoveDriverPrivileges(string UserName)
         {
             throw new MissingPermission();
         }

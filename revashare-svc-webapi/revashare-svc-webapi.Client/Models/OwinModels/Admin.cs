@@ -104,9 +104,9 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return logic.RemoveReport(reportToRemove);
         }
 
-        public override bool RemoveDriverPrivileges(UserDTO user)
+        public override bool RemoveDriverPrivileges(string UserName)
         {
-            return logic.RemoveDriverPrivileges(user);
+            return logic.RemoveDriverPrivileges(UserName);
         }
 
         public override UserDTO RequestRider(string UserName)

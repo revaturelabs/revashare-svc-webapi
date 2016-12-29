@@ -1,4 +1,6 @@
 ﻿using revashare_svc_webapi.Logic.RevaShareServiceReference;
+using revashare_svc_webapi.Logic.RiderLogic;
+using revashare_svc_webapi.Logic.ServiceClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,108 +13,115 @@ namespace revashare_svc_webapi.Tests
   public class UserTests
   {
 
-        private RevaShareDataServiceClient client;
+    private RevaShareDataServiceClient client;
+    
+    public UserTests()
+    {
+      this.client = new RevaShareDataServiceClient();
+    }
 
 
-        public UserTests()
+    [Fact]
+    public void test_getUsers()
+    {
+
+      List<UserDAO> getUsers = client.GetAllUsers().ToList();
+
+      Assert.NotNull(getUsers);
+
+    }
+
+    [Fact]
+    public void test_getUsersByUsername()
+    {
+
+      string name = "johnbob";
+      UserDAO getUserByUsername = client.GetUserByUsername(name);
+
+      Assert.NotNull(getUserByUsername);
+
+    }
+    [Fact]
+    public void test_GetUsers_RiderLogic()
+    {
+      ServiceClient sc = new ServiceClient();
+      RiderLogic rdrLogic = new RiderLogic(sc);
+      var a = rdrLogic.getUsers();
+
+      Assert.NotEmpty(a);
+
+    }
+
+    [Fact]
+    public void test_create_delete_user()
+    {
+
+      string sampleUserName = "not_gonna_remember_this_either";
+
+      UserDAO new_user = new UserDAO()
+      {
+        Name = sampleUserName,
+        UserName = sampleUserName,
+        Apartment = new ApartmentDAO()
         {
-            this.client = new RevaShareDataServiceClient();
-        }
-
-
-        [Fact]
-        public void test_getUsers()
-        {
-          
-          List<UserDAO> getUsers = client.GetAllUsers().ToList();
-
-          Assert.NotNull(getUsers);
-
-        }
-
-        [Fact]
-        public void test_getUsersByUsername()
-        {
-
-          string name = "johnbob";
-          UserDAO getUserByUsername = client.GetUserByUsername(name);
-
-          Assert.NotNull(getUserByUsername);
-
-        }
-
-
-
-        [Fact]
-        public void test_create_delete_user()
-        {
-
-            string sampleUserName = "not_gonna_remember_this_either";
-
-            UserDAO new_user = new UserDAO()
-            {
-                Name = sampleUserName,
-                UserName = sampleUserName,
-                Apartment = new ApartmentDAO()
-                {
-                    Latitude = "1.1",
-                    Longitude = "2.2",
-                    Name = "abc"
-                },
-                Email = "asdf@g.com",
-                PhoneNumber = "5556667777",
-                Roles = new RoleDAO[] {
+          Latitude = "1.1",
+          Longitude = "2.2",
+          Name = "abc"
+        },
+        Email = "asdf@g.com",
+        PhoneNumber = "5556667777",
+        Roles = new RoleDAO[] {
                     new RoleDAO()
                     {
                         Type = "Rider"
                     }
                 }
-            };
+      };
 
-            bool success = client.RegisterUser(new_user, sampleUserName, "test_password");
+      bool success = client.RegisterUser(new_user, sampleUserName, "test_password");
 
-            Assert.True(success);
+      Assert.True(success);
 
-            var user = client.GetUserByUsername(sampleUserName);
+      var user = client.GetUserByUsername(sampleUserName);
 
-            Assert.NotNull(user);
+      Assert.NotNull(user);
 
-            bool successDelete = client.DeleteUser(sampleUserName);
+      bool successDelete = client.DeleteUser(sampleUserName);
 
-            Assert.True(successDelete);
+      Assert.True(successDelete);
 
-            user = client.GetUserByUsername(sampleUserName);
+      user = client.GetUserByUsername(sampleUserName);
 
-            Assert.Null(user);
+      Assert.Null(user);
 
-        }
-
-
-
-        [Fact]
-        public void test_deleteUser()
-        {
-            bool success = client.DeleteUser("bbbbb");
-
-            Assert.True(success);
-        }
+    }
 
 
 
-        [Fact]
-        public void test_login()
-        {
+    [Fact]
+    public void test_deleteUser()
+    {
+      bool success = client.DeleteUser("bbbbb");
 
-            var user = client.Login("a_new_username", "sample_password");
+      Assert.True(success);
+    }
 
-            Assert.NotNull(user);
 
-            user.UserName = "asdfqwer";
-            bool success = client.RegisterUser(user, user.UserName, "a_totally_original_password");
 
-            Assert.True(success);
+    [Fact]
+    public void test_login()
+    {
 
-        }
+      var user = client.Login("a_new_username", "sample_password");
+
+      Assert.NotNull(user);
+
+      user.UserName = "asdfqwer";
+      bool success = client.RegisterUser(user, user.UserName, "a_totally_original_password");
+
+      Assert.True(success);
+
+    }
 
 
   }

@@ -8,41 +8,34 @@ using revashare_svc_webapi.Logic.Models;
 
 namespace revashare_svc_webapi.Logic.RiderLogic
 {
-   
-   public partial class RiderLogic : IRider
-   {
-      public List<RideDTO> getAvailableRides(string startLocation)
-      {
-         var list = sc.getRidesByLocation(startLocation);
-         var ret = new List<RideDTO>();
-         foreach (var item in list)
-         {
-            ret.Add(Mappers.RideMapper.mapToRideDTO(item));
-         }
-         return ret;
-      }
-      public List<RideDTO> getRides()
-      {
-         var list = sc.GetRides();
-         var toReturn = new List<RideDTO>();
-         foreach (var item in list)
-         {
-            toReturn.Add(Mappers.RideMapper.mapToRideDTO(item));
-         }
-         return toReturn;
-      }
 
-      public int getAvailableSeatsInRide(RideDTO ride)
-      {
-         return sc.getAvailableSeatsByRide(Mappers.RideMapper.mapToRideDAO(ride));
-      }
+    public partial class RiderLogic : IRider
+    {
+        public List<RideDTO> getAvailableRides(string startLocation)
+        {
+            return sc.getRidesByLocation(startLocation).ConvertAll(x => Mappers.RideMapper.mapToRideDTO(x));
+        }
+        public List<RideDTO> getRides()
+        {
+            return sc.GetRides().ConvertAll(x => Mappers.RideMapper.mapToRideDTO(x));
+        }
 
-      public RideDTO getCurrentSelectedRide(RideDTO ride)
-      {
-         return getRides().Where(m => m.Vehicle.LicensePlate.Equals(ride.Vehicle.LicensePlate)).FirstOrDefault();
-      }
+        public List<UserDTO> getRiders()
+        {
+            return sc.GetRiders().ConvertAll(x => Mappers.UserMapper.mapToUserDTO(x));
+        }
 
-      
-   }
-   
+        public int getAvailableSeatsInRide(RideDTO ride)
+        {
+            return sc.getAvailableSeatsByRide(Mappers.RideMapper.mapToRideDAO(ride));
+        }
+
+        public RideDTO getCurrentSelectedRide(RideDTO ride)
+        {
+            return getRides().Where(m => m.Vehicle.LicensePlate.Equals(ride.Vehicle.LicensePlate)).FirstOrDefault();
+        }
+
+
+    }
+
 }

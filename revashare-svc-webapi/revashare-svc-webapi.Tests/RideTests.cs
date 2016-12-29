@@ -3,6 +3,7 @@ using revashare_svc_webapi.Logic.Models;
 using revashare_svc_webapi.Logic.RevaShareServiceReference;
 using revashare_svc_webapi.Logic.RiderLogic;
 using revashare_svc_webapi.Logic.ServiceClient;
+using revashare_svc_webapi.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,19 @@ using Xunit;
 
 namespace revashare_svc_webapi.Tests
 {
-  public class RideTests
-  {
-    [Fact]
-    public void test_getRides()
+    public class RideTests
     {
-      RevaShareDataServiceClient dataClient = new RevaShareDataServiceClient();
 
-      List<RideDAO> getRides = dataClient.GetAllRides().ToList();
+        private RiderLogic riderLogic;
+        private DriverLogic driverLogic;
 
-      Assert.NotNull(getRides);
+        public RideTests()
+        {
+            ServiceClient svc = new ServiceClient();
 
-    }
+            this.riderLogic = new RiderLogic(svc);
+            this.driverLogic = new DriverLogic();
+        }
 
     [Fact]
     public void test_getRidesByApartments()

@@ -28,12 +28,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             return true;
         }
-
-        public override VehicleDTO ViewVehicleInfo(string driver)
-        {
-            return logic.ViewVehicleInfo(driver);
-        }
-
+        
         public override bool AddVehicle(VehicleDTO vehicle)
         {
             return logic.AddVehicle(vehicle);
@@ -64,19 +59,9 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return logic.ScheduleRide(ride);
         }
 
-        public override RideDTO getSingleRide(RideDTO ride)
-        {
-            return logic.getSingleRide(ride);
-        }
-
         public override bool CancelRide(RideDTO ride)
         {
             return logic.CancelRide(ride);
-        }
-
-        public override List<UserDTO> ViewPassengers(RideDTO ride)
-        {
-            return logic.ViewPassengers(ride);
         }
 
         public override bool AcceptPassenger(RideRiderDTO rider)

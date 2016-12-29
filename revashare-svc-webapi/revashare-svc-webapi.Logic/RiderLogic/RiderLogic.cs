@@ -20,7 +20,7 @@ namespace revashare_svc_webapi.Logic.RiderLogic
       {        
          enroll.MyCar.Owner = enroll.User;
          var insert = sc.InsertVehicle(Mappers.VehicleMapper.mapToVehicleDAO(enroll.MyCar));
-         var request = sc.RequestToBeDriver(enroll.User.Name);
+         var request = sc.RequestToBeDriver(enroll.User.UserName);
          return (insert && request);
       }
    }

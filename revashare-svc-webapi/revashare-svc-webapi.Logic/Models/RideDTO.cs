@@ -13,6 +13,7 @@ namespace revashare_svc_webapi.Logic.Models
         public bool IsOnTime { get; set; }
         public virtual VehicleDTO Vehicle { get; set; }
         public bool IsAMRide { get; set; }
+        public int NumberOfRidersInRide { get; set; }
 
         public bool Equals(RideDTO other)
         {

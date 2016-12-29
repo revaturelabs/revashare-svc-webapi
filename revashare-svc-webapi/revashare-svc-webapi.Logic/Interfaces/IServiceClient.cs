@@ -40,7 +40,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
         bool InsertRideRider(UserDAO rider, RideDAO ride);
         bool UpdateRideRider(RideRidersDAO rideRider);
         bool DeleteRideRider(RideRidersDAO rr);
-        bool Accept(RideRidersDAO rr);
+        bool AcceptRideRequest(RideRidersDAO rr);
 
         // User Methods
         bool DeleteUser(UserDAO user);

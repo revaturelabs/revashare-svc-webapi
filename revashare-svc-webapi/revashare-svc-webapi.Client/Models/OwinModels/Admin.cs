@@ -94,9 +94,9 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return logic.DeleteDriver(driverToRemove);
         }
 
-        public override List<FlagDTO> GetUserReports()
+        public override List<FlagDTO> GetUserReports(UserDTO user)
         {
-            return logic.GetUserReports();
+            return logic.GetUserReports(user);
         }
 
         public override bool RemoveReport(FlagDTO reportToRemove)
@@ -104,9 +104,9 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return logic.RemoveReport(reportToRemove);
         }
 
-        public override bool RemoveDriverPrivileges(FlagDTO reportForUser)
+        public override bool RemoveDriverPrivileges(string UserName)
         {
-            return logic.RemoveDriverPrivileges(reportForUser);
+            return logic.RemoveDriverPrivileges(UserName);
         }
 
         public override UserDTO RequestRider(string UserName)

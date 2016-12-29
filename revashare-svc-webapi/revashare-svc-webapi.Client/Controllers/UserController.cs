@@ -17,13 +17,11 @@ namespace revashare_svc_webapi.Client.Controllers
         {
             userLogic = UL;
         }
-
-
+        
         [HttpGet]
         [Route("profile")]
         public IHttpActionResult profile()
         {
-
             Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
             var owinUser = userFactory.getUser(Request.GetOwinContext());
 
@@ -33,15 +31,20 @@ namespace revashare_svc_webapi.Client.Controllers
             }
 
             return Json(owinUser.getProfile());
-
         }
-
 
         [HttpGet]
         [Route("get-user")]
         public HttpResponseMessage GetUser([FromUri] string username)
         {
             return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetUser(username), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-users")]
+        public HttpResponseMessage GetUsers()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetUsers(), "application/json");
         }
 
         [HttpGet]

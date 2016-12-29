@@ -18,26 +18,26 @@ namespace revashare_svc_webapi.Logic.UserLogic
             sc = client;
         }
 
-        public ApartmentDTO GetApartment(string name)
-        {
-            return ApartmentMapper.mapToApartmentDTO(sc.getApartmentByName(name));
-        }
-
-        public List<ApartmentDTO> GetApartments()
-        {
-            List<ApartmentDTO> apartments = new List<ApartmentDTO>();
-
-            foreach (var apartment in sc.GetApartments())
-            {
-                apartments.Add(ApartmentMapper.mapToApartmentDTO(apartment));
-            }
-
-            return apartments;
-        }
-
         public UserDTO GetUser(string UserName)
         {
             return UserMapper.mapToUserDTO(sc.GetUser(UserName));
+        }
+
+        public List<UserDTO> GetUsers()
+        {
+            List<UserDTO> allUsers = new List<UserDTO>();
+
+            foreach (var rider in sc.GetRiders())
+            {
+                allUsers.Add(UserMapper.mapToUserDTO(rider));
+            }
+
+            foreach (var driver in sc.GetDrivers())
+            {
+                allUsers.Add(UserMapper.mapToUserDTO(driver));
+            }
+
+            return allUsers;
         }
 
         public bool registerUser(UserDTO user, string password)
@@ -55,43 +55,6 @@ namespace revashare_svc_webapi.Logic.UserLogic
                 return null;
             }
             return UserMapper.mapToUserDTO(user);
-        }
-
-
-        public List<RideDTO> GetRidesByApartment(string name)
-        {
-            List<RideDTO> rides = new List<RideDTO>();
-
-            foreach (var ride in sc.GetRidesByApartment(name))
-            {
-                rides.Add(RideMapper.mapToRideDTO(ride));
-            }
-
-            return rides;
-        }
-
-        public List<RideDTO> GetMorningRidesByApartment(string name)
-        {
-            List<RideDTO> rides = new List<RideDTO>();
-
-            foreach (var ride in sc.GetMorningRidesByApartment(name))
-            {
-                rides.Add(RideMapper.mapToRideDTO(ride));
-            }
-
-            return rides;
-        }
-
-        public List<RideDTO> GetEveningRidesByApartment(string name)
-        {
-            List<RideDTO> rides = new List<RideDTO>();
-
-            foreach (var ride in sc.GetEveningRidesByApartment(name))
-            {
-                rides.Add(RideMapper.mapToRideDTO(ride));
-            }
-
-            return rides;
         }
     }
 }

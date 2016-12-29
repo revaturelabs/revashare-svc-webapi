@@ -10,31 +10,47 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.AdminLogic
 {
-  public partial class AdminLogic : IAdmin
-  {
-    public List<FlagDTO> GetUserReports()
+    public partial class AdminLogic : IAdmin
     {
-      List<FlagDAO> allFlagsDAO = sc.GetFlags();
-      List<FlagDTO> allFlagsDTO = new List<FlagDTO>();
+        public List<FlagDTO> GetUserReports(UserDTO user)
+        {
+            List<FlagDTO> userFlags = new List<FlagDTO>();
 
-      foreach (FlagDAO flag in allFlagsDAO)
-      {
-        allFlagsDTO.Add(FlagMapper.mapToFlagDTO(flag));
-      }
+            foreach (var flag in sc.GetFlags())
+            {
+                if(flag.Driver.UserName == user.UserName)
+                {
+                    userFlags.Add(FlagMapper.mapToFlagDTO(flag));
+                }
+            }
 
-      return allFlagsDTO;
+            return userFlags;
+        }
+
+        public FlagDTO GetReport(int id)
+        {
+            return FlagMapper.mapToFlagDTO(sc.GetFlagsById(id));
+        }
+
+        public List<FlagDTO> GetReports()
+        {
+            List<FlagDTO> flags = new List<FlagDTO>();
+
+            foreach (var flag in sc.GetFlags())
+            {
+                flags.Add(FlagMapper.mapToFlagDTO(flag));
+            }
+            return flags;
+        }
+
+        public bool RemoveReport(FlagDTO reportToRemove)
+        {
+            return sc.DeleteFlag(FlagMapper.mapToFlagDAO(reportToRemove));
+        }
+
+        public bool RemoveDriverPrivileges(string UserName)
+        {
+            return sc.DemoteDriver(UserName);
+        }
     }
-
-    public bool RemoveReport(FlagDTO reportToRemove)
-    {
-
-      throw new NotImplementedException();
-      //return sc.DeleteFlag(FlagMapper.mapToFlagDAO(reportToRemove));
-    }
-
-    public bool RemoveDriverPrivileges(FlagDTO reportForUser)
-    {
-      throw new NotImplementedException();
-    }
-  }
 }

@@ -270,7 +270,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             throw new MissingPermission();
         }
 
-        public virtual List<FlagDTO> GetUserReports()
+        public virtual List<FlagDTO> GetUserReports(UserDTO user)
         {
             throw new MissingPermission();
         }
@@ -280,7 +280,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             throw new MissingPermission();
         }
 
-        public virtual bool RemoveDriverPrivileges(FlagDTO reportForUser)
+        public virtual bool RemoveDriverPrivileges(string UserName)
         {
             throw new MissingPermission();
         }

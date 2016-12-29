@@ -119,6 +119,43 @@ namespace revashare_svc_webapi.Client.Controllers
         }
         #endregion
 
+        #region Ride CRUD
+        [HttpPost]
+        [Route("get-ride")]
+        public HttpResponseMessage GetRide([FromBody] RideDTO ride)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetRide(ride), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-rides")]
+        public HttpResponseMessage GetRides()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetRides(), "application/json");
+        }
+
+        [HttpPost]
+        [Route("add-ride")]
+        public HttpResponseMessage AddRide([FromBody] RideDTO ride)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.InsertRide(ride), "application/json");
+        }
+
+        [HttpPost]
+        [Route("update-ride")]
+        public HttpResponseMessage UpdateRide([FromBody] RideDTO ride)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ModifyRide(ride));
+        }
+
+        [HttpPost]
+        [Route("remove-ride")]
+        public HttpResponseMessage RemoveRide([FromBody] RideDTO ride)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.DeleteRide(ride));
+        }
+        #endregion
+
         #region User Approval
         [HttpPost]
         [Route("approve-user")]
@@ -151,10 +188,24 @@ namespace revashare_svc_webapi.Client.Controllers
 
         #region User Reporting
         [HttpGet]
-        [Route("get-user-reports")]
-        public HttpResponseMessage UserReports()
+        [Route("get-report")]
+        public HttpResponseMessage GetReport([FromUri] int id)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetUserReports(), "application/json");
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetReport(id), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-reports")]
+        public HttpResponseMessage GetReports()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetReports(), "application/json");
+        }
+
+        [HttpPost]
+        [Route("get-user-reports")]
+        public HttpResponseMessage GetUserReports([FromBody] UserDTO user)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.GetUserReports(user), "application/json");
         }
 
         [HttpPost]
@@ -166,9 +217,9 @@ namespace revashare_svc_webapi.Client.Controllers
 
         [HttpPost]
         [Route("remove-driver-privileges")]
-        public HttpResponseMessage RemoveDriverPrivileges([FromBody] FlagDTO report)
+        public HttpResponseMessage RemoveDriverPrivileges([FromUri] string UserName)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveDriverPrivileges(report));
+            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.RemoveDriverPrivileges(UserName));
         }
         #endregion
 

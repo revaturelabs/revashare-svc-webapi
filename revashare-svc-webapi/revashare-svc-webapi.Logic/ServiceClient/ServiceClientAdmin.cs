@@ -56,5 +56,10 @@ namespace revashare_svc_webapi.Logic.ServiceClient
         {
             return rs.GetPendingDrivers().ToList();
         }
+
+        public bool DemoteDriver(string UserName)
+        {
+            return rs.RemoveDriverPrivileges(UserName);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace revashare_svc_webapi.Tests
         {
             ServiceClient sc = new ServiceClient();
             AdminLogic admLogic = new AdminLogic(sc);
-            var a = admLogic.GetUserReports();
+            var a = admLogic.GetReports();
 
 
             Assert.NotEmpty(a);

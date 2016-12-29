@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using revashare_svc_webapi.Logic.Models;
+using revashare_svc_webapi.Logic.ServiceClient;
+using revashare_svc_webapi.Logic.UserLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
     {
 
         protected UserDTO userDetails;
+        private UserLogic logic;
 
         public string userName
         {
@@ -32,8 +35,8 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             string userJson = principal.FindFirst(ClaimTypes.UserData).Value;
             this.userDetails = JsonConvert.DeserializeObject<UserDTO>(userJson);
+            this.logic = new UserLogic(new ServiceClient());
         }
-
 
         public UserDTO getProfile()
         {
@@ -51,6 +54,25 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             return false;
         }
 
+
+        public virtual bool updateProfileApartment(ApartmentDTO apartment)
+        {
+            
+            UserDTO newProfile = new UserDTO();
+            newProfile.Apartment = apartment;
+            newProfile.ApartmentId = this.userDetails.ApartmentId;
+            newProfile.Email = this.userDetails.Email;
+            newProfile.Name = this.userDetails.Name;
+            newProfile.PhoneNumber = this.userDetails.PhoneNumber;
+            newProfile.Roles = this.userDetails.Roles;
+            newProfile.UserName = this.userDetails.UserName;
+
+            bool success = this.logic.updateUser(newProfile);
+            
+            return success;
+
+        }
+        
 
         #region rider methods
 

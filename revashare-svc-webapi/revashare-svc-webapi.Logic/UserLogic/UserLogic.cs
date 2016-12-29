@@ -56,5 +56,13 @@ namespace revashare_svc_webapi.Logic.UserLogic
             }
             return UserMapper.mapToUserDTO(user);
         }
+
+        
+        public bool updateUser(UserDTO user)
+        {
+            return sc.UpdateUser(UserMapper.mapToUserDAO(user));
+        }
+
+
     }
 }

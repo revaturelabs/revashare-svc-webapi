@@ -133,7 +133,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
 
         [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
-        [HttpPost]
+        [HttpGet]
         [Route("apartments")]
         public IHttpActionResult getApartments()
         {
@@ -143,6 +143,28 @@ namespace revashare_svc_webapi.Client.Controllers
             List<ApartmentDTO> apartments = user.getApartments();
 
             return Json(apartments);
+
+        }
+
+
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [HttpPost]
+        [Route("updateProfileApartment")]
+        public IHttpActionResult updateProfileApartment(ApartmentDTO apartment)
+        {
+
+            var user = userFactory.getUser(Request.GetOwinContext());
+
+            bool success = user.updateProfileApartment(apartment);
+
+            if (success)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
 
         }
 

@@ -28,15 +28,34 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             return true;
         }
-        
+
+        public override VehicleDTO ViewVehicleInfo()
+        {
+            return logic.ViewVehicleInfo(this.userDetails.UserName);
+        }
+
         public override bool AddVehicle(VehicleDTO vehicle)
         {
-            return logic.AddVehicle(vehicle);
+            if (logic.ViewVehicleInfo(this.userDetails.UserName) == null)
+            {
+                return logic.AddVehicle(vehicle);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override bool UpdateVehicleInfo(VehicleDTO vehicle)
         {
-            return logic.UpdateVehicleInfo(vehicle);
+            if (logic.ViewVehicleInfo(this.userDetails.UserName) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return logic.UpdateVehicleInfo(vehicle);
+            }
         }
 
         public override bool ReportRider(FlagDTO flag)

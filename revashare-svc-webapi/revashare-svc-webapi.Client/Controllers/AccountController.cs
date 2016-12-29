@@ -85,15 +85,10 @@ namespace revashare_svc_webapi.Client.Controllers
             }
 
             string userJson = JsonConvert.SerializeObject(user);
-
-            Claim[] claims = new Claim[]
-            {
-                new Claim(ClaimTypes.Role, "user"),
-                new Claim(ClaimTypes.UserData, userJson)
-            };
-
-            ClaimsIdentity identity = new ClaimsIdentity(claims, "ApplicationCookie");
-            identity.AddClaims(claims);
+            
+            ClaimsIdentity identity = new ClaimsIdentity("ApplicationCookie");
+            identity.AddClaim(new Claim(ClaimTypes.UserData, userJson));
+            user.Roles.ForEach(x => identity.AddClaim(new Claim(ClaimTypes.Role, x.Type)));
             
             var context = Request.GetOwinContext();
             var authManager = context.Authentication;
@@ -104,6 +99,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
         [HttpPost]
         [Route("logout")]
         public IHttpActionResult logout()
@@ -122,7 +118,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [Authorize(Roles = "user")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
         [HttpGet]
         [Route("profile")]
         public UserDTO profile()
@@ -136,28 +132,19 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [Authorize(Roles = "user")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
         [HttpPost]
-        [Route("driverUpgrade")]
-        public IHttpActionResult driverUpgrade(VehicleDTO car)
+        [Route("apartments")]
+        public IHttpActionResult getApartments()
         {
 
             var user = userFactory.getUser(Request.GetOwinContext());
 
-            bool success = user.requestToBeDriver(car);
+            List<ApartmentDTO> apartments = user.getApartments();
 
-            if (success)
-            {
-                return Ok();
-            }
-            else
-            {
-                return StatusCode(HttpStatusCode.BadRequest);
-            }
+            return Json(apartments);
 
         }
-
-
 
 
         #region helpers

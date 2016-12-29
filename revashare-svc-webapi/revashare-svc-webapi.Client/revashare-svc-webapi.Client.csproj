@@ -219,6 +219,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\david_ec2.pubxml" />
     <None Include="Service References\RevaShareServiceReference\configuration91.svcinfo" />
     <None Include="Service References\RevaShareServiceReference\configuration.svcinfo" />
     <None Include="Service References\RevaShareServiceReference\Reference.svcmap">
@@ -264,6 +265,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\RiderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

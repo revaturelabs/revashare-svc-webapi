@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using revashare_svc_webapi.Logic.Models;
+using System.Collections.Generic;
 using System.Security.Claims;
 
 namespace revashare_svc_webapi.Client.Models.OwinModels
@@ -8,10 +9,11 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
     {
 
         private static UserFactory _factory = null;
-        private static string USER_TYPE = "user";
-        private static string RIDER_TYPE = "rider";
-        private static string DRIVER_TYPE = "driver";
-        private static string ADMIN_TYPE = "admin";
+        private static string USER_TYPE = "Unassigned";
+        private static string RIDER_TYPE = "Rider";
+        private static string REQUEST_DRIVER = "RequestDriver";
+        private static string DRIVER_TYPE = "Driver";
+        private static string ADMIN_TYPE = "Admin";
 
         public static UserFactory getFactory()
         {
@@ -27,35 +29,42 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
             ClaimsPrincipal principal = context.Authentication.User;
 
-            Claim role = principal.FindFirst(ClaimTypes.Role);
+            var claims = new List<Claim>(principal.FindAll(ClaimTypes.Role));
 
-            if (role == null)
+            List<string> roles = claims.ConvertAll(x => x.Value);
+
+
+            if (claims.Count == 0)
             {
                 return null;
             }
 
-            string roleName = role.Value;
-
-            if (roleName.Equals(USER_TYPE))
+            if (roles.Contains(ADMIN_TYPE))
             {
-                return new User(principal);
+                return new Admin(principal);
             }
-            else if (roleName.Equals(RIDER_TYPE))
-            {
-                return new Rider(principal);
-            }
-            else if (roleName.Equals(DRIVER_TYPE))
+            else if (roles.Contains(DRIVER_TYPE))
             {
                 return new Driver(principal);
             }
-            else if (roleName.Equals(ADMIN_TYPE))
+            else if (roles.Contains(REQUEST_DRIVER))
             {
-                return new Admin(principal);
+                return new Rider(principal);
+            }
+            else if (roles.Contains(RIDER_TYPE))
+            {
+                return new Rider(principal);
+            }
+            else if (roles.Contains(USER_TYPE))
+            {
+                return new User(principal);
             }
             else
             {
                 return null;
             }
+
+          
         }
 
     }

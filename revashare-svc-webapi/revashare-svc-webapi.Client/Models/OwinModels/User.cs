@@ -63,43 +63,23 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             throw new MissingPermission();
         }
-
-        public virtual ApartmentDTO getApartmentByName(string name)
-        {
-            throw new MissingPermission();
-        }
-
+        
         public virtual bool fileComplaintAboutDriver(FlagDTO flag)
         {
             throw new MissingPermission();
         }
-
-        public virtual List<RideDTO> getAvailableRides(string startLocation)
-        {
-            throw new MissingPermission();
-        }
-
+        
         public virtual List<RideDTO> getRides()
         {
             throw new MissingPermission();
         }
-
-        public virtual int getAvailableSeatsInRide(RideDTO ride)
+        
+        public virtual bool bookRide(RideDTO ride)
         {
             throw new MissingPermission();
         }
 
-        public virtual RideDTO getCurrentSelectedRide(RideDTO ride)
-        {
-            throw new MissingPermission();
-        }
-
-        public virtual bool addRiderToRide(RideDTO ride, UserDTO rider)
-        {
-            throw new MissingPermission();
-        }
-
-        public virtual bool removeRiderFromRide(RideRiderDTO rider)
+        public virtual bool unBookRide(RideDTO ride)
         {
             throw new MissingPermission();
         }
@@ -118,12 +98,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             throw new MissingPermission();
         }
-
-        public virtual int getOccupiedSeatsByRide(RideDTO ride)
-        {
-            throw new MissingPermission();
-        }
-
+        
         public virtual List<UserDTO> getUsers()
         {
             throw new MissingPermission();
@@ -181,21 +156,11 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
             throw new MissingPermission();
         }
 
-        public virtual RideDTO getSingleRide(RideDTO ride)
-        {
-            throw new MissingPermission();
-        }
-
         public virtual bool CancelRide(RideDTO ride)
         {
             throw new MissingPermission();
         }
-
-        public virtual List<UserDTO> ViewPassengers(RideDTO ride)
-        {
-            throw new MissingPermission();
-        }
-
+        
         public virtual bool AcceptPassenger(RideRiderDTO rider)
         {
             throw new MissingPermission();

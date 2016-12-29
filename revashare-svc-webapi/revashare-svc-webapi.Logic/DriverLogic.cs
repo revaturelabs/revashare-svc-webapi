@@ -10,95 +10,95 @@ using revashare_svc_webapi.Logic.Mappers;
 
 namespace revashare_svc_webapi.Logic
 {
-  public class DriverLogic : IDriverRepository
-  {
-    private RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
-
-    public VehicleDTO ViewVehicleInfo(string driver)
+    public class DriverLogic : IDriverRepository
     {
-      try
-      {
-        var vehicles = svc.GetVehicles();
-        foreach (var item in vehicles)
+        private RevaShareDataServiceClient svc = new RevaShareDataServiceClient();
+
+        public VehicleDTO ViewVehicleInfo(string driver)
         {
-          if (item.Owner.UserName == driver)
-          {
-            return Mappers.VehicleMapper.mapToVehicleDTO(item);
-          }
+            try
+            {
+                var vehicles = svc.GetVehicles();
+                foreach (var item in vehicles)
+                {
+                    if (item.Owner.UserName == driver)
+                    {
+                        return Mappers.VehicleMapper.mapToVehicleDTO(item);
+                    }
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
-        return null;
-      }
-      catch (Exception)
-      {
-        return null;
-      }
-    }
 
-    public bool AddVehicle(VehicleDTO vehicle)
-    {
-      VehicleDAO something = Mappers.VehicleMapper.mapToVehicleDAO(vehicle);
-      return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
-    }
-    public bool UpdateVehicleInfo(VehicleDTO vehicle)
-    {
-      try
-      {
-        return svc.UpdateVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
-      }
-      catch (Exception)
-      {
-        return false;
-      }
-    }
+        public bool AddVehicle(VehicleDTO vehicle)
+        {
+            VehicleDAO something = Mappers.VehicleMapper.mapToVehicleDAO(vehicle);
+            return svc.AddVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
+        }
+        public bool UpdateVehicleInfo(VehicleDTO vehicle)
+        {
+            try
+            {
+                return svc.UpdateVehicle(VehicleMapper.mapToVehicleDAO(vehicle));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
-    public bool ReportRider(FlagDTO flag)
-    {
-      try
-      {
-        return svc.CreateFlag(FlagMapper.mapToFlagDAO(flag));
-      }
-      catch (Exception)
-      {
-        return false;
-      }
-    }
+        public bool ReportRider(FlagDTO flag)
+        {
+            try
+            {
+                return svc.CreateFlag(FlagMapper.mapToFlagDAO(flag));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
-    public bool SetAvailability(RideDTO ride)
-    {
-      try
-      {
-        return svc.UpdateRide(RideMapper.mapToRideDAO(ride));
-      }
-      catch (Exception)
-      {
-        return false;
-      }
-    }
+        public bool SetAvailability(RideDTO ride)
+        {
+            try
+            {
+                return svc.UpdateRide(RideMapper.mapToRideDAO(ride));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
-    public bool UpdateDriverProfile(UserDTO driver)
-    {
-      try
-      {
-        return svc.UpdateUser(UserMapper.mapToUserDAO(driver));
-      }
-      catch (Exception)
-      {
-        return false;
-      }
-    }
+        public bool UpdateDriverProfile(UserDTO driver)
+        {
+            try
+            {
+                return svc.UpdateUser(UserMapper.mapToUserDAO(driver));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
 
-    public bool ScheduleRide(RideDTO ride)
-    {
-      try
-      {
-        return svc.AddRide(RideMapper.mapToRideDAO(ride));
-      }
-      catch (Exception)
-      {
-        return false;
-      }
-    }
+        public bool ScheduleRide(RideDTO ride)
+        {
+            try
+            {
+                return svc.AddRide(RideMapper.mapToRideDAO(ride));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
     public RideDTO getSingleRide(RideDTO ride)
     {
@@ -109,52 +109,51 @@ namespace revashare_svc_webapi.Logic
                                       && x.StartOfWeek == ride.StartOfWeekDate).FirstOrDefault());
     }
 
-    public bool CancelRide(RideDTO ride)
-    {
-      try
-      {
-        return svc.DeleteRide(RideMapper.mapToRideDAO(ride));
-      }
-      catch (Exception)
-      {
-        return false;
-      }
-    }
-
-    public List<UserDTO> ViewPassengers(RideDTO ride)
-    {
-      try
-      {
-        List<UserDTO> members = new List<UserDTO>();
-        ride = getSingleRide(ride);
-        var riders = svc.getRidersInRide(Mappers.RideMapper.mapToRideDAO(ride));
-        foreach (var item in riders)
+        public bool CancelRide(RideDTO ride)
         {
-          members.Add(Mappers.UserMapper.mapToUserDTO(item));
+            try
+            {
+                return svc.DeleteRide(RideMapper.mapToRideDAO(ride));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
-        return members;
-      }
-      catch (Exception)
-      {
-        return null;
-      }
-    }
 
-    public bool AcceptPassenger(RideRiderDTO rider)
-    {
-      try
-      {
-        var ride = getSingleRide(rider.Ride);
-        var passenger = svc.GetUserByUsername(rider.Rider.UserName);
-        rider.Ride = ride;
-        rider.Rider = Mappers.UserMapper.mapToUserDTO(passenger);
-        rider.Accepted = true;
-        return svc.AcceptRideRequest(RideRiderMapper.mapToRideRiderDAO(rider));
-      }
-      catch (Exception)
-      {
-        return false;
-      }
+        public List<UserDTO> ViewPassengers(RideDTO ride)
+        {
+            try
+            {
+                List<UserDTO> members = new List<UserDTO>();
+                ride = getSingleRide(ride);
+                var riders = svc.getRidersInRide(Mappers.RideMapper.mapToRideDAO(ride));
+                foreach (var item in riders)
+                {
+                    members.Add(Mappers.UserMapper.mapToUserDTO(item));
+                }
+                return members;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public bool AcceptPassenger(RideRiderDTO rideRider)
+        {
+            
+            bool success = svc.AcceptRideRequest(Mappers.RideRiderMapper.mapToRideRiderDAO(rideRider));
+
+            return success;
+
+        }
+
+        public bool RemovePassenger(RideRiderDTO rideRider)
+        {
+            return svc.DeleteRideRider(Mappers.RideRiderMapper.mapToRideRiderDAO(rideRider));
+
+        }
+
     }
-  }
 }

@@ -139,6 +139,23 @@ namespace revashare_svc_webapi.Tests
       Assert.Equal(res.StatusCode, HttpStatusCode.OK);
     }
 
+    /*  Doesn't have a method within DriverController for removing a passenger
+    [Fact]
+    public void Test_RemovePassenger()
+    {
+      var mock = new Mock<IDriverRepository>();
+      mock.Setup(m => m.RemovePassenger(new RideRiderDTO()))
+        .Returns(true);
+
+      var ctrl = new DriverController(mock.Object);
+      ctrl.Request = Substitute.For<HttpRequestMessage>();
+      ctrl.Configuration = Substitute.For<HttpConfiguration>();
+      HttpResponseMessage res = ctrl.(new RideRiderDTO());
+
+      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
+    }
+    */
+
     [Fact]
     public void test_removeRideRider()
     {

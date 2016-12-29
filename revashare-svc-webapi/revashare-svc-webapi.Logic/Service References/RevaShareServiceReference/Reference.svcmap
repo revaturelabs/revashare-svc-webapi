@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://54.145.144.187/revashare-dbs/RevaShareDataService.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RevaShareDataService11.wsdl" MetadataType="Wsdl" ID="80965be7-49b5-431d-a603-7b7aa79c5adc" SourceId="1" SourceUrl="http://34.193.92.187/revashare-dataaccess/RevaShareDataService.svc?singleWsdl" />
+    <MetadataFile FileName="RevaShareDataService.wsdl" MetadataType="Wsdl" ID="ed84f31c-2768-41a3-834f-026197e94d28" SourceId="1" SourceUrl="http://54.145.144.187/revashare-dbs/RevaShareDataService.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

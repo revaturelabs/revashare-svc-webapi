@@ -106,7 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\RevaShareServiceReference\RevaShareDataService11.wsdl" />
+    <None Include="Service References\RevaShareServiceReference\RevaShareDataService.wsdl" />
     <None Include="Service References\RevaShareServiceReference\revashare_svc_webapi.Logic.RevaShareServiceReference.ApartmentDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

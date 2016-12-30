@@ -62,8 +62,8 @@ namespace revashare_svc_webapi.Tests
         public void temp_test()
         {
             RevaShareDataServiceClient client = new RevaShareDataServiceClient();
-            UserDAO user = client.GetUserByUsername("fresh_new_user");
-            RideDAO ride = client.GetAllRides().First();
+            UserDAO user = client.GetUserByUsername("testrider");
+            RideDAO ride = client.GetAllRides().Single(x => x.Vehicle.Make.Equals("test make"));
             bool success = client.AddRideRiders(user, ride);
             Assert.True(success);
             

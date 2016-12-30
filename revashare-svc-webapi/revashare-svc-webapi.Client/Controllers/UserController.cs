@@ -2,14 +2,14 @@
 using revashare_svc_webapi.Logic.Interfaces;
 using revashare_svc_webapi.Logic.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
+
+    [Authorize(Roles = "Rider,RequestDriver,Driver")]
     [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
@@ -23,6 +23,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
         
         [HttpGet]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
         [Route("profile")]
         public IHttpActionResult profile()
         {
@@ -39,6 +40,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
         [Route("updateProfile")]
         public IHttpActionResult updateProfile(UserDTO profile)
         {

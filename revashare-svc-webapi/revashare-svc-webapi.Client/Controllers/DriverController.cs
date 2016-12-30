@@ -12,6 +12,7 @@ using System.Web.Http.Cors;
 namespace revashare_svc_webapi.Client.Controllers
 {
 
+    [Authorize(Roles = "Driver")]
     [RoutePrefix("api/driver")]
     public class DriverController : ApiController
     {
@@ -165,36 +166,6 @@ namespace revashare_svc_webapi.Client.Controllers
             }
         }
 
-        /// <summary>
-        /// Allows driver to update profile
-        /// </summary>
-        /// <param name="driver"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [Route("updatedriverprofile")]
-        public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver)
-        {
-
-            var user = this.userFactory.getUser(Request.GetOwinContext());
-
-            try
-            {
-                bool success = user.UpdateDriverProfile(driver);
-
-                if (success)
-                {
-                    return Request.CreateResponse(HttpStatusCode.OK, success);
-                }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest);
-                }
-            }
-            catch (Exception)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-        }
 
         /// <summary>
         /// Allows driver to schedule ride

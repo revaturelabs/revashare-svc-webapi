@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Models
 {
-   public class ApartmentDTO
+   public class ApartmentDTO: IEquatable<ApartmentDTO>
    {
       public string Latitude { get; set; }
 
@@ -14,5 +14,12 @@ namespace revashare_svc_webapi.Logic.Models
 
       public string Name { get; set; }
 
-   }
+      public bool Equals(ApartmentDTO other)
+      {
+            return this.Latitude.Equals(other.Latitude)
+                    && this.Longitude.Equals(other.Longitude)
+                    && this.Name.Equals(other.Name);
+      }
+
+    }
 }

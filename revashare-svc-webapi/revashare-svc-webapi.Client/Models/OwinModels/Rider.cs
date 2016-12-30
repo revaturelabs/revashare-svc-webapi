@@ -59,7 +59,22 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             return logic.getRides();
         }
-        
+
+        public override List<RideDTO> getAvailableRides()
+        {
+            return logic.getRides().Where(x => x.Vehicle.Owner.Apartment.Equals(this.userDetails.Apartment)).ToList();
+        }
+
+        public override List<RideDTO> getScheduledRides()
+        {
+            var rideRiders = logic.getRideRidersByUser(this.userDetails);
+
+            var rides = logic.getRides();
+
+            return rides.Where(x => rideRiders.Any(y => y.Ride.Equals(x))).ToList();
+
+        }
+
         public override bool bookRide(RideDTO ride)
         {
             return logic.addRiderToRide(ride, this.getProfile());

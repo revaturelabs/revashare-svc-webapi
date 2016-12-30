@@ -14,8 +14,17 @@ namespace revashare_svc_webapi.Logic.RiderLogic
     {
       DriverLogic driver = new DriverLogic();
       var _ride = driver.getSingleRide(ride);
-      var passenger = sc.GetUser(rider.UserName);
-      return sc.InsertRideRider(passenger, Mappers.RideMapper.mapToRideDAO(_ride));
+
+      if (_ride.NumberOfRidersInRide < _ride.Vehicle.Capacity)
+      {
+        var passenger = sc.GetUser(rider.UserName);
+        return sc.InsertRideRider(passenger, Mappers.RideMapper.mapToRideDAO(_ride));
+      }
+      else
+      {
+        return false;
+      }
+
     }
 
     public bool removeRiderFromRide(RideRiderDTO rider)

@@ -1,4 +1,5 @@
-﻿using revashare_svc_webapi.Logic.Interfaces;
+﻿using revashare_svc_webapi.Client.Models.OwinModels;
+using revashare_svc_webapi.Logic.Interfaces;
 using revashare_svc_webapi.Logic.Models;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,17 @@ using System.Web.Http.Cors;
 namespace revashare_svc_webapi.Client.Controllers
 {
 
+    [Authorize(Roles = "Driver")]
     [RoutePrefix("api/driver")]
     public class DriverController : ApiController
     {
         private readonly IDriverRepository repo;
+        private UserFactory userFactory;
 
         public DriverController(IDriverRepository repo)
         {
             this.repo = repo;
+            this.userFactory = UserFactory.getFactory();
         }
 
         /// <summary>
@@ -30,9 +34,12 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("viewvehicle")]
         public HttpResponseMessage ViewVehicleInfo([FromUri]string driver)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.ViewVehicleInfo(driver));
+                return Request.CreateResponse(HttpStatusCode.OK, user.ViewVehicleInfo());
             }
             catch (Exception)
             {
@@ -44,9 +51,21 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("addvehicle")]
         public HttpResponseMessage AddVehicle([FromBody] VehicleDTO vehicle)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.AddVehicle(vehicle));
+                bool success = user.AddVehicle(vehicle);
+
+                if (success)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, success);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest);
+                }
             }
             catch
             {
@@ -63,9 +82,21 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("updatevehicle")]
         public HttpResponseMessage UpdateVehicleInfo([FromBody]VehicleDTO vehicle)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.UpdateVehicleInfo(vehicle));
+                bool success = user.UpdateVehicleInfo(vehicle);
+
+                if (success)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, success);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest);
+                }
             }
             catch (Exception)
             {
@@ -82,9 +113,21 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("reportrider")]
         public HttpResponseMessage ReportRider([FromBody]FlagDTO flag)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.ReportRider(flag));
+                bool success = user.ReportRider(flag);
+
+                if (success)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, success);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest);
+                }
             }
             catch (Exception)
             {
@@ -101,9 +144,21 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("setavailability")]
         public HttpResponseMessage SetAvailability([FromBody]RideDTO ride)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.SetAvailability(ride));
+                bool success = user.SetAvailability(ride);
+
+                if (success)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, success);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest);
+                }
             }
             catch (Exception)
             {
@@ -111,24 +166,6 @@ namespace revashare_svc_webapi.Client.Controllers
             }
         }
 
-        /// <summary>
-        /// Allows driver to update profile
-        /// </summary>
-        /// <param name="driver"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [Route("updatedriverprofile")]
-        public HttpResponseMessage UpdateDriverProfile([FromBody] UserDTO driver)
-        {
-            try
-            {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.UpdateDriverProfile(driver));
-            }
-            catch (Exception)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-        }
 
         /// <summary>
         /// Allows driver to schedule ride
@@ -139,10 +176,21 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("scheduleride")]
         public HttpResponseMessage ScheduleRide([FromBody]RideDTO ride)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                ride.Vehicle = this.repo.ViewVehicleInfo(ride.Vehicle.Owner.UserName);
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.ScheduleRide(ride));
+                bool success = user.ScheduleRide(ride);
+
+                if (success)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, success);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest);
+                }
             }
             catch (Exception)
             {
@@ -172,9 +220,21 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("cancelride")]
         public HttpResponseMessage CancelRide([FromBody]RideDTO ride)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.CancelRide(ride));
+                bool success = user.CancelRide(ride);
+
+                if (success)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, success);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest);
+                }
             }
             catch (Exception)
             {
@@ -209,9 +269,21 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("acceptpassenger")]
         public HttpResponseMessage AcceptPassenger([FromBody]RideRiderDTO rider)
         {
+
+            var user = this.userFactory.getUser(Request.GetOwinContext());
+
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, this.repo.AcceptPassenger(rider));
+                bool success = user.AcceptPassenger(rider);
+
+                if (success)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, success);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest);
+                }
             }
             catch (Exception ex)
             {

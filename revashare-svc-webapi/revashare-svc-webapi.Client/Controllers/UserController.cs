@@ -1,28 +1,33 @@
-﻿using revashare_svc_webapi.Logic.Interfaces;
+﻿using revashare_svc_webapi.Client.Models.OwinModels;
+using revashare_svc_webapi.Logic.Interfaces;
+using revashare_svc_webapi.Logic.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
+
+    [Authorize(Roles = "Rider,RequestDriver,Driver")]
     [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
         private IUser userLogic;
+        private UserFactory userFactory;
 
         public UserController(IUser UL)
         {
             userLogic = UL;
+            this.userFactory = UserFactory.getFactory();
         }
         
         [HttpGet]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
         [Route("profile")]
         public IHttpActionResult profile()
         {
-            Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
+            UserFactory userFactory = UserFactory.getFactory();
             var owinUser = userFactory.getUser(Request.GetOwinContext());
 
             if (owinUser == null)
@@ -32,6 +37,27 @@ namespace revashare_svc_webapi.Client.Controllers
 
             return Json(owinUser.getProfile());
         }
+
+
+        [HttpPost]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [Route("updateProfile")]
+        public IHttpActionResult updateProfile(UserDTO profile)
+        {
+            UserFactory userFactory= UserFactory.getFactory();
+            var user = userFactory.getUser(Request.GetOwinContext());
+
+            if (user.updateProfile(profile))
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+        }
+
 
         [HttpGet]
         [Route("get-user")]
@@ -59,6 +85,45 @@ namespace revashare_svc_webapi.Client.Controllers
         public HttpResponseMessage GetApartments()
         {
             return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetApartments(), "application/json");
+        }
+
+        [HttpGet]
+        [Route("get-available-rides")]
+        public IHttpActionResult getAvailableRides()
+        {
+            var user = userFactory.getUser(Request.GetOwinContext());
+
+            try
+            {
+                return Json(user.getAvailableRides());
+            }
+            catch (MissingPermission)
+            {
+                return Unauthorized();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
+        }
+
+        [HttpGet]
+        [Route("get-scheduled-rides")]
+        public IHttpActionResult getScheduledRides()
+        {
+            var user = userFactory.getUser(Request.GetOwinContext());
+
+            try
+            {
+                return Json(user.getScheduledRides());
+            }
+            catch (MissingPermission)
+            {
+                return Unauthorized();
+            }
+            
+
         }
 
         [HttpGet]

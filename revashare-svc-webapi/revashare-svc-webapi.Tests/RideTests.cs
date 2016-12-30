@@ -20,19 +20,19 @@ using System.Net;
 
 namespace revashare_svc_webapi.Tests
 {
-    public class RideTests
+  public class RideTests
+  {
+
+    private RiderLogic riderLogic;
+    private DriverLogic driverLogic;
+
+    public RideTests()
     {
+      ServiceClient svc = new ServiceClient();
 
-        private RiderLogic riderLogic;
-        private DriverLogic driverLogic;
-
-        public RideTests()
-        {
-            ServiceClient svc = new ServiceClient();
-
-            this.riderLogic = new RiderLogic(svc);
-            this.driverLogic = new DriverLogic();
-        }
+      this.riderLogic = new RiderLogic(svc);
+      this.driverLogic = new DriverLogic();
+    }
 
     [Fact]
     public void test_getRidesByApartments()
@@ -58,7 +58,7 @@ namespace revashare_svc_webapi.Tests
 
     }
 
-    
+
     #region Mock Tests 
 
 
@@ -67,7 +67,7 @@ namespace revashare_svc_webapi.Tests
     {
       var mock = new Mock<IDriverRepository>();
       mock.Setup(m => m.ViewPassengers(new RideDTO()));
-        
+
 
       var ctrl = new DriverController(mock.Object);
       ctrl.Request = Substitute.For<HttpRequestMessage>();

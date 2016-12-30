@@ -9,7 +9,7 @@ using System.Web.Http;
 namespace revashare_svc_webapi.Client.Controllers
 {
 
-    [Authorize(Roles = "Rider,RequestDriver,Driver")]
+    [Authorize(Roles = "Rider,RequestDriver,Driver,Admin")]
     [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
@@ -23,7 +23,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
         
         [HttpGet]
-        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver,Admin")]
         [Route("profile")]
         public IHttpActionResult profile()
         {
@@ -40,7 +40,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
 
         [HttpPost]
-        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver,Admin")]
         [Route("updateProfile")]
         public IHttpActionResult updateProfile(UserDTO profile)
         {

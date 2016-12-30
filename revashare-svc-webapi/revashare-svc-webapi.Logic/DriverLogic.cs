@@ -144,7 +144,7 @@ namespace revashare_svc_webapi.Logic
         {
             
             bool success = svc.AcceptRideRequest(Mappers.RideRiderMapper.mapToRideRiderDAO(rideRider));
-
+            
             return success;
 
         }

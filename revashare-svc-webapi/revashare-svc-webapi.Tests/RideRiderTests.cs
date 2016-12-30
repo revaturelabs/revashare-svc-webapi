@@ -42,10 +42,7 @@ namespace revashare_svc_webapi.Tests
 
     }
 
-
-
-
-
+    
     [Fact]
     public void test_insertRideRider()
     {
@@ -109,20 +106,6 @@ namespace revashare_svc_webapi.Tests
       Assert.True(success);
 
     }
-    /*
-    [Fact]
-    public void test_acceptRideRequest_RiderLogic()
-    {
-      ServiceClient sc = new ServiceClient();
-      RiderLogic rdrLogic = new RiderLogic(sc);
-      var accept = new RideRiderDTO { RideId =  , RiderId = , Accepted = true};
-      var a = rdrLogic.getVehicleByOwner(accept);
-
-
-      Assert.True(a);
-
-    }
-    */
 
     [Fact]
     public void Test_acceptRideRequest()
@@ -138,23 +121,6 @@ namespace revashare_svc_webapi.Tests
 
       Assert.Equal(res.StatusCode, HttpStatusCode.OK);
     }
-
-    /*  Doesn't have a method within DriverController for removing a passenger
-    [Fact]
-    public void Test_RemovePassenger()
-    {
-      var mock = new Mock<IDriverRepository>();
-      mock.Setup(m => m.RemovePassenger(new RideRiderDTO()))
-        .Returns(true);
-
-      var ctrl = new DriverController(mock.Object);
-      ctrl.Request = Substitute.For<HttpRequestMessage>();
-      ctrl.Configuration = Substitute.For<HttpConfiguration>();
-      HttpResponseMessage res = ctrl.(new RideRiderDTO());
-
-      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
-    }
-    */
 
     [Fact]
     public void test_removeRideRider()

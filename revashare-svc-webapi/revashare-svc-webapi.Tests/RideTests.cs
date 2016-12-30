@@ -62,20 +62,6 @@ namespace revashare_svc_webapi.Tests
     #region Mock Tests 
 
 
-    [Fact]
-    public void Test_ViewPassengers()
-    {
-      var mock = new Mock<IDriverRepository>();
-      mock.Setup(m => m.ViewPassengers(new RideDTO()));
-
-
-      var ctrl = new DriverController(mock.Object);
-      ctrl.Request = Substitute.For<HttpRequestMessage>();
-      ctrl.Configuration = Substitute.For<HttpConfiguration>();
-      HttpResponseMessage res = ctrl.ViewPassengers(new RideDTO());
-
-      Assert.Equal(res.StatusCode, HttpStatusCode.OK);
-    }
 
     [Fact]
     public void Test_CancelRide()

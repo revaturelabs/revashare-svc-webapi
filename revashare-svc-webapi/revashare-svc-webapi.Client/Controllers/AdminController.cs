@@ -12,6 +12,7 @@ using revashare_svc_webapi.Logic.ServiceClient;
 
 namespace revashare_svc_webapi.Client.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [RoutePrefix("api/admin")]
     public class AdminController : ApiController
     {

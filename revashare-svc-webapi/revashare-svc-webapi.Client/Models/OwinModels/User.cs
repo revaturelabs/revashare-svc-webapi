@@ -55,6 +55,16 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         }
 
 
+        public virtual bool updateProfile(UserDTO user)
+        {
+
+            user.UserName = this.userDetails.UserName;
+            user.Roles = this.userDetails.Roles;
+
+            return logic.updateUser(user);
+        }
+
+
         public virtual bool updateProfileApartment(ApartmentDTO apartment)
         {
             
@@ -95,7 +105,17 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             throw new MissingPermission();
         }
-        
+
+        public virtual List<RideDTO> getAvailableRides()
+        {
+            throw new MissingPermission();
+        }
+
+        public virtual List<RideDTO> getScheduledRides()
+        {
+            throw new MissingPermission();
+        }
+
         public virtual bool bookRide(RideDTO ride)
         {
             throw new MissingPermission();
@@ -143,7 +163,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         #endregion
 
         #region driver methods 
-        public virtual VehicleDTO ViewVehicleInfo(string driver)
+        public virtual VehicleDTO ViewVehicleInfo()
         {
             throw new MissingPermission();
         }

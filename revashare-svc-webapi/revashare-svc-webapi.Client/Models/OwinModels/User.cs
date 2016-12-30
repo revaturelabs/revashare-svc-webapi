@@ -143,7 +143,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         #endregion
 
         #region driver methods 
-        public virtual VehicleDTO ViewVehicleInfo(string driver)
+        public virtual VehicleDTO ViewVehicleInfo()
         {
             throw new MissingPermission();
         }

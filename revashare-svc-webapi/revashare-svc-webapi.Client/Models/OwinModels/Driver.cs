@@ -28,15 +28,34 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             return true;
         }
-        
+
+        public override VehicleDTO ViewVehicleInfo()
+        {
+            return logic.ViewVehicleInfo(this.userDetails.UserName);
+        }
+
         public override bool AddVehicle(VehicleDTO vehicle)
         {
-            return logic.AddVehicle(vehicle);
+            if (logic.ViewVehicleInfo(this.userDetails.UserName) == null)
+            {
+                return logic.AddVehicle(vehicle);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override bool UpdateVehicleInfo(VehicleDTO vehicle)
         {
-            return logic.UpdateVehicleInfo(vehicle);
+            if (logic.ViewVehicleInfo(this.userDetails.UserName) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return logic.UpdateVehicleInfo(vehicle);
+            }
         }
 
         public override bool ReportRider(FlagDTO flag)
@@ -56,17 +75,50 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         public override bool ScheduleRide(RideDTO ride)
         {
-            return logic.ScheduleRide(ride);
+
+            VehicleDTO driverVehicle = this.logic.ViewVehicleInfo(this.userDetails.UserName);
+
+            if (this.userDetails.Equals(driverVehicle.Owner))
+            {
+                ride.Vehicle = driverVehicle;
+
+                return logic.ScheduleRide(ride);
+            }
+            else
+            {
+                throw new UnauthorizedAccessException();
+            }
+
         }
 
         public override bool CancelRide(RideDTO ride)
         {
-            return logic.CancelRide(ride);
+
+            if (ride.Vehicle.Equals(this.logic.ViewVehicleInfo(this.userDetails.UserName)))
+            {
+                return logic.CancelRide(ride);
+            }
+            else
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            
         }
 
-        public override bool AcceptPassenger(RideRiderDTO rider)
+        public override bool AcceptPassenger(RideRiderDTO rideRider)
         {
-            return logic.AcceptPassenger(rider);
+
+            if (rideRider.Ride.Vehicle.Owner.Equals(this.userDetails))
+            {
+                return logic.AcceptPassenger(rideRider);
+            }
+            else
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            
         }
 
     }

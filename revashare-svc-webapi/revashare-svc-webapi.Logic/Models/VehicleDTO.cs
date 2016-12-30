@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace revashare_svc_webapi.Logic.Models {
-   public class VehicleDTO
+   public class VehicleDTO: IEquatable<VehicleDTO>
    {
        public string Make { get; set; }
 
@@ -21,5 +21,11 @@ namespace revashare_svc_webapi.Logic.Models {
 
         // may need to take this out and create new model to pass to UI
        public UserDTO Owner { get; set; }
-   }
+
+       public bool Equals(VehicleDTO other)
+       {
+            return this.Owner.UserName.Equals(other.Owner.UserName)
+                   && this.LicensePlate.Equals(other.LicensePlate);
+       }
+    }  
 }

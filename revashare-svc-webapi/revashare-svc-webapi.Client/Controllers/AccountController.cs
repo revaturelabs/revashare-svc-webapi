@@ -99,7 +99,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver,Admin")]
         [HttpPost]
         [Route("logout")]
         public IHttpActionResult logout()
@@ -118,7 +118,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver,Admin")]
         [HttpGet]
         [Route("profile")]
         public UserDTO profile()
@@ -132,7 +132,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver,Admin")]
         [HttpGet]
         [Route("apartments")]
         public IHttpActionResult getApartments()
@@ -147,7 +147,7 @@ namespace revashare_svc_webapi.Client.Controllers
         }
 
 
-        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver")]
+        [Authorize(Roles = "Unassigned,Rider,RequestDriver,Driver,Admin")]
         [HttpPost]
         [Route("updateProfileApartment")]
         public IHttpActionResult updateProfileApartment(ApartmentDTO apartment)

@@ -162,14 +162,20 @@ namespace revashare_svc_webapi.Client.Controllers
         [Route("approve-user")]
         public HttpResponseMessage ApproveUser([FromBody] UserDTO user)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveUser(user));
+            bool success = adminLogic.ApproveUser(user);
+            new MessageLogic().NotifyRiderUpgrade(user, success);
+
+            return Request.CreateResponse(HttpStatusCode.OK, success);
         }
 
         [HttpPost]
         [Route("approve-driver")]
         public HttpResponseMessage ApproveDriver([FromBody] UserDTO user)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, adminLogic.ApproveDriver(user));
+            bool success = adminLogic.ApproveDriver(user);
+            new MessageLogic().NotifyRiderUpgrade(user, success);
+
+            return Request.CreateResponse(HttpStatusCode.OK, success);
         }
 
         [HttpGet]

@@ -121,16 +121,20 @@ namespace revashare_svc_webapi.Logic
             }
         }
 
-        public List<UserDTO> ViewPassengers(RideDTO ride)
+        public List<RideRiderDTO> ViewPassengers(RideDTO ride)
         {
             try
             {
-                List<UserDTO> members = new List<UserDTO>();
-                ride = getSingleRide(ride);
-                var riders = svc.getRidersInRide(Mappers.RideMapper.mapToRideDAO(ride));
+                List<RideRiderDTO> members = new List<RideRiderDTO>();
+                //ride = getSingleRide(ride);
+                //var riders = svc.getRidersInRide(Mappers.RideMapper.mapToRideDAO(ride));
+                var riders = svc.GetRideRiders().Where(x=> x.Ride.Vehicle.Owner.UserName == ride.Vehicle.Owner.UserName &&
+                                                        x.Ride.IsAmRide == ride.IsAMRide &&
+                                                        x.Ride.StartOfWeek == ride.StartOfWeekDate);
                 foreach (var item in riders)
                 {
-                    members.Add(Mappers.UserMapper.mapToUserDTO(item));
+                    members.Add(Mappers.RideRiderMapper.mapToRideRiderDTO(item));
+                    //members.Add(Mappers.UserMapper.mapToUserDTO(item));
                 }
                 return members;
             }

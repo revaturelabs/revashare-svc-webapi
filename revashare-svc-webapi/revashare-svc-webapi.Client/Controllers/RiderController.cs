@@ -38,7 +38,8 @@ namespace revashare_svc_webapi.Client.Controllers
 
             try
             {
-                List<RideDTO> rides = user.getRides();
+                
+                List<RideRiderDTO> rides = user.getRideRidersByUser(new UserDTO { UserName = user.userName });
                 return Json(rides);
             }
             catch (MissingPermission err)

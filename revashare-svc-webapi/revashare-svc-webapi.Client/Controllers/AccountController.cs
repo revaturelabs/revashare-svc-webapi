@@ -54,19 +54,7 @@ namespace revashare_svc_webapi.Client.Controllers
 
         }
 
-
-        [HttpGet]
-        [Route("test")]
-        public IHttpActionResult test()
-        {
-
-            Models.OwinModels.UserFactory userFactory = Models.OwinModels.UserFactory.getFactory();
-            var owinUser = userFactory.getUser(Request.GetOwinContext());
-
-            return Ok();
-        }
-
-
+     
         [HttpPost]
         [Route("login")]
         public IHttpActionResult login([FromBody] ViewModels.Account.LoginVM vm)

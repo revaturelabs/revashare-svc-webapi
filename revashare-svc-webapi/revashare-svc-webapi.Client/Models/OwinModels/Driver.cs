@@ -38,6 +38,7 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             if (logic.ViewVehicleInfo(this.userDetails.UserName) == null)
             {
+                vehicle.Owner = this.userDetails;
                 return logic.AddVehicle(vehicle);
             }
             else
@@ -60,17 +61,13 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         public override bool ReportRider(FlagDTO flag)
         {
+            flag.Driver = this.userDetails;
             return logic.ReportRider(flag);
         }
 
         public override bool SetAvailability(RideDTO ride)
         {
             return logic.SetAvailability(ride);
-        }
-
-        public override bool UpdateDriverProfile(UserDTO driver)
-        {
-            return logic.UpdateDriverProfile(driver);
         }
 
         public override bool ScheduleRide(RideDTO ride)

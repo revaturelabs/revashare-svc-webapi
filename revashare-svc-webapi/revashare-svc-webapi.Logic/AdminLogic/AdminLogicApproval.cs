@@ -37,7 +37,7 @@ namespace revashare_svc_webapi.Logic.AdminLogic
         {
             List<UserDTO> pendingDrivers = new List<UserDTO>();
 
-            foreach (var user in sc.PendingRegistrations())
+            foreach (var user in sc.PendingDriverAprovals())
             {
                 pendingDrivers.Add(UserMapper.mapToUserDTO(user));
             }

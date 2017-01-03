@@ -79,6 +79,7 @@ namespace revashare_svc_webapi.Client.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, userLogic.GetApartment(name), "application/json");
         }
 
+        [AllowAnonymous]
         [HttpGet]
         [Route("get-apartments")]
         public HttpResponseMessage GetApartments()

@@ -48,7 +48,7 @@ namespace revashare_svc_webapi.Logic.RiderLogic
 
     public List<RideRiderDTO> getRideRidersByUser(UserDTO rider)
     {
-      var list = sc.GetRideRiders().Where(m => m.Rider.Name.Equals(rider.Name));
+      var list = sc.GetRideRiders().Where(m => m.Rider.UserName.Equals(rider.UserName));
       var ret = new List<RideRiderDTO>();
       foreach (var item in list)
       {

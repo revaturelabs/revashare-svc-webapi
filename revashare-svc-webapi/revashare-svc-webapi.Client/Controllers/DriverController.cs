@@ -285,9 +285,9 @@ namespace revashare_svc_webapi.Client.Controllers
                     return Request.CreateResponse(HttpStatusCode.BadRequest);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
             }
         }
     }

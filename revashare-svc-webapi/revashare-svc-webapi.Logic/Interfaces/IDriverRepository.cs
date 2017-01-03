@@ -25,7 +25,7 @@ namespace revashare_svc_webapi.Logic.Interfaces
 
         bool CancelRide(RideDTO ride);
 
-        List<UserDTO> ViewPassengers(RideDTO ride);
+        List<RideRiderDTO> ViewPassengers(RideDTO ride);
 
         bool AcceptPassenger(RideRiderDTO rider);
 

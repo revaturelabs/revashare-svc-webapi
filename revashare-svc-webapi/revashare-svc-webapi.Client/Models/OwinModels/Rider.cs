@@ -15,6 +15,10 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
 
         RiderLogic logic;
 
+        public override List<RideRiderDTO> getRideRidersByUser(UserDTO rider)
+        {
+            return logic.getRideRidersByUser(rider);
+        }
         public Rider(ClaimsPrincipal principal) : base(principal)
         {
             this.logic = new RiderLogic(new ServiceClient());

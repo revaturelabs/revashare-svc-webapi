@@ -26,7 +26,8 @@ namespace revashare_svc_webapi.Client.Models.OwinModels
         {
             get
             {
-                return this.FindFirst(ClaimTypes.Name).Value;
+                return userDetails.UserName;
+                //return this.FindFirst(ClaimTypes.Name).Value;
             }
         }
 

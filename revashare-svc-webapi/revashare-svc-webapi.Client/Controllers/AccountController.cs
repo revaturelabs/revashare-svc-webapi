@@ -143,6 +143,8 @@ namespace revashare_svc_webapi.Client.Controllers
 
             var user = userFactory.getUser(Request.GetOwinContext());
 
+            apartment = new UserLogic(new ServiceClient()).GetApartment(apartment.Name);
+
             bool success = user.updateProfileApartment(apartment);
 
             if (success)

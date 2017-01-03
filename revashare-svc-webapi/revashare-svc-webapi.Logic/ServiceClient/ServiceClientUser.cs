@@ -12,7 +12,7 @@ namespace revashare_svc_webapi.Logic.ServiceClient
     {
         public bool DeleteUser(UserDAO user)
         {
-            return rs.DeleteUser(user.Name);
+            return rs.DeleteUser(user.UserName);
         }
 
         public UserDAO GetUser(string UserName)
